@@ -1,1 +1,35 @@
-<p>registro works!</p>
+<div class="contenedor-formulario col-md-5">
+    <form autocomplete="off" [formGroup]="formulario">
+        <h3 class="titulo-login">REGISTRARSE</h3>
+        <div class="mb-3">
+            <label class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="exampleInputEmail1">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Cargo que desempeña</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>albañil</option>
+                <option value="1">puto</option>
+                <option value="2">escobita</option>
+                <option value="3">chupa pinga</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input type="email" class="form-control" id="correo" formControlName="correo" (focusout)="validarCorreo()">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" formControlName="password" (focusout)="validarPassword()">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Confirmar contraseña</label>
+            <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" (focusout)="validarPassword()">
+        </div>
+
+        <div class="contedor-btn-iniciar mt-5">
+            <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registrarUsuario()">Registrarse</button>
+        </div>
+        <p>ya tienes una cuenta? <a href="/login">inicia sesion</a></p>
+    </form>
+</div>

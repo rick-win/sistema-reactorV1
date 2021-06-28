@@ -1,14 +1,14 @@
 <div class="login">
     <div class="contenedor-formulario col-md-5">
-      <form autocomplete="off">
+      <form autocomplete="off" [formGroup]="formulario">
         <div class="container-form">
-          <h3 class="titulo-login">LOGUÉATE Y AYUDEMOS AL PLANETA</h3>
+          <h3 class="titulo-login">INICIAR SESION</h3>
           <div class="form-group">
             <div class="input-group ">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
               </div>
-              <input type="email" class="form-control" placeholder="Correo" name="email">
+              <input type="email" class="form-control" placeholder="Correo" name="correo" formControlName="correo">
             </div>
           </div>
           <div class="form-group">
@@ -16,13 +16,16 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
               </div>
-              <input type="password" class="form-control" placeholder="Contraseña" name="password">
+              <input type="password" class="form-control" placeholder="Contraseña" name="password" formControlName="password">
             </div>
         </div>
-        <div class="contedor-btn-iniciar">
+        <p>¿has olvidado tu contraseña? <a href="/recuperarPassword">recupera tu contraseña</a></p>
+        <div class="contedor-btn-iniciar mt-5">
           <a (click)="login()"><button type="submit" class="btn btn-iniciar btn-primary btn-lg">Iniciar
              Sesion</button></a>
          </div>
+
+         <p>No tienes una cuenta? <a href="/registro">registrate aqui</a> </p>
      
         </div>
   
