@@ -17,13 +17,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar-password.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroComponent,
     DashboardComponent,
-    RecuperarPasswordComponent
+    RecuperarPasswordComponent,
+   
+  
+    
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
