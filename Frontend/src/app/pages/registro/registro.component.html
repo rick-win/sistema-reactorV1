@@ -1,19 +1,27 @@
-<div class="contenedor-formulario col-md-5">
-    <form autocomplete="off" [formGroup]="formulario">
+
+<div class="contenedor-formulario col-md-5 mt-5 shadow-lg" >
+   
+    <form class="mt-4" autocomplete="off" [formGroup]="formulario">
+        
         <h3 class="titulo-login">REGISTRARSE</h3>
-        <div class="mb-3">
-            <label class="form-label">Nombre completo</label>
-            <input type="text" class="form-control" id="exampleInputEmail1">
+
+        <div class="form-row">
+            <div class="row">
+            <div class="form-group col-md-8 mb-3">   
+                <label class="col-form-label">Nombre completo</label>            
+                <input type="text" class="form-control" id="exampleInputEmail1">
+            </div>
+            
+            <div class="form-group col-md-4 mb-3">
+                <label class="col-form-label">Cargo que desempeña</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Admin</option>
+                    <option value="1">Operario</option>
+                </select>
+            </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Cargo que desempeña</label>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>albañil</option>
-                <option value="1">puto</option>
-                <option value="2">escobita</option>
-                <option value="3">chupa pinga</option>
-              </select>
-        </div>
+    
         <div class="mb-3">
             <label class="form-label">Correo</label>
             <input type="email" class="form-control" id="correo" formControlName="correo" (focusout)="validarCorreo()">
@@ -27,9 +35,12 @@
             <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" (focusout)="validarPassword()">
         </div>
 
-        <div class="contedor-btn-iniciar mt-5">
+        <div class="contedor-btn-iniciar mt-3">
             <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registrarUsuario()">Registrarse</button>
         </div>
         <p>ya tienes una cuenta? <a href="/login">inicia sesion</a></p>
+    
     </form>
-</div>
+    </div>
+    
+
