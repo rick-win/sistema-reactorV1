@@ -29,9 +29,7 @@
     <div class="collapse navbar-collapse" id="topNavBar">
       <form class="d-flex ms-auto my-3 my-lg-0">
         <div class="input-group">
-          <button class="btn btn-primary" type="submit">
-            <i class="bi bi-search"></i>
-          </button>
+          
         </div>
       </form>
       <ul class="navbar-nav">
@@ -43,14 +41,10 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <i class="bi bi-person-fill"></i>
+            Usuario <i class="bi bi-person-fill"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </li>
+            <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
           </ul>
         </li>
       </ul>
@@ -84,39 +78,102 @@
             Interface
           </div>
         </li>
+
+        <li>
+          <a href="#" class="nav-link px-3">
+            <span class="me-2"><i class="bi bi-book-fill"></i></span>
+            <span>Gestionar Usuario</span>
+          </a>
+        </li>
+
         <li>
           <a
             class="nav-link px-3 sidebar-link"
             data-bs-toggle="collapse"
-            href="#layouts"
+            href="#OpManuales"
           >
             <span class="me-2"><i class="bi bi-layout-split"></i></span>
-            <span>Layouts</span>
+            <span>Operaciones Manuales</span>
             <span class="ms-auto">
               <span class="right-icon">
                 <i class="bi bi-chevron-down"></i>
               </span>
             </span>
           </a>
-          <div class="collapse" id="layouts">
+          <div class="collapse" id="OpManuales">
             <ul class="navbar-nav ps-3">
               <li>
                 <a href="#" class="nav-link px-3">
                   <span class="me-2"
                     ><i class="bi bi-speedometer2"></i
                   ></span>
-                  <span>Dashboard</span>
+                  <span>Cargue Materail</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Encender Equipos</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Cierre de Valvulas</span>
                 </a>
               </li>
             </ul>
           </div>
         </li>
+
         <li>
-          <a href="#" class="nav-link px-3">
-            <span class="me-2"><i class="bi bi-book-fill"></i></span>
-            <span>Pages</span>
+          <a
+            class="nav-link px-3 sidebar-link"
+            data-bs-toggle="collapse"
+            href="#Parametrizar"
+          >
+            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+            <span>Parametrizar</span>
+            <span class="ms-auto">
+              <span class="right-icon">
+                <i class="bi bi-chevron-down"></i>
+              </span>
+            </span>
           </a>
+          <div class="collapse" id="Parametrizar">
+            <ul class="navbar-nav ps-3">
+              <li>
+                <a href="#" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Temperaturas</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Presiones</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Funcionamiento Tornillo</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </li>
+       
         <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
         <li>
           <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
@@ -126,13 +183,13 @@
         <li>
           <a href="#" class="nav-link px-3">
             <span class="me-2"><i class="bi bi-graph-up"></i></span>
-            <span>Charts</span>
+            <span>Monitoreo</span>
           </a>
         </li>
         <li>
           <a href="#" class="nav-link px-3">
             <span class="me-2"><i class="bi bi-table"></i></span>
-            <span>Tables</span>
+            <span>Generar Reporte</span>
           </a>
         </li>
       </ul>
@@ -141,5 +198,10 @@
 </div>
 <!-- offcanvas -->
 <main class="mt-5 pt-3 ctn-main" >
+  <div class="container-fuid">
+    <div class="row">
+      <div class="col-md-12 fw-bold fs-3">Dashboard</div>
+    </div>
+  </div>
   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima ut nesciunt fuga itaque dolorem architecto inventore. Nulla, libero. Accusantium quia deserunt molestias labore sunt dicta consequuntur voluptas ipsum doloremque fuga.</p>
 </main>
