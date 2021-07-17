@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,8 @@ import { PresionComponent } from './pages/presion/presion.component';
 import { FlujoComponent } from './pages/flujo/flujo.component';
 import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
 import { GenerarReportesComponent } from './pages/generar-reportes/generar-reportes.component';
+
+import { GestionarUsuarioService } from './services/gestionar-usuario.service';
 
 
 @NgModule({
@@ -51,9 +54,9 @@ import { GenerarReportesComponent } from './pages/generar-reportes/generar-repor
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [GestionarUsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
