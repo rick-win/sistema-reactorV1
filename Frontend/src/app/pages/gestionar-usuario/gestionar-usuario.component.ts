@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {GestionarUsuarioService} from '../../services/gestionar-usuario.service';
+
 @Component({
   selector: 'app-gestionar-usuario',
   templateUrl: './gestionar-usuario.component.html',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionarUsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gestionarUsuarioService : GestionarUsuarioService) { }
 
   ngOnInit(): void {
+    this.gestionarUsuarioService.getUsuarios().subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
   }
 
 }
