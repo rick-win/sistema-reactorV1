@@ -9,7 +9,8 @@ import { GenerarReportesComponent } from './pages/generar-reportes/generar-repor
 import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
 import { TemperaturasComponent } from './pages/temperaturas/temperaturas.component';
 import { PresionComponent } from './pages/presion/presion.component';
-
+import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
+import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnico/acceso-funcional-tecnico.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,16 @@ const routes: Routes = [
   path: 'presion',
   component: PresionComponent
 },
+
+{
+  path: 'encender-equipos',
+  component: EncenderEquiposComponent,
+},
+
+{
+  path: 'accesofuncional-tecnico',
+  component: AccesoFuncionalTecnicoComponent,
+}
 
 ];
 

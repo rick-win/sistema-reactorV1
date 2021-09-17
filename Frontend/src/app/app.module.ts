@@ -26,6 +26,8 @@ import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
 import { GenerarReportesComponent } from './pages/generar-reportes/generar-reportes.component';
 
 import { GestionarUsuarioService } from './services/gestionar-usuario.service';
+import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
+import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnico/acceso-funcional-tecnico.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { GestionarUsuarioService } from './services/gestionar-usuario.service';
     FlujoComponent,
     MonitoreoComponent,
     GenerarReportesComponent,
+    EncenderEquiposComponent,
+    AccesoFuncionalTecnicoComponent,
    
   
     

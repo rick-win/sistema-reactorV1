@@ -24,7 +24,7 @@ export class AuthFireService {
         });
         // this.SetUserData(result.user);
       }).catch((error) => {
-        this.toast.error('A ocurrido un error, intentalo de nuevo perrrr');
+        this.toast.error('A ocurrido un error, intentalo de nuevo');
       })
   }
 
@@ -42,7 +42,7 @@ export class AuthFireService {
         // this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
-        this.toast.error('A ocurrido un error perrrrr')
+        this.toast.error('A ocurrido un error')
       })
   }
 
@@ -50,7 +50,7 @@ export class AuthFireService {
   public ForgotPassword(passwordResetEmail:string) {
     return this.angularFire.sendPasswordResetEmail(passwordResetEmail)
     .then(() => {
-      this.toast.success('Te hemos enviado un correo, revisa tu bandeja perrroo')
+      this.toast.success('Te hemos enviado un correo, revisa tu bandeja')
     }).catch((error) => {
       this.toast.error(error)
     })

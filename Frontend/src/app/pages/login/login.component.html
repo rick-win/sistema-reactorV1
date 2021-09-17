@@ -74,8 +74,9 @@
       <div class="col-lg-5 d-flex flex-column align-items-end min-vh-100   ">
           <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 w-100 mt-auto">
               <img src="assets/Img/logoSena.png" class="img-fluid" width="90 " alt="LogoSena">
-              <img src="assets/Img/logoSena.png" class="img-fluid" width="90 " alt="LogoSena">
+              <img src="assets/Img/logo_astin.png" class="img-fluid" width="90 " alt="LogoAstin">
           </div>
+
          
           <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
               <h1 class="font-weight-bold mb-4">Bienvenidos...</h1>
@@ -98,28 +99,28 @@
                         <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="password" formControlName="password">
                       </div>
                   </div>
-                  
-                      <p>¿has olvidado tu contraseña? <a href="/recuperarPassword" class="text-decoration-none">Recuperar tu contraseña</a></p>
-                  
-                  <div class="contedor-btn-iniciar mt-5 mb-4">
+                                
+              
+                  <div class="contedor-btn-iniciar mt-3 mb-2">
                     <a (click)="login()"><button type="submit" class="btn btn-iniciar btn-primary btn-lg w-100">Iniciar
                        Sesion</button></a>
                    </div>
                
                   </div>
                 </form>
-
                 <p class= "font-weight-bold text-center text-mute">O inicia sesion con</p>
                 <div class="d-flex justify-content-around">
-                  <button type="submit" class="btn btn-outline-danger flex-grow-1 my-1">
+                  <button type="submit" class="btn btn-outline-danger flex-grow-1 my-1" (click)="loginGoogle()">
                   <img   src="assets/Img/iconGoogle.png" width = "32" alt="logoGoogle"><i class=" lead mr-2"></i>Google
                   </button>
                 </div>
           </div>
-          <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
-              <p class="d-inline-block mb-0">Todavia no tienes una cuenta? <a href="/registro" class="font-weight-bold text-decoration-none">registrate aqui</a> </p>
+          <div class="text-center px-lg-5 pt-lg-4 pb-lg-4 p-4 w-100 mt-auto">
+              <p class="d-inline-block mb-0"> ¿No tienes una cuenta? <a href="/registro" class="font-weight-bold text-decoration-none">registrate aqui</a> </p>
+              <p>¿has olvidado tu contraseña? <a href="/recuperarPassword" class="text-decoration-none">Recuperar tu contraseña</a></p>
+              
           </div>
-
+              
       </div>
   </div>
 
