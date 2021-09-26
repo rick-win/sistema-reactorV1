@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //firebase
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { AngularFireAuthModule} from '@angular/fire/auth';
 
 //toast
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -56,6 +57,7 @@ import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnic
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,

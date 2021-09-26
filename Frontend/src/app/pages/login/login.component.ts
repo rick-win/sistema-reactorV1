@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import{FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AuthFireService } from '../../services/auth-fire.service';
 import {AngularFireAuth} from '@angular/fire/auth';
-import {firebase} from 'firebase/app';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   private isValidEmail = /\S*@\S*\.\S*/;
   constructor(
     private fb: FormBuilder,
-    private auth: AngularFireAuth,
+    private firebase: AngularFireAuth,
     private authServices: AuthFireService
     ) {
     this.formulario = new FormGroup({});
@@ -42,8 +43,12 @@ export class LoginComponent implements OnInit {
     this.authServices.SignIn(correo, password);
   }
 
-  public loginGoogle(){
-    this.auth.signInWithPopup(new firebase.Google);
+  async loginGoogle(){
+    await this.firebase.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+  logout(){
+    return this.firebase.signOut();
   }
 
   public recuperarPassword() {
