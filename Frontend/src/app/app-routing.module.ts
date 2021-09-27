@@ -11,6 +11,7 @@ import { TemperaturasComponent } from './pages/temperaturas/temperaturas.compone
 import { PresionComponent } from './pages/presion/presion.component';
 import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
 import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnico/acceso-funcional-tecnico.component';
+import { DatatablesComponent } from './pages/datatables/datatables.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,11 @@ const routes: Routes = [
 {
   path: 'accesofuncional-tecnico',
   component: AccesoFuncionalTecnicoComponent,
+},
+
+{
+  path: 'dataTable',
+  component: DatatablesComponent,
 }
 
 ];

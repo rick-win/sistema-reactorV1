@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatatablesComponent } from '../datatables/datatables.component'; 
 
 @Component({
   selector: 'app-acceso-funcional-tecnico',
@@ -11,5 +12,7 @@ export class AccesoFuncionalTecnicoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
 
 }

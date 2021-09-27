@@ -1,0 +1,28 @@
+<div class="conteiner mt-5  ">
+  <div class="row">
+   
+  <div class="col-lg-12">
+    
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class= "table-table-light table table-striped" >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let e of data">
+          <td>{{e.employee_name}}</td>
+          <td>{{e.employee_salary}}</td>
+          <td>{{e.employee_age}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  
+  
+  </div>
+  </div>
+

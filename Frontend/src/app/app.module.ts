@@ -30,6 +30,9 @@ import { GestionarUsuarioService } from './services/gestionar-usuario.service';
 import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
 import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnico/acceso-funcional-tecnico.component';
 
+import { DataTablesModule } from "angular-datatables";
+import { DatatablesComponent } from './pages/datatables/datatables.component';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnic
     GenerarReportesComponent,
     EncenderEquiposComponent,
     AccesoFuncionalTecnicoComponent,
+    DatatablesComponent,
    
   
     
@@ -61,6 +65,7 @@ import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnic
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    DataTablesModule
   ],
   providers: [GestionarUsuarioService],
   bootstrap: [AppComponent]
