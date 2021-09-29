@@ -73,6 +73,7 @@
               <span>Estado Maquina</span>
             </a>
           </li>
+
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
@@ -86,24 +87,24 @@
             <a
               class="nav-link px-3 sidebar-link"
               data-bs-toggle="collapse"
-              href="#configuraciones"
+              href="#parametrosI"
             >
               <span class="me-2"><i class="bi bi-layout-split"></i></span>
-              <span>Configuraciones</span>
+              <span>Parametros Iniciales</span>
               <span class="ms-auto">
                 <span class="right-icon">
                   <i class="bi bi-chevron-down"></i>
                 </span>
               </span>
             </a>
-            <div class="collapse" id="configuraciones">
+            <div class="collapse" id="parametrosI">
               <ul class="navbar-nav ps-3">
                 <li>
                   <a href="#" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
-                    <span>Modificar Parametros</span>
+                    <span>Verificar Encendido</span>
                   </a>
                 </li>
                 <li>
@@ -111,63 +112,41 @@
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
-                    <span>Gestionar Alarmas</span>
+                    <span>Tolva</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Parametrizar Topes de Proceso</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Programar PLC</span>
-                  </a>
-                </li>
+                    <a routerLink = "/encender-equipos" class="nav-link px-3">
+                      <span class="me-2"
+                        ><i class="bi bi-speedometer2"></i
+                      ></span>
+                      <span>Bomba de Vacio</span>
+                    </a>
+                  </li>
+
               </ul>
             </div>
           </li>
   
           <li>
-            <a
-              class="nav-link px-3 sidebar-link"
-              data-bs-toggle="collapse"
-              href="#iniciar"
-            >
-              <span class="me-2"><i class="bi bi-layout-split"></i></span>
-              <span>Iniciar</span>
-              <span class="ms-auto">
-                <span class="right-icon">
-                  <i class="bi bi-chevron-down"></i>
-                </span>
-              </span>
+            <a href="#" class="nav-link px-3 ">
+              <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+              <span>Parametros Tornillo</span>
             </a>
-            <div class="collapse" id="iniciar">
-              <ul class="navbar-nav ps-3">
-                <li>
-                  <a routerLink = "/temperaturas" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Modo Automatico</span>
-                  </a>
-                </li>
-                <li>
-                  <a routerLink="/presion" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Modo Manual</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link px-3 ">
+              <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+              <span>Parametros Temperatura</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link px-3 ">
+              <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+              <span>Registro de Productos</span>
+            </a>
           </li>
          
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
@@ -228,9 +207,12 @@
   
     <div class="container">
     <div class="row">
-     <div class="container-img">
-    <div style="width: 100%;"><div style="position: relative; padding-bottom: 32%; padding-top: 0; height: 0;"><iframe frameborder="0" width="190" height="90" style="position: absolute; top: 0; left: 0; width: 70%; height: 70%;" src="https://view.genial.ly/61369b756481860d8ad131aa" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
-    </div>
+     
+    <div class="container-img">
+        <img src="assets/planta1.png">
+        </div>
+
+
     
     <div class= "row mt-3">
       <h5>progreso del proceso</h5>

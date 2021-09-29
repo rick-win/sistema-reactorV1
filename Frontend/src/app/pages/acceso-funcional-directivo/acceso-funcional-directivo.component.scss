@@ -40,14 +40,16 @@ button {
     width: 17%;
     height: calc(100% - var(--topNavbarHeight));
   }
-  .ctn-main {
-      width: 82%;
-      float: right;
-  }
 
   .container-img{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%
+  }
+
+  .ctn-main {
+      width: 82%;
+      float: right;
   }
 }

@@ -11,7 +11,10 @@ import { TemperaturasComponent } from './pages/temperaturas/temperaturas.compone
 import { PresionComponent } from './pages/presion/presion.component';
 import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
 import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnico/acceso-funcional-tecnico.component';
+import {AccesoFuncionalDirectivoComponent} from './pages/acceso-funcional-directivo/acceso-funcional-directivo.component';
+import { AccesoFuncionalOperarioComponent } from './pages/acceso-funcional-operario/acceso-funcional-operario.component';
 import { DatatablesComponent } from './pages/datatables/datatables.component';
+
 
 const routes: Routes = [
   {
@@ -68,6 +71,17 @@ const routes: Routes = [
 {
   path: 'accesofuncional-tecnico',
   component: AccesoFuncionalTecnicoComponent,
+},
+
+
+{
+  path: 'accesofuncional-directivo',
+  component: AccesoFuncionalDirectivoComponent,
+},
+
+{
+  path: 'accesofuncional-operario',
+  component: AccesoFuncionalOperarioComponent,
 },
 
 {

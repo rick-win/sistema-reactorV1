@@ -32,6 +32,8 @@ import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnic
 
 import { DataTablesModule } from "angular-datatables";
 import { DatatablesComponent } from './pages/datatables/datatables.component';
+import { AccesoFuncionalDirectivoComponent } from './pages/acceso-funcional-directivo/acceso-funcional-directivo.component';
+import { AccesoFuncionalOperarioComponent } from './pages/acceso-funcional-operario/acceso-funcional-operario.component';
 
 
 @NgModule({
@@ -51,6 +53,8 @@ import { DatatablesComponent } from './pages/datatables/datatables.component';
     EncenderEquiposComponent,
     AccesoFuncionalTecnicoComponent,
     DatatablesComponent,
+    AccesoFuncionalDirectivoComponent,
+    AccesoFuncionalOperarioComponent,
    
   
     
