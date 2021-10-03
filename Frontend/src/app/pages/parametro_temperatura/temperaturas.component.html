@@ -1,0 +1,136 @@
+<h2>Parametros de Temperatura</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)= "guardar (formPerfilTemp)" 
+              #formPerfilTemp ="ngForm"
+              autocomplete="off">
+
+
+            <!-- campo Zona A -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Zona A</label>
+                <div class="col-sm-3">
+                    <input type="number"
+                           class="form-control" 
+                           ngModel
+                           name="ZonaA"
+                           placeholder ="Ingrasar valor temperatura"
+                           required
+                           min= "0"
+                    >
+                    <span class="from-text text-danger">Temperatura en grados celcius °C</span>
+                </div>
+            </div>
+
+            <!-- campo Zona B -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Zona B</label>
+                <div class="col-sm-3">
+                    <input type="number"
+                           class="form-control" 
+                           ngModel
+                           name="ZonaB"
+                           placeholder ="Ingrasar valor temperatura"
+                           required
+                           min= "0"
+                    >
+                    
+                </div>
+            </div>
+
+            <!-- campo Zona C -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Zona C</label>
+                <div class="col-sm-3">
+                    <input type="number"
+                           class="form-control" 
+                           ngModel
+                           name="ZonaC"
+                           placeholder ="Ingrasar valor temperatura"
+                           required
+                           min= "0"
+                    >
+                    
+                </div>
+            </div>
+
+            <!-- campo Zona D -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Zona D</label>
+                <div class="col-sm-3">
+                    <input type="number"
+                           class="form-control" 
+                           ngModel
+                           name="ZonaD"
+                           placeholder ="Ingrasar valor temperatura"
+                           required
+                           min= "0"
+                    >
+                    
+                </div>
+            </div>
+
+            <!-- campo Zona E -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Zona E</label>
+                <div class="col-sm-3">
+                    <input type="number"
+                           class="form-control" 
+                           ngModel
+                           name="ZonaE"
+                           placeholder ="Ingrasar valor temperatura"
+                           required
+                           min= "0"
+                    >
+                    
+                </div>
+            </div>
+
+            <!-- campo Zona F -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Zona F</label>
+                <div class="col-sm-3">
+                    <input type="number"
+                           class="form-control" 
+                           ngModel
+                           name="ZonaF"
+                           placeholder ="Ingrasar valor temperatura"
+                           required
+                           min= "0"
+                    >
+                    
+                </div>
+            </div>
+
+            <!-- campo Zona G -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Zona G</label>
+                <div class="col-sm-3">
+                    <input type="number"
+                           class="form-control" 
+                           ngModel
+                           name="ZonaG"
+                           placeholder ="Ingrasar valor temperatura"
+                           required
+                           min= "0"
+                    >
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" 
+                            class="btn btn-primary flot-end">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>

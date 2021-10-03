@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-temperaturas',
@@ -12,4 +13,7 @@ export class TemperaturasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   guardar(formPerfilTemp:NgForm){
+    console.log(formPerfilTemp.value)
+   }
 }

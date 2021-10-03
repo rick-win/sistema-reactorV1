@@ -7,7 +7,7 @@ import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar
 import { RegistroComponent } from './pages/registro/registro.component';
 import { GenerarReportesComponent } from './pages/generar-reportes/generar-reportes.component';
 import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
-import { TemperaturasComponent } from './pages/temperaturas/temperaturas.component';
+import { TemperaturasComponent } from './pages/parametro_temperatura/temperaturas.component';
 import { PresionComponent } from './pages/presion/presion.component';
 import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
 import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnico/acceso-funcional-tecnico.component';
@@ -54,7 +54,7 @@ const routes: Routes = [
 },
 
 {
-  path: 'temperaturas',
+  path: 'perfilTemperatura',
   component: TemperaturasComponent
 },
 

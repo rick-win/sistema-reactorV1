@@ -20,7 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar-password.component';
 import { GestionarUsuarioComponent } from './pages/gestionar-usuario/gestionar-usuario.component';
 import { CargueMaterialComponent } from './pages/cargue-material/cargue-material.component';
-import { TemperaturasComponent } from './pages/temperaturas/temperaturas.component';
+import { TemperaturasComponent } from './pages/parametro_temperatura/temperaturas.component';
 import { PresionComponent } from './pages/presion/presion.component';
 import { FlujoComponent } from './pages/flujo/flujo.component';
 import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';

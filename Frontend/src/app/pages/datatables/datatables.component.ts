@@ -9,6 +9,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DatatablesComponent implements OnDestroy, OnInit {
 
+  indicadoresMat:boolean = false;
+  indicadoresProd:boolean = false;
+
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject();
   data: any;

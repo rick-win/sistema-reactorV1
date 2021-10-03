@@ -7,7 +7,7 @@ import { AuthFireService } from '../../services/auth-fire.service';
   styleUrls: ['./recuperar-password.component.scss']
 })
 export class RecuperarPasswordComponent implements OnInit {
-  public correoRecuperar = '';
+  public correoRecuperar = 'sistemareactor@gmail.com';
   constructor(
     private authServices: AuthFireService
   ) { 
