@@ -34,6 +34,8 @@ import { DataTablesModule } from "angular-datatables";
 import { DatatablesComponent } from './pages/datatables/datatables.component';
 import { AccesoFuncionalDirectivoComponent } from './pages/acceso-funcional-directivo/acceso-funcional-directivo.component';
 import { AccesoFuncionalOperarioComponent } from './pages/acceso-funcional-operario/acceso-funcional-operario.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { RegistroProductoComponent } from './pages/registro-producto/registro-producto.component';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { AccesoFuncionalOperarioComponent } from './pages/acceso-funcional-opera
     DatatablesComponent,
     AccesoFuncionalDirectivoComponent,
     AccesoFuncionalOperarioComponent,
+    NavbarComponent,
+    RegistroProductoComponent,
    
   
     

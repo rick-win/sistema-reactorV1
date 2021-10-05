@@ -14,7 +14,7 @@ import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnic
 import {AccesoFuncionalDirectivoComponent} from './pages/acceso-funcional-directivo/acceso-funcional-directivo.component';
 import { AccesoFuncionalOperarioComponent } from './pages/acceso-funcional-operario/acceso-funcional-operario.component';
 import { DatatablesComponent } from './pages/datatables/datatables.component';
-
+import { NavbarComponent } from './pages/navbar/navbar.component';
 
 const routes: Routes = [
   {
@@ -87,6 +87,11 @@ const routes: Routes = [
 {
   path: 'dataTable',
   component: DatatablesComponent,
+},
+
+{
+  path: 'Navbar',
+  component: NavbarComponent,
 }
 
 ];

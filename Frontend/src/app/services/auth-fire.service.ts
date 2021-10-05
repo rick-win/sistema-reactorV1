@@ -2,18 +2,39 @@ import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import 'firebase/auth';
+import { Observable } from 'rxjs';
+import { User } from '../models/usuario.model';
+import firebase from 'firebase/app';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthFireService {
 
+  public userdata$: Observable<firebase.User | null | undefined>;
+  public usuario: User = new User();
+
   constructor(
     private angularFire: AngularFireAuth,
     private toast: ToastrService,
     private router: Router,
     public ngZone: NgZone
-  ) { }
+  ) { 
+    this.userdata$ = angularFire.authState; 
+    this.angularFire.authState.subscribe(user => {
+      if(user){
+        this.usuario.nombre = user.displayName;
+        this.usuario.email = user.email;
+        this.usuario.foto = user.photoURL;
+        this.usuario.uid = user.uid;
+      }
+        else{
+          console.log('no hay usuario');
+        }
+    })
+  }
 
    // Sign in with email/password
   public SignIn(email:string, password:string) {
@@ -54,6 +75,28 @@ export class AuthFireService {
     }).catch((error) => {
       this.toast.error(error)
     })
+  }
+
+  // verificaCorreo(){
+  //   this.angularFire.currentUser.then(user=> {
+  //     if(user){
+  //       user.sendEmailVerification();
+  //     }
+  //   })
+  // }
+
+  async loginGoogle(){
+    await this.angularFire.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.angularFire.currentUser.then(user => {
+      if(user){
+        user.sendEmailVerification();
+      }
+    })
+    
+  }
+
+  LogOut(){
+  return this.angularFire.signOut();
   }
 
 }

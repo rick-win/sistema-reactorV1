@@ -64,8 +64,8 @@ export class RegistroComponent implements OnInit {
         console.log('contraseñas coinciden');
       } else {
         this.passwordValido = false;
-        this.toast.error('las contraseñas no coinciden ojoo perrr');
-        console.log('contraseñas diferentes errorrrr'); 
+        this.toast.error('las contraseñas no coinciden ');
+        console.log('contraseñas diferentes error'); 
       }
     }
   }

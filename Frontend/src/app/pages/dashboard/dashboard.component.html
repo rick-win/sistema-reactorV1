@@ -1,6 +1,7 @@
 <!-- top navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
+
     <button
       class="navbar-toggler"
       type="button"
@@ -13,8 +14,8 @@
     <a
       class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
       href="#"
-      >Sistema Reactor</a
-    >
+      >Sistema Reactor</a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -41,11 +42,12 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Usuario <i class="bi bi-person-fill"></i>
+          {{authServices.usuario.email}} 
+          <img [src]="authServices.usuario.foto" alt="hugenerd" width="30" height="30" class="rounded-circle">
           </a>
 
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby = "navbarDropdown">
-            <li><a class="dropdown-item" >Cerrar Sesion</a></li>
+            <li><a class="dropdown-item" (click)="LogOut()" >Cerrar Sesion</a></li>
           </ul>
 
         </li>
@@ -63,6 +65,11 @@
   <div class="offcanvas-body p-0">
     <nav class="navbar-dark">
       <ul class="navbar-nav">
+ 
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none mt-3">
+          <span class="fs-5 d-none d-sm-inline">Menu: <a>{{authServices.usuario.nombre}}</a></span>
+      </a>
+
         <li>
           <div class="text-muted small fw-bold text-uppercase px-3">
             CORE
@@ -197,7 +204,7 @@
       </ul>
     </nav>
   </div>
-</div>
+</div> -->
 <!-- offcanvas -->
 
 <main class="mt-5 pt-3 ctn-main" >
