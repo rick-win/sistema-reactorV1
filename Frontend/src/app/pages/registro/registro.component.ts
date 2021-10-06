@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent implements OnInit {
-  formulario: FormGroup;
+  formularioReg: FormGroup;
   correoValido = false;
   passwordValido = false;
   constructor(
@@ -16,14 +16,14 @@ export class RegistroComponent implements OnInit {
     private authFireService: AuthFireService,
     private toast: ToastrService
   ) {
-    this.formulario = new FormGroup({});
+    this.formularioReg = new FormGroup({});
    }
 
   ngOnInit(): void {
     this.crearFormulario();
   }
   private crearFormulario() {
-    this.formulario = this.fb.group({
+    this.formularioReg = this.fb.group({
       nombre: [null, Validators.required],
       correo: [null, Validators.required],
       cargo: [null, Validators.required],
@@ -32,8 +32,8 @@ export class RegistroComponent implements OnInit {
     })
   }
   public registrarUsuario() {
-    const correo = this.formulario.get('correo')?.value;
-    const password = this.formulario.get('password')?.value;
+    const correo = this.formularioReg.get('correo')?.value;
+    const password = this.formularioReg.get('password')?.value;
     console.log(this.correoValido);
     
     if (this.correoValido) {
@@ -45,7 +45,7 @@ export class RegistroComponent implements OnInit {
     }
   }
   public validarCorreo() {
-    let entidadCorreo = this.formulario.get('correo')?.value.split('@')[1];
+    let entidadCorreo = this.formularioReg.get('correo')?.value.split('@')[1];
     console.log(entidadCorreo);
     if (entidadCorreo === 'misena.edu.co') {
       console.log('correo correcto');
@@ -56,8 +56,8 @@ export class RegistroComponent implements OnInit {
     }
   }
   public validarPassword() {
-    const password = this.formulario.get('password')?.value;
-    const retryPassword = this.formulario.get('confirmPassword')?.value;
+    const password = this.formularioReg.get('password')?.value;
+    const retryPassword = this.formularioReg.get('confirmPassword')?.value;
     if (password && retryPassword) {
       if (password === retryPassword) {
         this.passwordValido = true;

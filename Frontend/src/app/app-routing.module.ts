@@ -5,7 +5,6 @@ import { GestionarUsuarioComponent } from './pages/gestionar-usuario/gestionar-u
 import { LoginComponent } from './pages/login/login.component';
 import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar-password.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { GenerarReportesComponent } from './pages/generar-reportes/generar-reportes.component';
 import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
 import { TemperaturasComponent } from './pages/parametro_temperatura/temperaturas.component';
 import { PresionComponent } from './pages/presion/presion.component';
@@ -15,6 +14,9 @@ import {AccesoFuncionalDirectivoComponent} from './pages/acceso-funcional-direct
 import { AccesoFuncionalOperarioComponent } from './pages/acceso-funcional-operario/acceso-funcional-operario.component';
 import { DatatablesComponent } from './pages/datatables/datatables.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { RegistroProductoComponent } from './pages/registro-producto/registro-producto.component';
+import { SimulacionComponent} from './pages/simulacion/simulacion.component';
+import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bienbenida.component';
 
 const routes: Routes = [
   {
@@ -43,10 +45,7 @@ const routes: Routes = [
     path: 'gestionarUsuario',
     component: GestionarUsuarioComponent
   },
-{
-  path: 'generarReporte',
-  component: GenerarReportesComponent
-},
+
 
 {
   path: 'monitoreo',
@@ -92,6 +91,21 @@ const routes: Routes = [
 {
   path: 'Navbar',
   component: NavbarComponent,
+},
+
+{
+  path: 'registroProducto',
+  component: RegistroProductoComponent,
+},
+
+{
+  path: 'simulacion',
+  component: SimulacionComponent,
+},
+
+{
+  path: 'saludoEntrada',
+  component: SaludoBienbenidaComponent,
 }
 
 ];

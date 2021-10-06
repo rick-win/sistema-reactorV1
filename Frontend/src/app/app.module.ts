@@ -24,7 +24,6 @@ import { TemperaturasComponent } from './pages/parametro_temperatura/temperatura
 import { PresionComponent } from './pages/presion/presion.component';
 import { FlujoComponent } from './pages/flujo/flujo.component';
 import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
-import { GenerarReportesComponent } from './pages/generar-reportes/generar-reportes.component';
 
 import { GestionarUsuarioService } from './services/gestionar-usuario.service';
 import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
@@ -36,6 +35,11 @@ import { AccesoFuncionalDirectivoComponent } from './pages/acceso-funcional-dire
 import { AccesoFuncionalOperarioComponent } from './pages/acceso-funcional-operario/acceso-funcional-operario.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { RegistroProductoComponent } from './pages/registro-producto/registro-producto.component';
+import { ReporteProduccionOperarioComponent } from './pages/reporte-produccion-operario/reporte-produccion-operario.component';
+import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operario/reporte-proceso-operario.component';
+import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
+import { SimulacionComponent } from './pages/simulacion/simulacion.component';
+import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bienbenida.component';
 
 
 @NgModule({
@@ -51,7 +55,6 @@ import { RegistroProductoComponent } from './pages/registro-producto/registro-pr
     PresionComponent,
     FlujoComponent,
     MonitoreoComponent,
-    GenerarReportesComponent,
     EncenderEquiposComponent,
     AccesoFuncionalTecnicoComponent,
     DatatablesComponent,
@@ -59,6 +62,11 @@ import { RegistroProductoComponent } from './pages/registro-producto/registro-pr
     AccesoFuncionalOperarioComponent,
     NavbarComponent,
     RegistroProductoComponent,
+    ReporteProduccionOperarioComponent,
+    ReporteProcesoOperarioComponent,
+    ReporteBitacoraEventosOperarioComponent,
+    SimulacionComponent,
+    SaludoBienbenidaComponent,
    
   
     

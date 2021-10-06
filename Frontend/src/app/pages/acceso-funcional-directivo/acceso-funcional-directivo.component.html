@@ -232,7 +232,7 @@
             <div class="collapse" id="reporteDesempeño">
               <ul class="navbar-nav ps-3">
                 <li>
-                  <a routerLink = "/generarReporte" class="nav-link px-3">
+                  <a routerLink = "#" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -240,7 +240,7 @@
                   </a>
                 </li>
                 <li>
-                  <a routerLink="/generarReporte" class="nav-link px-3">
+                  <a routerLink="#" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -258,36 +258,38 @@
   <!-- offcanvas -->
 
   <main class="mt-5 pt-3 ctn-main" >
-        <div class="container-fuid">
-        <div class="row">
-            <div class="col-md-12 fw-bold fs-3">Dashboard</div>
-        </div>
-        </div>
+
+  <div class="container-fuid">
+          <div class="row">
+              <div class="col-md-12 fw-bold fs-3"></div>
+          </div>
+  </div>
     
-        <div class="container">
-        <div class="row">
-        <div class="col-8">
+  <div class="container">
+   <div class="row">
+      <div class="col-8">
+              
+                  <div class="container-img">
+                  <img src="assets/planta1.png">
+          </div>
             
-                <div class="container-img">
-                <img src="assets/planta1.png">
-                </div>
-            
-        </div>
-        <div class=row>
+      </div>
+
+      <div class=row>
             <h5>progreso del proceso</h5>
             <div class="row barra-progreso">
                 <div class="progress">
                 <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                 </div>
             </div>
-        </div>
-        </div>
-        </div>
+      </div>
+      </div>
+  </div>
       
         
 
         <div>
             <app-datatables></app-datatables>
         </div> 
-
-  </main>
+        
+</main>

@@ -1,136 +1,47 @@
-<h2>Parametros de Temperatura</h2>
-<hr>
+<div class="contenedor-formulario col-md-5 mt-5 shadow-lg mt-5" >
+   
+    <form class="mt-4" autocomplete="off" [formGroup]="formulario">
+        
+        <h3 class="titulo-login">Parametros Temperatura</h3>
 
-<div class="row">
-    <div class="col">
+        <div class="mb-3">
+            <label class="form-label">Zona A</label>
+            <input type="number" class="form-control" id="zonaA" formControlName="ZonaA" >
+        </div>
 
-        <form (ngSubmit)= "guardar (formPerfilTemp)" 
-              #formPerfilTemp ="ngForm"
-              autocomplete="off">
+        <div class="mb-3">
+            <label class="form-label">Zona B</label>
+            <input type="number" class="form-control" id="zonaB" formControlName="ZonaB" >
+        </div>
 
+        <div class="mb-3">
+            <label class="form-label">Zona C</label>
+            <input type="number" class="form-control" id="zonaC" formControlName="ZonaC" >
+        </div>
 
-            <!-- campo Zona A -->
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Zona A</label>
-                <div class="col-sm-3">
-                    <input type="number"
-                           class="form-control" 
-                           ngModel
-                           name="ZonaA"
-                           placeholder ="Ingrasar valor temperatura"
-                           required
-                           min= "0"
-                    >
-                    <span class="from-text text-danger">Temperatura en grados celcius °C</span>
-                </div>
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Zona D</label>
+            <input type="number" class="form-control" id="zonaD" formControlName="ZonaD" >
+        </div>
 
-            <!-- campo Zona B -->
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Zona B</label>
-                <div class="col-sm-3">
-                    <input type="number"
-                           class="form-control" 
-                           ngModel
-                           name="ZonaB"
-                           placeholder ="Ingrasar valor temperatura"
-                           required
-                           min= "0"
-                    >
-                    
-                </div>
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Zona E</label>
+            <input type="number" class="form-control" id="zonaE" formControlName="ZonaE" >
+        </div>
 
-            <!-- campo Zona C -->
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Zona C</label>
-                <div class="col-sm-3">
-                    <input type="number"
-                           class="form-control" 
-                           ngModel
-                           name="ZonaC"
-                           placeholder ="Ingrasar valor temperatura"
-                           required
-                           min= "0"
-                    >
-                    
-                </div>
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Zona F</label>
+            <input type="number" class="form-control" id="zonaF" formControlName="ZonaF" >
+        </div>
 
-            <!-- campo Zona D -->
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Zona D</label>
-                <div class="col-sm-3">
-                    <input type="number"
-                           class="form-control" 
-                           ngModel
-                           name="ZonaD"
-                           placeholder ="Ingrasar valor temperatura"
-                           required
-                           min= "0"
-                    >
-                    
-                </div>
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Zona G</label>
+            <input type="number" class="form-control" id="zonaG" formControlName="ZonaG" >
+        </div>
 
-            <!-- campo Zona E -->
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Zona E</label>
-                <div class="col-sm-3">
-                    <input type="number"
-                           class="form-control" 
-                           ngModel
-                           name="ZonaE"
-                           placeholder ="Ingrasar valor temperatura"
-                           required
-                           min= "0"
-                    >
-                    
-                </div>
-            </div>
+        <div class="contedor-btn-iniciar mt-3">
+            <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registrarPerfTemperatura()">Guardar</button>
+        </div>
 
-            <!-- campo Zona F -->
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Zona F</label>
-                <div class="col-sm-3">
-                    <input type="number"
-                           class="form-control" 
-                           ngModel
-                           name="ZonaF"
-                           placeholder ="Ingrasar valor temperatura"
-                           required
-                           min= "0"
-                    >
-                    
-                </div>
-            </div>
-
-            <!-- campo Zona G -->
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Zona G</label>
-                <div class="col-sm-3">
-                    <input type="number"
-                           class="form-control" 
-                           ngModel
-                           name="ZonaG"
-                           placeholder ="Ingrasar valor temperatura"
-                           required
-                           min= "0"
-                    >
-                    
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <button type="submit" 
-                            class="btn btn-primary flot-end">
-                        Guardar
-                    </button>
-                </div>
-            </div>
-
-        </form>
-
-    </div>
+    </form>
 </div>

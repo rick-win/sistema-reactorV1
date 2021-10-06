@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-temperaturas',
@@ -7,13 +7,15 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./temperaturas.component.scss']
 })
 export class TemperaturasComponent implements OnInit {
-
-  constructor() { }
+  formulario: FormGroup;
+  constructor() { 
+    this.formulario = new FormGroup({});
+  }
 
   ngOnInit(): void {
   }
 
-   guardar(formPerfilTemp:NgForm){
-    console.log(formPerfilTemp.value)
-   }
+  registrarPerfTemperatura(){
+    
+  }
 }
