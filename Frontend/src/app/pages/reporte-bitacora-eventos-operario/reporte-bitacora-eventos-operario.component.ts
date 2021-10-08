@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-reporte-bitacora-eventos-operario',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reporte-bitacora-eventos-operario.component.scss']
 })
 export class ReporteBitacoraEventosOperarioComponent implements OnInit {
-
-  constructor() { }
+  formulary: FormGroup;
+  constructor() {
+    this.formulary = new FormGroup({});
+  }
 
   ngOnInit(): void {
   }
 
+  registerFailure(){}
 }

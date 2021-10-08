@@ -17,6 +17,13 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { RegistroProductoComponent } from './pages/registro-producto/registro-producto.component';
 import { SimulacionComponent} from './pages/simulacion/simulacion.component';
 import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bienbenida.component';
+import {ReporteBitacoraEventosOperarioComponent} from "./pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component";
+import {ReadProductionReportComponent} from "./pages/read-production-report/read-production-report.component";
+import {ReadProcessReportComponent} from "./pages/read-process-report/read-process-report.component";
+import {ReadProductRegistryComponent} from "./pages/read-product-registry/read-product-registry.component";
+import {ReporteProduccionOperarioComponent} from "./pages/reporte-produccion-operario/reporte-produccion-operario.component";
+import {ReporteProcesoOperarioComponent} from "./pages/reporte-proceso-operario/reporte-proceso-operario.component";
+import {ReadFailureReportComponent} from "./pages/read-failure-report/read-failure-report.component";
 
 const routes: Routes = [
   {
@@ -40,78 +47,112 @@ const routes: Routes = [
     path: 'recuperarPassword',
     component: RecuperarPasswordComponent
   },
-  
+
   {
     path: 'gestionarUsuario',
     component: GestionarUsuarioComponent
   },
 
+  {
+    path: 'monitoreo',
+    component: MonitoreoComponent
+  },
 
-{
-  path: 'monitoreo',
-  component: MonitoreoComponent
-},
+  {
+    path: 'perfilTemperatura',
+    component: TemperaturasComponent
+  },
 
-{
-  path: 'perfilTemperatura',
-  component: TemperaturasComponent
-},
+  {
+    path: 'presion',
+    component: PresionComponent
+  },
 
-{
-  path: 'presion',
-  component: PresionComponent
-},
+  {
+    path: 'encender-equipos',
+    component: EncenderEquiposComponent,
+  },
 
-{
-  path: 'encender-equipos',
-  component: EncenderEquiposComponent,
-},
-
-{
-  path: 'accesofuncional-tecnico',
-  component: AccesoFuncionalTecnicoComponent,
-},
+  {
+    path: 'accesofuncional-tecnico',
+    component: AccesoFuncionalTecnicoComponent,
+  },
 
 
-{
-  path: 'accesofuncional-directivo',
-  component: AccesoFuncionalDirectivoComponent,
-},
+  {
+    path: 'accesofuncional-directivo',
+    component: AccesoFuncionalDirectivoComponent,
+  },
 
-{
-  path: 'accesofuncional-operario',
-  component: AccesoFuncionalOperarioComponent,
-},
+  {
+    path: 'accesofuncional-operario',
+    component: AccesoFuncionalOperarioComponent,
+  },
 
-{
-  path: 'dataTable',
-  component: DatatablesComponent,
-},
+  {
+    path: 'dataTable',
+    component: DatatablesComponent,
+  },
 
-{
-  path: 'Navbar',
-  component: NavbarComponent,
-},
+  {
+    path: 'Navbar',
+    component: NavbarComponent,
+  },
 
-{
-  path: 'registroProducto',
-  component: RegistroProductoComponent,
-},
+  {
+    path: 'readFailure',
+    component: ReadFailureReportComponent
+  },
 
-{
-  path: 'simulacion',
-  component: SimulacionComponent,
-},
+  {
+    path: 'readProduction',
+    component: ReadProductionReportComponent
+  },
 
-{
-  path: 'saludoEntrada',
-  component: SaludoBienbenidaComponent,
-}
+  {
+    path: 'readProcess',
+    component: ReadProcessReportComponent
+  },
 
-];
+  {
+    path: 'readProduct',
+    component: ReadProductRegistryComponent
+  },
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+  {
+    path: 'registroProducto',
+    component: RegistroProductoComponent
+  },
+
+  {
+    path: 'productionRegister',
+    component: ReporteProduccionOperarioComponent
+  },
+
+  {
+    path: 'processRegister',
+    component: ReporteProcesoOperarioComponent
+  },
+
+  {
+    path: 'failureRegister',
+    component: ReporteBitacoraEventosOperarioComponent
+  },
+
+  {
+    path: 'simulacion',
+    component: SimulacionComponent,
+  },
+
+  {
+    path: 'saludoEntrada',
+    component: SaludoBienbenidaComponent,
+  }
+
+  ];
+
+  @NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }

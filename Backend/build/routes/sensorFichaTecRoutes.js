@@ -4,7 +4,7 @@ const express_1 = require("express");
 const sensorFichaTecControllers_1 = require("../controllers/sensorFichaTecControllers");
 class SensorFichaTecRoutes {
     constructor() {
-        this.router = express_1.Router();
+        this.router = (0, express_1.Router)();
         this.config();
     }
     config() {

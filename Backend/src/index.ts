@@ -1,9 +1,11 @@
 import express, {Application} from 'express';
-import usuariosRoutes from './routes/usuariosRoutes';
-import indexRoutes from './routes/indexRoutes'
-import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
+
+//Routes imports
+import indexRoutes from './routes/indexRoutes'
+import usuariosRoutes from './routes/usuariosRoutes';
+import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
 
 
 class Server{
@@ -30,7 +32,7 @@ class Server{
         this.app.use('/sistemaReactor/sensores', sensorFichaTecRoutes);
     }
 
-    stard():void{
+    start():void{
         this.app.listen(this.app.get('port'), () => {
             console.log('server on port', this.app.get('port'))
         });
@@ -38,4 +40,4 @@ class Server{
 
 }
 const server = new Server();
-server.stard();
+server.start();

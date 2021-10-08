@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registro-producto',
@@ -7,9 +7,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registro-producto.component.scss']
 })
 export class RegistroProductoComponent implements OnInit {
-  formulario: FormGroup;
-  constructor() { 
-    this.formulario = new FormGroup({});
+  formulary: FormGroup;
+  constructor() {
+    this.formulary = new FormGroup({});
   }
 
   ngOnInit(): void {
