@@ -39,7 +39,7 @@ import { ReporteProduccionOperarioComponent } from './pages/reporte-produccion-o
 import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operario/reporte-proceso-operario.component';
 import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
 import { SimulacionComponent } from './pages/simulacion/simulacion.component';
-import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bienbenida.component';
+
 
 
 @NgModule({
@@ -66,10 +66,7 @@ import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bien
     ReporteProcesoOperarioComponent,
     ReporteBitacoraEventosOperarioComponent,
     SimulacionComponent,
-    SaludoBienbenidaComponent,
-   
   
-    
   ],
   imports: [
     BrowserModule,
@@ -81,7 +78,8 @@ import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bien
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    
   ],
   providers: [GestionarUsuarioService],
   bootstrap: [AppComponent]

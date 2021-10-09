@@ -15,6 +15,8 @@ export class AuthFireService {
 
   public userdata$: Observable<firebase.User | null | undefined>;
   public usuario: User = new User();
+  SendVerificationMail: any;
+  SetUserData: any;
 
   constructor(
     private angularFire: AngularFireAuth,
@@ -59,8 +61,8 @@ export class AuthFireService {
         this.toast.success('usuario registrado!')
         this.router.navigate(['/login'])
         
-        // this.SendVerificationMail();
-        // this.SetUserData(result.user);
+        this.SendVerificationMail();
+        this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
         this.toast.error('A ocurrido un error')
@@ -77,13 +79,13 @@ export class AuthFireService {
     })
   }
 
-  // verificaCorreo(){
-  //   this.angularFire.currentUser.then(user=> {
-  //     if(user){
-  //       user.sendEmailVerification();
-  //     }
-  //   })
-  // }
+  verificaCorreo(){
+     this.angularFire.currentUser.then(user=> {
+       if(user){
+         user.sendEmailVerification();
+       }
+     })
+   }
 
   async loginGoogle(){
     await this.angularFire.signInWithPopup(new firebase.auth.GoogleAuthProvider());

@@ -16,7 +16,7 @@ import { DatatablesComponent } from './pages/datatables/datatables.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { RegistroProductoComponent } from './pages/registro-producto/registro-producto.component';
 import { SimulacionComponent} from './pages/simulacion/simulacion.component';
-import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bienbenida.component';
+
 
 const routes: Routes = [
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
   
   {
     path: 'gestionarUsuario',
-    component: GestionarUsuarioComponent
+    component: DashboardComponent
   },
 
 
@@ -100,13 +100,10 @@ const routes: Routes = [
 
 {
   path: 'simulacion',
-  component: SimulacionComponent,
+  component: AccesoFuncionalDirectivoComponent,
 },
 
-{
-  path: 'saludoEntrada',
-  component: SaludoBienbenidaComponent,
-}
+
 
 ];
 

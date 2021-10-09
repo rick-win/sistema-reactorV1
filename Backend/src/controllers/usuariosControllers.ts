@@ -24,6 +24,11 @@ class UsuariosController{
         res.json({message: 'Usuario guardado'});
     }
 
+    // public async createRol (req: Request , res:Response): Promise<void>{
+    //     await pool.query('INSERT INTO Rol set ?', [req.body]);|
+    //     res.json({message: 'Usuario guardado'});
+    // }
+
     public async update( req: Request, res: Response): Promise<void>{
         const {id} = req.params;
         await pool.query('UPDATE usuario set ? WHERE Id_Usuario = ?', [req.body, id]);

@@ -84,7 +84,7 @@
           </div>
         </li>
         <li>
-          <a href="#" class="nav-link px-3 active">
+          <a routerLink="/dashboard" class="nav-link px-3 active">
             <span class="me-2"><i class="bi bi-speedometer2"></i></span>
             <span>Dashboard</span>
           </a>
@@ -215,7 +215,14 @@
 </div> -->
 <!-- offcanvas -->
 
-<main class="mt-5 pt-3 ctn-main" >
+<!--Contenido gestionar usuario-->
+
+<div *ngIf="router.url === '/gestionarUsuario'">
+  <app-gestionar-usuario></app-gestionar-usuario>
+</div>
+
+<!--Contenido dashboard-->
+<main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/dashboard'">
   <div class="container-fuid">
     <div class="row">
       <div class="col-md-12 fw-bold fs-3">Dashboard</div>
@@ -314,6 +321,4 @@
     <img src ="assets/Img/logoSena.png"  width="32" 
     class=" aling-top mr-2">
 
-  
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima ut nesciunt fuga itaque dolorem architecto inventore. Nulla, libero. Accusantium quia deserunt molestias labore sunt dicta consequuntur voluptas ipsum doloremque fuga.</p>
 </main>
