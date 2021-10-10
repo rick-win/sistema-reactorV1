@@ -1,14 +1,13 @@
-import { Component,OnDestroy ,OnInit } from '@angular/core';
+import { Component, OnDestroy,OnInit } from '@angular/core';
 import { Subject, Subscriber } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-reporte-produccion-operario',
-  templateUrl: './reporte-produccion-operario.component.html',
-  styleUrls: ['./reporte-produccion-operario.component.scss']
+  selector: 'app-estadisticas-proceso-directivo',
+  templateUrl: './estadisticas-proceso-directivo.component.html',
+  styleUrls: ['./estadisticas-proceso-directivo.component.scss']
 })
-
-export class ReporteProduccionOperarioComponent implements OnInit {
+export class EstadisticasProcesoDirectivoComponent implements OnInit {
 
   indicadoresMat:boolean = false;
   indicadoresProd:boolean = false;
@@ -35,5 +34,7 @@ export class ReporteProduccionOperarioComponent implements OnInit {
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
     }
+  }
+  
 
-}
+
