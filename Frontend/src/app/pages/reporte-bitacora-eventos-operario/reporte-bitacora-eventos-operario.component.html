@@ -2,21 +2,26 @@
 
   <form class="mt-4" autocomplete="off" [formGroup]="formulary">
 
-    <h3 class="titulo-login">Registrar Producto</h3>
+    <h3 class="titulo-login">Registrar Falla o Incidente</h3>
 
     <div class="form-row">
       <div class="row">
         <div class="form-group col-md-8 mb-3">
           <label class="col-form-label">Fecha y hora</label>
-          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="dateTime">
+          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="dateTime" [(ngModel)]="failureReport.date">
         </div>
 
       </div>
     </div>
 
+    <div class="form-group mb-3">
+      <label class="col-form-label">Descripción</label>
+      <input type="text" class="form-control" id="failureType" [(ngModel)]="failureReport.failureType">
+    </div>
+
     <div class="mb-3">
       <label class="form-label">Zona</label>
-      <select class="form-select" aria-label="default Select Example">
+      <select class="form-select" aria-label="default Select Example" id="zone" [(ngModel)]="failureReport.zone">
         <option value="1">A</option>
         <option value="2">B</option>
         <option value="3">C</option>
@@ -25,12 +30,12 @@
 
     <div class="form-group mb-3">
       <label class="col-form-label">Descripción</label>
-      <input type="text" class="form-control" id="description">
+      <input type="text" class="form-control" id="description" [(ngModel)]="failureReport.failureDesc">
     </div>
 
     <div class="mb-3">
       <label class="form-label">Solucionado</label>
-      <select class="form-select" aria-label="default Select Example">
+      <select class="form-select" aria-label="default Select Example" id="solved" [(ngModel)]="failureReport.solved">
         <option value="true">Sí</option>
         <option value="false">No</option>
       </select>
@@ -38,7 +43,7 @@
 
     <div class="mb-3">
       <label class="form-label">Anotaciones de escalamiento (Opcional)</label>
-      <input type="text" class="form-control" id="unidadmed" formControlName="Scaling" >
+      <input type="text" class="form-control" id="measureUnit" formControlName="Scaling" [(ngModel)]="failureReport.annotations">
     </div>
 
     <div class="contedor-btn-iniciar mt-3">

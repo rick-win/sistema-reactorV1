@@ -1,4 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class FailureRoutes {
+const express_1 = require("express");
+const reportsFailureControl_1 = require("../controllers/reportsFailureControl");
+class ReportsFailureRoutes {
+    constructor() {
+        this.router = (0, express_1.Router)();
+        this.config();
+    }
+    config() {
+        this.router.get('/', reportsFailureControl_1.failureController.list);
+        this.router.get('/:id', reportsFailureControl_1.failureController.getRange);
+        this.router.post('/', reportsFailureControl_1.failureController.create);
+        this.router.put('/:id', reportsFailureControl_1.failureController.update);
+        this.router.delete('/:id', reportsFailureControl_1.failureController.delete);
+    }
 }
+const failureProductRoutes = new ReportsFailureRoutes();
+exports.default = failureProductRoutes.router;

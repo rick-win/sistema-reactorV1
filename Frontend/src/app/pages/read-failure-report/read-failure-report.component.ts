@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportsManagerService } from '../../services/reports-manager.service'
+import { Failure } from '../../models/failure'
 
 @Component({
   selector: 'app-read-failure-report',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadFailureReportComponent implements OnInit {
 
-  constructor() { }
+  constructor( private reportService: ReportsManagerService) { }
+
+  reports: any = [];
 
   ngOnInit(): void {
+    this.reportService.getFailures().subscribe(
+      res => {
+        this.reports = res;
+      },
+      err => console.log()
+    )
   }
-
 }

@@ -28,6 +28,7 @@ import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
 import { GestionarUsuarioService } from './services/gestionar-usuario.service';
 import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
 import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnico/acceso-funcional-tecnico.component';
+import { ReportsManagerService } from './services/reports-manager.service'
 
 import { DataTablesModule } from "angular-datatables";
 import { DatatablesComponent } from './pages/datatables/datatables.component';
@@ -91,7 +92,7 @@ import { ReadFailureReportComponent } from './pages/read-failure-report/read-fai
     HttpClientModule,
     DataTablesModule
   ],
-  providers: [GestionarUsuarioService],
+  providers: [GestionarUsuarioService, ReportsManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

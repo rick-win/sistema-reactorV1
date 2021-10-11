@@ -10,6 +10,10 @@ const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const usuariosRoutes_1 = __importDefault(require("./routes/usuariosRoutes"));
 const sensorFichaTecRoutes_1 = __importDefault(require("./routes/sensorFichaTecRoutes"));
+const reportsProductRoutes_1 = __importDefault(require("./routes/reportsProductRoutes"));
+const reportsFailureRoutes_1 = __importDefault(require("./routes/reportsFailureRoutes"));
+const reportsProcessRoutes_1 = __importDefault(require("./routes/reportsProcessRoutes"));
+const reportsProductionRoutes_1 = __importDefault(require("./routes/reportsProductionRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -27,6 +31,10 @@ class Server {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/sistemaReactor/usuarios', usuariosRoutes_1.default);
         this.app.use('/sistemaReactor/sensores', sensorFichaTecRoutes_1.default);
+        this.app.use('/sistemaReactor/product', reportsProductRoutes_1.default);
+        this.app.use('/sistemaReactor/process', reportsProcessRoutes_1.default);
+        this.app.use('/sistemaReactor/failure', reportsFailureRoutes_1.default);
+        this.app.use('/sistemaReactor/production', reportsProductionRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

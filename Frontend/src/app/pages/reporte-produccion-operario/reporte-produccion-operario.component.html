@@ -7,8 +7,8 @@
     <div class="form-row">
       <div class="row">
         <div class="form-group col-md-8 mb-3">
-          <label class="col-form-label">Fecha y hora</label>
-          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="starDateTime">
+          <label class="col-form-label">Fecha y hora de inicio</label>
+          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="starDateTime" [(ngModel)]="production.startDate">
         </div>
       </div>
     </div>
@@ -16,15 +16,15 @@
     <div class="form-row">
       <div class="row">
         <div class="form-group col-md-8 mb-3">
-          <label class="col-form-label">Fecha y hora</label>
-          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="endDateTime">
+          <label class="col-form-label">Fecha y hora de finalización</label>
+          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="endDateTime" [(ngModel)]="production.endDate">
         </div>
       </div>
     </div>
 
     <div class="mb-3">
       <label class="form-label">Proceso Activo</label>
-      <select class="form-select" aria-label="default Select Example">
+      <select class="form-select" aria-label="default Select Example" [(ngModel)]="production.activeProcess">
         <option value="true">Sí</option>
         <option value="false">No</option>
       </select>
@@ -32,7 +32,7 @@
 
     <div class="mb-3">
       <label class="form-label">Tipo de producto ingresado</label>
-      <select class="form-select" aria-label="default Select Example">
+      <select class="form-select" aria-label="default Select Example" [(ngModel)]="production.productType">
         <option value="1">A</option>
         <option value="2">B</option>
         <option value="3">C</option>
@@ -41,31 +41,40 @@
 
     <div class="form-group mb-3">
       <label class="col-form-label">Cantidad de producto ingresado</label>
-      <input type="number" class="form-control" id="amount">
+      <input type="number" class="form-control" id="amount" [(ngModel)]="production.productIn">
     </div>
 
     <div class="mb-3">
       <label class="form-label">Porcentaje de Avance</label>
-      <input type="number" class="form-control" id="advanced" formControlName="Undmedida" >
+      <input type="number" class="form-control" id="advanced" formControlName="Undmedida" [(ngModel)]="production.advancePercentage">
     </div>
 
     <div class="mb-3">
       <label class="form-label">Tiempo Restante</label>
-      <input type="number" class="form-control" id="remainingTime" formControlName="Undmedida" >
+      <input type="number" class="form-control" id="remainingTime" formControlName="Undmedida" [(ngModel)]="production.remainingTime">
     </div>
 
     <div class="mb-3">
       <label class="form-label">Cantidad producida</label>
-      <input type="number" class="form-control" id="producedAmount" formControlName="Undmedida" >
+      <input type="number" class="form-control" id="producedAmount" formControlName="Undmedida" [(ngModel)]="production.producedAmount">
     </div>
 
     <div class="mb-3">
       <label class="form-label">Unidad de Medida</label>
-      <input type="number" class="form-control" id="measurementUnit" formControlName="Undmedida" >
+      <input type="number" class="form-control" id="measurementUnit" formControlName="Undmedida" [(ngModel)]="production.measureUnit">
     </div>
 
     <div class="contedor-btn-iniciar mt-3">
       <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registerProduction()">Guardar</button>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Estado producido</label>
+      <select class="form-select" aria-label="default Select Example" [(ngModel)]="production.state">
+        <option value="1">Sólido</option>
+        <option value="2">Líquido</option>
+        <option value="3">Gaseoso</option>
+      </select>
     </div>
 
   </form>

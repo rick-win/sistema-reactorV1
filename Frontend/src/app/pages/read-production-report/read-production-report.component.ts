@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ReportsManagerService} from "../../services/reports-manager.service";
+import {Production} from "../../models/production";
 
 @Component({
   selector: 'app-read-production-report',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadProductionReportComponent implements OnInit {
 
-  constructor() { }
+  constructor( private reportService: ReportsManagerService) { }
+
+  reports: any = [];
 
   ngOnInit(): void {
+    this.reportService.getProduction().subscribe(
+      res => {
+        this.reports = res;
+      },
+      err => console.log()
+    )
   }
-
 }

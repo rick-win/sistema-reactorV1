@@ -1,1 +1,26 @@
-<p>read-process-report works!</p>
+<div class="divTable blueTable">
+  <div class="divTableHeading">
+    <div class="divTableRow">
+      <div class="divTableHead">ID</div>
+      <div class="divTableHead">Fecha De Reporte</div>
+      <div class="divTableHead">Fecha de de Proceso</div>
+      <div class="divTableHead">Operario</div>
+      <div class="divTableHead">Verificación de Encendido</div>
+      <div class="divTableHead">Verificación de Cierre</div>
+      <div class="divTableHead">Exito del Proceso</div>
+      <div class="divTableHead">Anotaciones</div>
+    </div>
+  </div>
+  <div class="divTableBody" *ngFor="let Process of reports">
+    <div class="divTableRow">
+      <div class="divTableCell">{{Process.id}}</div>
+      <div class="divTableCell">{{Process.reportTime}}</div>
+      <div class="divTableCell">{{Process.date}}</div>
+      <div class="divTableCell">{{Process.operator}}</div>
+      <div class="divTableCell">{{Process.powerVerify}}</div>
+      <div class="divTableCell">{{Process.closeVerify}}</div>
+      <div class="divTableCell">{{Process.success}}</div>
+      <div class="divTableCell">{{Process.annotations}}</div>
+    </div>
+  </div>
+</div>

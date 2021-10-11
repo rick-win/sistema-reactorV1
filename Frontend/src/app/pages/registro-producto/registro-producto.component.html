@@ -7,16 +7,21 @@
         <div class="form-row">
             <div class="row">
             <div class="form-group col-md-8 mb-3">
-                <label class="col-form-label">Fecha</label>
-                <input type="date" ng-model="valueofdate" class="form-control" id="fecha">
+                <label class="col-form-label">Fecha de Inicio</label>
+                <input type="date" ng-model="valueofdate" class="form-control" id="startDate" [(ngModel)]="product.startDate">
             </div>
+
+              <div class="form-group col-md-8 mb-3">
+                <label class="col-form-label">Fecha de Finalización</label>
+                <input type="date" ng-model="valueofdate" class="form-control" id="enDate" [(ngModel)]="product.startDate">
+              </div>
 
             </div>
         </div>
 
         <div class="form-group mb-3">
             <label class="col-form-label">Clasificaion</label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="product.classification">
                 <option selected>combustible</option>
                 <option value="1">Tipo A</option>
                 <option value="2">Tipo B</option>
@@ -25,25 +30,21 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Detalle</label>
-            <input type="text" class="form-control" id="correo" formControlName="clasificacion">
+            <label class="form-label">Descripción (Tipo)</label>
+            <input type="text" class="form-control" id="Detail" formControlName="clasificacion" [(ngModel)]="product.description">
         </div>
-        <!-- <div class="mb-3">
-            <label class="form-label">Detalle(tipo) </label>
-            <input type="" class="form-control" id="password" formControlName="detalle" >
-        </div> -->
 
         <div class="mb-3">
             <label class="form-label">Cantidad</label>
-            <input type="number" class="form-control" id="cantidaProducto" formControlName="cantidad" >
+            <input type="number" class="form-control" id="amount" formControlName="cantidad" [(ngModel)]="product.amount">
         </div>
         <div class="mb-3">
-            <label class="form-label">Unidad de medida</label>
-            <input type="text" class="form-control" id="unidadmed" formControlName="Undmedida" >
+            <label class="form-label">Unidad de Medida</label>
+            <input type="text" class="form-control" id="measureUnit" formControlName="Undmedida" [(ngModel)]="product.measureUnit">
         </div>
 
         <div class="contedor-btn-iniciar mt-3">
-            <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registrarProducto()">Guardar</button>
+            <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registerProduct()">Guardar</button>
         </div>
 
     </form>

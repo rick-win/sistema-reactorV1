@@ -1,1 +1,30 @@
-<p>read-production-report works!</p>
+<div class="divTable blueTable">
+  <div class="divTableHeading">
+    <div class="divTableRow">
+      <div class="divTableHead">Número de Reporte</div>
+      <div class="divTableHead">Fecha De Reporte</div>
+      <div class="divTableHead">Fecha de Inicio</div>
+      <div class="divTableHead">Fecah de Finnalización</div>
+      <div class="divTableHead">Tipo de Producto</div>
+      <div class="divTableHead">Cantidad roducida</div>
+      <div class="divTableHead">Proceso Activo</div>
+      <div class="divTableHead">Progreso</div>
+      <div class="divTableHead">Tiempo Restante</div>
+      <div class="divTableHead">Estado del Producto</div>
+    </div>
+  </div>
+  <div class="divTableBody" *ngFor="let Production of reports">
+    <div class="divTableRow">
+      <div class="divTableCell">{{Production.id}}</div>
+      <div class="divTableCell">{{Production.reportTime}}</div>
+      <div class="divTableCell">{{Production.startDate}}</div>
+      <div class="divTableCell">{{Production.endDate}}</div>
+      <div class="divTableCell">{{Production.productType}}</div>
+      <div class="divTableCell">{{Production.producedAmount}}</div>
+      <div class="divTableCell">{{Production.activeProcess}}</div>
+      <div class="divTableCell">{{Production.advancePercentage}}</div>
+      <div class="divTableCell">{{Production.remainingTime}}</div>
+      <div class="divTableCell">{{Production.state}}</div>
+    </div>
+  </div>
+</div>

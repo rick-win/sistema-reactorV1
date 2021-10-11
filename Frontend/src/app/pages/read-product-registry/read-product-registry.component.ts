@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportsManagerService } from "../../services/reports-manager.service";
+import { Product } from "../../models/product";
 
 @Component({
   selector: 'app-read-product-registry',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadProductRegistryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private reportsService: ReportsManagerService) { }
+
+  reports: any = []
 
   ngOnInit(): void {
+    this.reportsService.getProduct().subscribe(
+      res => {
+        this.reports = res;
+      },
+      err => console.log()
+    )
   }
-
 }
+
+

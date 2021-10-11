@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup} from "@angular/forms";
+import {ReportsManagerService} from "../../services/reports-manager.service";
+import {Process} from "../../models/process";
 
 @Component({
   selector: 'app-reporte-proceso-operario',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReporteProcesoOperarioComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup;
+
+  constructor(private reportsService: ReportsManagerService) {
+    this.formulario = new FormGroup({});
+  }
+
+  process: Process = {
+    id: 0,
+    reportTime: new Date(),
+    date: new Date(),
+    operator: "",
+    powerVerify: false,
+    closeVerify: false,
+    success: false,
+    annotations: ''
+  }
+
 
   ngOnInit(): void {
   }
+  registerProcess(){
+  delete this.process.id;
+  delete this.process.reportTime;
 
+  this.reportsService.registerProcess(this.process).subscribe(
+    res => {
+      console.log(res)
+    },
+    err => console.error(err)
+  )
+  };
 }

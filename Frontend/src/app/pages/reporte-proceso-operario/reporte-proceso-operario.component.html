@@ -1,44 +1,43 @@
 <div class="contenedor-formulario col-md-5 mt-5 shadow-lg mt-5" >
 
-  <form class="mt-4" autocomplete="off" [formGroup]="formulary">
+  <form class="mt-4" autocomplete="off" [formGroup]="formulario">
 
-    <h3 class="titulo-login">Registrar Producto</h3>
+    <h3 class="titulo-login">Registrar Control de Proceso</h3>
 
     <div class="form-row">
       <div class="row">
         <div class="form-group col-md-8 mb-3">
           <label class="col-form-label">Fecha y hora</label>
-          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="dateTime">
+          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="startDateTime" [(ngModel)]="process.date">
         </div>
 
       </div>
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Zona</label>
-      <select class="form-select" aria-label="default Select Example">
-        <option value="1">A</option>
-        <option value="2">B</option>
-        <option value="3">C</option>
-      </select>
+    <div class="form-group mb-3">
+      <label class="col-form-label">Operador</label>
+      <input type="text" class="form-control" id="productIn">
     </div>
 
     <div class="form-group mb-3">
-      <label class="col-form-label">Descripción</label>
-      <input type="text" class="form-control" id="description">
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label">Solucionado</label>
-      <select class="form-select" aria-label="default Select Example">
-        <option value="true">Sí</option>
-        <option value="false">No</option>
+      <label class="col-form-label">Verificación de Encendido</label>
+      <select class="form-select" aria-label="default Select Example" id="power" [(ngModel)]="process.powerVerify">
+        <option value="true">Realizada</option>
+        <option value="false">No Realizada</option>
       </select>
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Anotaciones de escalamiento (Opcional)</label>
-      <input type="text" class="form-control" id="unidadmed" formControlName="Undmedida" >
+      <label class="col-form-label">Verificación de Cerrado</label>
+      <select class="form-select" aria-label="default Select Example" id="close" [(ngModel)]="process.closeVerify">
+      <option value="true">Realizada</option>
+      <option value="false">No Realizada</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Anotaciones</label>
+      <input type="text" class="form-control" id="unidadmed" formControlName="Annotations" >
     </div>
 
     <div class="contedor-btn-iniciar mt-3">

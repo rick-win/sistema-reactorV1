@@ -6,6 +6,10 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes'
 import usuariosRoutes from './routes/usuariosRoutes';
 import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
+import reportsProductRoutes from "./routes/reportsProductRoutes";
+import reportsFailureRoutes from "./routes/reportsFailureRoutes";
+import reportsProcessRoutes from "./routes/reportsProcessRoutes";
+import reportsProductionRoutes from "./routes/reportsProductionRoutes";
 
 
 class Server{
@@ -30,6 +34,10 @@ class Server{
         this.app.use('/',indexRoutes);
         this.app.use('/sistemaReactor/usuarios',usuariosRoutes);
         this.app.use('/sistemaReactor/sensores', sensorFichaTecRoutes);
+        this.app.use('/sistemaReactor/product', reportsProductRoutes);
+        this.app.use('/sistemaReactor/process', reportsProcessRoutes);
+        this.app.use('/sistemaReactor/failure', reportsFailureRoutes);
+        this.app.use('/sistemaReactor/production', reportsProductionRoutes);
     }
 
     start():void{
