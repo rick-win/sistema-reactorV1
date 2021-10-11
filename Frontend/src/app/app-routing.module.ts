@@ -21,6 +21,7 @@ import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operari
 import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
 import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
 import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
+import { AdministradorComponent } from './pages/administrador/administrador.component';
 
 const routes: Routes = [
   {
@@ -47,7 +48,7 @@ const routes: Routes = [
   
   {
     path: 'gestionarUsuario',
-    component: DashboardComponent
+    component: AdministradorComponent,
   },
 
 
@@ -109,28 +110,33 @@ const routes: Routes = [
 
 {
   path: 'reporteProduccionOperario',
-  component: ReporteProduccionOperarioComponent,
+  component: AccesoFuncionalOperarioComponent,
 },
 
 {
   path: 'reporteProcesoOperario',
-  component: ReporteProcesoOperarioComponent,
+  component: AccesoFuncionalOperarioComponent,
 },
 
 {
-  path: 'reporteBitacoraOperario',
-  component: ReporteBitacoraEventosOperarioComponent,
+  path: 'reporteBitacoraIncidencias',
+  component: AccesoFuncionalOperarioComponent,
 },
 
 {
   path: 'estadisticasProcesoDirectivo',
-  component: EstadisticasProcesoDirectivoComponent,
+  component: AccesoFuncionalDirectivoComponent,
 },
 
 {
   path: 'estadisticasProduccionDirectivo',
-  component: EstadisticasProduccionDirectivoComponent,
+  component: AccesoFuncionalDirectivoComponent,
 },
+
+{
+  path: '/administrador',
+  component: AdministradorComponent
+}
 
 
 

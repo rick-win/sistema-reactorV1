@@ -173,7 +173,7 @@
             <div class="collapse" id="reporteOperario">
               <ul class="navbar-nav ps-3">
                 <li>
-                  <a routerLink = "/generarReporte" class="nav-link px-3">
+                  <a routerLink = "/reporteProduccionOperario" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -181,7 +181,7 @@
                   </a>
                 </li>
                 <li>
-                  <a routerLink="#" class="nav-link px-3">
+                  <a routerLink="/reporteProcesoOperario" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -189,7 +189,7 @@
                   </a>
                 </li>
                 <li>
-                  <a routerLink="#" class="nav-link px-3">
+                  <a routerLink="/reporteBitacoraIncidencias" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -206,7 +206,27 @@
   </div>
   <!-- offcanvas -->
 
-  <main class="mt-5 pt-3 ctn-main" >
+<!-- contenido reporte produccion operario-->
+
+<div class="ctn-main" *ngIf="router.url === '/reporteProduccionOperario'">
+  <app-reporte-produccion-operario></app-reporte-produccion-operario>
+</div> 
+
+<!-- contenido reporte proceso operario(bitacora)-->
+
+<div class="ctn-main" *ngIf="router.url === '/reporteProcesoOperario'">
+  <app-reporte-proceso-operario></app-reporte-proceso-operario>
+</div> 
+
+<!-- contenido bitacora incidencias-->
+
+<div class="ctn-main" *ngIf="router.url === '/reporteBitacoraIncidencias'">
+  <app-reporte-bitacora-eventos-operario></app-reporte-bitacora-eventos-operario>
+</div> 
+
+
+<!--Contenido acceso funcional Operario-->
+  <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/accesofuncional-operario'" >
     <div class="container-fuid">
       <div class="row">
         <div class="col-md-12 fw-bold fs-3">Dashboard</div>

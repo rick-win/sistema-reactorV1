@@ -69,7 +69,7 @@
             </div>
           </li>
           <li>
-                <a routerLink ="accesofuncional-directivo" class="nav-link px-3 active">
+                <a routerLink ="/accesofuncional-directivo" class="nav-link px-3 active">
                   <span class="me-2"><i class="bi bi-speedometer2"></i></span>
                   <span>Estado Maquina</span>
                 </a>
@@ -89,74 +89,87 @@
               </a>
             </li>
 
-            <a
-            class="nav-link px-3 sidebar-link"
-             routerLink="/simulacion"
-          >
-            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                <!-- <a
+                class="nav-link px-3 sidebar-link"
+                routerLink="/simulacion"
+                >
+                <span class="me-2"><i class="bi bi-layout-split"></i></span>
 
-           <span>Simulacion</span>
-              <span class="ms-auto">
-                      <span class="right-icon">
-                      <i class="bi bi-chevron-down"></i>
-                      </span>
-              </span>
-          </a>
+              <span>Simulacion</span>
+                  <span class="ms-auto">
+                          <span class="right-icon">
+                          <i class="bi bi-chevron-down"></i>
+                          </span>
+                  </span>
+              </a> -->
             
                  
          
-          <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
-          <li>
-            <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-              Addons
-            </div>
-          </li>
+            <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+            <li>
+              <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+                Addons
+              </div>
+            </li>
          
-          <li>
-            <a
-              class="nav-link px-3 sidebar-link"
-              data-bs-toggle="collapse"
-              href="#reporteDirectivo"
-            >
-              <span class="me-2"><i class="bi bi-layout-split"></i></span>
-              <span>Estadisticas</span>
-              <span class="ms-auto">
-                <span class="right-icon">
-                  <i class="bi bi-chevron-down"></i>
-                </span>
-              </span>
-            </a>
-            <div class="collapse" id="reporteDirectivo">
-              <ul class="navbar-nav ps-3">
-                <li>
-                  <a routerLink = "#" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Proceso</span>
-                  </a>
-                </li>
-                <li>
-                  <a routerLink="#" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Produccion</span>
-                  </a>
-                </li>
-               
-              </ul>
-            </div>
-          </li>
-          </ul>
+              <li>
+                <a
+                  class="nav-link px-3 sidebar-link"
+                  data-bs-toggle="collapse"
+                  href="#reporteDirectivo"
+                >
+                  <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                  <span>Estadisticas</span>
+                  <span class="ms-auto">
+                    <span class="right-icon">
+                      <i class="bi bi-chevron-down"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="collapse" id="reporteDirectivo">
+                  <ul class="navbar-nav ps-3">
+                    <li>
+                      <a class="nav-link px-3" href="#" routerLink = "/estadisticasProcesoDirectivo" >
+                        <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                        ></span>
+                        <span>Proceso</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a routerLink="/estadisticasProduccionDirectivo" class="nav-link px-3">
+                        <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                        ></span>
+                        <span>Produccion</span>
+                      </a>
+                    </li>
+                  
+                  </ul>
+                </div>
+              </li>
+        </ul>
       </nav>
     </div>
   </div>
   <!-- offcanvas -->
 
-  <!-- contenido repotes datatables -->
 
-  <div *ngIf="router.url === '/simulacion'">
+  <!-- contenido estadisticas proceso directivo-->
+
+  <div class="ctn-main" *ngIf="router.url === '/estadisticasProcesoDirectivo'">
+    <app-estadisticas-proceso-directivo></app-estadisticas-proceso-directivo>
+  </div> 
+
+   <!-- contenido estadisticas produccion directivo-->
+
+   <div class="ctn-main" *ngIf="router.url === '/estadisticasProduccionDirectivo'">
+    <app-estadisticas-produccion-directivo></app-estadisticas-produccion-directivo>
+  </div> 
+
+  <!-- contenido simulacion directivo -->
+
+  <div class="ctn-main" *ngIf="router.url === '/simulacion'">
     <app-simulacion></app-simulacion>
   </div>
 
@@ -187,16 +200,16 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-uppercase mb-1">New User</div>
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">366</div>
+                    <div class="text-xs font-weight-bold text-uppercase mb-1">Estado Maquina</div>
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Encendida/Apagada</div>
                     <div class="mt-2 mb-0 text-muted text-xs">
-                      <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
-                      <span>Since last month</span>
+                      <span class="text-success mr-2"> 20.4%</span>
+                      
                     </div>
                   </div>
-                  <div class="col-auto">
+                  <!-- <div class="col-auto">
                     <i class="fas fa-users fa-2x text-info"></i>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>

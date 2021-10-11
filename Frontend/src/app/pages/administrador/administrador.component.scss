@@ -42,13 +42,14 @@ button {
     width: 17%;
     height: calc(100% - var(--topNavbarHeight));
   }
-
-.ctn-main {
-  width: 60%;
-  float: right;
-}
-
-.imgLS {
-    max-width: 10%;
+  .ctn-main {
+      width: 82%;
+      float: right;
   }
+
+  .barra-progreso{
+    width: 95%;
+    
+ }
+
 }
