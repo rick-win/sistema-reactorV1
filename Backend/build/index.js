@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const usuariosRoutes_1 = __importDefault(require("./routes/usuariosRoutes"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
+const tolvaRoutes_1 = __importDefault(require("./routes/tolvaRoutes"));
 const sensorFichaTecRoutes_1 = __importDefault(require("./routes/sensorFichaTecRoutes"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
@@ -24,8 +25,9 @@ class Server {
     }
     routes() {
         this.app.use('/', indexRoutes_1.default);
-        this.app.use('/sistemaReactor/usuarios', usuariosRoutes_1.default);
-        this.app.use('/sistemaReactor/sensores', sensorFichaTecRoutes_1.default);
+        this.app.use('/api/usuarios', usuariosRoutes_1.default);
+        this.app.use('/api/sensores', sensorFichaTecRoutes_1.default);
+        this.app.use('/api/tolva', tolvaRoutes_1.default);
     }
     stard() {
         this.app.listen(this.app.get('port'), () => {

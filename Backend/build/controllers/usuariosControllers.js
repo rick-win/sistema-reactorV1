@@ -17,14 +17,14 @@ const database_1 = __importDefault(require("../database"));
 class UsuariosController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const usuario = yield database_1.default.query('SELECT * FROM usuario');
+            const usuario = yield database_1.default.query('SELECT * FROM Usuario');
             res.json(usuario);
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const usuario = yield database_1.default.query('SELECT * FROM usuario WHERE Id_Usuario = ?', [id]);
+            const usuario = yield database_1.default.query('SELECT * FROM Usuario WHERE Id_Usuario = ?', [id]);
             if (usuario.length > 0) {
                 return res.json(usuario[0]);
             }
@@ -33,21 +33,38 @@ class UsuariosController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO usuario set ?', [req.body]);
+            console.log(req.body);
+            res.json(req.body);
+            yield database_1.default.query('INSERT INTO Usuario set ?', [req.body]);
             res.json({ message: 'Usuario guardado' });
+        });
+    }
+    // public async createRol (req: Request , res:Response): Promise<void>{
+    //     await pool.query('INSERT INTO Rol set ?', [req.body]);|
+    //     res.json({message: 'Usuario guardado'});
+    // }
+    createTolva(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                yield database_1.default.query('INSERT INTO Tolva set ?', [req.body]);
+                res.json({ message: 'Tolva guardado' });
+            }
+            catch (e) {
+                console.log(e);
+            }
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE usuario set ? WHERE Id_Usuario = ?', [req.body, id]);
+            yield database_1.default.query('UPDATE Usuario set ? WHERE Id_Usuario = ?', [req.body, id]);
             res.json({ message: 'El Usuario fue Actualizado' });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM usuario WHERE Id_Usuario = ?', [id]);
+            yield database_1.default.query('DELETE FROM Usuario WHERE Id_Usuario = ?', [id]);
             res.json({ message: 'El usuario fue Elimiado' });
         });
     }

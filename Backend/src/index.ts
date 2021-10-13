@@ -1,6 +1,7 @@
 import express, {Application} from 'express';
 import usuariosRoutes from './routes/usuariosRoutes';
 import indexRoutes from './routes/indexRoutes'
+import tolvaRoutes from './routes/tolvaRoutes';
 import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
@@ -26,8 +27,9 @@ class Server{
 
     routes(): void{
         this.app.use('/',indexRoutes);
-        this.app.use('/sistemaReactor/usuarios',usuariosRoutes);
-        this.app.use('/sistemaReactor/sensores', sensorFichaTecRoutes);
+        this.app.use('/api/usuarios',usuariosRoutes);
+        this.app.use('/api/sensores', sensorFichaTecRoutes);
+        this.app.use('/api/tolva', tolvaRoutes);
     }
 
     stard():void{

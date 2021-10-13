@@ -6,13 +6,13 @@ import pool from "../database";
 class UsuariosController{
 
     public async list (req: Request, res: Response){
-       const usuario = await pool.query('SELECT * FROM usuario');
+       const usuario = await pool.query('SELECT * FROM Usuario');
        res.json(usuario);
     }
 
     public async getOne(req: Request, res: Response): Promise<any>{
        const { id } = req.params;
-       const usuario = await pool.query('SELECT * FROM usuario WHERE Id_Usuario = ?', [id]);
+       const usuario = await pool.query('SELECT * FROM Usuario WHERE Id_Usuario = ?', [id]);
        if (usuario.length > 0 ){
            return res.json(usuario[0]);
        }
@@ -20,8 +20,10 @@ class UsuariosController{
     }
 
     public async create (req: Request , res:Response): Promise<void>{
-        await pool.query('INSERT INTO usuario set ?', [req.body]);
-        res.json({message: 'Usuario guardado'});
+        console.log(req.body);
+        res.json(req.body);
+        await pool.query('INSERT INTO Usuario set ?', [req.body]);
+        res.json({message: 'Usuario guardado'});   
     }
 
     // public async createRol (req: Request , res:Response): Promise<void>{
@@ -29,15 +31,26 @@ class UsuariosController{
     //     res.json({message: 'Usuario guardado'});
     // }
 
+    public async createTolva (req: Request , res:Response): Promise<void>{
+        try{
+            await pool.query('INSERT INTO Tolva set ?', [req.body]);
+            res.json({message: 'Tolva guardado'});
+        }catch(e){
+            console.log(e)
+        }
+        
+    }
+
+
     public async update( req: Request, res: Response): Promise<void>{
         const {id} = req.params;
-        await pool.query('UPDATE usuario set ? WHERE Id_Usuario = ?', [req.body, id]);
+        await pool.query('UPDATE Usuario set ? WHERE Id_Usuario = ?', [req.body, id]);
         res.json({message: 'El Usuario fue Actualizado'});
     }
 
     public async delete (req: Request , res:Response): Promise<void>{
         const {id} = req.params;
-       await pool.query('DELETE FROM usuario WHERE Id_Usuario = ?', [id]);
+       await pool.query('DELETE FROM Usuario WHERE Id_Usuario = ?', [id]);
        res.json({message: 'El usuario fue Elimiado'});
     }
 }
