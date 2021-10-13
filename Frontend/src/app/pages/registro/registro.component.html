@@ -8,19 +8,35 @@
         <div class="form-row">
             <div class="row">
             <div class="form-group col-md-8 mb-3">   
-                <label class="col-form-label">Nombre completo</label>            
-                <input type="text" class="form-control" id="exampleInputEmail1">
+                <label class="col-form-label">Nombres</label>            
+                <input type="text" class="form-control" formControlName="nombres">
+            </div>
+
+            <div class="form-group col-md-8 mb-3">   
+                <label class="col-form-label">Apellidos</label>            
+                <input type="text" class="form-control" formControlName="apellidos" >
+            </div>
+
+            <div class="form-group col-md-8 mb-3">   
+                <label class="col-form-label">Telefono</label>            
+                <input type="text" class="form-control" formControlName="telefono">
             </div>
             
-            <!-- <div class="form-group col-md-4 mb-3">
+            <div class="form-group col-md-4 mb-3">
+               
                 <label class="col-form-label">Rol</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Administrador</option>
-                    <option value="1">Supervisor</option>
-                    <option value="2">Operario</option>
-                    <option value="3">Invitado</option>
-                </select>
-            </div> -->
+                <div id="checkboxes">
+                  <label for="uno">
+                    <input type="checkbox" id="uno" />Administrador</label>
+                  <label for="dos">
+                    <input type="checkbox" id="dos" />Operario</label>
+                  <label for="tres">
+                    <input type="checkbox" id="tres" />Tecnico</label>
+                  <label for="cuatro">
+                     <input type="checkbox" id="cuatro" />Invitado</label>
+                </div>
+             </div>
+
             </div>
         </div>
     

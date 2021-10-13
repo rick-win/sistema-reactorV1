@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthFireService } from '../../services/auth-fire.service';
 import { ToastrService } from 'ngx-toastr';
+import { GestionarUsuarioService } from '../../services/gestionar-usuario.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -14,7 +15,8 @@ export class RegistroComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authFireService: AuthFireService,
-    private toast: ToastrService
+    private toast: ToastrService,
+    private gestionarUsuarioService: GestionarUsuarioService
   ) {
     this.formularioReg = new FormGroup({});
    }
@@ -24,7 +26,9 @@ export class RegistroComponent implements OnInit {
   }
   private crearFormulario() {
     this.formularioReg = this.fb.group({
-      nombre: [null, Validators.required],
+      nombres: [null, Validators.required],
+      apellidos: [null, Validators.required],
+      telefono: [null, Validators.required],
       correo: [null, Validators.required],
       cargo: [null, Validators.required],
       password: [null, Validators.required],
@@ -39,6 +43,7 @@ export class RegistroComponent implements OnInit {
     if (this.correoValido) {
       if (this.passwordValido) {
         this.authFireService.signUp(correo, password);
+        this.gestionarUsuarioService.saveUsuario(this.formularioReg.value)
       }
     } else {
       this.toast.error('El correo debe ser del sena')

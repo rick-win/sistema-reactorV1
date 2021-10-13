@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'registro',
-    component: RegistroComponent
+    component: DashboardComponent
   },
   {
     path: 'dashboard',

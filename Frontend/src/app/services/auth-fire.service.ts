@@ -59,7 +59,7 @@ export class AuthFireService {
         up and returns promise */
         console.log('usuario registrado');
         this.toast.success('usuario registrado!')
-        this.router.navigate(['/login'])
+        
         
         this.SendVerificationMail();
         this.SetUserData(result.user);
