@@ -39,6 +39,10 @@ import { ReporteProduccionOperarioComponent } from './pages/reporte-produccion-o
 import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operario/reporte-proceso-operario.component';
 import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
 import { SimulacionComponent } from './pages/simulacion/simulacion.component';
+import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
+import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
+import { AdministradorComponent } from './pages/administrador/administrador.component';
+
 
 
 
@@ -66,6 +70,9 @@ import { SimulacionComponent } from './pages/simulacion/simulacion.component';
     ReporteProcesoOperarioComponent,
     ReporteBitacoraEventosOperarioComponent,
     SimulacionComponent,
+    EstadisticasProcesoDirectivoComponent,
+    EstadisticasProduccionDirectivoComponent,
+    AdministradorComponent,
   
   ],
   imports: [
