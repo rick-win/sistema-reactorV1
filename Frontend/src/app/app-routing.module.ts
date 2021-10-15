@@ -134,7 +134,6 @@ const routes: Routes = [
 },
 
 {
-  path: '/administrador',
   path: 'administrador',
   component: AdministradorComponent
 }

@@ -38,11 +38,11 @@ export class RegistroComponent implements OnInit {
   public registrarUsuario() {
     const correo = this.formularioReg.get('correo')?.value;
     const password = this.formularioReg.get('password')?.value;
-    console.log(this.correoValido);
     
     if (this.correoValido) {
       if (this.passwordValido) {
         this.authFireService.signUp(correo, password);
+        console.log('entra a guardar ');
         this.gestionarUsuarioService.saveUsuario(this.formularioReg.value)
       }
     } else {
