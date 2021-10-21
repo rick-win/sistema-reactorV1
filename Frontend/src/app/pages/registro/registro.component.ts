@@ -4,6 +4,7 @@ import { AuthFireService } from '../../services/auth-fire.service';
 import { ToastrService } from 'ngx-toastr';
 import { GestionarUsuarioService } from '../../services/gestionar-usuario.service';
 import { Usuario } from 'src/app/models/Usuario';
+import { Router } from '@angular/router';
 
 
 @Component({

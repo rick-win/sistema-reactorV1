@@ -42,6 +42,7 @@ import { SimulacionComponent } from './pages/simulacion/simulacion.component';
 import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
 import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
+import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.component';
 
 
 
@@ -73,6 +74,7 @@ import { AdministradorComponent } from './pages/administrador/administrador.comp
     EstadisticasProcesoDirectivoComponent,
     EstadisticasProduccionDirectivoComponent,
     AdministradorComponent,
+    ListarUsuarioComponent,
   
   ],
   imports: [

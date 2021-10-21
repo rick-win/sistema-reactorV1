@@ -22,6 +22,7 @@ import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacor
 import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
 import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
+import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.component';
 
 const routes: Routes = [
   {
@@ -136,7 +137,13 @@ const routes: Routes = [
 {
   path: 'administrador',
   component: AdministradorComponent
+},
+
+{
+  path: 'lista-usuarios',
+  component: ListarUsuarioComponent
 }
+
 
 
 
