@@ -28,10 +28,10 @@ export class GestionarUsuarioService {
 
   saveUsuario(usuario: Usuario){
     console.log(`${this.API_URI}/usuarios`);
-    return this.http.post(`${this.API_URI}/usuarios`, usuario)
+    return this.http.post(`${this.API_URI}/usuarios`, usuario);
   }
 
-  updateUsuario(id: string, updatedGame: Usuario){
-    return this.http.put(`${this.API_URI}/usuarios/${id}`, updatedGame)
+  updateUsuario(id: string, updatedUsuario: Usuario){
+    return this.http.put(`${this.API_URI}/usuarios/${id}`, updatedUsuario);
   }
 }

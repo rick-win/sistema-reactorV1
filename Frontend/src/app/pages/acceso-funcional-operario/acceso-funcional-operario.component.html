@@ -9,11 +9,18 @@
       >
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a
+      <a 
         class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
         href="#"
-        >Sistema Reactor</a
-      >
+        >
+        <img src="assets/Img/logoSena.png"  width="40" 
+        class="d-inline-block aling-top mr-2"/>
+        Sistema Reactor
+        <img src="assets/Img/logo_astin.png"  width="60" 
+        class="d-inline-block aling-top mr-8"/>
+        <img src="assets/Img/LogoSENNOVA.jpeg"  width="60" 
+        class="d-inline-block aling-top mr-2"/>
+    </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -68,7 +75,7 @@
             </div>
           </li>
           <li>
-            <a href="#" class="nav-link px-3 active">
+            <a routerLink="/accesofuncional-operario" class="nav-link px-3 active">
               <span class="me-2"><i class="bi bi-speedometer2"></i></span>
               <span>Estado Maquina</span>
             </a>
@@ -208,20 +215,26 @@
 
 <!-- contenido reporte produccion operario-->
 
-<div class="ctn-main" *ngIf="router.url === '/reporteProduccionOperario'">
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteProduccionOperario'">
   <app-reporte-produccion-operario></app-reporte-produccion-operario>
 </div> 
 
 <!-- contenido reporte proceso operario(bitacora)-->
 
-<div class="ctn-main" *ngIf="router.url === '/reporteProcesoOperario'">
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteProcesoOperario'">
   <app-reporte-proceso-operario></app-reporte-proceso-operario>
 </div> 
 
 <!-- contenido bitacora incidencias-->
 
-<div class="ctn-main" *ngIf="router.url === '/reporteBitacoraIncidencias'">
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteBitacoraIncidencias'">
   <app-reporte-bitacora-eventos-operario></app-reporte-bitacora-eventos-operario>
+</div> 
+
+<!-- contenido registro de productos-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/registroProducto'">
+  <app-registro-producto></app-registro-producto>
 </div> 
 
 

@@ -20,16 +20,15 @@ class UsuariosController{
     }
 
     public async create (req: Request , res:Response): Promise<void>{
-        console.log(req.body);
-        res.json(req.body);
+        console.log('entra a crear');
         await pool.query('INSERT INTO Usuario set ?', [req.body]);
-        res.json({message: 'Usuario guardado'});   
+        res.json({message: 'Usuario guardado'});
     }
 
-    // public async createRol (req: Request , res:Response): Promise<void>{
-    //     await pool.query('INSERT INTO Rol set ?', [req.body]);|
-    //     res.json({message: 'Usuario guardado'});
-    // }
+    public async createRol (req: Request , res:Response): Promise<void>{
+     await pool.query('INSERT INTO Rol set ?', [req.body]);
+        res.json({message: 'rol guardado'});
+     }
 
     public async createTolva (req: Request , res:Response): Promise<void>{
         try{

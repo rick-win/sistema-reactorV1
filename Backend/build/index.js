@@ -21,7 +21,7 @@ class Server {
         this.app.use(morgan_1.default('dev'));
         this.app.use(cors_1.default());
         this.app.use(express_1.default.json());
-        this.app.use(express_1.default.urlencoded({ extended: false }));
+        this.app.use(express_1.default.urlencoded({ extended: true }));
     }
     routes() {
         this.app.use('/', indexRoutes_1.default);
@@ -29,11 +29,11 @@ class Server {
         this.app.use('/api/sensores', sensorFichaTecRoutes_1.default);
         this.app.use('/api/tolva', tolvaRoutes_1.default);
     }
-    stard() {
+    start() {
         this.app.listen(this.app.get('port'), () => {
             console.log('server on port', this.app.get('port'));
         });
     }
 }
 const server = new Server();
-server.stard();
+server.start();

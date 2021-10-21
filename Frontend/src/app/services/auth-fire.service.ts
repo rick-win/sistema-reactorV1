@@ -28,7 +28,9 @@ export class AuthFireService {
     this.angularFire.authState.subscribe(user => {
       if(user){
         this.usuario.nombre = user.displayName;
+        this.usuario.apellido = user.displayName;
         this.usuario.email = user.email;
+        this.usuario.telefono = user.phoneNumber;
         this.usuario.foto = user.photoURL;
         this.usuario.uid = user.uid;
       }

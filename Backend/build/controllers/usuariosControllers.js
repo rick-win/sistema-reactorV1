@@ -33,16 +33,17 @@ class UsuariosController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(req.body);
-            res.json(req.body);
+            console.log('entra a crear');
             yield database_1.default.query('INSERT INTO Usuario set ?', [req.body]);
             res.json({ message: 'Usuario guardado' });
         });
     }
-    // public async createRol (req: Request , res:Response): Promise<void>{
-    //     await pool.query('INSERT INTO Rol set ?', [req.body]);|
-    //     res.json({message: 'Usuario guardado'});
-    // }
+    createRol(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query('INSERT INTO Rol set ?', [req.body]);
+            res.json({ message: 'rol guardado' });
+        });
+    }
     createTolva(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

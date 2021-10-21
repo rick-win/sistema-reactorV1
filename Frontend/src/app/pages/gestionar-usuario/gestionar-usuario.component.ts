@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class GestionarUsuarioComponent implements OnInit {
 
-  roles = ['administrador', 'supervisor', 'operario', 'invitado'];
+  roles = ['Administrador', 'Supervisor', 'Operario', 'Invitado'];
 
   constructor
   (private gestionarUsuarioService : GestionarUsuarioService,

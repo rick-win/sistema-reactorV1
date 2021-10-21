@@ -9,11 +9,18 @@
       >
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a
-        class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
-        href="#"
-        >Sistema Reactor</a
+      <a 
+      class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+      href="#"
       >
+      <img src="assets/Img/logoSena.png"  width="40" 
+      class="d-inline-block aling-top mr-2"/>
+      Sistema Reactor
+      <img src="assets/Img/logo_astin.png"  width="60" 
+      class="d-inline-block aling-top mr-8"/>
+      <img src="assets/Img/LogoSENNOVA.jpeg"  width="60" 
+      class="d-inline-block aling-top mr-2"/>
+    </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -157,13 +164,13 @@
 
   <!-- contenido estadisticas proceso directivo-->
 
-  <div class="ctn-main" *ngIf="router.url === '/estadisticasProcesoDirectivo'">
+  <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/estadisticasProcesoDirectivo'">
     <app-estadisticas-proceso-directivo></app-estadisticas-proceso-directivo>
   </div> 
 
    <!-- contenido estadisticas produccion directivo-->
 
-   <div class="ctn-main" *ngIf="router.url === '/estadisticasProduccionDirectivo'">
+   <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/estadisticasProduccionDirectivo'">
     <app-estadisticas-produccion-directivo></app-estadisticas-produccion-directivo>
   </div> 
 

@@ -100,7 +100,7 @@ const routes: Routes = [
 
 {
   path: 'registroProducto',
-  component: RegistroProductoComponent,
+  component: AccesoFuncionalOperarioComponent,
 },
 
 {

@@ -1,9 +1,10 @@
 export interface Usuario{
-       nombres: string,
-      apellidos: string,
-      telefono: string,
-      correo: string,
-      cargo: string,
-      password: string,
-      confirmPassword: string
+      Nom_Usuario: string,
+      Ape_Usuario: string,
+      Tel_Usuario: string,
+      Email_Usuario: string,
+      //cargo: string,
+      Contrasena_Usuario: string,
+      ConfirmContrasena?: string,
+      roles: []
 }
