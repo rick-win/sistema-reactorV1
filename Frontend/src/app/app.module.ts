@@ -42,6 +42,9 @@ import { SimulacionComponent } from './pages/simulacion/simulacion.component';
 import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
 import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
+import { SobreElProyectoComponent } from './pages/sobre-el-proyecto/sobre-el-proyecto.component';
+import { InstitucionesComponent } from './pages/instituciones/instituciones.component';
+import { AgradecimientosComponent } from './pages/agradecimientos/agradecimientos.component';
 
 
 
@@ -73,6 +76,9 @@ import { AdministradorComponent } from './pages/administrador/administrador.comp
     EstadisticasProcesoDirectivoComponent,
     EstadisticasProduccionDirectivoComponent,
     AdministradorComponent,
+    SobreElProyectoComponent,
+    InstitucionesComponent,
+    AgradecimientosComponent,
   
   ],
   imports: [

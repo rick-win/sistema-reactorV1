@@ -1,0 +1,196 @@
+$c1: mediumturquoise;
+$c2: mediumpurple;
+$g1: linear-gradient(to right, $c1, $c2);
+
+.attempt-1{
+  font-size: 1.5rem;
+  
+  em{
+    font-style: normal;
+    padding: 0.1em 0.3em;
+    border-radius: 0.2em;
+    position: relative;
+    background: white;
+    background: $g1;
+    transform: skewX(-10deg);
+    display: inline-block;
+  }
+}
+
+.attempt-2{
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 0;
+  
+  em{
+    font-style: normal;
+    padding: 0.1em 0.3em;
+    position: relative;
+    display: inline-block;
+    
+    &::after{
+      content: "";
+      position: absolute;
+      background: white;
+      background: $g1;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index: -1;
+      border-radius: 0.2em;
+      transform: skewX(-10deg);
+    }
+  }
+}
+
+.attempt-3{
+  font-size: 1.5rem;
+  
+  em{
+    font-style: normal;
+    position: relative;
+    display: inline;
+    box-decoration-break: clone;
+    padding: 0.1em 0.2em;
+    border-radius: 0.2em;
+    background: white;
+    background: $g1;
+    transform: skewX(-10deg); // this is ignored on inline elements, in Webkit at least.
+  }
+}
+
+.attempt-4{
+  font-size: 1.5rem;
+  
+  em{
+    display: inline-block;
+    font-style: normal;
+    padding: 0.1em 0.3em;
+    border-radius: 0.2em;
+    position: relative;
+    background: white;
+    background: $g1;
+    transform: skewX(-10deg);
+    
+    span{
+      display: inline-block;
+      transform: skewX(10deg);
+    }
+  }
+}
+
+.attempt-5{
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 0;
+  
+  em{
+    font-style: normal;
+    padding: 0.1em 0;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    position: relative;
+    background: white;
+    background: $g1;
+    display: inline-block;
+    
+    &::before,
+    &::after{
+      content: "";
+      border-radius: 0.2em;
+      background: white;
+      display: inline-block;
+      width: 1em;
+      transform: skewX(-10deg);
+      position: absolute;
+      z-index: -1;
+    }
+    
+    &::before{
+      top: 0;
+      bottom: 0;
+      left: -0.3em;
+      background: $c1;
+    }
+    
+    &::after{
+      top: 0;
+      bottom: 0;
+      right: -0.3em;
+      background: $c2;
+    }
+  }
+}
+
+
+
+
+/* Setup CSS unrelated to core task. */
+
+body{
+  background: #ccc;
+  background: linear-gradient(to right, #abd, #bce);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 300;
+  width: min(90vw, 600px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+section {
+  background: rgba(white,.6);
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(white,.2);
+}
+
+h1,
+h2{
+  font-weight: 400;
+}
+
+.gray {
+  color: #666;
+}
+
+li{
+  margin-bottom: 0.5em;  
+}
+
+
+
+
+
+
+.contenedor-sp1{
+    margin:auto;
+  //  margin-top: 500;
+  //  margin-left: 600;
+   // display: flex;
+ //   justify-content: center;
+    width:  66.5%;
+    height: 50%;
+    position: absolute;
+    left: 18%;
+    
+   
+  }
+
+
+  .justificado {
+    text-align: justify;
+    font-size:medium;
+     
+  }
+
+
+.centro {
+	text-align: center;
+  //font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  

@@ -209,10 +209,26 @@
             <span>Generar Reporte</span>
           </a>
         </li>
+
+        <!--Sobre el proyecto-->
+
+        <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+        <li>
+          <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+            Sobre El Proyecto
+          </div>
+        </li>
+        <li>
+          <a routerLink="/sobre-el-proyecto" class="nav-link px-3">
+            <span class="me-2"><i class="bi bi-graph-up"></i></span>
+            <span>Sobre El Proyecto</span>
+          </a>
+        </li>
+       
       </ul>
     </nav>
   </div>
-</div> -->
+</div> 
 <!-- offcanvas -->
 
 <!--Contenido gestionar usuario-->
@@ -220,6 +236,27 @@
 <div *ngIf="router.url === '/registro'">
   <app-registro></app-registro>
 </div>
+
+<!--Contenido sobre el proyecto-->
+
+<div *ngIf="router.url === '/sobre-el-proyecto'">
+  <app-sobre-el-proyecto></app-sobre-el-proyecto>
+</div>
+
+<!--Contenido sobre el proyecto-->
+
+<div *ngIf="router.url === '/instituciones'">
+  <app-instituciones></app-instituciones>
+</div>
+
+
+<!--Contenido agradecimientos-->
+
+<div *ngIf="router.url === '/agradecimientos'">
+  <app-agradecimientos></app-agradecimientos>
+</div>
+
+
 
 <!--Contenido dashboard-->
 <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/dashboard'">
