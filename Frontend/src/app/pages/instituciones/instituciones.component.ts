@@ -9,6 +9,9 @@ export class InstitucionesComponent implements OnInit {
 
   constructor() { }
 
+
+  
+
   ngOnInit(): void {
   }
 
