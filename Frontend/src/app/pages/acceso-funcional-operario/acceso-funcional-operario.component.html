@@ -207,6 +207,23 @@
               </ul>
             </div>
           </li>
+
+             <!--Sobre el proyecto-->
+
+        <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+        <li>
+          <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+            Sobre El Proyecto
+          </div>
+        </li>
+        <li>
+          <a routerLink="/sobre-el-proyecto-operario" class="nav-link px-3">
+            <span class="me-2"><i class="bi bi-graph-up"></i></span>
+            <span>Sobre El Proyecto</span>
+          </a>
+        </li>
+
+
           </ul>
       </nav>
     </div>
@@ -236,6 +253,59 @@
 <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/registroProducto'">
   <app-registro-producto></app-registro-producto>
 </div> 
+
+<!-- aqui nuevo -->
+<!--Contenido sobre el proyecto-->
+
+<div *ngIf="router.url === '/sobre-el-proyecto-operario'">
+  <app-sobre-el-proyecto></app-sobre-el-proyecto>
+</div>
+
+<!--Contenido sobre instituciones-->
+
+<div class= "ctn-main" *ngIf="router.url === '/instituciones'">
+  <app-instituciones></app-instituciones>
+</div>
+
+
+<!--Contenido agradecimientos-->
+
+<div class= "ctn-main" *ngIf="router.url === '/agradecimientos'">
+  <app-agradecimientos></app-agradecimientos>
+</div>
+
+<!--Contenido astin-->
+
+<div class= "ctn-main mt-5" *ngIf="router.url === '/astin'">
+  <div class="col-sm">
+  <app-astin></app-astin>
+</div>
+</div>
+
+<!--Contenido cdm-->
+
+<div class= "ctn-main mt-5" *ngIf="router.url === '/cdm'">
+  <div class="col-sm">
+  <app-cdm></app-cdm>
+</div>
+</div>
+
+<!--Contenido Uniautonoma-->
+
+<div class= "ctn-main mt-5" *ngIf="router.url === '/uniautonoma-cauca'">
+  <div class="col-sm">
+  <app-uniautonoma></app-uniautonoma>
+</div>
+</div>
+
+<!-- aquitermina lo nuevo -->
+
+
+
+
+
+
+
 
 
 <!--Contenido acceso funcional Operario-->

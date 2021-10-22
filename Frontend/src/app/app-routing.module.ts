@@ -146,6 +146,8 @@ const routes: Routes = [
   path: 'sobre-el-proyecto',
   component: DashboardComponent
 },
+
+
 {
   path: 'instituciones',
   component: DashboardComponent
@@ -166,8 +168,36 @@ const routes: Routes = [
 {
   path: 'uniautonoma-cauca',
   component: DashboardComponent
-}
+},
 
+// Apunta A Operario
+{
+  path: 'sobre-el-proyecto-operario',
+  component:  AccesoFuncionalOperarioComponent
+},
+
+
+{
+  path: 'instituciones-operario',
+  component: AccesoFuncionalOperarioComponent
+},
+{
+  path: 'agradecimientos-operario',
+  component: AccesoFuncionalOperarioComponent
+},
+{
+  path: 'astin-operario',
+  component: AccesoFuncionalOperarioComponent
+},
+{
+  path: 'cdm-operario',
+  component: AccesoFuncionalOperarioComponent
+}
+,
+{
+  path: 'uniautonoma-cauca-operario',
+  component: DashboardComponent
+},
 
 
 ];
