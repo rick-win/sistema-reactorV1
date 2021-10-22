@@ -45,6 +45,8 @@ import { AdministradorComponent } from './pages/administrador/administrador.comp
 import { SobreElProyectoComponent } from './pages/sobre-el-proyecto/sobre-el-proyecto.component';
 import { InstitucionesComponent } from './pages/instituciones/instituciones.component';
 import { AgradecimientosComponent } from './pages/agradecimientos/agradecimientos.component';
+import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
+
 
 
 
@@ -79,6 +81,8 @@ import { AgradecimientosComponent } from './pages/agradecimientos/agradecimiento
     SobreElProyectoComponent,
     InstitucionesComponent,
     AgradecimientosComponent,
+    DesarrolloComponent,
+   
   
   ],
   imports: [

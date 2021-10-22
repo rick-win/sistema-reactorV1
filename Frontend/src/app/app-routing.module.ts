@@ -25,6 +25,8 @@ import { AdministradorComponent } from './pages/administrador/administrador.comp
 import { SobreElProyectoComponent } from './pages/sobre-el-proyecto/sobre-el-proyecto.component';
 import { InstitucionesComponent } from './pages/instituciones/instituciones.component';
 import { AgradecimientosComponent } from './pages/agradecimientos/agradecimientos.component';
+import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
+
 
 const routes: Routes = [
   {
@@ -150,6 +152,10 @@ const routes: Routes = [
 },
 {
   path: 'agradecimientos',
+  component: DashboardComponent
+},
+{
+  path: 'desarrollo',
   component: DashboardComponent
 }
 

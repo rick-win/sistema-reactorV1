@@ -1,0 +1,57 @@
+
+.contenedor-sp1{
+    margin:auto;
+  //  margin-top: 500;
+  //  margin-left: 600;
+   // display: flex;
+ //   justify-content: center;
+    width:  66.5%;
+    height: 50%;
+    position: absolute;
+    left: 18%;
+    
+   
+  }
+
+  .ctn-main {
+    width: 82%;
+    float: right;
+}
+
+.centro {
+	text-align: center;
+  //font-weight: bold;
+  //font-family: Arial, Helvetica, sans-serif;
+}
+
+.centroimg {
+	margin: 10px auto;
+  display: block;
+  //font-weight: bold;
+  //font-family: Arial, Helvetica, sans-serif;
+}
+  
+  
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+
+
+.service-box {
+  background-color: rgb(233, 239, 255);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 15px 0px 15px;
+  transition: 0.5s;
+  border: 1px solid transparent;
+}
