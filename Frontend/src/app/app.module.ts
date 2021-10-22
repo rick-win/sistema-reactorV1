@@ -45,6 +45,7 @@ import { AdministradorComponent } from './pages/administrador/administrador.comp
 import { SobreElProyectoComponent } from './pages/sobre-el-proyecto/sobre-el-proyecto.component';
 import { InstitucionesComponent } from './pages/instituciones/instituciones.component';
 import { AgradecimientosComponent } from './pages/agradecimientos/agradecimientos.component';
+import { AstinComponent } from './pages/astin/astin.component';
 
 
 
@@ -79,6 +80,7 @@ import { AgradecimientosComponent } from './pages/agradecimientos/agradecimiento
     SobreElProyectoComponent,
     InstitucionesComponent,
     AgradecimientosComponent,
+    AstinComponent,
   
   ],
   imports: [

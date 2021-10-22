@@ -151,6 +151,10 @@ const routes: Routes = [
 {
   path: 'agradecimientos',
   component: DashboardComponent
+},
+{
+  path: 'astin',
+  component: DashboardComponent
 }
 
 
