@@ -46,6 +46,8 @@ import { SobreElProyectoComponent } from './pages/sobre-el-proyecto/sobre-el-pro
 import { InstitucionesComponent } from './pages/instituciones/instituciones.component';
 import { AgradecimientosComponent } from './pages/agradecimientos/agradecimientos.component';
 import { AstinComponent } from './pages/astin/astin.component';
+import { CdmComponent } from './pages/cdm/cdm.component';
+import { UniautonomaComponent } from './pages/uniautonoma/uniautonoma.component';
 
 
 
@@ -81,6 +83,8 @@ import { AstinComponent } from './pages/astin/astin.component';
     InstitucionesComponent,
     AgradecimientosComponent,
     AstinComponent,
+    CdmComponent,
+    UniautonomaComponent,
   
   ],
   imports: [

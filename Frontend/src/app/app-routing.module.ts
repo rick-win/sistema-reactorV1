@@ -25,6 +25,8 @@ import { AdministradorComponent } from './pages/administrador/administrador.comp
 import { SobreElProyectoComponent } from './pages/sobre-el-proyecto/sobre-el-proyecto.component';
 import { InstitucionesComponent } from './pages/instituciones/instituciones.component';
 import { AgradecimientosComponent } from './pages/agradecimientos/agradecimientos.component';
+import { CdmComponent } from './pages/cdm/cdm.component';
+import { UniautonomaComponent } from './pages/uniautonoma/uniautonoma.component';
 
 const routes: Routes = [
   {
@@ -154,6 +156,15 @@ const routes: Routes = [
 },
 {
   path: 'astin',
+  component: DashboardComponent
+},
+{
+  path: 'cdm',
+  component: DashboardComponent
+}
+,
+{
+  path: 'uniautonoma-cauca',
   component: DashboardComponent
 }
 

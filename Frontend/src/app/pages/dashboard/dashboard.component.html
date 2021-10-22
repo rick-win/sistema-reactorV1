@@ -35,9 +35,9 @@
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item" routerLink="/astin">ASTIN</a></li>
-          <li><a class="dropdown-item" href="#">CMD</a></li>
-          <li><a class="dropdown-item" href="#">Tecnoparque Sede Bogota</a></li>
-          <li><a class="dropdown-item" href="#">Uniautonoma del Cauca</a></li>
+          <li><a class="dropdown-item" routerLink="/cdm">CMD</a></li>
+          <li><a class="dropdown-item" >Tecnoparque Sede Bogota</a></li>
+          <li><a class="dropdown-item" routerLink="/uniautonoma-cauca">Uniautonoma del Cauca</a></li>
         </ul>
       </li>
     </ul>
@@ -268,7 +268,7 @@
   <app-sobre-el-proyecto></app-sobre-el-proyecto>
 </div>
 
-<!--Contenido sobre el proyecto-->
+<!--Contenido sobre instituciones-->
 
 <div class= "ctn-main" *ngIf="router.url === '/instituciones'">
   <app-instituciones></app-instituciones>
@@ -288,6 +288,25 @@
   <app-astin></app-astin>
 </div>
 </div>
+
+<!--Contenido cdm-->
+
+<div class= "ctn-main mt-5" *ngIf="router.url === '/cdm'">
+  <div class="col-sm">
+  <app-cdm></app-cdm>
+</div>
+</div>
+
+<!--Contenido Uniautonoma-->
+
+<div class= "ctn-main mt-5" *ngIf="router.url === '/uniautonoma-cauca'">
+  <div class="col-sm">
+  <app-uniautonoma></app-uniautonoma>
+</div>
+</div>
+
+
+
 
 
 <!--Contenido dashboard-->
