@@ -107,7 +107,7 @@
             <div class="collapse" id="parametrosI">
               <ul class="navbar-nav ps-3">
                 <li>
-                  <a href="#" class="nav-link px-3">
+                  <a routerLink ="/encender-equipos" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -122,14 +122,14 @@
                     <span>Tolva</span>
                   </a>
                 </li>
-                <li>
-                    <a routerLink = "/encender-equipos" class="nav-link px-3">
+                <!-- <li>
+                    <a routerLink = "" class="nav-link px-3">
                       <span class="me-2"
                         ><i class="bi bi-speedometer2"></i
                       ></span>
                       <span>Bomba de Vacio</span>
                     </a>
-                  </li>
+                  </li> -->
 
               </ul>
             </div>
@@ -236,6 +236,19 @@
 <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/registroProducto'">
   <app-registro-producto></app-registro-producto>
 </div> 
+
+<!-- contenido registro dtemperaturas-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/perfilTemperatura'">
+  <app-temperaturas></app-temperaturas>
+</div>
+
+<!-- contenido registro EncenderEquipos-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/encender-equipos'">
+  <app-encender-equipos></app-encender-equipos>
+</div>
+
 
 
 <!--Contenido acceso funcional Operario-->

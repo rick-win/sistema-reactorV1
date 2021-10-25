@@ -60,7 +60,7 @@ const routes: Routes = [
 
 {
   path: 'perfilTemperatura',
-  component: TemperaturasComponent
+  component: AccesoFuncionalOperarioComponent
 },
 
 {
@@ -70,7 +70,7 @@ const routes: Routes = [
 
 {
   path: 'encender-equipos',
-  component: EncenderEquiposComponent,
+  component: AccesoFuncionalOperarioComponent,
 },
 
 {
