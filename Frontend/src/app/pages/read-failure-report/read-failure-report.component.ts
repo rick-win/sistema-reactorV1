@@ -11,14 +11,17 @@ export class ReadFailureReportComponent implements OnInit {
 
   constructor( private reportService: ReportsManagerService) { }
 
-  reports: any = [];
+  Failures: any = [];
+
 
   ngOnInit(): void {
+    console.log('start')
     this.reportService.getFailures().subscribe(
       res => {
-        this.reports = res;
+        this.Failures = res;
+        console.log(res)
       },
-      err => console.log()
+      err => console.log(err, 'sad')
     )
   }
 }

@@ -1,6 +1,6 @@
 <div class="contenedor-formulario col-md-5 mt-5 shadow-lg mt-5" >
 
-  <form class="mt-4" autocomplete="off" [formGroup]="formulario">
+  <form class="mt-4" autocomplete="off" [formGroup]="formulary">
 
     <h3 class="titulo-login">Registrar Control de Proceso</h3>
 
@@ -8,7 +8,7 @@
       <div class="row">
         <div class="form-group col-md-8 mb-3">
           <label class="col-form-label">Fecha y hora</label>
-          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="startDateTime" [(ngModel)]="process.date">
+          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="startDateTime" formControlName="date">
         </div>
 
       </div>
@@ -16,12 +16,12 @@
 
     <div class="form-group mb-3">
       <label class="col-form-label">Operador</label>
-      <input type="text" class="form-control" id="productIn">
+      <input type="text" class="form-control" id="productIn" formControlName="operator">
     </div>
 
     <div class="form-group mb-3">
       <label class="col-form-label">Verificación de Encendido</label>
-      <select class="form-select" aria-label="default Select Example" id="power" [(ngModel)]="process.powerVerify">
+      <select class="form-select" aria-label="default Select Example" id="power" formControlName="powerVerify">
         <option value="true">Realizada</option>
         <option value="false">No Realizada</option>
       </select>
@@ -29,15 +29,23 @@
 
     <div class="mb-3">
       <label class="col-form-label">Verificación de Cerrado</label>
-      <select class="form-select" aria-label="default Select Example" id="close" [(ngModel)]="process.closeVerify">
+      <select class="form-select" aria-label="default Select Example" id="close" formControlName="closeVerify">
       <option value="true">Realizada</option>
       <option value="false">No Realizada</option>
       </select>
     </div>
 
     <div class="mb-3">
+      <label class="col-form-label">Resultado del proceso</label>
+      <select class="form-select" aria-label="default Select Example" id="result" formControlName="success">
+        <option value="true">Exito</option>
+        <option value="false">Fracaso</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
       <label class="form-label">Anotaciones</label>
-      <input type="text" class="form-control" id="unidadmed" formControlName="Annotations" >
+      <input type="text" class="form-control" id="unidadmed" formControlName="annotations" >
     </div>
 
     <div class="contedor-btn-iniciar mt-3">

@@ -8,7 +8,7 @@
       <div class="row">
         <div class="form-group col-md-8 mb-3">
           <label class="col-form-label">Fecha y hora de inicio</label>
-          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="starDateTime" [(ngModel)]="production.startDate">
+          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="starDateTime" formControlName="Fecha_Inicio">
         </div>
       </div>
     </div>
@@ -17,64 +17,73 @@
       <div class="row">
         <div class="form-group col-md-8 mb-3">
           <label class="col-form-label">Fecha y hora de finalización</label>
-          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="endDateTime" [(ngModel)]="production.endDate">
+          <input type="datetime-local" ng-model="valueofdate" class="form-control" id="endDateTime" formControlName="Fecha_Finalizacion">
         </div>
       </div>
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Proceso Activo</label>
-      <select class="form-select" aria-label="default Select Example" [(ngModel)]="production.activeProcess">
-        <option value="true">Sí</option>
-        <option value="false">No</option>
-      </select>
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label">Tipo de producto ingresado</label>
-      <select class="form-select" aria-label="default Select Example" [(ngModel)]="production.productType">
-        <option value="1">A</option>
-        <option value="2">B</option>
-        <option value="3">C</option>
-      </select>
+    <div class="form-group mb-3">
+      <label class="col-form-label">Tipo de producto ingresado</label>
+      <input type="text" class="form-control" id="type" formControlName="Tipo_Ingreso">
     </div>
 
     <div class="form-group mb-3">
       <label class="col-form-label">Cantidad de producto ingresado</label>
-      <input type="number" class="form-control" id="amount" [(ngModel)]="production.productIn">
+      <input type="number" class="form-control" id="amount" formControlName="Cantidad_Ingreso">
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Porcentaje de Avance</label>
-      <input type="number" class="form-control" id="advanced" formControlName="Undmedida" [(ngModel)]="production.advancePercentage">
+    <div class="form-group mb-3">
+      <label class="col-form-label">Unidad de medida Ingreso</label>
+      <input type="number" class="form-control" id="uIn" formControlName="Unidad_Ingreso">
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Tiempo Restante</label>
-      <input type="number" class="form-control" id="remainingTime" formControlName="Undmedida" [(ngModel)]="production.remainingTime">
+    <div class="form-group mb-3">
+      <label class="col-form-label">Tipo de líquido producido</label>
+      <input type="text" class="form-control" id="tLiq" formControlName="Tipo_Liquido">
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Cantidad producida</label>
-      <input type="number" class="form-control" id="producedAmount" formControlName="Undmedida" [(ngModel)]="production.producedAmount">
+    <div class="form-group mb-3">
+      <label class="col-form-label">Cantidad de líquido producido</label>
+      <input type="number" class="form-control" id="cLiq" formControlName="Cantidad_Liquido">
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Unidad de Medida</label>
-      <input type="number" class="form-control" id="measurementUnit" formControlName="Undmedida" [(ngModel)]="production.measureUnit">
+    <div class="form-group mb-3">
+      <label class="col-form-label">Unidad de medida de líquido</label>
+      <input type="text" class="form-control" id="ULiq" formControlName="Unidad_Liquido">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Tipo de sólido producido</label>
+      <input type="text" class="form-control" id="tSol" formControlName="Tipo_Solido">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Cantidad de sólido producido</label>
+      <input type="number" class="form-control" id="cSol" formControlName="Cantidad_Solido">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Unidad de medida de sólidos</label>
+      <input type="text" class="form-control" id="uSol" formControlName="Unidad_Solido">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Tipo de gas producido</label>
+      <input type="text" class="form-control" id="tGas" formControlName="Tipo_Gas">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Cantidad de gas producido</label>
+      <input type="number" class="form-control" id="cGas" formControlName="Cantidad_Gas">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Unidad de medida de gases</label>
+      <input type="text" class="form-control" id="uGas" formControlName="Unidad_Gas">
     </div>
 
     <div class="contedor-btn-iniciar mt-3">
       <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registerProduction()">Guardar</button>
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label">Estado producido</label>
-      <select class="form-select" aria-label="default Select Example" [(ngModel)]="production.state">
-        <option value="1">Sólido</option>
-        <option value="2">Líquido</option>
-        <option value="3">Gaseoso</option>
-      </select>
     </div>
 
   </form>

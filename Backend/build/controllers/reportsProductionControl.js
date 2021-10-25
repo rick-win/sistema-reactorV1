@@ -17,14 +17,23 @@ const database_1 = __importDefault(require("../database"));
 class ReportsProductionController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const product = yield database_1.default.query('SELECT * FROM produccion');
+            const product = yield database_1.default.query('SELECT * FROM Reporte_Proceso');
             res.json(product);
+        });
+    }
+    tryDb(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const product = yield database_1.default.query('describe Alarma');
+            res.json(product);
+            console.log(res);
+            console.log('trying');
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const product = yield database_1.default.query('SELECT * FROM producto_Log WHERE Id_Product = ?', [id]);
+            const product = yield database_1.default.query('SELECT * FROM Produccion WHERE Id_Produccion = ?', [id]);
+            ;
             if (product.length > 0) {
                 return res.json(product[0]);
             }

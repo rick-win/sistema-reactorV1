@@ -14,6 +14,7 @@ const reportsProductRoutes_1 = __importDefault(require("./routes/reportsProductR
 const reportsFailureRoutes_1 = __importDefault(require("./routes/reportsFailureRoutes"));
 const reportsProcessRoutes_1 = __importDefault(require("./routes/reportsProcessRoutes"));
 const reportsProductionRoutes_1 = __importDefault(require("./routes/reportsProductionRoutes"));
+const startCheckListRoutes_1 = __importDefault(require("./routes/startCheckListRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -35,11 +36,13 @@ class Server {
         this.app.use('/sistemaReactor/process', reportsProcessRoutes_1.default);
         this.app.use('/sistemaReactor/failure', reportsFailureRoutes_1.default);
         this.app.use('/sistemaReactor/production', reportsProductionRoutes_1.default);
+        this.app.use('/sistemaReactor/startCheckList', startCheckListRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
             console.log('server on port', this.app.get('port'));
         });
+        console.log("Done");
     }
 }
 const server = new Server();

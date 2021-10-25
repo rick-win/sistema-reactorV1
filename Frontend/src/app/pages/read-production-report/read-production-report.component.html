@@ -5,26 +5,38 @@
       <div class="divTableHead">Fecha De Reporte</div>
       <div class="divTableHead">Fecha de Inicio</div>
       <div class="divTableHead">Fecah de Finnalización</div>
-      <div class="divTableHead">Tipo de Producto</div>
-      <div class="divTableHead">Cantidad roducida</div>
-      <div class="divTableHead">Proceso Activo</div>
-      <div class="divTableHead">Progreso</div>
-      <div class="divTableHead">Tiempo Restante</div>
-      <div class="divTableHead">Estado del Producto</div>
+      <div class="divTableHead">Tipo de Producto ingresado</div>
+      <div class="divTableHead">Cantidad Ingresada</div>
+      <div class="divTableHead">Unidad de medida</div>
+      <div class="divTableHead">Tipo de Líquido producido</div>
+      <div class="divTableHead">Cantidad de líquido producida</div>
+      <div class="divTableHead">Unidad de medida</div>
+      <div class="divTableHead">Tipo de sólido producido</div>
+      <div class="divTableHead">Cantidad de sólido producida</div>
+      <div class="divTableHead">Unidad de medida</div>
+      <div class="divTableHead">Tipo de gas producido</div>
+      <div class="divTableHead">Cantidad de gas producida</div>
+      <div class="divTableHead">Unidad de medida</div>
     </div>
   </div>
   <div class="divTableBody" *ngFor="let Production of reports">
     <div class="divTableRow">
-      <div class="divTableCell">{{Production.id}}</div>
-      <div class="divTableCell">{{Production.reportTime}}</div>
-      <div class="divTableCell">{{Production.startDate}}</div>
-      <div class="divTableCell">{{Production.endDate}}</div>
-      <div class="divTableCell">{{Production.productType}}</div>
-      <div class="divTableCell">{{Production.producedAmount}}</div>
-      <div class="divTableCell">{{Production.activeProcess}}</div>
-      <div class="divTableCell">{{Production.advancePercentage}}</div>
-      <div class="divTableCell">{{Production.remainingTime}}</div>
-      <div class="divTableCell">{{Production.state}}</div>
+      <div class="divTableCell">{{Production.Id_Production}}</div>
+      <div class="divTableCell">{{Production.Tiempo_Reporte}}</div>
+      <div class="divTableCell">{{Production.Fecha_Inicio}}</div>
+      <div class="divTableCell">{{Production.Fecha_Finalizacion}}</div>
+      <div class="divTableCell">{{Production.Tipo_Ingreso}}</div>
+      <div class="divTableCell">{{Production.Cantidad_Ingreso}}</div>
+      <div class="divTableCell">{{Production.Unidad_Ingreso}}</div>
+      <div class="divTableCell">{{Production.Tipo_Liquido}}</div>
+      <div class="divTableCell">{{Production.Cantidad_Liquido}}</div>
+      <div class="divTableCell">{{Production.Unidad_Liquido}}</div>
+      <div class="divTableCell">{{Production.Tipo_Solido}}</div>
+      <div class="divTableCell">{{Production.Cantidad_Solido}}</div>
+      <div class="divTableCell">{{Production.Unidad_Solido}}</div>
+      <div class="divTableCell">{{Production.Tipo_Gas}}</div>
+      <div class="divTableCell">{{Production.Cantidad_Gas}}</div>
+      <div class="divTableCell">{{Production.Unidad_Gas}}</div>
     </div>
   </div>
 </div>

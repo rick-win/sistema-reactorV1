@@ -2,13 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const reportsFailureControl_1 = require("../controllers/reportsFailureControl");
-class ReportsFailureRoutes {
+const startCheckListController_1 = require("../controllers/startCheckListController");
+class StartChekListRoutes {
     constructor() {
         this.router = (0, express_1.Router)();
         this.config();
     }
     config() {
-        this.router.get('/', reportsFailureControl_1.failureController.list);
+        this.router.get('/open', startCheckListController_1.startCheckListController.hopperLidState);
         this.router.get('/alarm', reportsFailureControl_1.failureController.alarm);
         this.router.get('/:id', reportsFailureControl_1.failureController.getOne);
         this.router.post('/', reportsFailureControl_1.failureController.create);
@@ -16,5 +17,5 @@ class ReportsFailureRoutes {
         this.router.delete('/:id', reportsFailureControl_1.failureController.delete);
     }
 }
-const failureProductRoutes = new ReportsFailureRoutes();
-exports.default = failureProductRoutes.router;
+const starCheckListRoutes = new StartChekListRoutes();
+exports.default = starCheckListRoutes.router;

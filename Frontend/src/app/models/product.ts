@@ -1,11 +1,9 @@
 export interface Product{
-  id?: number;
-  reportTime?:Date;
-  classification: string;
-  description: string;
-  measureUnit: string;
-  amount: number;
-  startDate: Date;
-  endDate: Date;
-  producedAmount: number;
+  Id_Producto?: number;
+  Fecha_Reporte?: Date;
+  Can_Producto: number;
+  Tipo: string;
+  Sub_Producto: string
+  Detalle: string;
+  Unidad_Medida: string;
 }

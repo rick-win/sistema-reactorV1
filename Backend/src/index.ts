@@ -1,6 +1,8 @@
-import express, {Application} from 'express';
+import express, {Application, Request, Response} from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import pool from './database'
+import {request, response} from 'express'
 
 //Routes imports
 import indexRoutes from './routes/indexRoutes'
@@ -10,6 +12,7 @@ import reportsProductRoutes from "./routes/reportsProductRoutes";
 import reportsFailureRoutes from "./routes/reportsFailureRoutes";
 import reportsProcessRoutes from "./routes/reportsProcessRoutes";
 import reportsProductionRoutes from "./routes/reportsProductionRoutes";
+import startCheckListRoutes from "./routes/startCheckListRoutes";
 
 
 class Server{
@@ -37,13 +40,15 @@ class Server{
         this.app.use('/sistemaReactor/product', reportsProductRoutes);
         this.app.use('/sistemaReactor/process', reportsProcessRoutes);
         this.app.use('/sistemaReactor/failure', reportsFailureRoutes);
-        this.app.use('/sistemaReactor/production', reportsProductionRoutes);
+        this.app.use('/sistemaReactor/production', reportsProductionRoutes );
+        this.app.use('/sistemaReactor/startCheckList', startCheckListRoutes );
     }
 
     start():void{
         this.app.listen(this.app.get('port'), () => {
             console.log('server on port', this.app.get('port'))
         });
+        console.log("Done")
     }
 
 }

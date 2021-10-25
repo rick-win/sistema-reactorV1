@@ -77,11 +77,9 @@
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-              Interface
+              Interfaz
             </div>
           </li>
-
-
 
           <li>
             <a
@@ -100,12 +98,64 @@
             <div class="collapse" id="parametrosI">
               <ul class="navbar-nav ps-3">
                 <li>
-                  <a href="#" class="nav-link px-3">
+                  <a (click)="check()" class="nav-link px-3" data-bs-toggle="collapse" href="#checkList">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
                     <span>Verificar Encendido</span>
                   </a>
+                  <div class="collapse" id="checkList">
+                    <ul class="navbar-nav ps-3">
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                            ><i class="bi bi-speedometer2"></i
+                            ></span>
+                          <span>Cierre de tolva: {{hopperOpen}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de energía: {{powerOn}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de carga: {{charged}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de Chiller: {{chillerStatus}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de bomba de vacio: {{voidStatus}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de compresor: {{compresorStatus}}</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li>
                   <a routerLink = "/encender-equipos" class="nav-link px-3">

@@ -18,7 +18,7 @@ export class ReadProductRegistryComponent implements OnInit {
       res => {
         this.reports = res;
       },
-      err => console.log()
+      err => console.log(err)
     )
   }
 }

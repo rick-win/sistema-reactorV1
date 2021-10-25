@@ -4,43 +4,28 @@
 
         <h3 class="titulo-login">Registrar Producto</h3>
 
-        <div class="form-row">
-            <div class="row">
-            <div class="form-group col-md-8 mb-3">
-                <label class="col-form-label">Fecha de Inicio</label>
-                <input type="date" ng-model="valueofdate" class="form-control" id="startDate" [(ngModel)]="product.startDate">
-            </div>
-
-              <div class="form-group col-md-8 mb-3">
-                <label class="col-form-label">Fecha de Finalización</label>
-                <input type="date" ng-model="valueofdate" class="form-control" id="enDate" [(ngModel)]="product.startDate">
-              </div>
-
-            </div>
+        <div class="form-group mb-3">
+            <label class="col-form-label">Tipo de producto</label>
+            <input type="text" class="form-control" formControlName="Tipo">
         </div>
 
         <div class="form-group mb-3">
-            <label class="col-form-label">Clasificaion</label>
-            <select class="form-select" aria-label="Default select example" [(ngModel)]="product.classification">
-                <option selected>combustible</option>
-                <option value="1">Tipo A</option>
-                <option value="2">Tipo B</option>
-                <option value="3">Tipo N/A</option>
-            </select>
+          <label class="col-form-label">Subproducto</label>
+          <input type="text" class="form-control" formControlName="Sub_Producto">
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Descripción (Tipo)</label>
-            <input type="text" class="form-control" id="Detail" formControlName="clasificacion" [(ngModel)]="product.description">
+            <label class="form-label">Detalle</label>
+            <input type="text" class="form-control" id="Detail" formControlName="Detalle">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Cantidad</label>
-            <input type="number" class="form-control" id="amount" formControlName="cantidad" [(ngModel)]="product.amount">
+            <input type="number" class="form-control" id="amount" formControlName="Can_Producto">
         </div>
         <div class="mb-3">
             <label class="form-label">Unidad de Medida</label>
-            <input type="text" class="form-control" id="measureUnit" formControlName="Undmedida" [(ngModel)]="product.measureUnit">
+            <input type="text" class="form-control" id="measureUnit" formControlName="Unidad_Medida">
         </div>
 
         <div class="contedor-btn-iniciar mt-3">

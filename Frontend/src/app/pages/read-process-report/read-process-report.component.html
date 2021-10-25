@@ -1,7 +1,7 @@
 <div class="divTable blueTable">
   <div class="divTableHeading">
     <div class="divTableRow">
-      <div class="divTableHead">ID</div>
+      <div class="divTableHead">Número de proceso</div>
       <div class="divTableHead">Fecha De Reporte</div>
       <div class="divTableHead">Fecha de de Proceso</div>
       <div class="divTableHead">Operario</div>
@@ -13,14 +13,14 @@
   </div>
   <div class="divTableBody" *ngFor="let Process of reports">
     <div class="divTableRow">
-      <div class="divTableCell">{{Process.id}}</div>
-      <div class="divTableCell">{{Process.reportTime}}</div>
-      <div class="divTableCell">{{Process.date}}</div>
-      <div class="divTableCell">{{Process.operator}}</div>
-      <div class="divTableCell">{{Process.powerVerify}}</div>
-      <div class="divTableCell">{{Process.closeVerify}}</div>
-      <div class="divTableCell">{{Process.success}}</div>
-      <div class="divTableCell">{{Process.annotations}}</div>
+      <div class="divTableCell">{{Process.Id_Proceso}}</div>
+      <div class="divTableCell">{{Process.reportTime_Proceso}}</div>
+      <div class="divTableCell">{{Process.date_Proceso}}</div>
+      <div class="divTableCell">{{Process.operator_Proceso}}</div>
+      <div class="divTableCell">{{Process.powerVerify_Proceso}}</div>
+      <div class="divTableCell">{{Process.closeVerify_Proceso}}</div>
+      <div class="divTableCell">{{Process.success_Proceso}}</div>
+      <div class="divTableCell">{{Process.annotations_Proceso}}</div>
     </div>
   </div>
 </div>

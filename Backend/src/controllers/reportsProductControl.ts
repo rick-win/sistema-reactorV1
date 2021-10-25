@@ -4,7 +4,7 @@ import pool from "../database";
 
 class ReportsProductController {
     public async list (req: Request, res: Response){
-        const product = await pool.query('SELECT * FROM producto');
+        const product = await pool.query('SELECT * FROM Registro_Producto');
         res.json(product);
     }
 
@@ -18,7 +18,7 @@ class ReportsProductController {
     }
 
     public async create (req: Request , res:Response): Promise<void>{
-        await pool.query('INSERT INTO usuario set ?', [req.body]);
+        await pool.query('INSERT INTO Registro_Producto set ?', [req.body]);
         res.json({message: 'Usuario guardado'});
     }
 

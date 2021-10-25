@@ -3,22 +3,22 @@
     <div class="divTableRow">
       <div class="divTableHead">Número de Reporte</div>
       <div class="divTableHead">Fecha De Reporte</div>
-      <div class="divTableHead">Unidad de Medida</div>
+      <div class="divTableHead">Tipo de producto</div>
       <div class="divTableHead">Cantidad</div>
-      <div class="divTableHead">Fecha de Inicio</div>
-      <div class="divTableHead">fecha de finalización</div>
-      <div class="divTableHead">Cantidad producida</div>
+      <div class="divTableHead">Unidad de Medida</div>
+      <div class="divTableHead">Subproducto</div>
+      <div class="divTableHead">Detalle</div>
     </div>
   </div>
   <div class="divTableBody" *ngFor="let Product of reports">
     <div class="divTableRow">
-      <div class="divTableCell">{{Product.id}}</div>
-      <div class="divTableCell">{{Product.reportTime}}</div>
-      <div class="divTableCell">{{Product.measureUnit}}</div>
-      <div class="divTableCell">{{Product.amount}}</div>
-      <div class="divTableCell">{{Product.startDate}}</div>
-      <div class="divTableCell">{{Product.endDate}}</div>
-      <div class="divTableCell">{{Product.producedAmount}}</div>
+      <div class="divTableCell">{{Product.Id_Producto}}</div>
+      <div class="divTableCell">{{Product.Fecha_Reporte}}</div>
+      <div class="divTableCell">{{Product.Tipo}}</div>
+      <div class="divTableCell">{{Product.Can_Producto}}</div>
+      <div class="divTableCell">{{Product.Unidad_Medida}}</div>
+      <div class="divTableCell">{{Product.Sub_Producto}}</div>
+      <div class="divTableCell">{{Product.Detalle}}</div>
     </div>
   </div>
 </div>

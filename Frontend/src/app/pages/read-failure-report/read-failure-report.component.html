@@ -1,27 +1,30 @@
 <div class="divTable blueTable">
   <div class="divTableHeading">
     <div class="divTableRow">
-      <div class="divTableHead">ID</div>
-      <div class="divTableHead">Fecha De Reporte</div>
+      <div class="divTableHead">Número de falla</div>
+      <div class="divTableHead">Sensor reportando la falla</div>
       <div class="divTableHead">Fecha de Falla</div>
-      <div class="divTableHead">Falla</div>
+      <div class="divTableHead">Código de error</div>
+      <div class="divTableHead">Operario reportando</div>
       <div class="divTableHead">Zona</div>
       <div class="divTableHead">Descripción</div>
       <div class="divTableHead">Estado</div>
+      <div class="divTableHead">Fecha de resolución</div>
       <div class="divTableHead">Anotaciones</div>
-      <div class="divTableHead">Operario</div>
     </div>
   </div>
-  <div class="divTableBody" *ngFor="let Failure of reports">
+  <div class="divTableBody" *ngFor="let Failure of Failures">
     <div class="divTableRow">
-      <div class="divTableCell">{{Failure.id}}</div>
-      <div class="divTableCell">{{Failure.reportTime}}</div>
-      <div class="divTableCell">{{Failure.date}}</div>
-      <div class="divTableCell">{{Failure.failure}}</div>
-      <div class="divTableCell">{{Failure.zone}}</div>
-      <div class="divTableCell">{{Failure.failureDesc}}</div>
-      <div class="divTableCell">{{Failure.solved}}</div>
-      <div class="divTableCell">{{Failure.annotations}}</div>
+      <div class="divTableCell">{{Failure.Alarma_Id_Alarma}}</div>
+      <div class="divTableCell">{{Failure.Sensor_Id_Sensor}}</div>
+      <div class="divTableCell">{{Failure.Fecha_Hora_LogAlarma}}</div>
+      <div class="divTableCell">{{Failure.Mensaje}}</div>
+      <div class="divTableCell">{{Failure.Usuario_Proceso_LogAlarma}}</div>
+      <div class="divTableCell">{{Failure.Nom_Zona}}</div>
+      <div class="divTableCell">{{Failure.Descripcion_LogAlarma}}</div>
+      <div class="divTableCell">{{Failure.Estado_LogAlarma}}</div>
+      <div class="divTableCell">{{Failure.Anotaciones_LogAlarma}}</div>
+      <div class="divTableCell">{{Failure.Fecha_Resol}}</div>
     </div>
   </div>
 </div>

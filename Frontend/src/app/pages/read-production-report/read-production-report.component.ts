@@ -17,8 +17,9 @@ export class ReadProductionReportComponent implements OnInit {
     this.reportService.getProduction().subscribe(
       res => {
         this.reports = res;
+        console.log(this.reports[1])
       },
-      err => console.log()
+      err => console.log(err)
     )
   }
 }

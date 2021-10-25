@@ -1,14 +1,15 @@
 import { Router } from "express";
 import { failureController } from '../controllers/reportsFailureControl';
+import {startCheckListController} from "../controllers/startCheckListController";
 
-class ReportsFailureRoutes{
+class StartChekListRoutes{
     public router: Router = Router();
 
     constructor(){
         this.config();
     }
     config(): void{
-        this.router.get('/', failureController.list);
+        this.router.get('/open', startCheckListController.hopperLidState);
         this.router.get('/alarm', failureController.alarm);
         this.router.get('/:id', failureController.getOne);
         this.router.post('/', failureController.create);
@@ -16,5 +17,5 @@ class ReportsFailureRoutes{
         this.router.delete('/:id',failureController.delete);
     }
 }
-const failureProductRoutes = new ReportsFailureRoutes();
-export default failureProductRoutes.router;
+const starCheckListRoutes = new StartChekListRoutes();
+export default starCheckListRoutes.router;

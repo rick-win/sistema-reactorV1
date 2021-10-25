@@ -1,10 +1,10 @@
 export interface Process{
-  id?: number;
-  reportTime?: Date;
-  date: Date;
-  operator: string;
-  powerVerify: boolean;
-  closeVerify: boolean;
-  success: boolean;
-  annotations: string;
+  Id_Proceso?: number;
+  reportTime_Proceso?: Date;
+  date_Proceso: Date;
+  operator_Proceso: string;
+  powerVerify_Proceso: boolean;
+  closeVerify_Proceso: boolean;
+  success_Proceso: boolean;
+  annotations_Proceso: string;
 }

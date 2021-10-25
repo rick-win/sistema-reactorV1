@@ -4,13 +4,20 @@ import pool from "../database";
 
 class ReportsProductionController {
     public async list (req: Request, res: Response){
-        const product = await pool.query('SELECT * FROM produccion');
+        const product = await pool.query('SELECT * FROM Reporte_Proceso');
         res.json(product);
+    }
+
+    public async tryDb(req: Request, res: Response){
+        const product = await pool.query('describe Alarma');
+        res.json(product);
+        console.log(res)
+        console.log('trying')
     }
 
     public async getOne(req: Request, res: Response): Promise<any>{
         const { id } = req.params;
-        const product = await pool.query('SELECT * FROM producto_Log WHERE Id_Product = ?', [id]);
+        const product = await pool.query('SELECT * FROM Produccion WHERE Id_Produccion = ?', [id]);;
         if (product.length > 0 ){
             return res.json(product[0]);
         }

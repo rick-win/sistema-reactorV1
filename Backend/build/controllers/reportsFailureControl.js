@@ -17,15 +17,20 @@ const database_1 = __importDefault(require("../database"));
 class ReportsFailureController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const product = yield database_1.default.query('SELECT * FROM log_alarma');
+            const product = yield database_1.default.query('SELECT * FROM Log_Alarma');
             res.json(product);
         });
     }
-    getRange(req, res) {
+    alarm(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { starDate } = req.params;
-            const { endDate } = req.params;
-            const product = yield database_1.default.query('SELECT * FROM producto_Log WHERE Fecha_Hora_LogAlarma I N (?,?)', [starDate, endDate]);
+            const product = yield database_1.default.query('SELECT Mensaje FROM Log_Alarma ORDER BY id DESC LIMIT 1');
+            res.json(product);
+        });
+    }
+    getOne(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const product = yield database_1.default.query('SELECT * FROM Log_Alarma WHERE Alarma_Id_Alarma = ?', [id]);
             if (product.length > 0) {
                 return res.json(product[0]);
             }
@@ -34,7 +39,7 @@ class ReportsFailureController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO usuario set ?', [req.body]);
+            yield database_1.default.query('INSERT INTO Log_Alarma set ?', [req.body]);
             res.json({ message: 'Usuario guardado' });
         });
     }
