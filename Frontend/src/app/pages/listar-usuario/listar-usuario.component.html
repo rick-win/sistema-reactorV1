@@ -8,22 +8,34 @@
             <table  class="table table-striped mt-5">
                 <thead>
                   <tr>
+                    <th>id_usuario</th>
                     <th>Nombres</th>
                     <th>Apellido</th>
+                    <th>Cargo/Rol</th>
                     <th>correos</th>
                     <th>Telefono</th>
-                    <th>Cargo/Rol</th>
-                    <th></th>
+                    <th>Acción</th>
+                    
+                    <th>
+                      <!-- <i [routerLink]="['/editar-producto', producto._id]" class="fas fa-edit text-primary"></i>
+                      <i (click)="eliminarProducto(producto._id)" class="fas fa-trash text-danger"></i> -->
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let empleado of ">
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  <tr *ngFor="let Usuarios of usuarios">
+                    <th scope="row">{{Usuarios.Id_Usuario}}</th>
+                    <td>{{Usuarios.Nom_Usuario}}</td>
+                    <td>{{Usuarios.Ape_Usuario}}</td>
+                    <td>{{Usuarios.Rol}}</td>
+                    <td>{{Usuarios.Email_Usuario}}</td>
+                    <td>{{Usuarios.Tel_Usuario}}</td>
+                    
                     <!-- <td>{{ empleado.salario | currency }}</td> -->
                     <td>
-                      <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]=""></i>
+                      <button class="btn btn-sm btn-danger" (click)="deleteUsuario(Usuarios.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                      <button class="btn btn-sm btn-danger" (click)="editUsuario(Usuarios.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                      <!-- <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]=""></i> -->
                       <!-- <i (click)="eliminarEmpleado(empleado.id)" class="fas fa-trash-alt fa-lg text-danger"></i> -->
                     </td>
                   </tr>
