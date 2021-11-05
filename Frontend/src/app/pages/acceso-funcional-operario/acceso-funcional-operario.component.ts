@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-acceso-funcional-operario',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccesoFuncionalOperarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   hopperState: boolean = false;
   hopperOpen: string = 'a';

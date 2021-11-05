@@ -19,7 +19,7 @@ class ReportsProductController {
 
     public async create (req: Request , res:Response): Promise<void>{
         await pool.query('INSERT INTO Registro_Producto set ?', [req.body]);
-        res.json({message: 'Usuario guardado'});
+        res.json({message: 'Product Registered'});
     }
 
     public async update( req: Request, res: Response): Promise<void>{

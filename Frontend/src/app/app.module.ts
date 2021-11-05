@@ -45,6 +45,8 @@ import { ReadProductionReportComponent } from './pages/read-production-report/re
 import { ReadProcessReportComponent } from './pages/read-process-report/read-process-report.component';
 import { ReadProductRegistryComponent } from './pages/read-product-registry/read-product-registry.component';
 import { ReadFailureReportComponent } from './pages/read-failure-report/read-failure-report.component';
+import { DirectiveResumeComponent } from './pages/directive-resume/directive-resume.component';
+import { DirectiveReportComponent } from './pages/directive-report/directive-report.component';
 
 
 @NgModule({
@@ -76,6 +78,8 @@ import { ReadFailureReportComponent } from './pages/read-failure-report/read-fai
     ReadProcessReportComponent,
     ReadProductRegistryComponent,
     ReadFailureReportComponent,
+    DirectiveResumeComponent,
+    DirectiveReportComponent,
 
 
 

@@ -42,7 +42,7 @@ class ReportsProductionController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO usuario set ?', [req.body]);
+            yield database_1.default.query('INSERT INTO Control_Produccion set ?', [req.body]);
             res.json({ message: 'Usuario guardado' });
         });
     }

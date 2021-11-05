@@ -21,20 +21,20 @@ export class AppComponent {
               private toaster: ToastrService) { }
 
   ngOnInit() {
-    this.intervalId = setInterval(() => this.alarmWatcher(), 3000);
+    // this.intervalId = setInterval(() => this.alarmWatcher(), 3000);
   }
-
-  alarmWatcher(): void {
-    this.reportsService.checkFailure().subscribe(
-      res => {
-        this.alarmCode = res;
-      },
-      err => console.log(err)
-    )
-    if (this.alarmCode.Mensaje != 0){
-      this.toaster.error('Error: ' + this.alarmCode.Mensaje)
-    }
-  }
+  //
+  // alarmWatcher(): void {
+  //   this.reportsService.checkFailure().subscribe(
+  //     res => {
+  //       this.alarmCode = res;
+  //     },
+  //     err => console.log(err)
+  //   )
+  //   if (this.alarmCode.Mensaje != 0){
+  //     this.toaster.error('Error: ' + this.alarmCode.Mensaje)
+  //   }
+  // }
 
   ngOnDestroy() {
     // For method 1

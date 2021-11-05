@@ -24,6 +24,7 @@ import {ReadProductRegistryComponent} from "./pages/read-product-registry/read-p
 import {ReporteProduccionOperarioComponent} from "./pages/reporte-produccion-operario/reporte-produccion-operario.component";
 import {ReporteProcesoOperarioComponent} from "./pages/reporte-proceso-operario/reporte-proceso-operario.component";
 import {ReadFailureReportComponent} from "./pages/read-failure-report/read-failure-report.component";
+import {DirectiveReportComponent} from "./pages/directive-report/directive-report.component";
 
 const routes: Routes = [
   {
@@ -105,8 +106,23 @@ const routes: Routes = [
   },
 
   {
+    path: 'readFailureShow',
+    component: AccesoFuncionalOperarioComponent
+  },
+
+  {
     path: 'readProduction',
     component: ReadProductionReportComponent
+  },
+
+  {
+    path: 'readProductionShow',
+    component: AccesoFuncionalOperarioComponent
+  },
+
+  {
+    path: 'reportResumeShow',
+    component: AccesoFuncionalDirectivoComponent
   },
 
   {
@@ -115,8 +131,23 @@ const routes: Routes = [
   },
 
   {
+    path: 'readProcessShow',
+    component: AccesoFuncionalOperarioComponent
+  },
+
+  {
     path: 'readProduct',
     component: ReadProductRegistryComponent
+  },
+
+  {
+    path: 'readProductShow',
+    component: AccesoFuncionalOperarioComponent
+  },
+
+  {
+    path: 'singleReport',
+    component: DirectiveReportComponent
   },
 
   {

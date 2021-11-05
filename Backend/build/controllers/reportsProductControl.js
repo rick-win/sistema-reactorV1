@@ -34,7 +34,7 @@ class ReportsProductController {
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO Registro_Producto set ?', [req.body]);
-            res.json({ message: 'Usuario guardado' });
+            res.json({ message: 'Product Registered' });
         });
     }
     update(req, res) {

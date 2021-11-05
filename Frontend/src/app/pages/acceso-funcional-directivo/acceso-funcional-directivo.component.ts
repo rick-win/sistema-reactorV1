@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DatatablesComponent } from '../datatables/datatables.component'; 
+import { Router} from "@angular/router";
+import { DatatablesComponent } from '../datatables/datatables.component';
 
 @Component({
   selector: 'app-acceso-funcional-directivo',
@@ -8,7 +9,7 @@ import { DatatablesComponent } from '../datatables/datatables.component';
 })
 export class AccesoFuncionalDirectivoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }

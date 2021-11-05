@@ -68,7 +68,7 @@
             </div>
           </li>
           <li>
-            <a href="#" class="nav-link px-3 active">
+            <a routerLink="/accesofuncional-operario" class="nav-link px-3 active">
               <span class="me-2"><i class="bi bi-speedometer2"></i></span>
               <span>Estado Maquina</span>
             </a>
@@ -217,13 +217,13 @@
             <div class="collapse" id="log">
               <ul class="navbar-nav ps-3">
                 <li>
-                  <a routerLink="/readProduct" class="nav-link px-3 ">
+                  <a routerLink="/readProductShow" class="nav-link px-3 ">
                     <span class="me-2"><i class="bi bi-speedometer2"></i></span>
                     <span>Registros de Producto</span>
                   </a>
                 </li>
                 <li>
-                  <a routerLink = "/readProcess" class="nav-link px-3">
+                  <a routerLink = "/readProcessShow" class="nav-link px-3">
                     <span class="me-2"
                     ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -231,7 +231,7 @@
                   </a>
                 </li>
                 <li>
-                  <a routerLink = "/readProduction" class="nav-link px-3">
+                  <a routerLink = "/readProductionShow" class="nav-link px-3">
                     <span class="me-2"
                     ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -239,7 +239,7 @@
                   </a>
                 </li>
                 <li>
-                  <a routerLink = "/readFailure" class="nav-link px-3">
+                  <a routerLink = "/readFailureShow" class="nav-link px-3">
                     <span class="me-2"
                     ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -305,7 +305,23 @@
   </div>
   <!-- offcanvas -->
 
-  <main class="mt-5 pt-3 ctn-main" >
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProductShow'">
+    <app-read-product-registry></app-read-product-registry>
+  </div>
+
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProcessShow'">
+    <app-read-process-report></app-read-process-report>
+  </div>
+
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProductionShow'">
+    <app-read-production-report></app-read-production-report>
+  </div>
+
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readFailureShow'">
+    <app-read-failure-report></app-read-failure-report>
+  </div>
+
+  <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/accesofuncional-operario'">
     <div class="container-fuid">
       <div class="row">
         <div class="col-md-12 fw-bold fs-3">Dashboard</div>
@@ -317,7 +333,7 @@
 
     <div class="container-img">
         <img src="assets/planta1.png">
-        </div>
+    </div>
 
 
 

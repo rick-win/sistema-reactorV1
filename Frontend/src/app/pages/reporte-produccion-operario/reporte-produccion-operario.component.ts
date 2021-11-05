@@ -65,7 +65,7 @@ export class ReporteProduccionOperarioComponent implements OnInit {
     this.production.Tipo_Liquido = this.formulary.get('Tipo_Liquido')?.value
     this.production.Tipo_Solido = this.formulary.get('Tipo_Solido')?.value
     this.production.Tipo_Gas = this.formulary.get('Tipo_Gas')?.value
-    console.log(this.production)
+    // console.log(this.production)
   }
 
   ngOnInit(): void {

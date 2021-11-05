@@ -45,7 +45,7 @@ export class RegistroProductoComponent implements OnInit {
   }
 
   registerProduct(){
-    delete this.product.Id_Producto;
+    // delete this.product.Id_Producto;
     delete this.product.Fecha_Reporte;
     this.onSubmit()
     this.reportsService.registerProduct(this.product).subscribe(

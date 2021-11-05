@@ -20,6 +20,26 @@
     </div>
 
     <div class="form-group mb-3">
+      <label class="col-form-label">Tipo de material ingresado a tolva</label>
+      <input type="text" class="form-control" formControlName="hopperIn">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Cantidad de material ingresado a tolva</label>
+      <input type="number" class="form-control" formControlName="hopperAmount">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Unidad de medida del material ingresado a tolva</label>
+      <input type="text" class="form-control" formControlName="hopperMU">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Catalizador</label>
+      <input type="number" class="form-control" formControlName="catalyst">
+    </div>
+
+    <div class="form-group mb-3">
       <label class="col-form-label">Verificación de Encendido</label>
       <select class="form-select" aria-label="default Select Example" id="power" formControlName="powerVerify">
         <option value="true">Realizada</option>
@@ -41,6 +61,21 @@
         <option value="true">Exito</option>
         <option value="false">Fracaso</option>
       </select>
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Temperatura inicial</label>
+      <input type="text" class="form-control"  formControlName="temp">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Configuración inicial</label>
+      <input type="text" class="form-control" formControlName="config">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="col-form-label">Registro de producción</label>
+      <input type="text" class="form-control" formControlName="production">
     </div>
 
     <div class="mb-3">
