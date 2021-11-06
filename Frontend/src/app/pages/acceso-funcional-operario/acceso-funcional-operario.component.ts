@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-acceso-funcional-operario',
@@ -7,8 +8,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./acceso-funcional-operario.component.scss']
 })
 export class AccesoFuncionalOperarioComponent implements OnInit {
-
-  constructor(public router: Router) { }
 
   hopperState: boolean = false;
   hopperOpen: string = 'a';
@@ -22,6 +21,10 @@ export class AccesoFuncionalOperarioComponent implements OnInit {
   voidStatus: string = 'a';
   compresorPower: boolean = false;
   compresorStatus: string = 'a';
+  constructor(
+    private http : HttpClient,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
   }

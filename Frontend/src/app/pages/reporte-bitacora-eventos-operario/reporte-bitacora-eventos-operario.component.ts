@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule} from "@angular/forms";
 import {Failure} from "../../models/failure";
 import {ReportsManagerService} from "../../services/reports-manager.service";
+import { Component, OnDestroy,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-reporte-bitacora-eventos-operario',

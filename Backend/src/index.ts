@@ -1,4 +1,8 @@
 import express, {Application, Request, Response} from 'express';
+import usuariosRoutes from './routes/usuariosRoutes';
+import indexRoutes from './routes/indexRoutes'
+import tolvaRoutes from './routes/tolvaRoutes';
+import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 import pool from './database'
@@ -30,7 +34,7 @@ class Server{
         this.app.use(morgan('dev'));
         this.app.use(cors());
         this.app.use(express.json());
-        this.app.use(express.urlencoded({extended:false}));
+        this.app.use(express.urlencoded({extended:true}));
     }
 
     routes(): void{
@@ -42,6 +46,9 @@ class Server{
         this.app.use('/sistemaReactor/failure', reportsFailureRoutes);
         this.app.use('/sistemaReactor/production', reportsProductionRoutes );
         this.app.use('/sistemaReactor/startCheckList', startCheckListRoutes );
+        this.app.use('/api/usuarios',usuariosRoutes);
+        this.app.use('/api/sensores', sensorFichaTecRoutes);
+        this.app.use('/api/tolva', tolvaRoutes);
     }
 
     start():void{

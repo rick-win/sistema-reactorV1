@@ -9,11 +9,18 @@
       >
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a
+      <a 
         class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
         href="#"
-        >Sistema Reactor</a
-      >
+        >
+        <img src="assets/Img/logoSena.png"  width="40" 
+        class="d-inline-block aling-top mr-2"/>
+        Sistema Reactor
+        <img src="assets/Img/logo_astin.png"  width="60" 
+        class="d-inline-block aling-top mr-8"/>
+        <img src="assets/Img/LogoSENNOVA.jpeg"  width="60" 
+        class="d-inline-block aling-top mr-2"/>
+    </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -165,14 +172,14 @@
                     <span>Tolva</span>
                   </a>
                 </li>
-                <li>
-                    <a routerLink = "/encender-equipos" class="nav-link px-3">
+                <!-- <li>
+                    <a routerLink = "" class="nav-link px-3">
                       <span class="me-2"
                         ><i class="bi bi-speedometer2"></i
                       ></span>
                       <span>Bomba de Vacio</span>
                     </a>
-                  </li>
+                  </li> -->
 
               </ul>
             </div>
@@ -204,7 +211,7 @@
             <a
               class="nav-link px-3 sidebar-link"
               data-bs-toggle="collapse"
-              href="#log"
+              href="#reporteOperario"
             >
               <span class="me-2"><i class="bi bi-layout-split"></i></span>
               <span>Reportes</span>
@@ -321,7 +328,20 @@
     <app-read-failure-report></app-read-failure-report>
   </div>
 
-  <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/accesofuncional-operario'">
+<!-- contenido registro dtemperaturas-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/perfilTemperatura'">
+  <app-temperaturas></app-temperaturas>
+</div>
+
+<!-- contenido registro EncenderEquipos-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/encender-equipos'">
+  <app-encender-equipos></app-encender-equipos>
+</div>
+
+<!--Contenido acceso funcional Operario-->
+  <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/accesofuncional-operario'" >
     <div class="container-fuid">
       <div class="row">
         <div class="col-md-12 fw-bold fs-3">Dashboard</div>

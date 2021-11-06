@@ -47,6 +47,12 @@ import { ReadProductRegistryComponent } from './pages/read-product-registry/read
 import { ReadFailureReportComponent } from './pages/read-failure-report/read-failure-report.component';
 import { DirectiveResumeComponent } from './pages/directive-resume/directive-resume.component';
 import { DirectiveReportComponent } from './pages/directive-report/directive-report.component';
+import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
+import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
+import { AdministradorComponent } from './pages/administrador/administrador.component';
+import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.component';
+
+
 
 
 @NgModule({
@@ -83,6 +89,11 @@ import { DirectiveReportComponent } from './pages/directive-report/directive-rep
 
 
 
+    EstadisticasProcesoDirectivoComponent,
+    EstadisticasProduccionDirectivoComponent,
+    AdministradorComponent,
+    ListarUsuarioComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -94,7 +105,8 @@ import { DirectiveReportComponent } from './pages/directive-report/directive-rep
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    
   ],
   providers: [GestionarUsuarioService, ReportsManagerService],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-simulacion',
@@ -10,7 +11,9 @@ export class SimulacionComponent implements OnInit {
 
   formularioInsmo: FormGroup;
   formularioZna: FormGroup;
-  constructor() { 
+  constructor(
+    public router: Router
+  ) { 
     this.formularioInsmo = new FormGroup({});
     this.formularioZna = new FormGroup({});
   }

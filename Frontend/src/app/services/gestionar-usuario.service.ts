@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class GestionarUsuarioService {
 
-  API_URI = 'http://localhost:3000/sistemaReactor';
+  API_URI = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
 
@@ -27,10 +27,11 @@ export class GestionarUsuarioService {
   }
 
   saveUsuario(usuario: Usuario){
-    return this.http.post(`${this.API_URI}/usuarios`, usuario)
+    console.log(`${this.API_URI}/usuarios`);
+    return this.http.post(`${this.API_URI}/usuarios`, usuario);
   }
 
-  updateUsuario(id: string, updatedGame: Usuario){
-    return this.http.put(`${this.API_URI}/usuarios/${id}`, updatedGame)
+  updateUsuario(id: string, updatedUsuario: Usuario){
+    return this.http.put(`${this.API_URI}/usuarios/${id}`, updatedUsuario);
   }
 }

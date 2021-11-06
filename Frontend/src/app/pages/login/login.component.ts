@@ -25,8 +25,6 @@ export class LoginComponent implements OnInit {
     this.formulario = new FormGroup({});
    }
 
-
-
   ngOnInit(): void {
     this.crearFormulario();
   }

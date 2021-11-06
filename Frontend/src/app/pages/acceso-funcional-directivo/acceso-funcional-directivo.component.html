@@ -9,11 +9,18 @@
       >
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a
-        class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
-        href="#"
-        >Sistema Reactor</a
+      <a 
+      class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+      href="#"
       >
+      <img src="assets/Img/logoSena.png"  width="40" 
+      class="d-inline-block aling-top mr-2"/>
+      Sistema Reactor
+      <img src="assets/Img/logo_astin.png"  width="60" 
+      class="d-inline-block aling-top mr-8"/>
+      <img src="assets/Img/LogoSENNOVA.jpeg"  width="60" 
+      class="d-inline-block aling-top mr-2"/>
+    </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -53,6 +60,7 @@
     </div>
   </nav>
   <!-- top navigation bar -->
+
   <!-- offcanvas -->
   <div
     class="offcanvas offcanvas-start sidebar-nav bg-dark"
@@ -68,7 +76,7 @@
             </div>
           </li>
           <li>
-                <a routerLink="/accesofuncional-directivo" class="nav-link px-3 active">
+                <a routerLink ="/accesofuncional-directivo" class="nav-link px-3 active">
                   <span class="me-2"><i class="bi bi-speedometer2"></i></span>
                   <span>Estado Maquina</span>
                 </a>
@@ -80,26 +88,13 @@
                 </div>
               </li>
           <li>
-            <a
-            class="nav-link px-3 sidebar-link"
-            data-bs-toggle="collapse"
-            href="#simulacion"
-          >
-            <span class="me-2"><i class="bi bi-layout-split"></i></span>
 
-           <span>Simulacion</span>
-              <span class="ms-auto">
-                      <span class="right-icon">
-                      <i class="bi bi-chevron-down"></i>
-                      </span>
-              </span>
-          </a>
-            <a
-              class="nav-link px-3 sidebar-link"
-              data-bs-toggle="collapse"
-              href="#gestionarInsumos"
-            >
-              <span class="me-2"><i class="bi bi-layout-split"></i></span>
+            <li>
+              <a routerLink="/simulacion" class="nav-link px-3 active">
+                <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+                <span>Simulacion</span>
+              </a>
+            </li>
 
              <span>Gestionar Insumos</span>
                 <span class="ms-auto">

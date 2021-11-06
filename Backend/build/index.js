@@ -4,6 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const usuariosRoutes_1 = __importDefault(require("./routes/usuariosRoutes"));
+const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
+const tolvaRoutes_1 = __importDefault(require("./routes/tolvaRoutes"));
+const sensorFichaTecRoutes_1 = __importDefault(require("./routes/sensorFichaTecRoutes"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 //Routes imports
@@ -26,7 +30,7 @@ class Server {
         this.app.use((0, morgan_1.default)('dev'));
         this.app.use((0, cors_1.default)());
         this.app.use(express_1.default.json());
-        this.app.use(express_1.default.urlencoded({ extended: false }));
+        this.app.use(express_1.default.urlencoded({ extended: true }));
     }
     routes() {
         this.app.use('/', indexRoutes_1.default);
@@ -37,6 +41,9 @@ class Server {
         this.app.use('/sistemaReactor/failure', reportsFailureRoutes_1.default);
         this.app.use('/sistemaReactor/production', reportsProductionRoutes_1.default);
         this.app.use('/sistemaReactor/startCheckList', startCheckListRoutes_1.default);
+        this.app.use('/api/usuarios', usuariosRoutes_1.default);
+        this.app.use('/api/sensores', sensorFichaTecRoutes_1.default);
+        this.app.use('/api/tolva', tolvaRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

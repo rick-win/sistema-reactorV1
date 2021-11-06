@@ -1,19 +1,4 @@
-
-.contenedor-formulario{
-    display: flex;
-    justify-content: center;
-    width: 70%;
-    height: 80vh;
-    position: absolute;
-    left: 15%;
-    margin: 0 auto;
-  }
-
-  form {
-      width: 60%;
-  }
-
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 
 body,
@@ -57,14 +42,13 @@ button {
     width: 17%;
     height: calc(100% - var(--topNavbarHeight));
   }
-  .ctn-main {
-      width: 82%;
-      float: right;
+
+.ctn-main {
+  width: 60%;
+  float: right;
+}
+
+.imgLS {
+    max-width: 10%;
   }
-
-  .barra-progreso{
-    width: 95%;
-    
- }
-
 }
