@@ -23,9 +23,7 @@ export class LoginComponent implements OnInit {
     private authServices: AuthFireService
     ) {
     this.formulario = new FormGroup({});
-    
    }
-
 
   ngOnInit(): void {
     this.crearFormulario();
@@ -51,9 +49,9 @@ LogOut(){
   this.authServices.LogOut();
   this.authServices.usuario = new User();
 }
- 
+
   public recuperarPassword() {
-    
+
   }
 
 }

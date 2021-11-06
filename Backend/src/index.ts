@@ -1,10 +1,22 @@
-import express, {Application} from 'express';
+import express, {Application, Request, Response} from 'express';
 import usuariosRoutes from './routes/usuariosRoutes';
 import indexRoutes from './routes/indexRoutes'
 import tolvaRoutes from './routes/tolvaRoutes';
 import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
+import pool from './database'
+import {request, response} from 'express'
+
+//Routes imports
+import indexRoutes from './routes/indexRoutes'
+import usuariosRoutes from './routes/usuariosRoutes';
+import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
+import reportsProductRoutes from "./routes/reportsProductRoutes";
+import reportsFailureRoutes from "./routes/reportsFailureRoutes";
+import reportsProcessRoutes from "./routes/reportsProcessRoutes";
+import reportsProductionRoutes from "./routes/reportsProductionRoutes";
+import startCheckListRoutes from "./routes/startCheckListRoutes";
 
 
 class Server{
@@ -27,6 +39,13 @@ class Server{
 
     routes(): void{
         this.app.use('/',indexRoutes);
+        this.app.use('/sistemaReactor/usuarios',usuariosRoutes);
+        this.app.use('/sistemaReactor/sensores', sensorFichaTecRoutes);
+        this.app.use('/sistemaReactor/product', reportsProductRoutes);
+        this.app.use('/sistemaReactor/process', reportsProcessRoutes);
+        this.app.use('/sistemaReactor/failure', reportsFailureRoutes);
+        this.app.use('/sistemaReactor/production', reportsProductionRoutes );
+        this.app.use('/sistemaReactor/startCheckList', startCheckListRoutes );
         this.app.use('/api/usuarios',usuariosRoutes);
         this.app.use('/api/sensores', sensorFichaTecRoutes);
         this.app.use('/api/tolva', tolvaRoutes);
@@ -36,6 +55,7 @@ class Server{
         this.app.listen(this.app.get('port'), () => {
             console.log('server on port', this.app.get('port'))
         });
+        console.log("Done")
     }
 
 }

@@ -16,6 +16,15 @@ import { DatatablesComponent } from './pages/datatables/datatables.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { RegistroProductoComponent } from './pages/registro-producto/registro-producto.component';
 import { SimulacionComponent} from './pages/simulacion/simulacion.component';
+import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bienbenida.component';
+import {ReporteBitacoraEventosOperarioComponent} from "./pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component";
+import {ReadProductionReportComponent} from "./pages/read-production-report/read-production-report.component";
+import {ReadProcessReportComponent} from "./pages/read-process-report/read-process-report.component";
+import {ReadProductRegistryComponent} from "./pages/read-product-registry/read-product-registry.component";
+import {ReporteProduccionOperarioComponent} from "./pages/reporte-produccion-operario/reporte-produccion-operario.component";
+import {ReporteProcesoOperarioComponent} from "./pages/reporte-proceso-operario/reporte-proceso-operario.component";
+import {ReadFailureReportComponent} from "./pages/read-failure-report/read-failure-report.component";
+import {DirectiveReportComponent} from "./pages/directive-report/directive-report.component";
 import { ReporteProduccionOperarioComponent } from './pages/reporte-produccion-operario/reporte-produccion-operario.component';
 import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operario/reporte-proceso-operario.component';
 import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
@@ -46,59 +55,147 @@ const routes: Routes = [
     path: 'recuperarPassword',
     component: RecuperarPasswordComponent
   },
-  
+
   {
     path: 'gestionarUsuario',
     component: AdministradorComponent,
   },
 
+  {
+    path: 'monitoreo',
+    component: MonitoreoComponent
+  },
 
-{
-  path: 'monitoreo',
-  component: MonitoreoComponent
-},
+  {
+    path: 'perfilTemperatura',
+    component: TemperaturasComponent
+  },
 
+  {
+    path: 'presion',
+    component: PresionComponent
+  },
+
+  {
+    path: 'encender-equipos',
+    component: EncenderEquiposComponent,
+  },
+
+  {
+    path: 'accesofuncional-tecnico',
+    component: AccesoFuncionalTecnicoComponent,
+  },
+
+
+  {
+    path: 'accesofuncional-directivo',
+    component: AccesoFuncionalDirectivoComponent,
+  },
+
+  {
+    path: 'accesofuncional-operario',
+    component: AccesoFuncionalOperarioComponent,
+  },
+
+  {
+    path: 'dataTable',
+    component: DatatablesComponent,
+  },
+
+  {
+    path: 'Navbar',
+    component: NavbarComponent,
+  },
+
+  {
+    path: 'readFailure',
+    component: ReadFailureReportComponent
+  },
+
+  {
+    path: 'readFailureShow',
+    component: AccesoFuncionalOperarioComponent
+  },
+
+  {
+    path: 'readProduction',
+    component: ReadProductionReportComponent
+  },
+
+  {
+    path: 'readProductionShow',
+    component: AccesoFuncionalOperarioComponent
+  },
 {
   path: 'perfilTemperatura',
   component: AccesoFuncionalOperarioComponent
 },
 
-{
-  path: 'presion',
-  component: PresionComponent
-},
+  {
+    path: 'reportResumeShow',
+    component: AccesoFuncionalDirectivoComponent
+  },
 
+  {
+    path: 'readProcess',
+    component: ReadProcessReportComponent
+  },
 {
   path: 'encender-equipos',
   component: AccesoFuncionalOperarioComponent,
 },
 
-{
-  path: 'accesofuncional-tecnico',
-  component: AccesoFuncionalTecnicoComponent,
-},
+  {
+    path: 'readProcessShow',
+    component: AccesoFuncionalOperarioComponent
+  },
 
+  {
+    path: 'readProduct',
+    component: ReadProductRegistryComponent
+  },
 
-{
-  path: 'accesofuncional-directivo',
-  component: AccesoFuncionalDirectivoComponent,
-},
+  {
+    path: 'readProductShow',
+    component: AccesoFuncionalOperarioComponent
+  },
 
-{
-  path: 'accesofuncional-operario',
-  component: AccesoFuncionalOperarioComponent,
-},
+  {
+    path: 'singleReport',
+    component: DirectiveReportComponent
+  },
 
-{
-  path: 'dataTable',
-  component: DatatablesComponent,
-},
+  {
+    path: 'registroProducto',
+    component: RegistroProductoComponent
+  },
 
-{
-  path: 'Navbar',
-  component: NavbarComponent,
-},
+  {
+    path: 'productionRegister',
+    component: ReporteProduccionOperarioComponent
+  },
 
+  {
+    path: 'processRegister',
+    component: ReporteProcesoOperarioComponent
+  },
+
+  {
+    path: 'failureRegister',
+    component: ReporteBitacoraEventosOperarioComponent
+  },
+
+  {
+    path: 'simulacion',
+    component: SimulacionComponent,
+  },
+
+  {
+    path: 'saludoEntrada',
+    component: SaludoBienbenidaComponent,
+  }
+
+  ];
 {
   path: 'registroProducto',
   component: AccesoFuncionalOperarioComponent,
@@ -149,8 +246,8 @@ const routes: Routes = [
 
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+  @NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }

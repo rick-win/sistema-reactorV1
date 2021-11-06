@@ -1,0 +1,88 @@
+<div class="container-sm ">
+
+  <div class="row text-center ">
+    <img src="assets/Img/logoSena.png"
+         class="imgLS d-inline-block col mr-2"/>
+    <h3 class="col">Reporte de Producto</h3>
+    <img src="assets/Img/LogoGIDEMP.jpg"
+         class="imgLS d-inline-block  col mr-2 float-end"/>
+  </div><hr>
+</div>
+<div class="container text-center">
+
+  <div class="row">
+    <div class="col mb-3 ">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="form-group col-sm-3">
+            <label  class="form-label">Fecha Inicio:</label>
+            <input class="form-control" type="datetime-local" class="dateadded form-control">
+          </div>
+          <div class="form-group col-sm-3">
+            <label  class="form-label">Hasta:</label>
+            <input class="form-control" type="datetime-local" class="dateadded form-control">
+          </div>
+
+          <div class="form-group col-sm-6 mt-3 ">
+            <label  class="form-label mr-5">Generar Reporte:</label>
+            <button type ="button" class="btn btn-danger "><i class="fa fa-print"></i>  PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <table datatable  id="dataTables-example" class="table table-striped table-bordered table-sm row-border hover">
+    <thead>
+    <tr>
+      <th>Nuemro de Reporte</th>
+      <th>Fecha/hora</th>
+      <th>Tipo Producto</th>
+      <th>Sub-producto</th>
+      <th>Cantidad</th>
+      <th>Unidad de Medida</th>
+      <th>Detalle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let Product of reports">
+      <td>{{Product.Id_Producto}}</td>
+      <td>{{Product.Fecha_Reporte}}</td>
+      <td>{{Product.Tipo}}</td>
+      <td>{{Product.Sub_Producto}}</td>
+      <td>{{Product.Can_Producto}}</td>
+      <td>{{Product.Unidad_Medida}}</td>
+      <td>{{Product.Detalle}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!--<div class="divTable blueTable">-->
+<!--  <div class="divTableHeading">-->
+<!--    <div class="divTableRow">-->
+<!--      <div class="divTableHead">Número de Reporte</div>-->
+<!--      <div class="divTableHead">Fecha De Reporte</div>-->
+<!--      <div class="divTableHead">Tipo de producto</div>-->
+<!--      <div class="divTableHead">Cantidad</div>-->
+<!--      <div class="divTableHead">Unidad de Medida</div>-->
+<!--      <div class="divTableHead">Subproducto</div>-->
+<!--      <div class="divTableHead">Detalle</div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="divTableBody" *ngFor="let Product of reports">-->
+<!--    <div class="divTableRow">-->
+<!--      <div class="divTableCell">{{Product.Id_Producto}}</div>-->
+<!--      <div class="divTableCell">{{Product.Fecha_Reporte}}</div>-->
+<!--      <div class="divTableCell">{{Product.Tipo}}</div>-->
+<!--      <div class="divTableCell">{{Product.Can_Producto}}</div>-->
+<!--      <div class="divTableCell">{{Product.Unidad_Medida}}</div>-->
+<!--      <div class="divTableCell">{{Product.Sub_Producto}}</div>-->
+<!--      <div class="divTableCell">{{Product.Detalle}}</div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

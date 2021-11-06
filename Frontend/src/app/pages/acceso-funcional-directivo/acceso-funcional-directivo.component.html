@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse" id="topNavBar">
         <form class="d-flex ms-auto my-3 my-lg-0">
           <div class="input-group">
-            
+
           </div>
         </form>
         <ul class="navbar-nav">
@@ -49,11 +49,11 @@
             >
               Usuario <i class="bi bi-person-fill"></i>
             </a>
-  
+
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby = "navbarDropdown">
               <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
             </ul>
-  
+
           </li>
         </ul>
       </div>
@@ -84,7 +84,7 @@
               <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
               <li>
                 <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                  Interface
+                  Interfaz
                 </div>
               </li>
           <li>
@@ -96,146 +96,198 @@
               </a>
             </li>
 
-                <!-- <a
-                class="nav-link px-3 sidebar-link"
-                routerLink="/simulacion"
-                >
-                <span class="me-2"><i class="bi bi-layout-split"></i></span>
+             <span>Gestionar Insumos</span>
+                <span class="ms-auto">
+                        <span class="right-icon">
+                        <i class="bi bi-chevron-down"></i>
+                        </span>
+                </span>
+            </a>
+            <div class="collapse" id="gestionarInsumos">
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a href="#" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Tipo</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/encender-equipos" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Cantidad</span>
+                  </a>
+                </li>
 
-              <span>Simulacion</span>
-                  <span class="ms-auto">
-                          <span class="right-icon">
-                          <i class="bi bi-chevron-down"></i>
-                          </span>
-                  </span>
-              </a> -->
-            
-                 
-         
-            <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
-            <li>
-              <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                Addons
-              </div>
-            </li>
-         
-              <li>
-                <a
-                  class="nav-link px-3 sidebar-link"
-                  data-bs-toggle="collapse"
-                  href="#reporteDirectivo"
-                >
-                  <span class="me-2"><i class="bi bi-layout-split"></i></span>
-                  <span>Estadisticas</span>
-                  <span class="ms-auto">
-                    <span class="right-icon">
-                      <i class="bi bi-chevron-down"></i>
-                    </span>
-                  </span>
-                </a>
-                <div class="collapse" id="reporteDirectivo">
-                  <ul class="navbar-nav ps-3">
-                    <li>
-                      <a class="nav-link px-3" href="#" routerLink = "/estadisticasProcesoDirectivo" >
-                        <span class="me-2"
-                          ><i class="bi bi-speedometer2"></i
-                        ></span>
-                        <span>Proceso</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a routerLink="/estadisticasProduccionDirectivo" class="nav-link px-3">
-                        <span class="me-2"
-                          ><i class="bi bi-speedometer2"></i
-                        ></span>
-                        <span>Produccion</span>
-                      </a>
-                    </li>
-                  
-                  </ul>
-                </div>
-              </li>
-        </ul>
+              </ul>
+            </div>
+          </li>
+          <li>
+          <a routerLink = "/reportResumeShow" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+            <span>Reporte y Resumen</span>
+          </a>
+        </li>
+          <li>
+            <a
+              class="nav-link px-3 sidebar-link"
+              data-bs-toggle="collapse"
+              href="#iniciar"
+            >
+              <span class="me-2"><i class="bi bi-layout-split"></i></span>
+              <span>Gestionar Zona</span>
+              <span class="ms-auto">
+                <span class="right-icon">
+                  <i class="bi bi-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+            <div class="collapse" id="iniciar">
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a routerLink = "/temperaturas" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Zona A</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/temperaturas" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Zona B</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/temperaturas" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Zona C</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/temperaturas" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Zona D</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/temperaturas" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Zona E</span>
+                  </a>
+
+                </li>
+                <li>
+                  <a routerLink = "/temperaturas" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Zona F</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/presion" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Desplegar criterios</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+              Addons
+            </div>
+          </li>
+
+          <li>
+            <a
+              class="nav-link px-3 sidebar-link"
+              data-bs-toggle="collapse"
+              href="#reporteDesempeño"
+            >
+              <span class="me-2"><i class="bi bi-layout-split"></i></span>
+              <span>Estadisticas</span>
+              <span class="ms-auto">
+                <span class="right-icon">
+                  <i class="bi bi-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+            <div class="collapse" id="reporteDesempeño">
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a routerLink = "#" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Proceso</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="#" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Produccion</span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </li>
+          </ul>
       </nav>
     </div>
   </div>
   <!-- offcanvas -->
 
 
-  <!-- contenido estadisticas proceso directivo-->
-
-  <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/estadisticasProcesoDirectivo'">
-    <app-estadisticas-proceso-directivo></app-estadisticas-proceso-directivo>
-  </div> 
-
-   <!-- contenido estadisticas produccion directivo-->
-
-   <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/estadisticasProduccionDirectivo'">
-    <app-estadisticas-produccion-directivo></app-estadisticas-produccion-directivo>
-  </div> 
-
-  <!-- contenido simulacion directivo -->
-
-  <div class="ctn-main" *ngIf="router.url === '/simulacion'">
-    <app-simulacion></app-simulacion>
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/reportResumeShow'">
+    <app-directive-resume></app-directive-resume>
   </div>
 
-  <!--Contenido acceso funcional directivo-->
-  <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/accesofuncional-directivo'" >
-
-    
-        
-    <div class="container-fuid">
-          <div class="row">
-                  <div class="col-md-12 fw-bold fs-3">Dashboard</div>
-          </div>
+<main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/accesofuncional-directivo'">
+  <div class="container-fuid">
+    <div class="row">
+      <div class="col-md-12 fw-bold fs-3">Dashboard</div>
     </div>
-        
-    <div class="container">
-      <div class="row">
-          <div class="col-8">
-                  
-              <div class="container-img">
-                <img src="assets/planta1.png">
-              </div>
-                
-          </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="container-img">
+        <img src="assets/planta1.png">
+      </div>
 
 
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-uppercase mb-1">Estado Maquina</div>
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Encendida/Apagada</div>
-                    <div class="mt-2 mb-0 text-muted text-xs">
-                      <span class="text-success mr-2"> 20.4%</span>
-                      
-                    </div>
-                  </div>
-                  <!-- <div class="col-auto">
-                    <i class="fas fa-users fa-2x text-info"></i>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        
 
-          <div class=row>
-                <h5>progreso del proceso</h5>
-                <div class="row barra-progreso">
-                    <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                </div>
+      <div class= "row mt-3">
+        <h5>progreso del proceso</h5>
+        <div class="row barra-progreso">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
           </div>
-          </div>
+        </div>
+      </div>
     </div>
-  
-        <!-- <div>
-          <app-datatables></app-datatables>
-        </div>  -->
-        
+  </div>
 </main>

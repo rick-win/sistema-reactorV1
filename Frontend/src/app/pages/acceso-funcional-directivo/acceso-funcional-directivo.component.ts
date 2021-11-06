@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatatablesComponent } from '../datatables/datatables.component'; 
+import { Router} from "@angular/router";
+import { DatatablesComponent } from '../datatables/datatables.component';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acceso-funcional-directivo',

@@ -1,5 +1,6 @@
 import mysql from 'promise-mysql';
 import keys from './keys';
+import reportsFailureRoutes from "./routes/reportsFailureRoutes"; reportsFailureRoutes
 
 const pool = mysql.createPool(keys.database);
 

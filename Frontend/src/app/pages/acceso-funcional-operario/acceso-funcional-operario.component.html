@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse" id="topNavBar">
         <form class="d-flex ms-auto my-3 my-lg-0">
           <div class="input-group">
-            
+
           </div>
         </form>
         <ul class="navbar-nav">
@@ -49,11 +49,11 @@
             >
               Usuario <i class="bi bi-person-fill"></i>
             </a>
-  
+
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby = "navbarDropdown">
               <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
             </ul>
-  
+
           </li>
         </ul>
       </div>
@@ -84,12 +84,10 @@
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-              Interface
+              Interfaz
             </div>
           </li>
-  
-          
-  
+
           <li>
             <a
               class="nav-link px-3 sidebar-link"
@@ -107,12 +105,64 @@
             <div class="collapse" id="parametrosI">
               <ul class="navbar-nav ps-3">
                 <li>
-                  <a routerLink ="/encender-equipos" class="nav-link px-3">
+                  <a (click)="check()" class="nav-link px-3" data-bs-toggle="collapse" href="#checkList">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
                     <span>Verificar Encendido</span>
                   </a>
+                  <div class="collapse" id="checkList">
+                    <ul class="navbar-nav ps-3">
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                            ><i class="bi bi-speedometer2"></i
+                            ></span>
+                          <span>Cierre de tolva: {{hopperOpen}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de energía: {{powerOn}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de carga: {{charged}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de Chiller: {{chillerStatus}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de bomba de vacio: {{voidStatus}}</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link px-3">
+                          <span class="me-2"
+                          ><i class="bi bi-speedometer2"></i
+                          ></span>
+                          <span>Estado de compresor: {{compresorStatus}}</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li>
                   <a routerLink = "/encender-equipos" class="nav-link px-3">
@@ -134,7 +184,7 @@
               </ul>
             </div>
           </li>
-  
+
           <li>
             <a href="#" class="nav-link px-3 ">
               <span class="me-2"><i class="bi bi-speedometer2"></i></span>
@@ -149,20 +199,14 @@
             </a>
           </li>
 
-          <li>
-            <a routerLink="/registroProducto" class="nav-link px-3 ">
-              <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-              <span>Registro de Productos</span>
-            </a>
-          </li>
-         
+
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-              Addons
+              Reportes
             </div>
           </li>
-         
+
           <li>
             <a
               class="nav-link px-3 sidebar-link"
@@ -177,33 +221,88 @@
                 </span>
               </span>
             </a>
-            <div class="collapse" id="reporteOperario">
+            <div class="collapse" id="log">
               <ul class="navbar-nav ps-3">
                 <li>
-                  <a routerLink = "/reporteProduccionOperario" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Produccion</span>
+                  <a routerLink="/readProductShow" class="nav-link px-3 ">
+                    <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+                    <span>Registros de Producto</span>
                   </a>
                 </li>
                 <li>
-                  <a routerLink="/reporteProcesoOperario" class="nav-link px-3">
+                  <a routerLink = "/readProcessShow" class="nav-link px-3">
                     <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
+                    ><i class="bi bi-speedometer2"></i
                     ></span>
-                    <span>Bitacora Operario</span>
+                    <span>Reportes de Proceso</span>
                   </a>
                 </li>
                 <li>
-                  <a routerLink="/reporteBitacoraIncidencias" class="nav-link px-3">
+                  <a routerLink = "/readProductionShow" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Reportes de Producción</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/readFailureShow" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Reportes de Bitácora de Falla</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          <li>
+            <a
+              class="nav-link px-3 sidebar-link"
+              data-bs-toggle="collapse"
+              href="#reporteDesempeño"
+            >
+              <span class="me-2"><i class="bi bi-layout-split"></i></span>
+              <span>Reportar</span>
+              <span class="ms-auto">
+                <span class="right-icon">
+                  <i class="bi bi-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+            <div class="collapse" id="reporteDesempeño">
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a routerLink="/registroProducto" class="nav-link px-3 ">
+                    <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+                    <span>Registrar de Productos</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/productionRegister" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
-                    <span>Bitacora Incidencias</span>
+                    <span>Reportar Producción</span>
                   </a>
                 </li>
-               
+                <li>
+                  <a routerLink="/processRegister" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Reportar Control de Proceso</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/failureRegister" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Reportar Falla</span>
+                  </a>
+                </li>
+
               </ul>
             </div>
           </li>
@@ -213,29 +312,21 @@
   </div>
   <!-- offcanvas -->
 
-<!-- contenido reporte produccion operario-->
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProductShow'">
+    <app-read-product-registry></app-read-product-registry>
+  </div>
 
-<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteProduccionOperario'">
-  <app-reporte-produccion-operario></app-reporte-produccion-operario>
-</div> 
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProcessShow'">
+    <app-read-process-report></app-read-process-report>
+  </div>
 
-<!-- contenido reporte proceso operario(bitacora)-->
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProductionShow'">
+    <app-read-production-report></app-read-production-report>
+  </div>
 
-<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteProcesoOperario'">
-  <app-reporte-proceso-operario></app-reporte-proceso-operario>
-</div> 
-
-<!-- contenido bitacora incidencias-->
-
-<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteBitacoraIncidencias'">
-  <app-reporte-bitacora-eventos-operario></app-reporte-bitacora-eventos-operario>
-</div> 
-
-<!-- contenido registro de productos-->
-
-<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/registroProducto'">
-  <app-registro-producto></app-registro-producto>
-</div> 
+  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readFailureShow'">
+    <app-read-failure-report></app-read-failure-report>
+  </div>
 
 <!-- contenido registro dtemperaturas-->
 
@@ -249,8 +340,6 @@
   <app-encender-equipos></app-encender-equipos>
 </div>
 
-
-
 <!--Contenido acceso funcional Operario-->
   <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/accesofuncional-operario'" >
     <div class="container-fuid">
@@ -258,16 +347,16 @@
         <div class="col-md-12 fw-bold fs-3">Dashboard</div>
       </div>
     </div>
-  
+
     <div class="container">
     <div class="row">
-     
+
     <div class="container-img">
         <img src="assets/planta1.png">
-        </div>
+    </div>
 
 
-    
+
     <div class= "row mt-3">
       <h5>progreso del proceso</h5>
       <div class="row barra-progreso">
@@ -278,5 +367,5 @@
     </div>
     </div>
   </div>
- 
+
   </main>

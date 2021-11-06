@@ -28,6 +28,7 @@ import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
 import { GestionarUsuarioService } from './services/gestionar-usuario.service';
 import { EncenderEquiposComponent } from './pages/encender-equipos/encender-equipos.component';
 import { AccesoFuncionalTecnicoComponent } from './pages/acceso-funcional-tecnico/acceso-funcional-tecnico.component';
+import { ReportsManagerService } from './services/reports-manager.service'
 
 import { DataTablesModule } from "angular-datatables";
 import { DatatablesComponent } from './pages/datatables/datatables.component';
@@ -39,6 +40,13 @@ import { ReporteProduccionOperarioComponent } from './pages/reporte-produccion-o
 import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operario/reporte-proceso-operario.component';
 import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
 import { SimulacionComponent } from './pages/simulacion/simulacion.component';
+import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bienbenida.component';
+import { ReadProductionReportComponent } from './pages/read-production-report/read-production-report.component';
+import { ReadProcessReportComponent } from './pages/read-process-report/read-process-report.component';
+import { ReadProductRegistryComponent } from './pages/read-product-registry/read-product-registry.component';
+import { ReadFailureReportComponent } from './pages/read-failure-report/read-failure-report.component';
+import { DirectiveResumeComponent } from './pages/directive-resume/directive-resume.component';
+import { DirectiveReportComponent } from './pages/directive-report/directive-report.component';
 import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
 import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
@@ -71,6 +79,16 @@ import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.co
     ReporteProcesoOperarioComponent,
     ReporteBitacoraEventosOperarioComponent,
     SimulacionComponent,
+    SaludoBienbenidaComponent,
+    ReadProductionReportComponent,
+    ReadProcessReportComponent,
+    ReadProductRegistryComponent,
+    ReadFailureReportComponent,
+    DirectiveResumeComponent,
+    DirectiveReportComponent,
+
+
+
     EstadisticasProcesoDirectivoComponent,
     EstadisticasProduccionDirectivoComponent,
     AdministradorComponent,
@@ -90,7 +108,7 @@ import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.co
     DataTablesModule,
     
   ],
-  providers: [GestionarUsuarioService],
+  providers: [GestionarUsuarioService, ReportsManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
