@@ -57,16 +57,16 @@ export class ReporteProcesoOperarioComponent implements OnInit {
     console.log(this.process)
   }
   ngOnInit(): void {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      language : {
-        url :'//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
-      }
-    };
-    this.http.get('http://dummy.restapiexample.com/api/v1/employees').subscribe((res:any) => {this.data = res.data
-    this.dtTrigger.next();
-    });  
+    // this.dtOptions = {
+    //   pagingType: 'full_numbers',
+    //   pageLength: 5,
+    //   language : {
+    //     url :'//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
+    //   }
+    // };
+    // this.http.get('http://dummy.restapiexample.com/api/v1/employees').subscribe((res:any) => {this.data = res.data
+    // this.dtTrigger.next();
+    // });  
   }
 
   registerProcess(){

@@ -16,7 +16,6 @@ import { DatatablesComponent } from './pages/datatables/datatables.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { RegistroProductoComponent } from './pages/registro-producto/registro-producto.component';
 import { SimulacionComponent} from './pages/simulacion/simulacion.component';
-import { SaludoBienbenidaComponent } from './pages/saludo-bienbenida/saludo-bienbenida.component';
 import {ReporteBitacoraEventosOperarioComponent} from "./pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component";
 import {ReadProductionReportComponent} from "./pages/read-production-report/read-production-report.component";
 import {ReadProcessReportComponent} from "./pages/read-process-report/read-process-report.component";
@@ -25,9 +24,9 @@ import {ReporteProduccionOperarioComponent} from "./pages/reporte-produccion-ope
 import {ReporteProcesoOperarioComponent} from "./pages/reporte-proceso-operario/reporte-proceso-operario.component";
 import {ReadFailureReportComponent} from "./pages/read-failure-report/read-failure-report.component";
 import {DirectiveReportComponent} from "./pages/directive-report/directive-report.component";
-import { ReporteProduccionOperarioComponent } from './pages/reporte-produccion-operario/reporte-produccion-operario.component';
-import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operario/reporte-proceso-operario.component';
-import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
+//import { ReporteProduccionOperarioComponent } from './pages/reporte-produccion-operario/reporte-produccion-operario.component';
+//import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operario/reporte-proceso-operario.component';
+//import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
 import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
 import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
@@ -190,12 +189,8 @@ const routes: Routes = [
     component: SimulacionComponent,
   },
 
-  {
-    path: 'saludoEntrada',
-    component: SaludoBienbenidaComponent,
-  }
 
-  ];
+ 
 {
   path: 'registroProducto',
   component: AccesoFuncionalOperarioComponent,
