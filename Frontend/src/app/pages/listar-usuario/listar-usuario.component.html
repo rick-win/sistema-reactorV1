@@ -12,7 +12,7 @@
                     <th>Nombres</th>
                     <th>Apellido</th>
                     <th>Cargo/Rol</th>
-                    <th>correos</th>
+                    <th>E-mail</th>
                     <th>Telefono</th>
                     <th>Acción</th>
                     
@@ -33,14 +33,16 @@
                     
                     <!-- <td>{{ empleado.salario | currency }}</td> -->
                     <td>
-                      <button class="btn btn-sm btn-danger" (click)="deleteUsuario(Usuarios.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                      <button class="btn btn-sm btn-danger" (click)="editUsuario(Usuarios.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                      <button class="btn btn-danger" (click)="deleteUsuario(Usuarios.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                      <!-- <button class="btn btn-sm btn-danger" (click)="editUsuario(Usuarios.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> -->
                       <!-- <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]=""></i> -->
                       <!-- <i (click)="eliminarEmpleado(empleado.id)" class="fas fa-trash-alt fa-lg text-danger"></i> -->
                     </td>
                   </tr>
                 </tbody>
+                
               </table>
+              <button class="btn btn-sm btn-danger" ><i class="fa fa-trash-o" aria-hidden="true"></i></button>
         </div>
     </div>
 </div>

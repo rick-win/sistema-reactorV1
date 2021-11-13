@@ -45,11 +45,9 @@
                         <div class="row">
                             
 
-                            <div [(ngModel)]="selectedOptions" *ngFor="let object of roles" formControlName="roles">
-                              <input type="checkbox"> {{object}}
+                            <div *ngFor="let object of roles">
+                              <input type="checkbox"  (change)="rolesSeleccionados(object)"> {{object.nombre}}
                            </div>
-
-                           
                         </div>
                     </div>
                 </div>
@@ -71,7 +69,7 @@
             <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registrarUsuario()">Registrar</button>
         </div>
         <!-- <p>ya tienes una cuenta? <a href="/login">inicia sesion</a></p> -->
-        
+         
 
     </form>
 </div>

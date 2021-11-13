@@ -14,7 +14,12 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
-  roles = ['Administrador', 'Supervisor', 'Operario', 'Tecnico'];
+  roles = [
+    { nombre: 'Administrador', id: 1}, 
+    { nombre: 'Supervisor', id: 2}, 
+    { nombre: 'Operario', id: 3}, 
+    { nombre: 'Tecnico', id: 4}
+  ]; 
 
 
 
@@ -34,7 +39,7 @@ export class RegistroComponent implements OnInit {
     roles:[]
   };
 
-
+  idRoles: string;
 
   constructor(
     private fb: FormBuilder,
@@ -43,6 +48,7 @@ export class RegistroComponent implements OnInit {
     private gestionarUsuarioService: GestionarUsuarioService
   ) {
     this.formularioReg = new FormGroup({});
+    this.idRoles = '';
    }
 
   ngOnInit(): void {
@@ -57,7 +63,6 @@ export class RegistroComponent implements OnInit {
       //cargo: [null, Validators.required],
       Contrasena_Usuario: [null, Validators.required],
       ConfirmContrasena: [null, Validators.required],
-      roles: [null, Validators.required],
     })
   }
 
@@ -66,24 +71,25 @@ export class RegistroComponent implements OnInit {
 
   public registrarUsuario() {
 
-    //delete this.usuario.ConfirmContrasena;
-    // const ObjEnviar =  {
-    //   ... this.formularioReg.get('ConfirmContrasena')?.value,
-    //   delete: this.usuario.ConfirmContrasena
-    // }
-    
+    delete this.formularioReg.value.ConfirmContrasena;
+    let objEnviar = {
+      ...this.formularioReg.value,
+      Rol: this.idRoles
+    }
+    console.log(objEnviar);
 
     const correo = this.formularioReg.get('Email_Usuario')?.value;
     const password = this.formularioReg.get('Contrasena_Usuario')?.value;
     
     if (this.correoValido) {
       if (this.passwordValido) {
-        this.authFireService.signUp(correo, password);
-        console.log('entra a guardar ');
-        this.gestionarUsuarioService.saveUsuario(this.formularioReg.value).subscribe //formularioReg.value
-            (
-              res=>{
+        this.gestionarUsuarioService.saveUsuario(objEnviar).subscribe //formularioReg.value
+            ((res: any)=>{
                 console.log(res)
+                if(res.message === 'Usuario guardado'){
+                  this.formularioReg.reset();
+                  this.idRoles = '';
+                }
               },
               err =>console.error(err)
             )
@@ -98,14 +104,18 @@ export class RegistroComponent implements OnInit {
     let entidadCorreo = this.formularioReg.get('Email_Usuario')?.value.split('@')[1];
     console.log(entidadCorreo);
     if (entidadCorreo === 'misena.edu.co') {
-      console.log('correo correcto');
       this.correoValido = true;
     } else {
-      console.log('mostrar alerta');
       this.correoValido = false;
     }
   }
 
+  public rolesSeleccionados(evento: any) {
+    console.log(evento);
+    this.idRoles = this.idRoles + ',' + evento.id;
+    console.log(this.idRoles);
+    
+  }
 
   public validarPassword() {
     const password = this.formularioReg.get('Contrasena_Usuario')?.value;

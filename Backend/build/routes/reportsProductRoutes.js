@@ -4,7 +4,7 @@ const express_1 = require("express");
 const reportsProductControl_1 = require("../controllers/reportsProductControl");
 class ReportsProductRoutes {
     constructor() {
-        this.router = (0, express_1.Router)();
+        this.router = express_1.Router();
         this.config();
     }
     config() {
