@@ -4,7 +4,7 @@ const express_1 = require("express");
 const reportsFailureControl_1 = require("../controllers/reportsFailureControl");
 class ReportsFailureRoutes {
     constructor() {
-        this.router = express_1.Router();
+        this.router = (0, express_1.Router)();
         this.config();
     }
     config() {

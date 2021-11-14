@@ -1,4 +1,13 @@
+.contenedor-formulario{
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  height: 90vh;
+  position: absolute;
+  left: 15%;
 
-.imgLS {
-    max-width: 10%;
-  }
+}
+
+form {
+  width: 50%;
+}

@@ -24,32 +24,34 @@ import {ReporteProduccionOperarioComponent} from "./pages/reporte-produccion-ope
 import {ReporteProcesoOperarioComponent} from "./pages/reporte-proceso-operario/reporte-proceso-operario.component";
 import {ReadFailureReportComponent} from "./pages/read-failure-report/read-failure-report.component";
 import {DirectiveReportComponent} from "./pages/directive-report/directive-report.component";
-//import { ReporteProduccionOperarioComponent } from './pages/reporte-produccion-operario/reporte-produccion-operario.component';
-//import { ReporteProcesoOperarioComponent } from './pages/reporte-proceso-operario/reporte-proceso-operario.component';
-//import { ReporteBitacoraEventosOperarioComponent } from './pages/reporte-bitacora-eventos-operario/reporte-bitacora-eventos-operario.component';
 import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proceso-directivo/estadisticas-proceso-directivo.component';
 import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
 import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.component';
 
 const routes: Routes = [
+
   {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
   },
+
   {
     path: 'login',
     component: LoginComponent
   },
+
   {
     path: 'registro',
     component: DashboardComponent
   },
+
   {
     path: 'dashboard',
     component: DashboardComponent
   },
+
   {
     path: 'recuperarPassword',
     component: RecuperarPasswordComponent
@@ -84,7 +86,6 @@ const routes: Routes = [
     path: 'accesofuncional-tecnico',
     component: AccesoFuncionalTecnicoComponent,
   },
-
 
   {
     path: 'accesofuncional-directivo',
@@ -125,10 +126,11 @@ const routes: Routes = [
     path: 'readProductionShow',
     component: AccesoFuncionalOperarioComponent
   },
-{
-  path: 'perfilTemperatura',
-  component: AccesoFuncionalOperarioComponent
-},
+
+  {
+    path: 'perfilTemperatura',
+    component: AccesoFuncionalOperarioComponent
+  },
 
   {
     path: 'reportResumeShow',
@@ -139,10 +141,11 @@ const routes: Routes = [
     path: 'readProcess',
     component: ReadProcessReportComponent
   },
-{
-  path: 'encender-equipos',
-  component: AccesoFuncionalOperarioComponent,
-},
+
+  {
+    path: 'encender-equipos',
+    component: AccesoFuncionalOperarioComponent,
+  },
 
   {
     path: 'readProcessShow',
@@ -189,56 +192,50 @@ const routes: Routes = [
     component: SimulacionComponent,
   },
 
+  {
+    path: 'registroProducto',
+    component: AccesoFuncionalOperarioComponent,
+  },
 
- 
-{
-  path: 'registroProducto',
-  component: AccesoFuncionalOperarioComponent,
-},
+  {
+    path: 'simulacion',
+    component: AccesoFuncionalDirectivoComponent,
+  },
 
-{
-  path: 'simulacion',
-  component: AccesoFuncionalDirectivoComponent,
-},
+  {
+    path: 'reporteProduccionOperario',
+    component: AccesoFuncionalOperarioComponent,
+  },
 
-{
-  path: 'reporteProduccionOperario',
-  component: AccesoFuncionalOperarioComponent,
-},
+  {
+    path: 'reporteProcesoOperario',
+    component: AccesoFuncionalOperarioComponent,
+  },
 
-{
-  path: 'reporteProcesoOperario',
-  component: AccesoFuncionalOperarioComponent,
-},
+  {
+    path: 'reporteBitacoraIncidencias',
+    component: AccesoFuncionalOperarioComponent,
+  },
 
-{
-  path: 'reporteBitacoraIncidencias',
-  component: AccesoFuncionalOperarioComponent,
-},
+  {
+    path: 'estadisticasProcesoDirectivo',
+    component: AccesoFuncionalDirectivoComponent,
+  },
 
-{
-  path: 'estadisticasProcesoDirectivo',
-  component: AccesoFuncionalDirectivoComponent,
-},
+  {
+    path: 'estadisticasProduccionDirectivo',
+    component: AccesoFuncionalDirectivoComponent,
+  },
 
-{
-  path: 'estadisticasProduccionDirectivo',
-  component: AccesoFuncionalDirectivoComponent,
-},
+  {
+    path: 'administrador',
+    component: AdministradorComponent
+  },
 
-{
-  path: 'administrador',
-  component: AdministradorComponent
-},
-
-{
-  path: 'lista-usuarios',
-  component: ListarUsuarioComponent
-}
-
-
-
-
+  {
+    path: 'lista-usuarios',
+    component: ListarUsuarioComponent
+  }
 ];
 
   @NgModule({
