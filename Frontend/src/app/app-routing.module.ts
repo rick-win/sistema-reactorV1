@@ -169,22 +169,22 @@ const routes: Routes = [
 
   {
     path: 'registroProducto',
-    component: RegistroProductoComponent
+    component: AccesoFuncionalOperarioComponent,
   },
 
   {
     path: 'productionRegister',
-    component: ReporteProduccionOperarioComponent
+    component: AccesoFuncionalOperarioComponent
   },
 
   {
     path: 'processRegister',
-    component: ReporteProcesoOperarioComponent
+    component: AccesoFuncionalOperarioComponent
   },
 
   {
     path: 'failureRegister',
-    component: ReporteBitacoraEventosOperarioComponent
+    component: AccesoFuncionalOperarioComponent
   },
 
   {

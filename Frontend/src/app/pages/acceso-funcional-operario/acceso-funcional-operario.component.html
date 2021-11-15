@@ -312,26 +312,46 @@
   </div>
   <!-- offcanvas -->
 
-  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProductShow'">
+  <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/readProductShow'">
     <app-read-product-registry></app-read-product-registry>
   </div>
 
-  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProcessShow'">
+  <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/readProcessShow'">
     <app-read-process-report></app-read-process-report>
   </div>
 
-  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readProductionShow'">
+  <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/readProductionShow'">
     <app-read-production-report></app-read-production-report>
   </div>
 
-  <div class="m-5 pt-3 ctn-main" *ngIf="router.url === '/readFailureShow'">
+  <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/readFailureShow'">
     <app-read-failure-report></app-read-failure-report>
   </div>
 
-<!-- contenido registro dtemperaturas-->
+  <!-- contenido registro de productos-->
 
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/registroProducto'">
+  <app-registro-producto></app-registro-producto>
+</div> 
+
+<!-- contenido registrar  produccion-->
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/productionRegister'">
+<app-reporte-produccion-operario></app-reporte-produccion-operario>
+</div>
+
+<!-- contenido registro dtemperaturas-->
 <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/perfilTemperatura'">
   <app-temperaturas></app-temperaturas>
+</div>
+
+<!-- contenido registrar control de proceso-->
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/processRegister'">
+<app-reporte-proceso-operario></app-reporte-proceso-operario>
+</div>
+
+<!-- contenido registrar FALLA O INCIDENCIA-->
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/failureRegister'">
+<app-reporte-bitacora-eventos-operario></app-reporte-bitacora-eventos-operario>
 </div>
 
 <!-- contenido registro EncenderEquipos-->
