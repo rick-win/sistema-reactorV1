@@ -175,7 +175,7 @@ const routes: Routes = [
   path: 'desarrollo',
   component: DashboardComponent
 }
-},
+,
 
 // Apunta A Operario
 {
