@@ -28,6 +28,10 @@ import { AgradecimientosComponent } from './pages/agradecimientos/agradecimiento
 import { CdmComponent } from './pages/cdm/cdm.component';
 import { UniautonomaComponent } from './pages/uniautonoma/uniautonoma.component';
 import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
+import { ReporteParcialMantenimientoComponent } from './pages/reporte-parcial-mantenimiento/reporte-parcial-mantenimiento.component';
+import { GestionarAlarmasComponent } from './pages/gestionar-alarmas/gestionar-alarmas.component';
+import { GestionarReglasAlarmaComponent } from './pages/gestionar-reglas-alarma/gestionar-reglas-alarma.component';
+
 
 const routes: Routes = [
   {
@@ -39,14 +43,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'registro',
-    component: DashboardComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
+  
   {
     path: 'recuperarPassword',
     component: RecuperarPasswordComponent
@@ -78,20 +75,29 @@ const routes: Routes = [
   component: EncenderEquiposComponent,
 },
 
+// Apunta a tecnico o mantenimiento
+
 {
-  path: 'accesofuncional-tecnico',
+  path: 'accesofuncional-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent,
+},
+{
+  path: 'gestionar-alarmas',
   component: AccesoFuncionalTecnicoComponent,
 },
 
-
 {
-  path: 'accesofuncional-directivo',
-  component: AccesoFuncionalDirectivoComponent,
+  path: 'reglas-eventos',
+  component: AccesoFuncionalTecnicoComponent,
+},
+{
+  path: 'reporte-parcial-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent,
 },
 
 {
-  path: 'accesofuncional-operario',
-  component: AccesoFuncionalOperarioComponent,
+  path: 'sobre-el-proyecto-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent
 },
 
 {
@@ -104,51 +110,18 @@ const routes: Routes = [
   component: NavbarComponent,
 },
 
-{
-  path: 'registroProducto',
-  component: AccesoFuncionalOperarioComponent,
-},
 
-{
-  path: 'simulacion',
-  component: AccesoFuncionalDirectivoComponent,
-},
-
-{
-  path: 'reporteProduccionOperario',
-  component: AccesoFuncionalOperarioComponent,
-},
-
-{
-  path: 'reporteProcesoOperario',
-  component: AccesoFuncionalOperarioComponent,
-},
-
-{
-  path: 'reporteBitacoraIncidencias',
-  component: AccesoFuncionalOperarioComponent,
-},
-
-{
-  path: 'estadisticasProcesoDirectivo',
-  component: AccesoFuncionalDirectivoComponent,
-},
-
-{
-  path: 'estadisticasProduccionDirectivo',
-  component: AccesoFuncionalDirectivoComponent,
-},
 
 {
   path: 'administrador',
   component: AdministradorComponent
 },  
+
+// Apunta a dashboard
 {
   path: 'sobre-el-proyecto',
   component: DashboardComponent
 },
-
-
 {
   path: 'instituciones',
   component: DashboardComponent
@@ -174,15 +147,91 @@ const routes: Routes = [
 {
   path: 'desarrollo',
   component: DashboardComponent
-}
-,
+},
+{
+  path: 'registro',
+  component: DashboardComponent
+},
+{
+  path: 'dashboard',
+  component: DashboardComponent
+},
+
+
+// Apunta A Directivo
+{
+  path: 'accesofuncional-directivo',
+  component: AccesoFuncionalDirectivoComponent,
+},
+
+{
+  path: 'sobre-el-proyecto-directivo',
+  component:  AccesoFuncionalDirectivoComponent
+},
+
+{
+  path: 'instituciones-directivo',
+  component:  AccesoFuncionalDirectivoComponent
+},
+
+{
+  path: 'agradecimientos-directivo',
+  component:  AccesoFuncionalDirectivoComponent
+},
+
+{
+  path: 'astin-directivo',
+  component:  AccesoFuncionalDirectivoComponent
+},
+{
+  path: 'cdm-directivo',
+  component:  AccesoFuncionalDirectivoComponent
+},
+{
+  path: 'uniautonoma-cauca-directivo',
+  component:  AccesoFuncionalDirectivoComponent
+},
+
+{
+  path: 'estadisticasProduccionDirectivo',
+  component: AccesoFuncionalDirectivoComponent,
+},
+
+{
+  path: 'estadisticasProcesoDirectivo',
+  component: AccesoFuncionalDirectivoComponent,
+},
+
+{
+  path: 'simulacion',
+  component: AccesoFuncionalDirectivoComponent,
+},
+{
+  path: 'registro-directivo',
+  component: AccesoFuncionalDirectivoComponent
+},
+
 
 // Apunta A Operario
+
+{
+  path: 'accesofuncional-operario',
+  component: AccesoFuncionalOperarioComponent,
+},
+{
+  path: 'registroProducto',
+  component: AccesoFuncionalOperarioComponent,
+},
+
 {
   path: 'sobre-el-proyecto-operario',
   component:  AccesoFuncionalOperarioComponent
 },
 
+{
+  path: 'desarrollo',
+  component: AccesoFuncionalOperarioComponent
+},
 
 {
   path: 'instituciones-operario',
@@ -199,11 +248,24 @@ const routes: Routes = [
 {
   path: 'cdm-operario',
   component: AccesoFuncionalOperarioComponent
-}
-,
+},
 {
   path: 'uniautonoma-cauca-operario',
-  component: DashboardComponent
+  component: AccesoFuncionalOperarioComponent
+},
+{
+  path: 'reporteBitacoraIncidencias',
+  component: AccesoFuncionalOperarioComponent,
+},
+
+{
+  path: 'reporteProduccionOperario',
+  component: AccesoFuncionalOperarioComponent,
+},
+
+{
+  path: 'reporteProcesoOperario',
+  component: AccesoFuncionalOperarioComponent,
 },
 
 

@@ -50,6 +50,10 @@ import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
 import { AstinComponent } from './pages/astin/astin.component';
 import { CdmComponent } from './pages/cdm/cdm.component';
 import { UniautonomaComponent } from './pages/uniautonoma/uniautonoma.component';
+import { GestionarAlarmasComponent } from './pages/gestionar-alarmas/gestionar-alarmas.component';
+import { GestionarReglasAlarmaComponent } from './pages/gestionar-reglas-alarma/gestionar-reglas-alarma.component';
+import { ReporteParcialMantenimientoComponent } from './pages/reporte-parcial-mantenimiento/reporte-parcial-mantenimiento.component';
+import { RecordReporteMantenimientoComponent } from './pages/record-reporte-mantenimiento/record-reporte-mantenimiento.component';
 
 
 
@@ -89,6 +93,10 @@ import { UniautonomaComponent } from './pages/uniautonoma/uniautonoma.component'
     AstinComponent,
     CdmComponent,
     UniautonomaComponent,
+    GestionarAlarmasComponent,
+    GestionarReglasAlarmaComponent,
+    ReporteParcialMantenimientoComponent,
+    RecordReporteMantenimientoComponent,
   
   ],
   imports: [

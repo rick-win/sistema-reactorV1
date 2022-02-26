@@ -26,22 +26,7 @@
   
 
 
-   <!-- opcion intituciones -->
-   <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Instituciones
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-          <li><a class="dropdown-item" routerLink="/astin">ASTIN</a></li>
-          <li><a class="dropdown-item" routerLink="/cdm">CMD</a></li>
-          <li><a class="dropdown-item" >Tecnoparque Sede Bogota</a></li>
-          <li><a class="dropdown-item" routerLink="/uniautonoma-cauca">Uniautonoma del Cauca</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+ 
 
 
     <button
@@ -71,7 +56,6 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-
           {{authServices.usuario.email}} 
           <img [src]="authServices.usuario.foto" alt="hugenerd" width="30" height="30" class="rounded-circle">
           </a>
@@ -89,6 +73,7 @@
 
 </nav>
 <!-- top navigation bar -->
+
 <!-- offcanvas -->
 <div
   class="offcanvas offcanvas-start sidebar-nav bg-dark"
@@ -99,9 +84,9 @@
     <nav class="navbar-dark">
       <ul class="navbar-nav">
  
-        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none mt-3">
+        <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none mt-3">
           <span class="fs-5 d-none d-sm-inline">Menu: <a>{{authServices.usuario.nombre}}</a></span>
-      </a>
+        </a>
 
         <li>
           <div class="text-muted small fw-bold text-uppercase px-3">
@@ -173,7 +158,7 @@
         </li>
 
         <li>
-          <a
+          <!-- <a
             class="nav-link px-3 sidebar-link"
             data-bs-toggle="collapse"
             href="#Parametrizar"
@@ -185,7 +170,7 @@
                 <i class="bi bi-chevron-down"></i>
               </span>
             </span>
-          </a>
+          </a> -->
           <div class="collapse" id="Parametrizar">
             <ul class="navbar-nav ps-3">
               <li>
@@ -222,12 +207,12 @@
             Addons
           </div>
         </li>
-        <li>
+        <!-- <li>
           <a routerLink="/monitoreo" class="nav-link px-3">
             <span class="me-2"><i class="bi bi-graph-up"></i></span>
             <span>Monitoreo</span>
           </a>
-        </li>
+        </li> -->
         <li>
           <a routerLink ="/generarReporte" class="nav-link px-3">
             <span class="me-2"><i class="bi bi-table"></i></span>
@@ -264,7 +249,7 @@
 
 <!--Contenido sobre el proyecto-->
 
-<div *ngIf="router.url === '/sobre-el-proyecto'">
+<div class= "ctn-main mt-5" *ngIf="router.url === '/sobre-el-proyecto'">
   <app-sobre-el-proyecto></app-sobre-el-proyecto>
 </div>
 
@@ -317,101 +302,236 @@
 <!--Contenido dashboard-->
 <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/dashboard'">
   <div class="container-fuid">
-    <div class="row">
-      <div class="col-md-12 fw-bold fs-3">Dashboard</div>
-    </div>
-    <h5 class = "text-center">Progreso del proceso de pirolisis</h5>
-    <div class="row barra-progreso">
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      <div class="row">
+        <div class="col-md-12 fw-bold fs-3">Dashboard</div>
       </div>
-    </div>
-    <div class="row mt-2">
-     
-      <div class="col-md-4 ">
-        <div 
-        class="card text-white bg-primary h-100">
-        <div class="card-header">Header</div>
+
+      <!-- cajas -->
+
+    <div class ="row-mt-2" id="boxIzq">
+
+      <div class = "" id="prueba">
+        <div class="card">
+          <div class="card-header">
+            Zona A
+          </div>
+          <div class="card-body">
+            <canvas class="chart" width="100" height="50"></canvas>
+          </div>
+        </div>
+      </div> 
+  
+      <div class = "" id="prueba">
+        <div class="card">
+          <div class="card-header">
+            Zona B
+          </div>
+          <div class="card-body">
+            <canvas class="chart" width="100" height="50"></canvas>
+          </div>
+        </div>
+      </div> 
+  
+      <div id="prueba">
+        <div class="card">
+          <div class="card-header">
+            Zona C
+          </div>
+          <div class="card-body">
+            <canvas class="chart" width="100" height="50"></canvas>
+          </div>
+        </div>
+      </div>  
+  
+      <div  id="prueba">
+        <div class="card">
+          <div class="card-header">
+            Zona D
+          </div>
+          <div class="card-body">
+            <canvas class="chart" width="100" height="50"></canvas>
+          </div>
+        </div>
+      </div>  
+
+      <div  id="prueba">
+        <div class="card">
+          <div class="card-header">
+            Zona E
+          </div>
+          <div class="card-body">
+            <canvas class="chart" width="100" height="50"></canvas>
+          </div>
+        </div>
+      </div>  
+    
+
+    <div  id="prueba">
+      <div class="card">
+        <div class="card-header">
+          Zona F
+        </div>
         <div class="card-body">
-          <h5 class="card-tittle"> primary card tittle</h5>
-          <p class="card-text">
-            some quick example text to build on the card tuttle and make
-            up the bulk of the card´s content
-          </p>
-         </div>
+          <canvas class="chart" width="100" height="25"></canvas>
         </div>
       </div>
+    </div>  
   
-      <div class="col-md-4">
-        <div 
-        class="card text-white bg-warning h-100">
-  
-        <div class="card-header">Header</div>
+    <div  id="prueba">
+      <div class="card">
+        <div class="card-header">
+          Zona G
+        </div>
         <div class="card-body">
-          <h5 class="card-tittle"> primary card tittle</h5>
-          <p class="card-text">
-            some quick example text to build on the card tuttle and make
-            up the bulk of the card´s content
-          </p>
-         </div>
+          <canvas class="chart" width="100" height="25"></canvas>
         </div>
       </div>
+    </div>  
   
-      <div class="col-md-4">
-        <div 
-        class="card text-white bg-danger h-100">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h5 class="card-tittle"> primary card tittle</h5>
-          <p class="card-text">
-            some quick example text to build on the card tuttle and make
-            up the bulk of the card´s content
-          </p>
-         </div>
-        </div>
-      </div>
-  
+
+
     </div>
 
     
-    <div class="row mt-3">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            Temperatura
-          </div>
+    <!-- cajas -->
+  
+      <img src ="assets/planta2.jpg" alt="PlantaPirolisis" class="planta2" width="70%">
+   
+   
+
+      <h5 class="barraProgress"><span>Progreso del proceso de pirolisis</span> </h5>
+      <div class="row barra-progreso">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        </div>
+      </div>
+
+      <div class="row mt-2" id="boxCard">
+        <div class="col-md-2 ">
+          <div 
+          class="card   h-100">
+          <div class="card-header">Header</div>
           <div class="card-body">
-            <canvas class="chart" width="400" height="200"></canvas>
+            <h5 class="card-tittle"> primary card tittle</h5>
+            <p class="card-text">
+              some quick example text to build on the card tuttle and make
+              up the bulk of the card´s content
+            </p>
+          </div>
           </div>
         </div>
-      </div>  
-
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            Presion
-          </div>
+  
+        <div class="col-md-2">
+          <div 
+          class="card  h-100">
+    
+          <div class="card-header">Header</div>
           <div class="card-body">
-            <canvas class="chart" width="400" height="200"></canvas>
+            <h5 class="card-tittle"> primary card tittle</h5>
+            <p class="card-text">
+              some quick example text to build on the card tuttle and make
+              up the bulk of the card´s content
+            </p>
+          </div>
           </div>
         </div>
-      </div>  
-
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            charts
-          </div>
+  
+        <div class="col-md-2">
+          <div 
+          class="card  h-100">
+          <div class="card-header">Header</div>
           <div class="card-body">
-            <canvas class="chart" width="400" height="200"></canvas>
+            <h5 class="card-tittle"> primary card tittle</h5>
+            <p class="card-text">
+              some quick example text to build on the card tuttle and make
+              up the bulk of the card´s content
+            </p>
+          </div>
           </div>
         </div>
-      </div>  
 
+      
+          <div class="col-md-2 ">
+            <div 
+            class="card  h-100">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-tittle"> primary card tittle</h5>
+              <p class="card-text">
+                some quick example text to build on the card tuttle and make
+                up the bulk of the card´s content
+              </p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div 
+            class="card h-100">
+      
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-tittle"> primary card tittle</h5>
+              <p class="card-text">
+                some quick example text to build on the card tuttle and make
+                up the bulk of the card´s content
+              </p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="card  h-100">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-tittle"> primary card tittle</h5>
+              <p class="card-text">
+                some quick example text to build on the card tuttle and make
+                up the bulk of the card´s content
+              </p>
+            </div>
+            </div>
+          </div>
+  
+       
+
+<!--         
+        <div class="row mt-3">
+          
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                Temperatura
+              </div>
+              <div class="card-body">
+                <canvas class="chart" width="300" height="200"></canvas>
+              </div>
+            </div>
+          </div>  
+
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header">
+                  Presion
+                </div>
+                <div class="card-body">
+                  <canvas class="chart" width="300" height="200"></canvas>
+                </div>
+              </div>
+            </div>  
+
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header">
+                  charts
+                </div>
+                <div class="card-body">
+                  <canvas class="chart" width="300" height="200"></canvas>
+                </div>
+              </div>
+            </div>  
+
+        </div> -->
     </div>
-
-    </div>
-    <img src ="assets/Img/logoSena.png"  width="32" 
-    class=" aling-top mr-2">
-
+  </div>
 </main>
