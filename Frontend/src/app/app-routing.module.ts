@@ -70,10 +70,7 @@ const routes: Routes = [
   component: PresionComponent
 },
 
-{
-  path: 'encender-equipos',
-  component: EncenderEquiposComponent,
-},
+
 
 // Apunta a tecnico o mantenimiento
 
@@ -268,6 +265,10 @@ const routes: Routes = [
   component: AccesoFuncionalOperarioComponent,
 },
 
+{
+  path: 'encender-equipos',
+  component: AccesoFuncionalOperarioComponent,
+},
 
 ];
 
