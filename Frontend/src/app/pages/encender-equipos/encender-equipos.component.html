@@ -3,13 +3,14 @@
     <div class="row text-center ">
     <img src="assets/Img/logoSena.png"   
       class="imgLS d-inline-block col mr-2"/>
-    <h3 class="col">Verificaciar Encendido de Equipos </h3>
+    <h3 class="col mt-5">Verificaciar Encendido de Equipos </h3>
     <img src="assets/Img/LogoGIDEMP.jpg"   
       class="imgLS d-inline-block  col mr-2 float-end"/>
     </div><hr>
 </div>
 
 <div class="container">
+  <form autocomplete="off" [formGroup]="formularioEquiposManuales" >
     <div class= "row">
         <div class="col-mb-3">
     <div class="list-group">
@@ -28,4 +29,8 @@
         </div>
     </div>
     </div>
+    <div class="contedor-btn-iniciar mt-3">
+      <button type="submit" class="btn btn-iniciar btn-primary btn-lg float-end" (click)="guardarEncendidoEquipos()">Guardar</button>
+  </div>
+  </form>
 </div>
