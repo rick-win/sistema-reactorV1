@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cargue-material',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cargue-material.component.scss']
 })
 export class CargueMaterialComponent implements OnInit {
-
-  constructor() { }
+ formularioTolva: FormGroup;
+  constructor() {
+    this.formularioTolva = new FormGroup({});
+   }
 
   ngOnInit(): void {
   }
+
+  guardarParametrosTolva(){}
 
 }

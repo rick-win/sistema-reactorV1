@@ -1,0 +1,149 @@
+<div class="container-sm ">
+
+    <div class="row text-center ">
+    <img src="assets/Img/logoSena.png"   
+      class="imgLS d-inline-block col mr-2"/>
+    <h3 class="col mt-5">Formulario de Incidencias</h3>
+    <img src="assets/Img/LogoGIDEMP.jpg"   
+      class="imgLS d-inline-block  col mr-2 float-end"/>
+    </div><hr>
+</div>
+
+
+<div class="contenedor-formulario col-md-5 " >
+   
+    <form class="row mt-4" autocomplete="off" [formGroup]="formularioIncidencias">
+
+        <div class="mb-3">
+        <label class="row-sm-2 col-form-label">Incidencia</label>
+         <div class="row-sm-1">
+         <input type="text" class="form-control" id="inputIncidencia" placeholder="ingresar incidencia">
+        </div>
+        </div>
+        
+
+        <div class="form-group mb-3 col-md-6">
+
+            <!-- <label class="row-sm-2 col-form-label">Componente / Sensor</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Selecione tipo material plástico</option>
+                <option value="1">PET(Tereftalato de Polietileno)</option>
+                <option value="2">PVC(Cloruro de Polivinilo)</option>
+                <option value="3">PP(Polipropileno)</option>
+                <option value="4">PS(Poliestireno)</option>
+                <option value="5">LDPE/PEBD(Polietileno de baja densidad)</option>
+                <option value="6">HDPE/EAD(Polietileno de alta densidad)</option>
+                <option value="7">Otros plásticos/materiales compuestos</option>
+            </select> -->
+  
+            <div class="list-group">
+                <h5>Entradas Análogas (AI)</h5>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Transmisor de presión 1
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Transmisor de presión 2
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Transmisor de presión 3
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Transmisor de presión 4
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Transmisor de Flujo
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Transmisor de Nivel
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Transmisor de temperatura (y flujo)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Transmisor de Gases
+                </label>
+              
+            </div>
+        </div>
+
+        <div class="form-group mb-3 col-md-6">
+            <h5>Entradas Análagos (AI) - TC</h5>
+            <div class="list-group">
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla zona cero (TE100)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla Tornillo (TE100-1)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla zona 1 (TE100A)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla zona 2 (TE100B)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla zona 3 (TE100C)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla zona 4 (TE100D)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla zona 5 (TE100E)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla zona 6 (TE100F)
+                </label>
+                <label class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="">
+                Termocupla flanche (TE100G)
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group mb-3 col-md-6">
+            <label class="col-sm-1 col-form-label">Descripción:</label>
+            <div class="col-sm-12">
+                <textarea type="tex" class="form-control" id="inputAcciones" formControlName="acciones" placeholder="Digitar descripción"></textarea>
+            </div> 
+        </div>
+
+        <div class="form-group mb-3 col-md-6">
+            <label class="col-sm-6 col-form-label">Anotaciones de Escalamiento</label>
+            <div class="col-sm-12">
+                <textarea type="tex" class="form-control" id="inputAcciones" formControlName="acciones" placeholder="Digitar anotación"></textarea>
+            </div> 
+        </div>
+  
+        <div class="mb-3">
+            <label class="form-label">Solucionado</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Seleccionar</option>
+              <option value="1">SI</option>
+              <option value="2">NO</option>
+          </select>
+        </div>
+  
+        
+  
+    <div class="contedor-btn-iniciar mt-2">
+      <button type="submit" class="btn btn-iniciar btn-primary btn-lg float-end" (click)="guardarFormularioIncidencias()">Guardar</button>
+    </div>
+  
+  
+    </form>

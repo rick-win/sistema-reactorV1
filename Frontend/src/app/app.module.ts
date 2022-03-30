@@ -54,6 +54,8 @@ import { GestionarAlarmasComponent } from './pages/gestionar-alarmas/gestionar-a
 import { GestionarReglasAlarmaComponent } from './pages/gestionar-reglas-alarma/gestionar-reglas-alarma.component';
 import { ReporteParcialMantenimientoComponent } from './pages/reporte-parcial-mantenimiento/reporte-parcial-mantenimiento.component';
 import { RecordReporteMantenimientoComponent } from './pages/record-reporte-mantenimiento/record-reporte-mantenimiento.component';
+import { FomularioIncidenciasComponent } from './pages/fomulario-incidencias/fomulario-incidencias.component';
+import { ParametrosTornilloComponent } from './pages/parametros-tornillo/parametros-tornillo.component';
 
 
 
@@ -97,6 +99,8 @@ import { RecordReporteMantenimientoComponent } from './pages/record-reporte-mant
     GestionarReglasAlarmaComponent,
     ReporteParcialMantenimientoComponent,
     RecordReporteMantenimientoComponent,
+    FomularioIncidenciasComponent,
+    ParametrosTornilloComponent,
   
   ],
   imports: [

@@ -31,6 +31,9 @@ import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
 import { ReporteParcialMantenimientoComponent } from './pages/reporte-parcial-mantenimiento/reporte-parcial-mantenimiento.component';
 import { GestionarAlarmasComponent } from './pages/gestionar-alarmas/gestionar-alarmas.component';
 import { GestionarReglasAlarmaComponent } from './pages/gestionar-reglas-alarma/gestionar-reglas-alarma.component';
+import { CargueMaterialComponent } from './pages/cargue-material/cargue-material.component';
+import { FomularioIncidenciasComponent } from './pages/fomulario-incidencias/fomulario-incidencias.component';
+import { ParametrosTornilloComponent } from './pages/parametros-tornillo/parametros-tornillo.component';
 
 
 const routes: Routes = [
@@ -226,7 +229,7 @@ const routes: Routes = [
 },
 
 {
-  path: 'desarrollo',
+  path: 'desarrollo-operario',
   component: AccesoFuncionalOperarioComponent
 },
 
@@ -268,6 +271,19 @@ const routes: Routes = [
 {
   path: 'encender-equipos',
   component: AccesoFuncionalOperarioComponent,
+},
+{
+path: 'cargueMaterial-tolva',
+component: AccesoFuncionalOperarioComponent
+},
+{
+path: 'formnularioIncidencias',
+component: AccesoFuncionalOperarioComponent
+},
+
+{
+  path: 'parametrosTornillo',
+  component: AccesoFuncionalOperarioComponent
 },
 
 ];

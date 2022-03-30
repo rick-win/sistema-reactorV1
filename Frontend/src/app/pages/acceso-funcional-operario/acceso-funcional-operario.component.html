@@ -141,30 +141,32 @@
                   </a>
                 </li>
                 <li>
-                  <a routerLink = "#" class="nav-link px-3">
+                  <a routerLink = "/cargueMaterial-tolva" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
                     <span>Tolva</span>
                   </a>
                 </li>
+                <li>
+                  <a routerLink = "/parametrosTornillo" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Parametros de Tornillo</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/perfilTemperatura" class="nav-link px-3">
+                    <span class="me-2"
+                      ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Parametros Temperatura</span>
+                  </a>
+                </li>
               </ul>
             </div>
-          </li>
-  
-          <li>
-            <a href="#" class="nav-link px-3 ">
-              <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-              <span>Parametros Tornillo</span>
-            </a>
-          </li>
-
-          <li>
-            <a routerLink="/perfilTemperatura" class="nav-link px-3 ">
-              <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-              <span>Parametros Temperatura</span>
-            </a>
-          </li>
+          </li>  
 
           <li>
             <a routerLink="/registroProducto" class="nav-link px-3 ">
@@ -172,7 +174,14 @@
               <span>Registro de Productos</span>
             </a>
           </li>
-         
+         <!-- formnularioIncidencias -->
+         <li>
+          <a routerLink="/formnularioIncidencias" class="nav-link px-3 ">
+            <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+            <span>Formulario Incidencias</span>
+          </a>
+        </li>
+
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
@@ -320,6 +329,27 @@
 <div class= "ctn-main mt-5" *ngIf="router.url === '/encender-equipos'">
   <div class="col-sm">
   <app-encender-equipos></app-encender-equipos>
+</div>
+</div>
+
+<!-- contenido cargue material tolva -->
+<div class= "ctn-main mt-5" *ngIf="router.url === '/cargueMaterial-tolva'">
+  <div class="col-sm">
+  <app-cargue-material></app-cargue-material>
+</div>
+</div>
+
+<!--contenido formnularioIncidencias -->
+<div class= "ctn-main mt-5" *ngIf="router.url === '/formnularioIncidencias'">
+  <div class="col-sm">
+  <app-fomulario-incidencias></app-fomulario-incidencias>
+</div>
+</div>
+
+<!-- contenido-parametros-tornillo -->
+<div class= "ctn-main mt-5" *ngIf="router.url === '/parametrosTornillo'">
+  <div class="col-sm">
+  <app-parametros-tornillo></app-parametros-tornillo>
 </div>
 </div>
 
