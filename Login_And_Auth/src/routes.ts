@@ -21,3 +21,6 @@ export const Routes = [{
     controller: UserController,
     action: "remove"
 }];
+// export default Routes;
+// const indexRoutes = new Routes();
+// export default Routes.router;

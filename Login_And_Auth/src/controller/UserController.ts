@@ -1,111 +1,118 @@
 import { getRepository } from 'typeorm';
 import { Request, Response } from 'express';
-import { Users } from '../entity/Users';
+import { Usuario } from '../entity/usuario';
 import { validate } from 'class-validator';
 
 export class UserController {
-  static getAll = async (req: Request, res: Response) => {
-    const userRepository = getRepository(Users);
-    let users;
-
-    try {
-      users = await userRepository.find({ select: ['id', 'username', 'role'] });
-    } catch (e) {
-      res.status(404).json({ message: 'Somenthing goes wrong!' });
-    }
-
-    if (users.length > 0) {
+  static getAll = async (req: Request, res: Response) =>{
+    const userRepo = getRepository(Usuario);
+    try{
+      const users = await userRepo.find();
       res.send(users);
-    } else {
-      res.status(404).json({ message: 'Not result' });
     }
-  };
-
-  static getById = async (req: Request, res: Response) => {
-    const { id } = req.params;
-    const userRepository = getRepository(Users);
-    try {
-      const user = await userRepository.findOneOrFail(id);
-      res.send(user);
-    } catch (e) {
-      res.status(404).json({ message: 'Not result' });
+    catch (e) {
+      res.status(404).json({message: 'no users'})
     }
-  };
+  }
 
-  static new = async (req: Request, res: Response) => {
-    const { username, password, role } = req.body;
-    const user = new Users();
+  static getById = async (req: Request, res: Response) =>{
+    const {id} = req.params;
+    const userRepo = getRepository(Usuario);
+    try{
+      const user = await userRepo.findOneOrFail({where:{id_Usuario: id}})
+      res.send(user)
+    }
+    catch (e) {
+      res.status(404).json({message: 'User not found'})
+    }
+  }
 
-    user.username = username;
-    user.password = password;
-    user.role = role;
+  static newUser = async (req: Request, res: Response) =>{
+    const {username, password, role, phone, name, lastname} = req.body
+    const user = new Usuario();
 
-    // Validate
-    const validationOpt = { validationError: { target: false, value: false } };
-    const errors = await validate(user, validationOpt);
-    if (errors.length > 0) {
-      return res.status(400).json(errors);
+    user.email_Usuario = username;
+    user.constrasena_Usuario = password;
+    user.rol_Usuario = role;
+    user.nom_Usuario = name;
+    user.ape_Usuario = lastname;
+    user.tel_Usuario = phone;
+
+    //validator
+    const errors = await validate(user, {validationError: { target: false, value: false}});
+    if(errors.length > 0)
+    {
+      return res.status(400).json(errors)
+
     }
 
-    // TODO: HASH PASSWORD
+    //Hash pass
 
-    const userRepository = getRepository(Users);
-    try {
+    const userRepo = getRepository(Usuario);
+    try{
       user.hashPassword();
-      await userRepository.save(user);
-    } catch (e) {
-      return res.status(409).json({ message: 'Username already exist' });
+      await userRepo.save(user);
     }
-    // All ok
-    res.send('User created');
-  };
+    catch (e) {
+      return res.status(409).json({message: 'Username taken'})
+    }
 
-  static edit = async (req: Request, res: Response) => {
+    //Front ans
+    res.send('User created')
+  }
+
+  static editUser = async (req: Request, res: Response) =>{
     let user;
-    const { id } = req.params;
-    const { username, role } = req.body;
+    const {id} = req.params;
+    const {username, password, role, phone, name, lastname} = req.body
 
-    const userRepository = getRepository(Users);
-    // Try get user
-    try {
-      user = await userRepository.findOneOrFail(id);
-      user.username = username;
-      user.role = role;
-    } catch (e) {
-      return res.status(404).json({ message: 'User not found' });
+    const userRepo = getRepository(Usuario);
+    try{
+      user = await userRepo.findOneOrFail({where:{id_Usuario: id}})
+      user.email_Usuario = username;
+      user.constrasena_Usuario = password;
+      user.rol_Usuario = role;
+      user.nom_Usuario = name;
+      user.ape_Usuario = lastname;
+      user.tel_Usuario = phone;
     }
-    const validationOpt = { validationError: { target: false, value: false } };
-    const errors = await validate(user, validationOpt);
+    catch (e) {
+      return res.status(404).json({message: 'User not found'})
+    }
 
-    if (errors.length > 0) {
+    const errors = await validate(Usuario, {validationError: { target: false, value: false}});
+    if(errors.length > 0){
       return res.status(400).json(errors);
     }
 
-    // Try to save user
-    try {
-      await userRepository.save(user);
-    } catch (e) {
-      return res.status(409).json({ message: 'Username already in use' });
+    try{
+      user.hashPassword();
+      await userRepo.save(user)
+    }
+    catch (e) {
+      res.status(409).json({message: 'User already exists'})
     }
 
-    res.status(201).json({ message: 'User update' });
-  };
+    res.status(201).json({message: 'Edit successful'})
+  }
 
-  static delete = async (req: Request, res: Response) => {
-    const { id } = req.params;
-    const userRepository = getRepository(Users);
-    let user: Users;
+  static deleteUser = async (req: Request, res: Response) =>{
+    const {id} = req.params;
+    const userRepo = getRepository(Usuario);
 
-    try {
-      user = await userRepository.findOneOrFail(id);
-    } catch (e) {
-      return res.status(404).json({ message: 'User not found' });
+    let user: Usuario;
+
+    try{
+      user = await userRepo.findOneOrFail(id)
+    }
+    catch (e) {
+      return res.status(404).json({message: 'User not found'});
     }
 
-    // Remove user
-    userRepository.delete(id);
-    res.status(201).json({ message: ' User deleted' });
-  };
+    //remove
+    await userRepo.delete(id);
+    res.status(201).json({message: 'Deleted'})
+  }
 }
 
 export default UserController;

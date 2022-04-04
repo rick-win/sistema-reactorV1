@@ -2,8 +2,8 @@ import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import * as express from 'express';
 import * as cors from 'cors';
-import * as helmet from 'helmet';
-import routes from './routes';
+import helmet from 'helmet';
+import routes from "./routes/index";
 
 const PORT = process.env.PORT || 3000;
 
@@ -17,7 +17,7 @@ createConnection()
 
     app.use(express.json());
     // Routes
-    app.use('/', routes);
+      app.use('/', routes)
 
     // start express server
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

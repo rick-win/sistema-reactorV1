@@ -1,25 +1,29 @@
 import { getRepository } from 'typeorm';
 import { Request, Response, NextFunction } from 'express';
-import { Users } from '../entity/Users';
+import { Usuario } from '../entity/usuario';
 
 export const checkRole = (roles: Array<string>) => {
   return async (req: Request, res: Response, next: NextFunction) => {
-    const { userId } = res.locals.jwtPayload;
-    const userRepository = getRepository(Users);
-    let user: Users;
+    const {userID} = res.locals.jwtPayload;
+    const userRepo = getRepository(Usuario)
+    let user: Usuario;
 
+    console.log(res.locals.jwtPayload)
     try {
-      user = await userRepository.findOneOrFail(userId);
-    } catch (e) {
-      return res.status(401).json({ message: 'Not Authorized' });
+      user = await userRepo.findOneOrFail(userID)
+    }catch (e) {
+      return res.status(401).send();
     }
 
-    //Check
-    const { role } = user;
-    if (roles.includes(role)) {
+    const {rol_Usuario} = user
+
+    console.log('rol = ',user.rol_Usuario)
+    console.log('email = ',user.email_Usuario)
+
+    if (roles.includes(rol_Usuario)){
       next();
-    } else {
-      res.status(401).json({ message: 'Not Authorized' });
+    }else {
+      res.status(401).json({message: 'Unauthorized'})
     }
-  };
-};
+  }
+}

@@ -332,3 +332,6 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+Login_And_Auth/src/config
+Login_And_Auth/ormconfig.json

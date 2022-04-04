@@ -1,16 +1,13 @@
 import express, {Application, Request, Response} from 'express';
-import usuariosRoutes from './routes/usuariosRoutes';
-import indexRoutes from './routes/indexRoutes'
-import tolvaRoutes from './routes/tolvaRoutes';
-import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 import pool from './database'
 import {request, response} from 'express'
 
 //Routes imports
-import indexRoutes from './routes/indexRoutes'
 import usuariosRoutes from './routes/usuariosRoutes';
+import indexRoutes from './routes/indexRoutes'
+import tolvaRoutes from './routes/tolvaRoutes';
 import sensorFichaTecRoutes from './routes/sensorFichaTecRoutes';
 import reportsProductRoutes from "./routes/reportsProductRoutes";
 import reportsFailureRoutes from "./routes/reportsFailureRoutes";

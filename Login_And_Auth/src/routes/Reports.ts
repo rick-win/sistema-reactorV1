@@ -1,6 +1,6 @@
-import { checkRole } from './../middlewares/role';
-import { checkJwt } from './../middlewares/jwt';
-import { UserController } from './../controller/UserController';
+import { checkRole } from '../middlewares/role';
+import { checkJwt } from '../middlewares/jwt';
+import { UserController } from '../controller/UserController';
 import { Router } from 'express';
 
 const router = Router();
