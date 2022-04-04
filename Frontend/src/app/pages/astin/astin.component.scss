@@ -9,6 +9,18 @@
     box-sizing: border-box;
 }
 
+.contenedor-sp1{
+    margin:auto;
+  //  margin-top: 500;
+  //  margin-left: 600;
+   // display: flex;
+ //   justify-content: center;
+    width:  66.5%;
+    height: 50%;
+    position: absolute;
+    left: 25%;
+  }
+
 .container{
     display: flex;
     align-items: center;
@@ -22,6 +34,7 @@
     width: 600px;
     height: auto;
     box-shadow: 1px 1px 4px 2px rgba($color: #000000, $alpha: -2.0);
+    margin-top: 150px;
 }
 
 .Header{

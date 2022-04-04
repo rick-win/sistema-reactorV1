@@ -56,6 +56,18 @@ import { ReporteParcialMantenimientoComponent } from './pages/reporte-parcial-ma
 import { RecordReporteMantenimientoComponent } from './pages/record-reporte-mantenimiento/record-reporte-mantenimiento.component';
 import { FomularioIncidenciasComponent } from './pages/fomulario-incidencias/fomulario-incidencias.component';
 import { ParametrosTornilloComponent } from './pages/parametros-tornillo/parametros-tornillo.component';
+import { SobreProyectoDirectivoComponent } from './pages/sobre-proyecto-directivo/sobre-proyecto-directivo.component';
+import { UniautonomaDirectivoComponent } from './pages/uniautonoma-directivo/uniautonoma-directivo.component';
+import { AstinDirectivoComponent } from './pages/astin-directivo/astin-directivo.component';
+import { CmdDirectivoComponent } from './pages/cmd-directivo/cmd-directivo.component';
+import { AgradecimientosDirectivoComponent } from './pages/agradecimientos-directivo/agradecimientos-directivo.component';
+import { DesarrolloDirectivoComponent } from './pages/desarrollo-directivo/desarrollo-directivo.component';
+import { SobreProyectoMantenimientoComponent } from './pages/sobre-proyecto-mantenimiento/sobre-proyecto-mantenimiento.component';
+import { UniautonomaMantenimientoComponent } from './pages/uniautonoma-mantenimiento/uniautonoma-mantenimiento.component';
+import { AstinMantenimientoComponent } from './pages/astin-mantenimiento/astin-mantenimiento.component';
+import { CmdMantenimientoComponent } from './pages/cmd-mantenimiento/cmd-mantenimiento.component';
+import { AgradecimientosMantenimientoComponent } from './pages/agradecimientos-mantenimiento/agradecimientos-mantenimiento.component';
+import { DesarrolloMantenimientoComponent } from './pages/desarrollo-mantenimiento/desarrollo-mantenimiento.component';
 
 
 
@@ -101,6 +113,18 @@ import { ParametrosTornilloComponent } from './pages/parametros-tornillo/paramet
     RecordReporteMantenimientoComponent,
     FomularioIncidenciasComponent,
     ParametrosTornilloComponent,
+    SobreProyectoDirectivoComponent,
+    UniautonomaDirectivoComponent,
+    AstinDirectivoComponent,
+    CmdDirectivoComponent,
+    AgradecimientosDirectivoComponent,
+    DesarrolloDirectivoComponent,
+    SobreProyectoMantenimientoComponent,
+    UniautonomaMantenimientoComponent,
+    AstinMantenimientoComponent,
+    CmdMantenimientoComponent,
+    AgradecimientosMantenimientoComponent,
+    DesarrolloMantenimientoComponent,
   
   ],
   imports: [

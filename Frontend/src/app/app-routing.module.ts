@@ -96,10 +96,30 @@ const routes: Routes = [
 },
 
 {
-  path: 'sobre-el-proyecto-mantenimiento',
+  path: 'sobre-proyecto-mantenimiento',
   component: AccesoFuncionalTecnicoComponent
 },
 
+{
+  path: 'astin-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent
+},
+{
+  path: 'cdm-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent
+},
+{
+  path: 'agradecimientos-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent
+},
+{
+  path: 'equipo-desarrollo-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent
+},
+{
+  path: 'uniautonma-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent
+},
 {
   path: 'dataTable',
   component: DatatablesComponent,
@@ -118,18 +138,15 @@ const routes: Routes = [
 },  
 
 // Apunta a dashboard
-{
-  path: 'sobre-el-proyecto',
-  component: DashboardComponent
-},
+
 {
   path: 'instituciones',
   component: DashboardComponent
 },
-{
-  path: 'agradecimientos',
-  component: DashboardComponent
-},
+// {
+//   path: 'agradecimientos',
+//   component: DashboardComponent
+// },
 {
   path: 'astin',
   component: DashboardComponent
@@ -144,10 +161,10 @@ const routes: Routes = [
   component: DashboardComponent
 }
 ,
-{
-  path: 'desarrollo',
-  component: DashboardComponent
-},
+// {
+//   path: 'desarrollo',
+//   component: DashboardComponent
+// },
 {
   path: 'registro',
   component: DashboardComponent
@@ -165,7 +182,7 @@ const routes: Routes = [
 },
 
 {
-  path: 'sobre-el-proyecto-directivo',
+  path: 'sobre-proyecto-directivo',
   component:  AccesoFuncionalDirectivoComponent
 },
 
@@ -188,10 +205,13 @@ const routes: Routes = [
   component:  AccesoFuncionalDirectivoComponent
 },
 {
-  path: 'uniautonoma-cauca-directivo',
+  path: 'uniautonoma-directivo',
   component:  AccesoFuncionalDirectivoComponent
 },
-
+{
+  path: 'desarrollo-directivo',
+  component:  AccesoFuncionalDirectivoComponent
+},
 {
   path: 'estadisticasProduccionDirectivo',
   component: AccesoFuncionalDirectivoComponent,
@@ -224,12 +244,17 @@ const routes: Routes = [
 },
 
 {
-  path: 'sobre-el-proyecto-operario',
-  component:  AccesoFuncionalOperarioComponent
+  path: 'sobre-el-proyecto',
+  component: AccesoFuncionalOperarioComponent
 },
 
+// {
+//   path: 'sobre-el-proyecto-operario',
+//   component:  AccesoFuncionalOperarioComponent
+// },
+
 {
-  path: 'desarrollo-operario',
+  path: 'desarrollo-O',
   component: AccesoFuncionalOperarioComponent
 },
 
@@ -238,19 +263,19 @@ const routes: Routes = [
   component: AccesoFuncionalOperarioComponent
 },
 {
-  path: 'agradecimientos-operario',
+  path: 'agradecimientos-O',
   component: AccesoFuncionalOperarioComponent
 },
 {
-  path: 'astin-operario',
+  path: 'astin-O',
   component: AccesoFuncionalOperarioComponent
 },
 {
-  path: 'cdm-operario',
+  path: 'cdm-O',
   component: AccesoFuncionalOperarioComponent
 },
 {
-  path: 'uniautonoma-cauca-operario',
+  path: 'uniautonoma-cauca-O',
   component: AccesoFuncionalOperarioComponent
 },
 {

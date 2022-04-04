@@ -243,7 +243,7 @@
           </div>
         </li>
         <li>
-          <a routerLink="/sobre-el-proyecto-operario" class="nav-link px-3">
+          <a routerLink="/sobre-el-proyecto" class="nav-link px-3">
             <span class="me-2"><i class="bi bi-graph-up"></i></span>
             <span>Sobre El Proyecto</span>
           </a>
@@ -283,8 +283,13 @@
 <!-- aqui nuevo -->
 <!--Contenido sobre el proyecto-->
 
-<div *ngIf="router.url === '/sobre-el-proyecto-operario'">
+<div class="ctn-main" *ngIf="router.url === '/sobre-el-proyecto'">
   <app-sobre-el-proyecto></app-sobre-el-proyecto>
+</div>
+
+<!--Contenido EQUIPO DE DESARROLLO-->
+<div class="ctn-main" *ngIf="router.url === '/desarrollo-O'">
+ <app-desarrollo></app-desarrollo>
 </div>
 
 <!--Contenido sobre instituciones-->
@@ -296,13 +301,13 @@
 
 <!--Contenido agradecimientos-->
 
-<div class= "ctn-main" *ngIf="router.url === '/agradecimientos'">
+<div class= "ctn-main" *ngIf="router.url === '/agradecimientos-O'">
   <app-agradecimientos></app-agradecimientos>
 </div>
 
 <!--Contenido astin-->
 
-<div class= "ctn-main mt-5" *ngIf="router.url === '/astin'">
+<div class= "ctn-main mt-5" *ngIf="router.url === '/astin-O'">
   <div class="col-sm">
   <app-astin></app-astin>
 </div>
@@ -310,7 +315,7 @@
 
 <!--Contenido cdm-->
 
-<div class= "ctn-main mt-5" *ngIf="router.url === '/cdm'">
+<div class= "ctn-main mt-5" *ngIf="router.url === '/cdm-O'">
   <div class="col-sm">
   <app-cdm></app-cdm>
 </div>
@@ -318,7 +323,7 @@
 
 <!--Contenido Uniautonoma-->
 
-<div class= "ctn-main mt-5" *ngIf="router.url === '/uniautonoma-cauca'">
+<div class= "ctn-main mt-5" *ngIf="router.url === '/uniautonoma-cauca-O'">
   <div class="col-sm">
   <app-uniautonoma></app-uniautonoma>
 </div>
