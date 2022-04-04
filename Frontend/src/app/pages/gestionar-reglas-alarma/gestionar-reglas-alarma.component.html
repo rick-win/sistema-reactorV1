@@ -1,0 +1,105 @@
+<div class="container-sm ">
+
+    <div class="row text-center ">
+    <img src="assets/Img/logoSena.png"   
+      class="imgLS d-inline-block col mr-2"/>
+    <h3 class="col titulo1">Gestion de Reglas - Eventos</h3>
+    <img src="assets/Img/LogoGIDEMP.jpg"   
+      class="imgLS d-inline-block  col mr-2 float-end"/>
+    </div><hr>
+</div>
+<!-- 
+<div class="col-md-4">
+    <button type="submit" class="btn btn-iniciar btn-danger form-control float-end" >Descargar</button>
+</div> -->
+
+<div class="contenedor-formulario col-md-5 " >
+
+    <form class="row mt-4" autocomplete="off" [formGroup]="formReglaAlarma">
+        
+
+
+        <div class="row mb-3">
+
+            
+            <div class="form-group mb-3 col-md-4">
+              <label class="row-sm-2 col-form-label">Codigo Evento</label>
+              <div class="row-sm-2">
+              <input type="text" class="form-control" id="imputCodEvento" formControlName="codEvento">
+              </div>
+
+              <label class="row-sm-2 col-form-label">Codigo Regla</label>
+              <div class="row-sm-2">
+              <input type="text" class="form-control" id="imputCodEvento" formControlName="codRegla">
+              </div>
+
+              
+              <div formArrayName ="cod_fuente" >
+                <label class="row-sm-2 col-form-label">Codigo Fuente</label>
+                <div *ngFor="let item of getCodfuente.controls; let pointIndex=index" [formGroupName]="pointIndex" >
+                    <input type="text" class="form-control row-md-2" id="imputCodEvento" formControlName="codFuente">
+                    <a class="btn btn-primary float-end" (click)="eliminarCodFuente(pointIndex)" >Eliminar</a>
+                </div>
+                <a class="btn btn-primary float-end" (click)="addCodFuente()" >Add</a>
+
+              </div>
+              
+            </div>
+        
+
+            <div class="form-group mb-3 col-md-4">
+
+                <label class="row-sm-2 col-form-label">Descripción Regla</label>
+                <div class="crow-sm-12">
+                    <textarea type="tex" class="form-control" id="inputDesRegla" formControlName="regla" placeholder="Digite descripcion de la regla"></textarea>
+                </div> 
+
+                <div formArrayName ="cod_fuente" >
+                    <label class="row-sm-2 col-form-label">Criterio</label>
+                    <div *ngFor="let item of getCriterio.controls; let pointIndex=index" [formGroupName]="pointIndex" >
+                        <input type="text" class="form-control row-md-2" formControlName="codFuente">
+                        <a class="btn btn-primary float-end" (click)="eliminarCriterio(pointIndex)" >Eliminar</a>
+                    </div>
+                    <a class="btn btn-primary float-end" (click)="addCriterio()" >Add</a>
+    
+                  </div>
+
+            </div>
+           
+
+            <div class="form-group mb-3 col-md-4">
+
+                <label class="row-sm-2 col-form-label">Tipo_Validación</label>
+                <div class="row-sm-2">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>seleccionar</option>
+                        <option value="1">A</option>
+                        <option value="2">B</option>     
+                    </select>
+                
+                </div>   
+
+                <label class="row-sm-2 col-form-label">Descripcion Validación</label>
+                <div class="crow-sm-12">
+                    <textarea type="tex" class="form-control" id="inputDesRegla" formControlName="regla" placeholder="Digite Validación"></textarea>
+                </div> 
+                
+            </div>
+      </div>
+      
+
+      <div class="contenedor-btn-iniciar mt-3 row">
+          <div class=" col-md-4">
+              <button type="submit" class="btn btn-iniciar btn-primary  form-control" >Guardar</button>
+          </div>
+          <div class=" col-md-4">
+            <button type="submit" class="btn btn-iniciar btn-primary form-control" >Modificar</button>
+        </div>
+          <div class=" col-md-4">
+              <button type="submit" class="btn btn-iniciar btn-primary form-control" >Listar</button>
+          </div>
+      </div>
+
+  </form>
+
+</div>

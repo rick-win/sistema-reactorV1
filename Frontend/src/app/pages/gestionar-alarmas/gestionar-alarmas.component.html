@@ -1,0 +1,135 @@
+<div class="container-sm ">
+
+    <div class="row text-center ">
+    <img src="assets/Img/logoSena.png"   
+      class="imgLS d-inline-block col mr-2"/>
+    <h3 class="col titulo1">Gestion de Alarmas</h3>
+    <img src="assets/Img/LogoGIDEMP.jpg"   
+      class="imgLS d-inline-block  col mr-2 float-end"/>
+    </div><hr>
+</div>
+
+<div class="contenedor-formulario text-center" >
+   
+    <form class="row mt-4" autocomplete="off" [formGroup]="formGestionarAlarma">
+        
+
+
+          <div class="row mb-3">
+              
+            
+                <label class="col-sm-2 col-form-label">Codigo Evento</label>
+                <div class="col-sm-2">
+                <input type="text" class="form-control" id="imputCodEvento" formControlName="codEvento">
+                </div>
+            
+            
+            
+                <label class="col-sm-2 col-form-label">Criticidad</label>
+                <div class="col-sm-6">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>seleccionar</option>
+                        <option value="1">Advertencia</option>
+                        <option value="2">Peligro</option>     
+                    </select>
+                
+                </div>    
+
+                <label class="col-sm-2 col-form-label">Evento</label>
+                <div class="col-sm-2">
+                <input type="text" class="form-control" id="inputEvento">
+                </div>
+          
+
+                <label class="col-sm-2 col-form-label">Codigo Mensaje</label>
+                <div class="col-sm-2">
+                <input type="text" class="form-control" id="inputEvento">
+                </div>
+           
+
+                <label class="col-sm-2 col-form-label">Tipo Mensaje</label>
+                <div class="col-sm-2">
+                <input type="text" class="form-control" id="inputEvento">
+                </div>
+                
+        </div>
+
+
+
+          <!-- aqui -->
+            <div class="row">
+                <div class="form-group mb-3 col-md-4">
+                    <label class="col-sm-2 col-form-label">Monitoreo:</label>
+                    <div class="col-sm-12">
+                        <textarea type="tex" class="form-control" id="inputMonitoreo" formControlName="monitoreo" placeholder="1"></textarea>
+                    </div> 
+                 </div>
+
+                 <div class="form-group mb-3 col-md-4">
+                    <label class="col-sm-1 col-form-label">Mensaje:</label>
+                    <div class="col-sm-12">
+                        <textarea type="tex" class="form-control" id="inputAcciones" formControlName="acciones" placeholder="2"></textarea>
+                    </div> 
+                </div>
+
+                <div class="form-group mb-3 col-md-4">
+                    <label class="col-sm-1 col-form-label">Medio:</label>
+                    <div class="col-sm-12">
+                        <textarea type="tex" class="form-control" id="inputAcciones" formControlName="acciones" placeholder="3"></textarea>
+                    </div> 
+                </div>
+           
+
+                <div class="form-group mb-3 col-md-4">
+                    <label class="col-sm-3 col-form-label">Acciones:</label>
+                    <div class="col-sm-12">
+                        <textarea type="tex" class="form-control" id="inputAcciones" formControlName="acciones" placeholder="4"></textarea>
+                    </div> 
+                </div>
+
+                <div class="form-group mb-3 col-md-4">
+                    <label class="col-sm-8 col-form-label">Estado de Recuperacion:</label>
+                    <div class="col-sm-12">
+                        <textarea type="tex" class="form-control" id="inputAcciones" formControlName="acciones" placeholder="5"></textarea>
+                    </div> 
+                </div>
+
+                <div class="form-group mb-3 col-md-4">
+                    <label class="col-sm-4 col-form-label">Comentario:</label>
+                    <div class="col-sm-12">
+                        <textarea type="tex" class="form-control" id="inputAcciones" formControlName="acciones" placeholder="6"></textarea>
+                    </div> 
+                </div>
+             </div>
+        
+        
+        <!-- <div class="mb-3">
+            <label class="form-label">Detalle(tipo) </label>
+            <input type="" class="form-control" id="password" formControlName="detalle" >
+        </div> -->
+        
+
+        <div class="contenedor-btn-iniciar mt-3 row">
+            <div class=" col-md-4">
+                <button type="submit" class="btn btn-iniciar btn-primary  form-control" >Guardar</button>
+            </div>
+            <div class=" col-md-4">
+                <button type="submit" class="btn btn-iniciar btn-primary form-control" >Listar</button>
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-iniciar btn-primary form-control" >Descargar</button>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="container-sm subtitulo">
+        <div class="row text-center ">
+        
+        <h3 class="col">Posibles fuentes de problemas</h3>
+       
+        </div><hr>
+    </div>
+
+    </div>
+

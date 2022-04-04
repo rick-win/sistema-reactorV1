@@ -1,0 +1,91 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary form-control  btn-block" (click)="indicadoresMat = !indicadoresMat">Proceso</button></div>
+    <div class="col">
+      <button  class="btn btn-primary form-control btn-block" (click)= "indicadoresProd = !indicadoresProd" >Reporte</button></div>
+  </div>
+</div>
+
+<div class="conteiner mt-5  ">
+  
+  <div class="row" *ngIf="indicadoresMat">
+    <h5>Indicadores de Material</h5>
+      <div class="col-lg-12">
+
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class= "table-table-light table table-striped mt-3 " >
+
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Tipo</th>
+              <th>Cantidad</th>
+              <th>Duración</th>
+    
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let e of data">
+              <td>{{e.employee_name}}</td>
+              <td>{{e.employee_salary}}</td>
+              <td>{{e.employee_age}}</td>
+              <td>{{e.employee_salary}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+  </div>
+
+  <div class="conteiner mt-5  ">
+    <div *ngIf="indicadoresProd">
+    <div class="row" >
+      <h5>Indicadores de Produccion</h5>
+    <div class="col-lg-12">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class= "table-table-light table table-striped" >
+  
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+<!--         
+         <thead>
+          <tr>
+            <th >Solido</th>
+            <th></th>
+            <th >Hidrocarburo</th>
+            <th></th>
+            <th >Gaseoso</th>
+            <th></th>
+
+            
+          </tr>
+        </thead> -->
+
+        <tbody>
+          <tr *ngFor = "let e of data">
+            <td>{{e.employee_age}}</td>
+            <td>{{e.employee_age}}</td>
+            <td>{{e.employee_age}}</td>
+            <td>{{e.employee_age}}</td>
+            <td>{{e.employee_age}}</td>
+            <td>{{e.employee_age}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+
+      
+    </div>
+      
+    </div>
+  </div>
+    </div>
+  

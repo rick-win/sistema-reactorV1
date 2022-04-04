@@ -1,0 +1,45 @@
+<div class="container-sm mt-5">
+    <div class="row text-center ">
+    <img src="assets/Img/logoSena.png"   
+      class="imgLS d-inline-block col mr-2"/>
+    <h3 class="col mt-4">Parametros del Torinllo</h3>
+    <img src="assets/Img/LogoGIDEMP.jpg"   
+      class="imgLS d-inline-block  col mr-2 float-end"/>
+    </div><hr>
+</div>
+
+
+<div class="contenedor-formulario col-md-8 " >
+    <form class="row mt-8" autocomplete="off" [formGroup]="formTornillo">
+
+        <div class="form-group mb-4 col-md-4">
+            <div class="mb-3">
+            <label class="row-sm-2 col-form-label">Velocidad</label>
+            <input type="number" class="form-control" id="velTornillo" formControlName="cantidadMaterial" placeholder="ingresar velocidad tornillo">
+            </div>
+    
+
+    
+            <div class="mb-3">
+                <label class="form-label">Unidad/medida Velocidad  Tornillo</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccionar</option>
+                <option value="1">RPM</option>
+            </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Modo de Funcionamiento</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccionar</option>
+                <option value="1">Cíclico</option>
+                <option value="1">Continuo</option>
+            </select>
+            </div>
+
+            <div class="contedor-btn-iniciar mt-2">
+                <button type="submit" class="btn btn-iniciar btn-primary btn-lg float-end" (click)="guardarParametrosTolva()">Guardar</button>
+            </div>
+    </div>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="container-sm ">
+
+    <div class="row text-center ">
+    <img src="assets/Img/logoSena.png"   
+      class="imgLS d-inline-block col mr-2"/>
+    <h3 class="col mt-5">Verificaciar Encendido de Equipos </h3>
+    <img src="assets/Img/LogoGIDEMP.jpg"   
+      class="imgLS d-inline-block  col mr-2 float-end"/>
+    </div><hr>
+</div>
+
+<div class="container">
+  <form autocomplete="off" [formGroup]="formularioEquiposManuales" >
+    <div class= "row">
+        <div class="col-mb-3">
+    <div class="list-group">
+        <label class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" value="">
+        Refrigeración Chiller
+        </label>
+        <label class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" value="">
+        Bomba de Vacío
+        </label>
+        <label class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" value="">
+        Compresor
+        </label>
+        </div>
+    </div>
+    </div>
+    <div class="contedor-btn-iniciar mt-3">
+      <button type="submit" class="btn btn-iniciar btn-primary btn-lg float-end" (click)="guardarEncendidoEquipos()">Guardar</button>
+  </div>
+  </form>
+</div>
