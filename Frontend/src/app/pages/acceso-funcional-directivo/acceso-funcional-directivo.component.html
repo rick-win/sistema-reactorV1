@@ -277,7 +277,7 @@
                 </div>
               </li>
               <li>
-                <a routerLink="/sobre-el-proyecto-directivo" class="nav-link px-3">
+                <a routerLink="/sobre-proyecto-directivo" class="nav-link px-3">
                   <span class="me-2"><i class="bi bi-graph-up"></i></span>
                   <span>Sobre El Proyecto</span>
                 </a>
@@ -299,8 +299,8 @@
 
 <!--Contenido sobre el proyecto-->
 
-<div class= "ctn-main mt-5" *ngIf="router.url === '/sobre-el-proyecto-directivo'">
-  <app-sobre-el-proyecto></app-sobre-el-proyecto>
+<div class= "ctn-main mt-5" *ngIf="router.url === '/sobre-proyecto-directivo'">
+  <app-sobre-proyecto-directivo></app-sobre-proyecto-directivo>
 </div>
 
 <!--Contenido sobre instituciones-->
@@ -313,19 +313,19 @@
 <!--Contenido agradecimientos-->
 
 <div class= "ctn-main" *ngIf="router.url === '/agradecimientos-directivo'">
-  <app-agradecimientos></app-agradecimientos>
+  <app-agradecimientos-directivo></app-agradecimientos-directivo>
 </div>
 
 <!--Contenido desarrollo-->
 
-<div *ngIf="router.url === '/desarrollo'">
-  <app-desarrollo></app-desarrollo>
+<div *ngIf="router.url === '/equipo-desarrollo-directivo'">
+  <app-desarrollo-directivo></app-desarrollo-directivo>
 </div>
 <!--Contenido astin-->
 
 <div class= "ctn-main mt-5" *ngIf="router.url === '/astin-directivo'">
   <div class="col-sm">
-  <app-astin></app-astin>
+  <app-astin-directivo></app-astin-directivo>
 </div>
 </div>
 
@@ -333,15 +333,15 @@
 
 <div class= "ctn-main mt-5" *ngIf="router.url === '/cdm-directivo'">
   <div class="col-sm">
-  <app-cdm></app-cdm>
+  <app-cmd-directivo></app-cmd-directivo>
 </div>
 </div>
 
 <!--Contenido Uniautonoma-->
 
-<div class= "ctn-main mt-5" *ngIf="router.url === '/uniautonoma-cauca-directivo'">
+<div class= "ctn-main mt-5" *ngIf="router.url === '/uniautonoma-directivo'">
   <div class="col-sm">
-  <app-uniautonoma></app-uniautonoma>
+  <app-uniautonoma-directivo></app-uniautonoma-directivo>
 </div>
 </div>
 

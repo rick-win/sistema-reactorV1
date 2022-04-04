@@ -23,17 +23,28 @@ import { EstadisticasProcesoDirectivoComponent } from './pages/estadisticas-proc
 import { EstadisticasProduccionDirectivoComponent } from './pages/estadisticas-produccion-directivo/estadisticas-produccion-directivo.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
 import { SobreElProyectoComponent } from './pages/sobre-el-proyecto/sobre-el-proyecto.component';
+import { SobreProyectoDirectivoComponent} from './pages/sobre-proyecto-directivo/sobre-proyecto-directivo.component';
+import { SobreProyectoMantenimientoComponent } from './pages/sobre-proyecto-mantenimiento/sobre-proyecto-mantenimiento.component';
 import { InstitucionesComponent } from './pages/instituciones/instituciones.component';
 import { AgradecimientosComponent } from './pages/agradecimientos/agradecimientos.component';
+import { AgradecimientosDirectivoComponent } from './pages/agradecimientos-directivo/agradecimientos-directivo.component';
+import { AgradecimientosMantenimientoComponent } from './pages/agradecimientos-mantenimiento/agradecimientos-mantenimiento.component';
 import { CdmComponent } from './pages/cdm/cdm.component';
+import { CmdDirectivoComponent} from './pages/cmd-directivo/cmd-directivo.component';
+import { CmdMantenimientoComponent} from './pages/cmd-mantenimiento/cmd-mantenimiento.component';
 import { UniautonomaComponent } from './pages/uniautonoma/uniautonoma.component';
+import { UniautonomaDirectivoComponent} from './pages/uniautonoma-directivo/uniautonoma-directivo.component';
+import { UniautonomaMantenimientoComponent } from './pages/uniautonoma-mantenimiento/uniautonoma-mantenimiento.component';
 import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
+import { DesarrolloDirectivoComponent} from './pages/desarrollo-directivo/desarrollo-directivo.component';
+import { DesarrolloMantenimientoComponent } from './pages/desarrollo-mantenimiento/desarrollo-mantenimiento.component';
 import { ReporteParcialMantenimientoComponent } from './pages/reporte-parcial-mantenimiento/reporte-parcial-mantenimiento.component';
 import { GestionarAlarmasComponent } from './pages/gestionar-alarmas/gestionar-alarmas.component';
 import { GestionarReglasAlarmaComponent } from './pages/gestionar-reglas-alarma/gestionar-reglas-alarma.component';
 import { CargueMaterialComponent } from './pages/cargue-material/cargue-material.component';
 import { FomularioIncidenciasComponent } from './pages/fomulario-incidencias/fomulario-incidencias.component';
 import { ParametrosTornilloComponent } from './pages/parametros-tornillo/parametros-tornillo.component';
+
 
 
 const routes: Routes = [
@@ -117,7 +128,7 @@ const routes: Routes = [
   component: AccesoFuncionalTecnicoComponent
 },
 {
-  path: 'uniautonma-mantenimiento',
+  path: 'uniautonoma-mantenimiento',
   component: AccesoFuncionalTecnicoComponent
 },
 {
@@ -209,7 +220,7 @@ const routes: Routes = [
   component:  AccesoFuncionalDirectivoComponent
 },
 {
-  path: 'desarrollo-directivo',
+  path: 'equipo-desarrollo-directivo',
   component:  AccesoFuncionalDirectivoComponent
 },
 {
