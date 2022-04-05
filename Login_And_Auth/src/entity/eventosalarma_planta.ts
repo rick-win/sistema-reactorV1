@@ -5,24 +5,17 @@ import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
 export class Lectura_Sensor {
 
     @PrimaryGeneratedColumn()
-    id_LecturaSensor: bigint;
+    id_EventosAlarmaPlanta: number;
 
     @Column()
-    SENSOR_id_Sensor: number;
-
-    @Column()
-    @IsNotEmpty()
-    datetiime_LecturaSensor: Date;
+    MAESTROALARMA_PLANTA_cod_MaestroAlarmaPlanta: number;
 
     @Column()
     @IsNotEmpty()
-    codSensor_LecturaSensor: string ;
+    codAlarma_EventosAlarmaPlanta:string;
 
     @Column()
     @IsNotEmpty()
-    medida_LecturaSensor: number;
+    datetiime_EventosAlarmaPlanta: Date;
 
-    @Column()
-    @IsNotEmpty()
-    modoTornillo_LecturaSensor: boolean;
 }

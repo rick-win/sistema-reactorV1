@@ -2,27 +2,32 @@ import { Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, Updat
 import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
 
 @Entity()
-export class Lectura_Sensor {
+export class Registro_Producto {
 
     @PrimaryGeneratedColumn()
-    id_LecturaSensor: bigint;
-
-    @Column()
-    SENSOR_id_Sensor: number;
+    id_regProducto: number;
 
     @Column()
     @IsNotEmpty()
-    datetiime_LecturaSensor: Date;
+    cantProducto_regProducto: number;
 
     @Column()
     @IsNotEmpty()
-    codSensor_LecturaSensor: string ;
+    tipoProducto_regProducto: string ;
 
     @Column()
     @IsNotEmpty()
-    medida_LecturaSensor: number;
+    subProducto_regProducto: string;
 
     @Column()
     @IsNotEmpty()
-    modoTornillo_LecturaSensor: boolean;
+    unidadMedida_regProducto: string;
+
+    @Column()
+    @IsNotEmpty()
+    detalle_regProducto: string;
+
+    @Column()
+    @IsNotEmpty()
+    detetime_regProducto: Date;
 }
