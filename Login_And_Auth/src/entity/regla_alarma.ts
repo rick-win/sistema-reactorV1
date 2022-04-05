@@ -21,5 +21,5 @@ export class Regla_Alarma {
 
     @Column()
     @IsNotEmpty()
-    condicion_ReglaAlarma: boolean;
+    condicion_ReglaAlarma: string;
 }
