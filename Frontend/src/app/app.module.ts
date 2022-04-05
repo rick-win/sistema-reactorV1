@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +17,6 @@ import { AngularFireAuthModule} from '@angular/fire/auth';
 //toast
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar-password.component';
 import { GestionarUsuarioComponent } from './pages/gestionar-usuario/gestionar-usuario.component';
 import { CargueMaterialComponent } from './pages/cargue-material/cargue-material.component';
 import { TemperaturasComponent } from './pages/parametro_temperatura/temperaturas.component';
@@ -68,6 +67,7 @@ import { AstinMantenimientoComponent } from './pages/astin-mantenimiento/astin-m
 import { CmdMantenimientoComponent } from './pages/cmd-mantenimiento/cmd-mantenimiento.component';
 import { AgradecimientosMantenimientoComponent } from './pages/agradecimientos-mantenimiento/agradecimientos-mantenimiento.component';
 import { DesarrolloMantenimientoComponent } from './pages/desarrollo-mantenimiento/desarrollo-mantenimiento.component';
+import {AuthInterceptor} from "./shared/httpInterceptor";
 
 
 
@@ -78,7 +78,6 @@ import { DesarrolloMantenimientoComponent } from './pages/desarrollo-mantenimien
     LoginComponent,
     RegistroComponent,
     DashboardComponent,
-    RecuperarPasswordComponent,
     GestionarUsuarioComponent,
     CargueMaterialComponent,
     TemperaturasComponent,
@@ -103,7 +102,7 @@ import { DesarrolloMantenimientoComponent } from './pages/desarrollo-mantenimien
     InstitucionesComponent,
     AgradecimientosComponent,
     DesarrolloComponent,
-   
+
     AstinComponent,
     CdmComponent,
     UniautonomaComponent,
@@ -125,22 +124,22 @@ import { DesarrolloMantenimientoComponent } from './pages/desarrollo-mantenimien
     CmdMantenimientoComponent,
     AgradecimientosMantenimientoComponent,
     DesarrolloMantenimientoComponent,
-  
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
     DataTablesModule,
-    
+
   ],
-  providers: [GestionarUsuarioService],
+  providers: [GestionarUsuarioService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

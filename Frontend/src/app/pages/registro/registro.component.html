@@ -1,78 +1,78 @@
 
-<div class="contenedor-formulario col-md-5 mt-5 " >
-   
-    <form class="mt-4" autocomplete="off" [formGroup]="formularioReg">
-        
-        <h3 class="titulo-login">Registrar Usuarios</h3>
+<!--<div class="contenedor-formulario col-md-5 mt-5 " >-->
+<!--   -->
+<!--    <form class="mt-4" autocomplete="off" [formGroup]="formularioReg">-->
+<!--        -->
+<!--        <h3 class="titulo-login">Registrar Usuarios</h3>-->
 
-        <div class="form-row">
-            <div class="row">
-                <div class="form-group col-md-6 mb-3">   
-                    <label class="col-form-label">Nombres</label>            
-                    <input type="text" class="form-control"  formControlName="Nom_Usuario">
-                </div>
+<!--        <div class="form-row">-->
+<!--            <div class="row">-->
+<!--                <div class="form-group col-md-6 mb-3">   -->
+<!--                    <label class="col-form-label">Nombres</label>            -->
+<!--                    <input type="text" class="form-control"  formControlName="Nom_Usuario">-->
+<!--                </div>-->
 
-                
-                <div class="form-group col-md-6 mb-3">   
-                    <label class="col-form-label">Apellidos</label>            
-                    <input type="text" class="form-control"  formControlName="Ape_Usuario" >
-                </div>
- 
-            </div>
-            
+<!--                -->
+<!--                <div class="form-group col-md-6 mb-3">   -->
+<!--                    <label class="col-form-label">Apellidos</label>            -->
+<!--                    <input type="text" class="form-control"  formControlName="Ape_Usuario" >-->
+<!--                </div>-->
+<!-- -->
+<!--            </div>-->
+<!--            -->
 
-            <div class="row">
+<!--            <div class="row">-->
 
-                <div class="col-md-6">
+<!--                <div class="col-md-6">-->
 
-                    <div class="form-group  mb-3">
-                        <label class="form-label">Correo</label>
-                        <input type="email" class="form-control" id="correo"  formControlName="Email_Usuario" (focusout)="validarCorreo()">
-                </div>
+<!--                    <div class="form-group  mb-3">-->
+<!--                        <label class="form-label">Correo</label>-->
+<!--                        <input type="email" class="form-control" id="correo"  formControlName="Email_Usuario" (focusout)="validarCorreo()">-->
+<!--                </div>-->
 
-                <div class="form-group  mb-3">   
-                        <label class="col-form-label">Telefono</label>            
-                        <input type="text" class="form-control"  formControlName="Tel_Usuario">
-                </div>
+<!--                <div class="form-group  mb-3">   -->
+<!--                        <label class="col-form-label">Telefono</label>            -->
+<!--                        <input type="text" class="form-control"  formControlName="Tel_Usuario">-->
+<!--                </div>-->
 
-                </div>
+<!--                </div>-->
 
-                <div class="col-md-3"> 
+<!--                <div class="col-md-3"> -->
 
-                    <div class="form-group  ">
-                        
-                        <label class="col-form-label">Seleccionar Rol</label>
-                        <div class="row">
-                            
+<!--                    <div class="form-group  ">-->
+<!--                        -->
+<!--                        <label class="col-form-label">Seleccionar Rol</label>-->
+<!--                        <div class="row">-->
+<!--                            -->
 
-                            <div [(ngModel)]="selectedOptions" *ngFor="let object of roles" formControlName="roles">
-                              <input type="checkbox"> {{object}}
-                           </div>
+<!--                            <div [(ngModel)]="selectedOptions" *ngFor="let object of roles" formControlName="roles">-->
+<!--                              <input type="checkbox"> {{object}}-->
+<!--                           </div>-->
 
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--                           -->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password"  formControlName="Contrasena_Usuario" (focusout)="validarPassword()">
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class=" form-label">Confirmar contraseña</label>
-                    <input type="password" class="form-control" id="confirmPassword"  formControlName="ConfirmContrasena" (focusout)="validarPassword()">
-                </div>
-            </div>
-        </div>
+<!--            <div class="row">-->
+<!--                <div class="col-md-6 mb-3">-->
+<!--                    <label class="form-label">Contraseña</label>-->
+<!--                    <input type="password" class="form-control" id="password"  formControlName="Contrasena_Usuario" (focusout)="validarPassword()">-->
+<!--                </div>-->
+<!--                <div class="col-md-6 mb-3">-->
+<!--                    <label class=" form-label">Confirmar contraseña</label>-->
+<!--                    <input type="password" class="form-control" id="confirmPassword"  formControlName="ConfirmContrasena" (focusout)="validarPassword()">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="contedor-btn-iniciar mt-3 float-end">
-            <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registrarUsuario()">Registrar</button>
-        </div>
-        <!-- <p>ya tienes una cuenta? <a href="/login">inicia sesion</a></p> -->
-    
-    </form>
-</div>
-    
+<!--        <div class="contedor-btn-iniciar mt-3 float-end">-->
+<!--            <button type="submit" class="btn btn-iniciar btn-primary btn-lg" (click)="registrarUsuario()">Registrar</button>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; <p>ya tienes una cuenta? <a href="/login">inicia sesion</a></p> &ndash;&gt;-->
+<!--    -->
+<!--    </form>-->
+<!--</div>-->
+<!--    -->
 

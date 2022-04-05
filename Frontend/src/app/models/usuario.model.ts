@@ -1,12 +1,12 @@
-export class User{
+export class UserFull{
     constructor(
-        public nombre?: string | null | undefined,
-        public apellido?: string | null | undefined,
+        public userID?: number | null | undefined,
         public email?: string | null | undefined,
-        public telefono?: string | null | undefined,
-        public foto?: string | null | undefined,
-        public rol?: string | null | undefined,
-        public uid?: string | null | undefined,
+        public password?: string | null | undefined,
+        public lastname?: string | null | undefined,
+        public phone?: string | null | undefined,
+        public role?: string | null | undefined,
+        public name?: string | null | undefined
     ){
 
     }

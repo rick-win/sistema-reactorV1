@@ -6,6 +6,7 @@ import { validate } from 'class-validator';
 export class UserController {
   static getAll = async (req: Request, res: Response) =>{
     const userRepo = getRepository(Usuario);
+    console.log('Request = ',req)
     try{
       const users = await userRepo.find();
       res.send(users);

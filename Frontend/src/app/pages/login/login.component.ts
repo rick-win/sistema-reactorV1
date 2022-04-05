@@ -1,59 +1,59 @@
-import { Component, OnInit } from '@angular/core';
-import{FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { AuthFireService } from '../../services/auth-fire.service';
-import {AngularFireAuth} from '@angular/fire/auth';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import { User } from 'src/app/models/usuario.model';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormBuilder} from "@angular/forms";
+
+import { BaseFormUser } from '../../shared/base-form-user';
+import { AuthApiService } from '../../services/auth-api.service';
+import { Subscription } from 'rxjs';
+import {UserResponse} from "../../models/Usuario";
+import {catchError} from "rxjs/operators";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
+export class LoginComponent implements OnInit, OnDestroy {
 
 
-export class LoginComponent implements OnInit {
-  formulario: FormGroup;
-
-  private isValidEmail = /\S*@\S*\.\S*/;
-  constructor(
-    private fb: FormBuilder,
-    public firebase: AngularFireAuth,
-    private authServices: AuthFireService
-    ) {
-    this.formulario = new FormGroup({});
-    
-   }
-
+  logInForm = this.fB.group({
+    email:[''],
+    password:['']
+  })
+  constructor(private authSrvc: AuthApiService, private fB: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
-    this.crearFormulario();
   }
 
-  private crearFormulario(): void{
-    this.formulario = this.fb.group({
-      correo: [null, [Validators.required, Validators.pattern(this.isValidEmail)]],
-      password: [null, [Validators.required]]
-    })
-  }
-  public login() {
-    const correo = this.formulario.get('correo')?.value;
-    const password = this.formulario.get('password')?.value;
-    this.authServices.SignIn(correo, password);
+  onLogin(): void{
+    const formValue = this.logInForm.value;
+    console.log(formValue)
+    this.authSrvc.login(formValue).subscribe((res => {
+      if (res){
+        console.log('res = ', res)
+        switch (res.role) {
+          case 'operario' :{
+            this.router.navigate(['/accesofuncional-operario'])
+            break;
+          }
+          case 'admin' :{
+            this.router.navigate(['/administrador'])
+            break;
+          }
+          case 'mantenimiento' :{
+            this.router.navigate(['/accesofuncional-mantenimiento'])
+            break;
+          }
+        }
+      }
+    }));
   }
 
-  public loginGoogle(){
-  this.authServices.loginGoogle();
-}
-
-LogOut(){
-  this.authServices.LogOut();
-  this.authServices.usuario = new User();
-}
- 
-  public recuperarPassword() {
-    
+  logOut():void{
+    localStorage.removeItem('Token');
+    //Set isLogged as false
   }
 
+  ngOnDestroy(): void {
+  }
 }

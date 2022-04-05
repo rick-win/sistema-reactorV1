@@ -26,17 +26,17 @@
          </div>
 
          <p>No tienes una cuenta? <a href="/registro">registrate aqui</a> </p>
-     
+
         </div>
-  
-        
-  
+
+
+
       </form>
 
   </div>
   -->
 
-  
+
 <section>
   <div class="row g-0">
       <div class="col-lg-7 d-none d-lg-block">
@@ -47,14 +47,14 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item img1 min-vh-100 active">
-                  
+
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="font-weight-bold">Sistema de Informacion Planta Piloto de Pirolisis</h5>
                     <p>Permite monitoreo de variables del sistema reactor</p>
                   </div>
                 </div>
                 <div class="carousel-item img2 min-vh-100">
-                  
+
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="font-weight-bold">Sistema de Informacion Planta Piloto de Pirolisis</h5>
                     <p>Permite monitoreo de variables del sistema reactor.</p>
@@ -77,48 +77,48 @@
               <img src="assets/Img/logo_astin.png" class="img-fluid" width="90 " alt="LogoAstin">
           </div>
 
-         
+
           <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
               <h1 class="font-weight-bold mb-4">Bienvenidos...</h1>
-              <form autocomplete="off" [formGroup]="formulario">
+              <form autocomplete="off" [formGroup]="logInForm">
                   <div class="container-form">
                    <!-- <h3 class="titulo-login">INICIAR SESION</h3>-->
-                    <div class="form-group">
+                    <div>
                       <div class="input-group ">
                         <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                          <span class="input-group-text" id="basic-addon"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="email" class="form-control" placeholder="Ingresa tu email" name="correo" formControlName="correo">
+                        <input type="email" placeholder="Ingresa tu email" name="correo" formControlName="email">
                       </div>
                     </div>
-                    <div class="form-group">
+                    <div>
                       <div class="input-group mt-3">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="password" formControlName="password">
+                        <input type="password" class="mb-2" placeholder="Ingresa tu contraseña" name="password" formControlName="password">
                       </div>
                   </div>
                   <div class="contedor-btn-iniciar mt-3 mb-2">
-                    <a (click)="login()"><button type="submit" class="btn btn-iniciar btn-primary btn-lg w-100">Iniciar
+                    <a (click)="onLogin()"><button type="submit" class="btn btn-iniciar btn-primary btn-lg w-100">Iniciar
                        Sesion</button></a>
                    </div>
-               
+
                   </div>
                 </form>
-                <p class= "font-weight-bold text-center text-mute">O inicia sesion con</p>
-                <div class="d-flex justify-content-around">
-                  <button type="submit" class="btn btn-outline-danger flex-grow-1 my-1" (click)="loginGoogle()">
-                  <img   src="assets/Img/iconGoogle.png" width = "32" alt="logoGoogle"><i class=" lead mr-2"></i>Google
-                  </button>
-                </div>
+<!--                <p class= "font-weight-bold text-center text-mute">O inicia sesion con</p>-->
+<!--                <div class="d-flex justify-content-around">-->
+<!--                  <button type="submit" class="btn btn-outline-danger flex-grow-1 my-1" (click)="loginGoogle()">-->
+<!--                  <img   src="assets/Img/iconGoogle.png" width = "32" alt="logoGoogle"><i class=" lead mr-2"></i>Google-->
+<!--                  </button>-->
+<!--                </div>-->
           </div>
           <div class="text-center px-lg-5 pt-lg-4 pb-lg-4 p-4 w-100 mt-auto">
               <p class="d-inline-block mb-0"> ¿No tienes una cuenta? <a href="/registro" class="font-weight-bold text-decoration-none">registrate aqui</a> </p>
               <p>¿has olvidado tu contraseña? <a href="/recuperarPassword" class="text-decoration-none">Recuperar tu contraseña</a></p>
-              
+
           </div>
-              
+
       </div>
   </div>
 

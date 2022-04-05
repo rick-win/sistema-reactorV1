@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthFireService } from 'src/app/services/auth-fire.service';
 
 import {GestionarUsuarioService} from '../../services/gestionar-usuario.service';
 import { Router } from '@angular/router';
+import {AuthApiService} from "../../services/auth-api.service";
+import {DataTablesModule} from "angular-datatables";
+import {Subject} from "rxjs";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-gestionar-usuario',
@@ -11,25 +14,27 @@ import { Router } from '@angular/router';
 })
 export class GestionarUsuarioComponent implements OnInit {
 
-  roles = ['Administrador', 'Supervisor', 'Operario', 'Invitado'];
+  dtOptions: DataTables.Settings = {}
+  dtTrigger = new Subject()
+  data: any;
 
   constructor
   (private gestionarUsuarioService : GestionarUsuarioService,
-    public authServices: AuthFireService,
-    private router: Router
+    public authSvc: AuthApiService,
+    private router: Router,
+    private fB: FormBuilder
     ) { }
 
   ngOnInit(): void {
     this.gestionarUsuarioService.getUsuarios().subscribe(
-      res => console.log(res),
-      err => console.log(err)
+      res => (this.data = res)
     );
+    console.log(this.data);
   }
 
   public LogOut(): void {
-    this.authServices.LogOut().then( () => {
-      this.router.navigate(['login']);
-    })
+    this.authSvc.logout();
+    this.router.navigate(['login']);
   }
 
 }

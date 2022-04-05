@@ -1,10 +1,15 @@
-export interface Usuario{
-      Nom_Usuario: string,
-      Ape_Usuario: string,
-      Tel_Usuario: string,
-      Email_Usuario: string,
-      //cargo: string,
-      Contrasena_Usuario: string,
-      ConfirmContrasena?: string,
-      roles: []
+export interface User {
+  email: string;
+  password: string;
+}
+
+export interface UserResponse extends User {
+  message: string;
+  token: string;
+  userID: number;
+  role: string;
+  username: string;
+  name: string;
+  last: string;
+  phone: string;
 }

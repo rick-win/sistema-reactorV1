@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthFireService } from '../../services/auth-fire.service';
+import {Component, Injectable, OnInit} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public authServices: AuthFireService,) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

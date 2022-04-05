@@ -1,7 +1,7 @@
 <!-- top navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-  
+
       <button
         class="navbar-toggler"
         type="button"
@@ -11,19 +11,19 @@
       >
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a 
+      <a
         class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
         href="#"
         >
-        <img src="assets/Img/logoSena.png"  width="40" 
+        <img src="assets/Img/logoSena.png"  width="40"
         class="d-inline-block aling-top mr-2"/>
         Sistema Reactor
-        <img src="assets/Img/logo_astin.png"  width="60" 
+        <img src="assets/Img/logo_astin.png"  width="60"
         class="d-inline-block aling-top mr-8"/>
-        <img src="assets/Img/LogoSENNOVA.jpeg"  width="60" 
+        <img src="assets/Img/LogoSENNOVA.jpeg"  width="60"
         class="d-inline-block aling-top mr-2"/>
       </a>
-  
+
       <button
         class="navbar-toggler"
         type="button"
@@ -38,7 +38,7 @@
       <div class="collapse navbar-collapse" id="topNavBar">
         <form class="d-flex ms-auto my-3 my-lg-0">
           <div class="input-group">
-            
+
           </div>
         </form>
         <ul class="navbar-nav">
@@ -50,14 +50,13 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-            {{authServices.usuario.email}} 
-            <img [src]="authServices.usuario.foto" alt="hugenerd" width="30" height="30" class="rounded-circle">
+<!--            {{authServices.usuario.email}}-->
             </a>
-  
+
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby = "navbarDropdown">
-              <li><a class="dropdown-item" (click)="LogOut()" >Cerrar Sesion</a></li>
+              <li><a class="dropdown-item" (click)="logOut()" ><button type="submit" class="btn btn-iniciar btn-lg w-100">Cerrar Sesión</button></a></li>
             </ul>
-  
+
           </li>
         </ul>
       </div>
@@ -73,11 +72,11 @@
     <div class="offcanvas-body p-0">
       <nav class="navbar-dark">
         <ul class="navbar-nav">
-   
+
           <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none mt-3">
-            <span class="fs-5 d-none d-sm-inline">Menu: <a>{{authServices.usuario.nombre}}</a></span>
+            <span class="fs-5 d-none d-sm-inline">Menu: <a>{{authApi.isLogged}}</a></span>
         </a>
-  
+
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3">
               CORE
@@ -95,14 +94,14 @@
               Interface
             </div>
           </li>
-  
+
           <li>
             <a routerLink="/gestionarUsuario" class="nav-link px-3">
               <span class="me-2"><i class="bi bi-book-fill"></i></span>
               <span>Gestionar Usuario</span>
             </a>
           </li>
-  
+
           <li>
             <a
               class="nav-link px-3 sidebar-link"
@@ -146,7 +145,7 @@
               </ul>
             </div>
           </li>
-  
+
           <li>
             <a
               class="nav-link px-3 sidebar-link"
@@ -190,7 +189,7 @@
               </ul>
             </div>
           </li>
-         
+
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
@@ -214,10 +213,13 @@
     </div>
   </div> -->
   <!-- offcanvas -->
-  
+
   <!--Contenido gestionar usuario-->
-  
-  
+
+  <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/gestionarUsuario'">
+    <app-gestionar-usuario></app-gestionar-usuario>
+  </div>
+
   <!--Contenido administrador-->
   <main class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/administrador'">
     <div class="container-fuid">
@@ -231,9 +233,9 @@
         </div>
       </div>
       <div class="row mt-2">
-       
+
         <div class="col-md-4 ">
-          <div 
+          <div
           class="card text-white bg-primary h-100">
           <div class="card-header">Header</div>
           <div class="card-body">
@@ -245,11 +247,11 @@
            </div>
           </div>
         </div>
-    
+
         <div class="col-md-4">
-          <div 
+          <div
           class="card text-white bg-warning h-100">
-    
+
           <div class="card-header">Header</div>
           <div class="card-body">
             <h5 class="card-tittle"> primary card tittle</h5>
@@ -260,9 +262,9 @@
            </div>
           </div>
         </div>
-    
+
         <div class="col-md-4">
-          <div 
+          <div
           class="card text-white bg-danger h-100">
           <div class="card-header">Header</div>
           <div class="card-body">
@@ -274,10 +276,10 @@
            </div>
           </div>
         </div>
-    
+
       </div>
-  
-      
+
+
       <div class="row mt-3">
         <div class="col-md-4">
           <div class="card">
@@ -288,8 +290,8 @@
               <canvas class="chart" width="400" height="200"></canvas>
             </div>
           </div>
-        </div>  
-  
+        </div>
+
         <div class="col-md-4">
           <div class="card">
             <div class="card-header">
@@ -299,8 +301,8 @@
               <canvas class="chart" width="400" height="200"></canvas>
             </div>
           </div>
-        </div>  
-  
+        </div>
+
         <div class="col-md-4">
           <div class="card">
             <div class="card-header">
@@ -310,12 +312,12 @@
               <canvas class="chart" width="400" height="200"></canvas>
             </div>
           </div>
-        </div>  
-  
+        </div>
+
       </div>
-  
+
       </div>
-      <img src ="assets/Img/logoSena.png"  width="32" 
+      <img src ="assets/Img/logoSena.png"  width="32"
       class=" aling-top mr-2">
-  
+
   </main>

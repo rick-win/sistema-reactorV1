@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Subject, Subscriber } from 'rxjs';
+import {AuthApiService} from "../../services/auth-api.service";
 
 
 @Component({
@@ -19,9 +20,12 @@ export class AccesoFuncionalOperarioComponent implements OnInit {
   data: any;
 
   constructor(
+    private authApi: AuthApiService,
     private http : HttpClient,
     public router: Router
   ) { }
+
+
 
   ngOnInit(): void {
 
@@ -34,7 +38,7 @@ export class AccesoFuncionalOperarioComponent implements OnInit {
     };
     this.http.get('http://dummy.restapiexample.com/api/v1/employees').subscribe((res:any) => {this.data = res.data
     this.dtTrigger.next();
-    });  
+    });
 
 
   }

@@ -9,6 +9,7 @@ import user from "../routes/user";
 class AuthController {
 
   static login = async (req: Request, res: Response) => {
+
     const {email, password} = req.body;
     if (! (email && password)){
       return res.status(400).json({message: 'All fields required'})
@@ -31,11 +32,7 @@ class AuthController {
 
     const token = jwt.sign({userID: users.id_Usuario, username: users.email_Usuario}, config.jwtSecret, {expiresIn: '1h'})
 
-    res.json({message: 'Success', token, userID: users.id_Usuario, username: users.email_Usuario, role: users.rol_Usuario})
-  }
-
-  static changePassword = async (req: Request, res: Response) => {
-
+    res.json({message: 'Success', token, userID: users.id_Usuario, username: users.email_Usuario, role: users.rol_Usuario, name: users.nom_Usuario, last: users.ape_Usuario, phone: users.tel_Usuario})
   }
 }
 export default AuthController;

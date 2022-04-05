@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { GestionarUsuarioComponent } from './pages/gestionar-usuario/gestionar-usuario.component';
 import { LoginComponent } from './pages/login/login.component';
-import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar-password.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { MonitoreoComponent } from './pages/monitoreo/monitoreo.component';
 import { TemperaturasComponent } from './pages/parametro_temperatura/temperaturas.component';
@@ -44,6 +43,8 @@ import { GestionarReglasAlarmaComponent } from './pages/gestionar-reglas-alarma/
 import { CargueMaterialComponent } from './pages/cargue-material/cargue-material.component';
 import { FomularioIncidenciasComponent } from './pages/fomulario-incidencias/fomulario-incidencias.component';
 import { ParametrosTornilloComponent } from './pages/parametros-tornillo/parametros-tornillo.component';
+import {CheckLogInGuard} from "./shared/guards/check-log-in.guard";
+import {CheckLogOutGuard} from "./shared/guards/check-log-out.guard";
 
 
 
@@ -55,33 +56,33 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [CheckLogInGuard]
   },
-  
-  {
-    path: 'recuperarPassword',
-    component: RecuperarPasswordComponent
-  },
-  
+
   {
     path: 'gestionarUsuario',
     component: AdministradorComponent,
+    canActivate: [CheckLogOutGuard]
   },
 
 
 {
   path: 'monitoreo',
-  component: MonitoreoComponent
+  component: MonitoreoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'perfilTemperatura',
-  component: TemperaturasComponent
+  component: TemperaturasComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'presion',
-  component: PresionComponent
+  component: PresionComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 
@@ -91,68 +92,82 @@ const routes: Routes = [
 {
   path: 'accesofuncional-mantenimiento',
   component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'gestionar-alarmas',
   component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'reglas-eventos',
   component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'reporte-parcial-mantenimiento',
   component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'sobre-proyecto-mantenimiento',
-  component: AccesoFuncionalTecnicoComponent
+  component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'astin-mantenimiento',
-  component: AccesoFuncionalTecnicoComponent
+  component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'cdm-mantenimiento',
-  component: AccesoFuncionalTecnicoComponent
+  component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'agradecimientos-mantenimiento',
-  component: AccesoFuncionalTecnicoComponent
+  component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'equipo-desarrollo-mantenimiento',
-  component: AccesoFuncionalTecnicoComponent
+  component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'uniautonoma-mantenimiento',
-  component: AccesoFuncionalTecnicoComponent
+  component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'dataTable',
   component: DatatablesComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'Navbar',
   component: NavbarComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 
 
 {
   path: 'administrador',
-  component: AdministradorComponent
-},  
+  component: AdministradorComponent,
+  canActivate: [CheckLogOutGuard]
+},
 
 // Apunta a dashboard
 
 {
   path: 'instituciones',
-  component: DashboardComponent
+  component: DashboardComponent,
+  canActivate: [CheckLogOutGuard]
 },
 // {
 //   path: 'agradecimientos',
@@ -160,16 +175,19 @@ const routes: Routes = [
 // },
 {
   path: 'astin',
-  component: DashboardComponent
+  component: DashboardComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'cdm',
-  component: DashboardComponent
+  component: DashboardComponent,
+  canActivate: [CheckLogOutGuard]
 }
 ,
 {
   path: 'uniautonoma-cauca',
-  component: DashboardComponent
+  component: DashboardComponent,
+  canActivate: [CheckLogOutGuard]
 }
 ,
 // {
@@ -178,11 +196,13 @@ const routes: Routes = [
 // },
 {
   path: 'registro',
-  component: DashboardComponent
+  component: DashboardComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'dashboard',
-  component: DashboardComponent
+  component: DashboardComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 
@@ -190,56 +210,68 @@ const routes: Routes = [
 {
   path: 'accesofuncional-directivo',
   component: AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'sobre-proyecto-directivo',
-  component:  AccesoFuncionalDirectivoComponent
+  component:  AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'instituciones-directivo',
-  component:  AccesoFuncionalDirectivoComponent
+  component:  AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'agradecimientos-directivo',
-  component:  AccesoFuncionalDirectivoComponent
+  component:  AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'astin-directivo',
-  component:  AccesoFuncionalDirectivoComponent
+  component:  AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'cdm-directivo',
-  component:  AccesoFuncionalDirectivoComponent
+  component:  AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'uniautonoma-directivo',
-  component:  AccesoFuncionalDirectivoComponent
+  component:  AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'equipo-desarrollo-directivo',
-  component:  AccesoFuncionalDirectivoComponent
+  component:  AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'estadisticasProduccionDirectivo',
   component: AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'estadisticasProcesoDirectivo',
   component: AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'simulacion',
   component: AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'registro-directivo',
-  component: AccesoFuncionalDirectivoComponent
+  component: AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 
@@ -248,15 +280,18 @@ const routes: Routes = [
 {
   path: 'accesofuncional-operario',
   component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'registroProducto',
   component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'sobre-el-proyecto',
-  component: AccesoFuncionalOperarioComponent
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 // {
@@ -266,60 +301,73 @@ const routes: Routes = [
 
 {
   path: 'desarrollo-O',
-  component: AccesoFuncionalOperarioComponent
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'instituciones-operario',
-  component: AccesoFuncionalOperarioComponent
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'agradecimientos-O',
-  component: AccesoFuncionalOperarioComponent
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'astin-O',
-  component: AccesoFuncionalOperarioComponent
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'cdm-O',
-  component: AccesoFuncionalOperarioComponent
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'uniautonoma-cauca-O',
-  component: AccesoFuncionalOperarioComponent
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
   path: 'reporteBitacoraIncidencias',
   component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'reporteProduccionOperario',
   component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'reporteProcesoOperario',
   component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'encender-equipos',
   component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
 path: 'cargueMaterial-tolva',
-component: AccesoFuncionalOperarioComponent
+component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 {
 path: 'formnularioIncidencias',
-component: AccesoFuncionalOperarioComponent
+component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 {
   path: 'parametrosTornillo',
-  component: AccesoFuncionalOperarioComponent
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
 },
 
 ];
