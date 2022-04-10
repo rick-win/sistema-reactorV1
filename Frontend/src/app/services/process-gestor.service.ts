@@ -3,26 +3,24 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
-
-import { UserResponse, User } from '../models/Usuario';
 import { catchError, map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {error} from "jquery";
 import {loggedIn} from "@angular/fire/auth-guard";
-import {UserFull} from "../models/usuario.model";
+import {ProcesoFull} from "../models/Proceso";
 
 const helper = new JwtHelperService();
 
 @Injectable({
   providedIn: 'root'
 })
-export class GestionarUsuarioService {
+export class ProcessGestorService {
 
-  private userInfo: UserFull;
+  private userInfo: ProcesoFull;
 
   constructor(private http: HttpClient) { }
 
-  getUsuarios(){
+  getProcess(){
     const res = this.http.get(`${environment.API_URL}/users`);
     if (res) {
       console.log('Data obtained in service = ', res)
@@ -30,22 +28,22 @@ export class GestionarUsuarioService {
     return res
   }
 
-  getUsuarioById(id: number){
+  getProcessById(id: number){
     const res = this.http.get(`${environment.API_URL}/users/${id}`);
     console.log('Data obtained in service = ', res)
     return res
   }
 
-  deleteUsuario(id: number){
+  deleteProcess(id: number){
     return this.http.delete(`${environment.API_URL}/users/${id}`);
   }
 
-  saveUsuario(usuario: UserFull){
+  saveProcess(Process: ProcesoFull){
     console.log(`${environment.API_URL}/users`);
-    return this.http.post(`${environment.API_URL}/users`, usuario);
+    return this.http.post(`${environment.API_URL}/users`, Process);
   }
 
-  updateUsuario(id: number, updatedUsuario: any){
-    return this.http.patch(`${environment.API_URL}/users/${id}`, updatedUsuario);
+  updateProcess(id: number, updatedProcess: any){
+    return this.http.patch(`${environment.API_URL}/users/${id}`, updatedProcess);
   }
 }

@@ -5,18 +5,22 @@ import { validate } from 'class-validator';
 
 export class UserController {
   static getAll = async (req: Request, res: Response) =>{
-    const userRepo = getRepository(Usuario);
-    console.log('Request = ',req)
-    try{
-      const users = await userRepo.find();
-      res.send(users);
+    console.log('Attempting to get users')
+    let userRepo;
+    let users
+    try{;
+      userRepo = getRepository(Usuario);
+      users = await userRepo.find()
+      console.log(users)
     }
     catch (e) {
       res.status(404).json({message: 'no users'})
     }
+    res.send(users);
   }
 
   static getById = async (req: Request, res: Response) =>{
+    console.log('Attempting to get specific user')
     const {id} = req.params;
     const userRepo = getRepository(Usuario);
     try{
@@ -29,15 +33,16 @@ export class UserController {
   }
 
   static newUser = async (req: Request, res: Response) =>{
-    const {username, password, role, phone, name, lastname} = req.body
+    console.log('Attempting to create user')
+    const {email_Usuario, contrasena_Usuario, rol_Usuario, tel_Usuario, nom_Usuario, ape_Usuario} = req.body
     const user = new Usuario();
 
-    user.email_Usuario = username;
-    user.constrasena_Usuario = password;
-    user.rol_Usuario = role;
-    user.nom_Usuario = name;
-    user.ape_Usuario = lastname;
-    user.tel_Usuario = phone;
+    user.email_Usuario = email_Usuario;
+    user.constrasena_Usuario = contrasena_Usuario;
+    user.rol_Usuario = rol_Usuario;
+    user.nom_Usuario = nom_Usuario;
+    user.ape_Usuario = ape_Usuario;
+    user.tel_Usuario = tel_Usuario;
 
     //validator
     const errors = await validate(user, {validationError: { target: false, value: false}});
@@ -46,7 +51,6 @@ export class UserController {
       return res.status(400).json(errors)
 
     }
-
     //Hash pass
 
     const userRepo = getRepository(Usuario);
@@ -63,41 +67,47 @@ export class UserController {
   }
 
   static editUser = async (req: Request, res: Response) =>{
+    console.log('Attempting to edit user')
     let user;
     const {id} = req.params;
-    const {username, password, role, phone, name, lastname} = req.body
+    const {id_Usuario, email_Usuario, contrasena_Usuario, rol_Usuario, tel_Usuario, nom_Usuario, ape_Usuario} = req.body
+    console.log('Body', req.body)
 
     const userRepo = getRepository(Usuario);
     try{
       user = await userRepo.findOneOrFail({where:{id_Usuario: id}})
-      user.email_Usuario = username;
-      user.constrasena_Usuario = password;
-      user.rol_Usuario = role;
-      user.nom_Usuario = name;
-      user.ape_Usuario = lastname;
-      user.tel_Usuario = phone;
+      if (email_Usuario) {
+        user.email_Usuario = email_Usuario
+      }else {
+        delete user.email_Usuario
+      }
+      user.constrasena_Usuario = contrasena_Usuario? contrasena_Usuario : user.constrasena_Usuario;
+      user.rol_Usuario = rol_Usuario? rol_Usuario : user.rol_Usuario;
+      user.nom_Usuario = nom_Usuario? nom_Usuario : user.nom_Usuario;
+      user.ape_Usuario = ape_Usuario? ape_Usuario : user.ape_Usuario;
+      user.tel_Usuario = tel_Usuario? tel_Usuario : user.tel_Usuario;
     }
     catch (e) {
       return res.status(404).json({message: 'User not found'})
     }
-
     const errors = await validate(Usuario, {validationError: { target: false, value: false}});
     if(errors.length > 0){
       return res.status(400).json(errors);
     }
-
     try{
       user.hashPassword();
       await userRepo.save(user)
     }
     catch (e) {
-      res.status(409).json({message: 'User already exists'})
+      return res.status(409).json({message: 'User already exists'})
     }
 
-    res.status(201).json({message: 'Edit successful'})
+    console.log('End')
+    return res.status(201).json({message: 'Edit successful'})
   }
 
   static deleteUser = async (req: Request, res: Response) =>{
+    console.log('Attempting to delete user')
     const {id} = req.params;
     const userRepo = getRepository(Usuario);
 
@@ -115,5 +125,4 @@ export class UserController {
     res.status(201).json({message: 'Deleted'})
   }
 }
-
 export default UserController;

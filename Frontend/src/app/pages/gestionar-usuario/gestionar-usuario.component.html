@@ -30,71 +30,92 @@
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="dataTables-example" class="table table-striped table-bordered table-sm row-border hover">
       <thead>
       <tr>
-        <th>Fecha/hora</th>
-        <th>Tipo Producto</th>
-        <th>Sub-producto</th>
-        <th>Cantidad</th>
+        <th>E-Mail</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Rol</th>
+        <th>Teléfono</th>
+        <th>Fecha de Creación</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor = "let e of data">
-        <td>{{e.employee_age}}</td>
-        <td>{{e.employee_age}}</td>
-        <td>{{e.employee_age}}</td>
-        <td>{{e.employee_age}}</td>
+      <tr *ngFor = "let e of users">
+        <td> {{e.email_Usuario}} </td>
+        <td>{{e.nom_Usuario}}</td>
+        <td>{{e.ape_Usuario}}</td>
+        <td>{{e.rol_Usuario}}</td>
+        <td>{{e.tel_Usuario}}</td>
+        <td>{{e.createdAt}}</td>
+        <a><button (click)="startUpdating(e.id_Usuario)">Edit</button></a>
+        <a><button (click)="deleteUser(e.id_Usuario)">Delete</button></a>
       </tr>
       </tbody>
     </table>
   </div>
   <hr>
-  <div class="contenedor-formulario col-md-5 mt-5" >
+
+  <div *ngIf="showRegister" class="contenedor-formulario col-md-5 mt-5" >
   <form class="mt-4" autocomplete="off" >
 
         <h3 class="titulo-login">Registrar Usuario</h3>
 
-        <div class="form-row">
-            <div class="row">
-            <div class="form-group col-md-8 mb-3">
-                <label class="col-form-label">Nombre completo</label>
-                <input type="text" class="form-control" id="exampleInputEmail1">
-            </div>
-
-            <div class="form-group col-md-4 mb-3">
-
-                <!-- <div id="checkboxes">
-                  <label for="uno">
-                    <input type="checkbox" id="uno" />Administrador</label>
-                  <label for="dos">
-                    <input type="checkbox" id="dos" />Operario</label>
-                  <label for="tres">
-                    <input type="checkbox" id="tres" />Tecnico</label>
-                  <label for="cuatro">
-                     <input type="checkbox" id="cuatro" />Invitado</label>
-                </div> -->
-             </div>
-
-            </div>
+    <div class="form-row">
+      <div class="row">
+        <div class="form-group col-md-8 mb-3">
+            <label class="col-form-label">Correo </label> <label *ngIf="editing" class="col-form-label">a editar: {{newUser.email_Usuario}} </label>
+            <input type="email" class="form-control" placeholder="{{oldUser.email_Usuario}}" [(ngModel)]="newUser.email_Usuario" name="email">
         </div>
+      </div>
+    </div>
 
-<!--        <div class="mb-3">-->
-<!--            <label class="form-label">Correo</label>-->
-<!--            <input type="email" class="form-control" id="correo" formControlName="correo" >-->
-<!--        </div>-->
-<!--        <div class="mb-3">-->
-<!--            <label class="form-label">Contraseña</label>-->
-<!--            <input type="password" class="form-control" id="password" formControlName="password" >-->
-<!--        </div>-->
-<!--        <div class="mb-3">-->
-<!--            <label class="form-label">Confirmar contraseña</label>-->
-<!--            <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" >-->
-<!--        </div>-->
+    <div class="form-row">
+      <div class="row">
+        <div class="form-group col-md-8 mb-3">
+          <label class="col-form-label">Contraseña</label>
+          <input type="password" class="form-control" placeholder="New Password" [(ngModel)]="newUser.contrasena_Usuario" name="password">
+        </div>
+      </div>
+    </div>
 
-<!--        <div class="d-flex justify-content-around">-->
+    <div class="form-row">
+      <div class="row">
+        <div class="form-group col-md-8 mb-3">
+          <label class="col-form-label">Nombre</label>
+          <input type="text" class="form-control" placeholder="{{oldUser.nom_Usuario}}" [(ngModel)]="newUser.nom_Usuario" name="name">
+        </div>
+      </div>
+    </div>
 
-<!--                <button type="submit" class="btn btn-iniciar btn-primary btn-lg mr-2" >Guardar</button>-->
+    <div class="form-row">
+      <div class="row">
+        <div class="form-group col-md-8 mb-3">
+          <label class="col-form-label">Apellido</label>
+          <input type="text" class="form-control" placeholder="{{oldUser.ape_Usuario}}" [(ngModel)]="newUser.ape_Usuario" name="lastname">
+        </div>
+      </div>
+    </div>
 
-<!--                <button type="submit" class="btn btn-iniciar btn-primary btn-lg ml-2" >Listar</button>-->
-<!--        </div>-->
+    <div class="form-row">
+      <div class="row">
+        <div class="form-group col-md-8 mb-3">
+          <label class="col-form-label">Rol</label>
+          <input type="text" class="form-control" placeholder="{{oldUser.rol_Usuario}}" [(ngModel)]="newUser.rol_Usuario" name="role">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="row">
+        <div class="form-group col-md-8 mb-3">
+          <label class="col-form-label">Correo </label>
+          <input type="text" class="form-control" placeholder="{{oldUser.tel_Usuario}}" [(ngModel)]="newUser.tel_Usuario" name="email">
+        </div>
+      </div>
+    </div>
+          <div class="d-flex mt-4">
+
+                  <button (click)="updateUser(oldUser.id_Usuario)" type="submit" class="btn btn-iniciar btn-primary btn-lg mr-2" >Guardar</button>
+        </div>
     </form>
     </div>
 

@@ -14,7 +14,7 @@ export class ReporteProcesoOperarioComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject();
-  data: any;
+  data: any = [];
 
   constructor(private http : HttpClient) { }
 
@@ -26,14 +26,21 @@ export class ReporteProcesoOperarioComponent implements OnInit {
         url :'//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
       }
     };
-    this.http.get('http://dummy.restapiexample.com/api/v1/employees').subscribe((res:any) => {this.data = res.data
-    this.dtTrigger.next();
-    });  
+  }
+
+  getProcesses(){
+    // const res = this.http.get().subscribe(
+    //   res => {
+    //     this.data = res;
+    //     console.log(this.data)
+    //   },
+    //   error => {console.log(error)}
+    // )
   }
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
     }
-  
+
 
 }

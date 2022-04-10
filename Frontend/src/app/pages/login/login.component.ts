@@ -27,17 +27,15 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onLogin(): void{
     const formValue = this.logInForm.value;
-    console.log(formValue)
     this.authSrvc.login(formValue).subscribe((res => {
       if (res){
-        console.log('res = ', res)
         switch (res.role) {
           case 'operario' :{
             this.router.navigate(['/accesofuncional-operario'])
             break;
           }
           case 'admin' :{
-            this.router.navigate(['/administrador'])
+            this.router.navigate(['/accesofuncional-directivo'])
             break;
           }
           case 'mantenimiento' :{

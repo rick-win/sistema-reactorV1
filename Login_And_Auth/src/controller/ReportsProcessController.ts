@@ -1,45 +1,45 @@
 import { getRepository } from 'typeorm';
 import { Request, Response } from 'express';
-import { Usuario } from '../entity/usuario';
+import { Proceso } from '../entity/Proceso';
 import { validate } from 'class-validator';
 
-export class UserController {
+export class ReportsController {
     static getAll = async (req: Request, res: Response) =>{
-        const userRepo = getRepository(Usuario);
+        const processRepo = getRepository(Proceso);
         try{
-            const users = await userRepo.find();
-            res.send(users);
+            const process = await processRepo.find();
+            res.send(process);
         }
         catch (e) {
-            res.status(404).json({message: 'no users'})
+            res.status(404).json({message: 'no processs'})
         }
     }
 
     static getById = async (req: Request, res: Response) =>{
         const {id} = req.params;
-        const userRepo = getRepository(Usuario);
+        const processRepo = getRepository(Proceso);
         try{
-            const user = await userRepo.findOneOrFail({where:{id_Usuario: id}})
-            res.send(user)
+            const process = await processRepo.findOneOrFail({where:{id_Proceso: id}})
+            res.send(process)
         }
         catch (e) {
-            res.status(404).json({message: 'User not found'})
+            res.status(404).json({message: 'process not found'})
         }
     }
 
-    static newUser = async (req: Request, res: Response) =>{
-        const {username, password, role, phone, name, lastname} = req.body
-        const user = new Usuario();
+    static newProcess = async (req: Request, res: Response) =>{
+        const {horaCorrida_Proceso, operador_Proceso, verificarEnergia_Proceso, prod_Data, success_Proceso, annotations_Proceso} = req.body
+        const process = new Proceso();
 
-        user.email_Usuario = username;
-        user.constrasena_Usuario = password;
-        user.rol_Usuario = role;
-        user.nom_Usuario = name;
-        user.ape_Usuario = lastname;
-        user.tel_Usuario = phone;
+        process.horaCorrida_Proceso = horaCorrida_Proceso;
+        process.operador_Proceso = operador_Proceso;
+        process.verificarEnergia_Proceso = verificarEnergia_Proceso;
+        process.prod_Data = prod_Data;
+        process.success_Proceso = success_Proceso;
+        process.annotations_Proceso = annotations_Proceso;
 
         //validator
-        const errors = await validate(user, {validationError: { target: false, value: false}});
+        const errors = await validate(process, {validationError: { target: false, value: false}});
         if(errors.length > 0)
         {
             return res.status(400).json(errors)
@@ -48,71 +48,70 @@ export class UserController {
 
         //Hash pass
 
-        const userRepo = getRepository(Usuario);
+        const processRepo = getRepository(Proceso);
         try{
-            user.hashPassword();
-            await userRepo.save(user);
+            await processRepo.save(process);
         }
         catch (e) {
-            return res.status(409).json({message: 'Username taken'})
+            return res.status(409).json({message: 'processname taken'})
         }
 
         //Front ans
-        res.send('User created')
+        res.send('process created')
     }
 
-    static editUser = async (req: Request, res: Response) =>{
-        let user;
-        const {id} = req.params;
-        const {username, password, role, phone, name, lastname} = req.body
+    // static editProcess = async (req: Request, res: Response) =>{
+    //     let process;
+    //     const {id} = req.params;
+    //     const {processname, password, role, phone, name, lastname} = req.body
+    //
+    //     const processRepo = getRepository(Proceso);
+    //     try{
+    //         process = await processRepo.findOneOrFail({where:{id_Proceso: id}})
+    //         process.email_Proceso = processname;
+    //         process.constrasena_Proceso = password;
+    //         process.rol_Proceso = role;
+    //         process.nom_Proceso = name;
+    //         process.ape_Proceso = lastname;
+    //         process.tel_Proceso = phone;
+    //     }
+    //     catch (e) {
+    //         return res.status(404).json({message: 'process not found'})
+    //     }
+    //
+    //     const errors = await validate(Proceso, {validationError: { target: false, value: false}});
+    //     if(errors.length > 0){
+    //         return res.status(400).json(errors);
+    //     }
+    //
+    //     try{
+    //         process.hashPassword();
+    //         await processRepo.save(process)
+    //     }
+    //     catch (e) {
+    //         res.status(409).json({message: 'process already exists'})
+    //     }
+    //
+    //     res.status(201).json({message: 'Edit successful'})
+    // }
 
-        const userRepo = getRepository(Usuario);
-        try{
-            user = await userRepo.findOneOrFail({where:{id_Usuario: id}})
-            user.email_Usuario = username;
-            user.constrasena_Usuario = password;
-            user.rol_Usuario = role;
-            user.nom_Usuario = name;
-            user.ape_Usuario = lastname;
-            user.tel_Usuario = phone;
-        }
-        catch (e) {
-            return res.status(404).json({message: 'User not found'})
-        }
-
-        const errors = await validate(Usuario, {validationError: { target: false, value: false}});
-        if(errors.length > 0){
-            return res.status(400).json(errors);
-        }
-
-        try{
-            user.hashPassword();
-            await userRepo.save(user)
-        }
-        catch (e) {
-            res.status(409).json({message: 'User already exists'})
-        }
-
-        res.status(201).json({message: 'Edit successful'})
-    }
-
-    static deleteUser = async (req: Request, res: Response) =>{
-        const {id} = req.params;
-        const userRepo = getRepository(Usuario);
-
-        let user: Usuario;
-
-        try{
-            user = await userRepo.findOneOrFail(id)
-        }
-        catch (e) {
-            return res.status(404).json({message: 'User not found'});
-        }
-
-        //remove
-        await userRepo.delete(id);
-        res.status(201).json({message: 'Deleted'})
-    }
+    // static deleteProcess = async (req: Request, res: Response) =>{
+    //     const {id} = req.params;
+    //     const processRepo = getRepository(Proceso);
+    //
+    //     let process: Proceso;
+    //
+    //     try{
+    //         process = await processRepo.findOneOrFail(id)
+    //     }
+    //     catch (e) {
+    //         return res.status(404).json({message: 'process not found'});
+    //     }
+    //
+    //     //remove
+    //     await processRepo.delete(id);
+    //     res.status(201).json({message: 'Deleted'})
+    // }
 }
 
-export default UserController;
+export default ReportsController;

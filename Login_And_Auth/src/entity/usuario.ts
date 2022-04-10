@@ -5,6 +5,7 @@ import * as bcrypt from 'bcryptjs';
 @Entity()
 @Unique(['email_Usuario'])
 export class Usuario {
+
   @PrimaryGeneratedColumn()
   id_Usuario: number;
 

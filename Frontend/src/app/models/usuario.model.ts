@@ -1,12 +1,12 @@
 export class UserFull{
     constructor(
-        public userID?: number | null | undefined,
-        public email?: string | null | undefined,
-        public password?: string | null | undefined,
-        public lastname?: string | null | undefined,
-        public phone?: string | null | undefined,
-        public role?: string | null | undefined,
-        public name?: string | null | undefined
+        public id_Usuario?: number | null | undefined,
+        public email_Usuario?: string | null | undefined,
+        public contrasena_Usuario?: string | null | undefined,
+        public nom_Usuario?: string | null | undefined,
+        public ape_Usuario?: string | null | undefined,
+        public rol_Usuario?: string | null | undefined,
+        public tel_Usuario?: string | null | undefined,
     ){
 
     }

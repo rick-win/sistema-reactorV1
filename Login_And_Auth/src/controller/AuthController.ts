@@ -10,12 +10,15 @@ class AuthController {
 
   static login = async (req: Request, res: Response) => {
 
+    console.log(req)
     const {email, password} = req.body;
     if (! (email && password)){
       return res.status(400).json({message: 'All fields required'})
     }
     const userRepo = getRepository(Usuario)
     let users: Usuario;
+
+    console.log('Fields received')
 
     try{
       users = await userRepo.findOneOrFail({where:{email_Usuario: email}})
@@ -24,15 +27,15 @@ class AuthController {
       return res.status(400).json({message:'User or password incorrect'})
     }
 
+    console.log('Fields received 2')
     //Auth
     if(!users.checkPassword(password))
     {
       return res.status(400).json({message:'User or password incorrect'})
     }
-
     const token = jwt.sign({userID: users.id_Usuario, username: users.email_Usuario}, config.jwtSecret, {expiresIn: '1h'})
-
-    res.json({message: 'Success', token, userID: users.id_Usuario, username: users.email_Usuario, role: users.rol_Usuario, name: users.nom_Usuario, last: users.ape_Usuario, phone: users.tel_Usuario})
+    return res.json({message: 'Success', token, userID: users.id_Usuario, username: users.email_Usuario, role: users.rol_Usuario, name: users.nom_Usuario, last: users.ape_Usuario, phone: users.tel_Usuario})
+    // res.send(users)
   }
 }
 export default AuthController;
