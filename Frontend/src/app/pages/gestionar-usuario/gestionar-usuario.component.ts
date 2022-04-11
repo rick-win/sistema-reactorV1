@@ -76,24 +76,6 @@ export class GestionarUsuarioComponent implements OnInit {
   }
 
   updateUser(id: number){
-    // if (!this.newUser.email_Usuario) {
-    //   delete this.newUser.email_Usuario
-    // }
-    // if (!this.newUser.contrasena_Usuario) {
-    //   delete this.newUser.contrasena_Usuario
-    // }
-    // if (!this.newUser.nom_Usuario) {
-    //   delete this.newUser.nom_Usuario
-    // }
-    // if (!this.newUser.ape_Usuario) {
-    //   delete this.newUser.ape_Usuario
-    // }
-    // if (!this.newUser.rol_Usuario) {
-    //   delete this.newUser.rol_Usuario
-    // }
-    // if (!this.newUser.tel_Usuario) {
-    //   delete this.newUser.tel_Usuario
-    // }
     console.log(this.newUser)
 
     this.gestionarUsuarioService.updateUsuario(id, this.newUser).subscribe(
