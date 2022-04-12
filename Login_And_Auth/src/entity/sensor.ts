@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, Updat
 import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
 
 @Entity()
-export class Lectura_Sensor {
+export class Sensor {
 
     @PrimaryGeneratedColumn()
     id_Sensor: number;

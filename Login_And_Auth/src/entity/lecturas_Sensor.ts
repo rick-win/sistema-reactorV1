@@ -1,18 +1,26 @@
-import { Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Unique,
+    Column,
+    CreateDateColumn,
+    UpdateDateColumn
+} from 'typeorm';
 import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
 
 @Entity()
-export class Lectura_Sensor {
+export class Lecturas_Sensor {
 
     @PrimaryGeneratedColumn()
-    id_LecturaSensor: bigint;
+    id_LecturaSensor: number;
 
     @Column()
-    SENSOR_id_Sensor: number;
+    sensor_id_Sensor: number;
 
     @Column()
     @IsNotEmpty()
-    datetiime_LecturaSensor: Date;
+    @CreateDateColumn()
+    datetime_LecturaSensor: Date;
 
     @Column()
     @IsNotEmpty()

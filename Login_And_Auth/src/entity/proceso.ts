@@ -1,13 +1,24 @@
-import { Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Unique,
+    Column,
+    CreateDateColumn,
+    UpdateDateColumn,
+    OneToOne,
+    JoinColumn
+} from 'typeorm';
 import { MinLength, IsNotEmpty } from 'class-validator';
+import {Tolva} from "./tolva";
 
 @Entity()
 export class Proceso{
     @PrimaryGeneratedColumn()
     id_Proceso: number;
 
-    @Column()
-    TOLVA_id_Tolva: number;
+    @OneToOne(() => Tolva)
+    @JoinColumn()
+    tolva_id_Tolva: number;
 
     @Column()
     @CreateDateColumn()
@@ -15,6 +26,10 @@ export class Proceso{
 
     @Column()
     horaCorrida_Proceso: Date;
+
+
+    @Column()
+    cierreVerificado: Date;
 
     @Column()
     operador_Proceso: string;

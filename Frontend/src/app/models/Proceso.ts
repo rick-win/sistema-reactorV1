@@ -9,9 +9,8 @@ export class ProcesoFull{
       public exito_proceso?: string | null | undefined,
       public verificarEnergia_proceso?: boolean | null | undefined,
       public consumoEnergia_proceso?: number | null | undefined,
-    
+      public cierreVerificado?: boolean | null | undefined,
     ){
-  
+
     }
   }
-  

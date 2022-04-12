@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, Updat
 import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
 
 @Entity()
-export class Lectura_Sensor {
+export class EventosAlarmaPlanta {
 
     @PrimaryGeneratedColumn()
     id_EventosAlarmaPlanta: number;
@@ -16,6 +16,6 @@ export class Lectura_Sensor {
 
     @Column()
     @IsNotEmpty()
-    datetiime_EventosAlarmaPlanta: Date;
+    datetime_EventosAlarmaPlanta: Date;
 
 }
