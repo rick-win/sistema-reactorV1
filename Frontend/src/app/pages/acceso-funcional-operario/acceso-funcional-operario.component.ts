@@ -19,6 +19,9 @@ export class AccesoFuncionalOperarioComponent implements OnInit {
   dtTrigger = new Subject();
   data: any;
 
+  username: string
+  nameUser: string
+
   constructor(
     private authApi: AuthApiService,
     private http : HttpClient,
@@ -39,12 +42,17 @@ export class AccesoFuncionalOperarioComponent implements OnInit {
     this.http.get('http://dummy.restapiexample.com/api/v1/employees').subscribe((res:any) => {this.data = res.data
     this.dtTrigger.next();
     });
-
-
+    this.username = localStorage.getItem('Username');
+    this.nameUser = localStorage.getItem('Name')
   }
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
-    }
+  }
+
+  logOut(): void {
+    this.authApi.logout();
+    this.router.navigate(['/login'])
+  }
 
 }

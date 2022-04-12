@@ -3,7 +3,7 @@
     <div class="row text-center ">
     <img src="assets/Img/logoSena.png"
       class="imgLS d-inline-block col mr-2"/>
-    <h3 class="col">Bitacora Operario</h3>
+    <h3 class="col">Reportes de proceso</h3>
     <img src="assets/Img/LogoGIDEMP.jpg"
       class="imgLS d-inline-block  col mr-2 float-end"/>
     </div><hr>
@@ -25,10 +25,7 @@
                         <input class="form-control" type="datetime-local" class="dateadded form-control">
                     </div>
 
-                    <div class="form-group col-sm-6 mt-3 ">
-                        <label  class="form-label mr-5">Generar Reporte:</label>
-                        <button type ="button" class="btn btn-danger "><i class="fa fa-print"></i>  PDF</button>
-                    </div>
+
                  </div>
             </div>
         </div>
@@ -36,30 +33,223 @@
 
 
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="dataTables-example" class="table table-striped table-bordered table-sm row-border hover">
+
       <thead>
         <tr>
+          <th>Fecha de reporte</th>
           <th>Fecha/hora Proceso</th>
           <th>Operario</th>
-          <th>verificacion  Encendido</th>
-          <th>Verificacion de cierre</th>
-          <th>Configuracion inicial/temperatura</th>
-          <th>Ajuste Configuracion Inicial</th>
-          <th>Datos de Produdccion Registrados</th>
-          <th>Proceso Termindo con exito</th>
+          <th>verificación  Encendido</th>
+          <th>Verificación de cierre</th>
+          <th>Anotaciones</th>
+          <th>Proceso Terminado con éxito</th>
+          <th>Datos de producción</th>
+          <th>Datos de producto</th>
         </tr>
       </thead>
       <tbody>
        <tr *ngFor = "let e of data">
-             <td>{{e.datetime_proceso}}</td>
-             <td>{{e.operador_proceso}}</td>
-             <td>{{e.employee_age}}</td>
-             <td>{{e.employee_age}}</td>
-             <td>{{e.employee_age}}</td>
-             <td>{{e.employee_age}}</td>
-             <td>{{e.employee_age}}</td>
-             <td>{{e.employee_age}}</td>
+          <td>{{e.horaReporte_Proceso}}</td>
+          <td>{{e.horaCorrida_Proceso}}</td>
+          <td>{{e.operador_Proceso}}</td>
+          <td>{{e.verificarEnergia_Proceso}}</td>
+          <td>{{e.verificarCierre_Proceso}}</td>
+          <td>{{e.annotations_Proceso}}</td>
+          <td>{{e.success_Proceso}}</td>
+         <td><a><button (click)="showFormulary('production')">Añadir datos de producción</button></a></td>
+         <td><a><button (click)="showFormulary('product')">Añadir datos de producto</button></a></td>
          </tr>
       </tbody>
     </table>
+    <div class="d-flex mt-4">
+      <div class="form-group col-sm-6 mt-3 ">
+        <label  class="form-label mr-5">Generar Reporte:</label>
+        <button  type ="button" class="btn btn-danger "><i class="fa fa-print"></i>  PDF</button>
+      </div>
+      <button (click)="showFormulary('new')" type="submit" class="btn btn-iniciar btn-primary btn-lg mr-2" >Nuevo proceso</button>
+    </div>
+  <div *ngIf="registeringProcess" class="contenedor-formulario justify-content-center" >
+
+    <form class="mt-4" autocomplete="off">
+
+      <h3 class="titulo-login">Registrar Control de Proceso</h3>
+
+      <div class="form-row">
+        <div class="row">
+          <div class="form-group col-md-8 mb-3">
+            <label class="col-form-label">Fecha y hora</label>
+            <input [(ngModel)]="newProcessToSend.horaCorrida_Proceso" name="date" type="datetime-local" class="form-control">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Operador</label>
+        <input [(ngModel)]="newProcessToSend.operador_Proceso" name="ope" type="text" class="form-control">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Verificación de Encendido</label>
+        <select [(ngModel)]="newProcessToSend.verificarEnergia_Proceso" name="energy" class="form-select" aria-label="default Select Example">
+          <option value="true">Realizada</option>
+          <option value="false">No Realizada</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="col-form-label">Verificación de Cerrado</label>
+        <select [(ngModel)]="newProcessToSend.verificarCierre_Proceso" name="close" class="form-select" aria-label="default Select Example">
+          <option value="true">Realizada</option>
+          <option value="false">No Realizada</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Anotaciones</label>
+        <input [(ngModel)]="newProcessToSend.annotations_Proceso" name="ann" type="text" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label class="col-form-label">Resultado del proceso</label>
+        <select [(ngModel)]="newProcessToSend.success_proceso" name="res" class="form-select" aria-label="default Select Example">
+          <option value="true">Éxito</option>
+          <option value="false">Fracaso</option>
+        </select>
+      </div>
+
+      <div class="contedor-btn-iniciar mt-3">
+        <button (click)="newProcess()" type="submit" class="btn btn-iniciar btn-primary btn-lg" >Guardar</button>
+      </div>
+
+    </form>
   </div>
+  <div *ngIf="registeringProduction" class="contenedor-formulario col-md-5 mt-5  mt-5 justify-content-center" >
+
+    <form class="mt-4" autocomplete="off">
+
+      <h3 class="titulo-login">Registrar Producción</h3>
+
+      <div class="form-row">
+        <div class="row">
+          <div class="form-group col-md-8 mb-3">
+            <label class="col-form-label">Fecha y hora de inicio</label>
+            <input type="datetime-local" class="form-control" name="date1">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="row">
+          <div class="form-group col-md-8 mb-3">
+            <label class="col-form-label">Fecha y hora de finalización</label>
+            <input type="datetime-local" class="form-control" name="date2">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Tipo de producto ingresado</label>
+        <input type="text" class="form-control" name="typeIn">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Cantidad de producto ingresado</label>
+        <input type="number" class="form-control" name="amountIn">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Unidad de medida Ingreso</label>
+        <input type="text" class="form-control" name="measureIn">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Tipo de líquido producido</label>
+        <input type="text" class="form-control" >
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Cantidad de líquido producido</label>
+        <input type="number" class="form-control">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Unidad de medida de líquido</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Tipo de sólido producido</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Cantidad de sólido producido</label>
+        <input type="number" class="form-control">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Unidad de medida de sólidos</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Tipo de gas producido</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Cantidad de gas producido</label>
+        <input type="number" class="form-control">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Unidad de medida de gases</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="contedor-btn-iniciar mt-3">
+        <button type="submit" class="btn btn-iniciar btn-primary btn-lg" >Guardar</button>
+      </div>
+
+    </form>
+  </div>
+  <div *ngIf="registeringProduct" class="contenedor-formulario col-md-5 mt-5  mt-5 justify-content-center" >
+    <form class="mt-4" autocomplete="off">
+
+      <h3 class="titulo-login">Registrar Producto</h3>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Tipo de producto</label>
+        <input type="text" class="form-control" name="Tipo">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Subproducto</label>
+        <input type="text" class="form-control" name="Sub_Producto">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Detalle</label>
+        <input type="text" class="form-control" id="Detail" name="Detalle">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Cantidad</label>
+        <input type="number" class="form-control" id="amount" name="Can_Producto">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Unidad de Medida</label>
+        <input type="text" class="form-control" id="measureUnit" name="Unidad_Medida">
+      </div>
+
+      <div class="contedor-btn-iniciar mt-3">
+        <button type="submit" class="btn btn-iniciar btn-primary btn-lg">Guardar</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
 

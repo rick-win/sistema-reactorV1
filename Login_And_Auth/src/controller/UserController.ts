@@ -5,7 +5,7 @@ import { validate } from 'class-validator';
 
 export class UserController {
   static getAll = async (req: Request, res: Response) =>{
-    console.log('Attempting to get users')
+    console.log('Attempting to get users ', req.body)
     let userRepo;
     let users
     try{;

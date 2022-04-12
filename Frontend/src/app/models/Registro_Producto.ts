@@ -6,10 +6,9 @@ export class Registro_ProductoFull{
       public subProducto_regProducto?: string| null | undefined,
       public unidadMedida_regProducto?: string| null | undefined,
       public detalle_regProducto?: string | null | undefined,
-      public  detetime_regProducto?: Date | null | undefined,
-    
+      public datetime_regProducto?: Date | null | undefined,
+
     ){
-  
+
     }
   }
-  

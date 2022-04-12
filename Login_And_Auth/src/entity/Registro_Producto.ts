@@ -1,5 +1,15 @@
-import { Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Unique,
+    Column,
+    CreateDateColumn,
+    UpdateDateColumn,
+    OneToOne,
+    JoinColumn
+} from 'typeorm';
 import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
+import {Proceso} from "./proceso";
 
 @Entity()
 export class Registro_Producto {
@@ -10,6 +20,10 @@ export class Registro_Producto {
     @Column()
     @IsNotEmpty()
     cantProducto_regProducto: number;
+
+    @OneToOne(()=> Proceso)
+    @JoinColumn()
+    procesoID_: Proceso
 
     @Column()
     @IsNotEmpty()
@@ -28,6 +42,6 @@ export class Registro_Producto {
     detalle_regProducto: string;
 
     @Column()
-    @IsNotEmpty()
-    detetime_regProducto: Date;
+    @CreateDateColumn()
+    deteTime_regProducto: Date;
 }

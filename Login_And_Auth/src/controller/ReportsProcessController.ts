@@ -1,18 +1,25 @@
 import { getRepository } from 'typeorm';
 import { Request, Response } from 'express';
-import { Proceso } from '../entity/Proceso';
+import { Proceso } from '../entity/proceso';
 import { validate } from 'class-validator';
 
 export class ReportsController {
     static getAll = async (req: Request, res: Response) =>{
-        const processRepo = getRepository(Proceso);
-        try{
-            const process = await processRepo.find();
-            res.send(process);
+        console.log('Attempting to get process')
+        let processRepo;
+        let process
+        try{;
+            processRepo = getRepository(Proceso);
+            console.log('Repo = ',processRepo)
+            process = await processRepo.find()
+            console.log(process)
         }
         catch (e) {
-            res.status(404).json({message: 'no processs'})
+            console.log('error = ', e)
+            return res.status(404).json({message: 'no processes'})
+            console.log('Repo - ',processRepo)
         }
+        res.send(process);
     }
 
     static getById = async (req: Request, res: Response) =>{
@@ -28,15 +35,19 @@ export class ReportsController {
     }
 
     static newProcess = async (req: Request, res: Response) =>{
-        const {horaCorrida_Proceso, operador_Proceso, verificarEnergia_Proceso, prod_Data, success_Proceso, annotations_Proceso} = req.body
+        console.log('new process = ', req.body)
+        const {horaCorrida_Proceso, verificarCierre_Proceso, operador_Proceso, verificarEnergia_Proceso, prod_Data, success_proceso, annotations_Proceso} = req.body
         const process = new Proceso();
 
         process.horaCorrida_Proceso = horaCorrida_Proceso;
         process.operador_Proceso = operador_Proceso;
         process.verificarEnergia_Proceso = verificarEnergia_Proceso;
+        process.verificarCierre_Proceso = verificarCierre_Proceso
         process.prod_Data = prod_Data;
-        process.success_Proceso = success_Proceso;
+        process.success_Proceso = success_proceso;
         process.annotations_Proceso = annotations_Proceso;
+
+        console.log('proceso = ', process)
 
         //validator
         const errors = await validate(process, {validationError: { target: false, value: false}});
@@ -95,23 +106,23 @@ export class ReportsController {
     //     res.status(201).json({message: 'Edit successful'})
     // }
 
-    // static deleteProcess = async (req: Request, res: Response) =>{
-    //     const {id} = req.params;
-    //     const processRepo = getRepository(Proceso);
-    //
-    //     let process: Proceso;
-    //
-    //     try{
-    //         process = await processRepo.findOneOrFail(id)
-    //     }
-    //     catch (e) {
-    //         return res.status(404).json({message: 'process not found'});
-    //     }
-    //
-    //     //remove
-    //     await processRepo.delete(id);
-    //     res.status(201).json({message: 'Deleted'})
-    // }
+    static deleteProcess = async (req: Request, res: Response) =>{
+        const {id} = req.params;
+        const processRepo = getRepository(Proceso);
+
+        let process: Proceso;
+
+        try{
+            process = await processRepo.findOneOrFail(id)
+        }
+        catch (e) {
+            return res.status(404).json({message: 'process not found'});
+        }
+
+        //remove
+        await processRepo.delete(id);
+        res.status(201).json({message: 'Deleted'})
+    }
 }
 
 export default ReportsController;

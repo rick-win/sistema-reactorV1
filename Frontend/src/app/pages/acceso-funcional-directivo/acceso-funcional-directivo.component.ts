@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DatatablesComponent } from '../datatables/datatables.component'; 
+import { DatatablesComponent } from '../datatables/datatables.component';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Subject, Subscriber } from 'rxjs';
+import {AuthApiService} from "../../services/auth-api.service";
 
 @Component({
   selector: 'app-acceso-funcional-directivo',
@@ -19,11 +20,14 @@ export class AccesoFuncionalDirectivoComponent implements OnInit {
   dtTrigger = new Subject();
   data: any;
 
+  username: string;
+  nameUser: string;
+
   constructor(
-    private http : HttpClient,
-    public router: Router,
-    private toast: ToastrService,
-  ) { }
+    private authApi: AuthApiService,
+    public router: Router
+  ) {
+  }
 
   ngOnInit(): void {
 
@@ -34,16 +38,16 @@ export class AccesoFuncionalDirectivoComponent implements OnInit {
         url :'//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
       }
     };
-    this.http.get('http://dummy.restapiexample.com/api/v1/employees').subscribe((res:any) => {this.data = res.data
-    this.dtTrigger.next();
-    });  
-
-
+    this.username = localStorage.getItem('Username');
+    this.nameUser = localStorage.getItem('Name')
   }
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
-    }
+  }
 
-
+  logOut(): void {
+    this.authApi.logout();
+    this.router.navigate(['/login'])
+  }
 }

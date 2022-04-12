@@ -48,11 +48,11 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Usuario <i class="bi bi-person-fill"></i>
+              {{username}}({{nameUser}}) <i class="bi bi-person-fill"></i>
             </a>
 
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby = "navbarDropdown">
-              <li><a class="dropdown-item" href="#">Cerrar Sesion ></a></li>
+              <li><a (click)="logOut()" class="dropdown-item" href="#">Cerrar Sesion ></a></li>
             </ul>
 
           </li>
@@ -207,7 +207,7 @@
             <div class="collapse" id="reporteOperario">
               <ul class="navbar-nav ps-3">
                 <li>
-                  <a routerLink = "/reporteProduccionOperario" class="nav-link px-3">
+                  <a routerLink = "/reporteProcesoOperario" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
@@ -215,19 +215,11 @@
                   </a>
                 </li>
                 <li>
-                  <a routerLink="/reporteProcesoOperario" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Bitacora Operario</span>
-                  </a>
-                </li>
-                <li>
                   <a routerLink="/reporteBitacoraIncidencias" class="nav-link px-3">
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
-                    <span>Bitacora Incidencias</span>
+                    <span>Bitácora Incidencias</span>
                   </a>
                 </li>
 

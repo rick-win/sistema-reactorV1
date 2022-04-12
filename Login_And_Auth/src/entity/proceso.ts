@@ -16,9 +16,9 @@ export class Proceso{
     @PrimaryGeneratedColumn()
     id_Proceso: number;
 
-    @OneToOne(() => Tolva)
-    @JoinColumn()
-    tolva_id_Tolva: number;
+    // @OneToOne(() => Tolva)
+    // @JoinColumn()
+    // tolva_id_Tolva: number;
 
     @Column()
     @CreateDateColumn()
@@ -27,9 +27,8 @@ export class Proceso{
     @Column()
     horaCorrida_Proceso: Date;
 
-
     @Column()
-    cierreVerificado: Date;
+    verificarCierre_Proceso: Boolean;
 
     @Column()
     operador_Proceso: string;

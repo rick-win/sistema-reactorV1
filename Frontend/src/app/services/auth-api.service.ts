@@ -49,6 +49,7 @@ export class AuthApiService {
             ape_Usuario: res.last,
             tel_Usuario: res.phone
           }
+          this.saveUserInfo(this.userInfo)
           //saveToken
           this.saveToken(res.token);
           this.loggedIn.next(true);
@@ -59,7 +60,7 @@ export class AuthApiService {
   }
 
   logout(): void {
-    localStorage.removeItem('Token')
+    localStorage.clear()
     this.loggedIn.next(false)
   }
 
@@ -70,6 +71,11 @@ export class AuthApiService {
     isExpired ? this.logout() : this.loggedIn.next(true);
 
     console.log('Is Expired = ', isExpired )
+  }
+
+  private saveUserInfo(data: UserFull): void {
+    localStorage.setItem('Username', data.email_Usuario)
+    localStorage.setItem('Name', data.nom_Usuario)
   }
 
   private saveToken(token: string): void{

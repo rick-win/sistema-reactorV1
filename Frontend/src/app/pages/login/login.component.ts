@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   onLogin(): void{
     const formValue = this.logInForm.value;
     this.authSrvc.login(formValue).subscribe((res => {
+      console.log(res)
       if (res){
         switch (res.role) {
           case 'operario' :{

@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, UpdateDateColumn, OneToMany} from 'typeorm';
 import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
+import {Lecturas_Sensor} from "./lecturas_Sensor";
 
 @Entity()
 export class Sensor {
@@ -45,5 +46,8 @@ export class Sensor {
 
     @Column()
     @IsNotEmpty()
-    tipoOperacionDato_Sensor: Date;
+    tipoOperacionDato_Sensor: string;
+
+    @OneToMany(()=> Lecturas_Sensor, (readings) => readings.sensor_id_Sensor)
+    lecturas: Lecturas_Sensor[]
 }

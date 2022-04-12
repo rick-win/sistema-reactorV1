@@ -21,7 +21,7 @@ export class ProcessGestorService {
   constructor(private http: HttpClient) { }
 
   getProcess(){
-    const res = this.http.get(`${environment.API_URL}/users`);
+    const res = this.http.get(`${environment.API_URL}/Process`);
     if (res) {
       console.log('Data obtained in service = ', res)
     }
@@ -29,21 +29,21 @@ export class ProcessGestorService {
   }
 
   getProcessById(id: number){
-    const res = this.http.get(`${environment.API_URL}/users/${id}`);
+    const res = this.http.get(`${environment.API_URL}/Process/${id}`);
     console.log('Data obtained in service = ', res)
     return res
   }
 
   deleteProcess(id: number){
-    return this.http.delete(`${environment.API_URL}/users/${id}`);
+    return this.http.delete(`${environment.API_URL}/Process/${id}`);
   }
 
   saveProcess(Process: ProcesoFull){
-    console.log(`${environment.API_URL}/users`);
-    return this.http.post(`${environment.API_URL}/users`, Process);
+    console.log(`${environment.API_URL}/Process`);
+    return this.http.post(`${environment.API_URL}/Process`, Process);
   }
 
   updateProcess(id: number, updatedProcess: any){
-    return this.http.patch(`${environment.API_URL}/users/${id}`, updatedProcess);
+    return this.http.patch(`${environment.API_URL}/Process/${id}`, updatedProcess);
   }
 }

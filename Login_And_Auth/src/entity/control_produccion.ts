@@ -1,70 +1,84 @@
-import { Entity, PrimaryGeneratedColumn, Unique, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Unique,
+    Column,
+    CreateDateColumn,
+    UpdateDateColumn,
+    OneToOne,
+    JoinColumn
+} from 'typeorm';
 import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
+import {Proceso} from "./proceso";
 
 @Entity()
 export class Control_Produccion {
 
     @PrimaryGeneratedColumn()
-    id_contProduc: number;
+    id_contProduction: number;
+
+    @OneToOne(()=> Proceso)
+    @JoinColumn()
+    procesoID: Proceso
 
     @Column()
     @IsNotEmpty()
-    tiempoReporte_contProduc:Date;
+    tiempoReporte_contProduction:Date;
 
     @Column()
     @IsNotEmpty()
-    fechaInicio_contProduc:Date;
+    fechaInicio_contProduction:Date;
 
     @Column()
     @IsNotEmpty()
-    fechaFin_contProduc:Date;
+    fechaFin_contProduction:Date;
 
     @Column()
     @IsNotEmpty()
-    tipoIngreso_contProduc:string;
+    tipoIngreso_contProduction:string;
 
     @Column()
     @IsNotEmpty()
-    cantIngreso_contProduc:number;
+    cantIngreso_contProduction:number;
 
     @Column()
     @IsNotEmpty()
-    cantLiquido_contProduc:number;
+    cantLiquido_contProduction:number;
 
     @Column()
     @IsNotEmpty()
-    cantSolido_contProduc:number;
+    cantSolido_contProduction:number;
 
     @Column()
     @IsNotEmpty()
-    cantGas_contProduc:number;
+    cantGas_contProduction:number;
 
     @Column()
     @IsNotEmpty()
-    unidadLiquido_contProduc:string;
+    unidadLiquido_contProduction:string;
 
     @Column()
     @IsNotEmpty()
-    unidadSolido_contProduc:string;
+    unidadSolido_contProduction:string;
 
     @Column()
     @IsNotEmpty()
-    unidadGas_contProduc:string;
+    unidadGas_contProduction:string;
 
     @Column()
     @IsNotEmpty()
-    unidadIngreso_contProduc:string;
+    unidadIngreso_contProduction:string;
 
     @Column()
     @IsNotEmpty()
-    tipoSolido_contProduc:string;
+    tipoSolido_contProduction:string;
 
     @Column()
     @IsNotEmpty()
-    tipoLiquido_contProduc:string;
+    tipoLiquido_contProduction:string;
 
     @Column()
     @IsNotEmpty()
-    tipoGas_contProduc:string;
+    tipoGas_contProduction:string;
 
 }

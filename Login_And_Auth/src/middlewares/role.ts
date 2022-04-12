@@ -8,7 +8,7 @@ export const checkRole = (roles: Array<string>) => {
     const userRepo = getRepository(Usuario)
     let user: Usuario;
 
-    console.log(res.locals.jwtPayload)
+    // console.log('Role verifier', res.locals.jwtPayload)
     try {
       user = await userRepo.findOneOrFail(userID)
     }catch (e) {
@@ -17,6 +17,7 @@ export const checkRole = (roles: Array<string>) => {
 
     const {rol_Usuario} = user
 
+    console.log('role verifier')
     console.log('rol = ',user.rol_Usuario)
     console.log('email = ',user.email_Usuario)
 
