@@ -17,12 +17,15 @@ export class Control_Produccion {
     @PrimaryGeneratedColumn()
     id_contProduction: number;
 
+    @Column({ name: 'process_ID'} )
+    externalProcess: number
+
     @OneToOne(()=> Proceso)
-    @JoinColumn()
+    @JoinColumn({ name: 'process_ID'})
     procesoID: Proceso
 
     @Column()
-    @IsNotEmpty()
+    @CreateDateColumn()
     tiempoReporte_contProduction:Date;
 
     @Column()
@@ -40,6 +43,10 @@ export class Control_Produccion {
     @Column()
     @IsNotEmpty()
     cantIngreso_contProduction:number;
+
+    @Column()
+    @IsNotEmpty()
+    unidadIngreso_contProduction:string;
 
     @Column()
     @IsNotEmpty()
@@ -64,10 +71,6 @@ export class Control_Produccion {
     @Column()
     @IsNotEmpty()
     unidadGas_contProduction:string;
-
-    @Column()
-    @IsNotEmpty()
-    unidadIngreso_contProduction:string;
 
     @Column()
     @IsNotEmpty()

@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { Proceso } from '../entity/proceso';
 import { validate } from 'class-validator';
 
-export class ReportsController {
+export class ReportsProcessController {
     static getAll = async (req: Request, res: Response) =>{
         console.log('Attempting to get process')
         let processRepo;
@@ -125,4 +125,4 @@ export class ReportsController {
     }
 }
 
-export default ReportsController;
+export default ReportsProcessController;

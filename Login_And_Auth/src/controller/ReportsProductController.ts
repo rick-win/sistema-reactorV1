@@ -3,17 +3,18 @@ import { Request, Response } from 'express';
 import { Proceso } from '../entity/proceso';
 import { validate } from 'class-validator';
 import {Registro_Producto} from "../entity/Registro_Producto";
+import product from "../routes/product";
 
-export class ReportsController {
+export class ReportsProductController {
     static getAll = async (req: Request, res: Response) =>{
         console.log('Attempting to get Product')
         let ProductRepo;
         let Product
         try{;
             ProductRepo = getRepository(Registro_Producto);
-            console.log('Repo = ',ProductRepo)
+            // console.log('Repo = ',ProductRepo)
             Product = await ProductRepo.find()
-            console.log(Product)
+            // console.log(Product)
         }
         catch (e) {
             console.log('error = ', e)
@@ -37,9 +38,10 @@ export class ReportsController {
 
     static newProduct = async (req: Request, res: Response) =>{
         console.log('new Product = ', req.body)
-        const {cantProducto_regProducto, tipoProducto_regProducto, subProducto_regProducto, unidadMedida_regProducto, detalle_regProducto}= req.body
+        const {parentProcess, cantProducto_regProducto, tipoProducto_regProducto, subProducto_regProducto, unidadMedida_regProducto, detalle_regProducto}= req.body
         const Product = new Registro_Producto();
 
+        Product.parentProcess = parentProcess;
         Product.cantProducto_regProducto = cantProducto_regProducto;
         Product.tipoProducto_regProducto = tipoProducto_regProducto;
         Product.subProducto_regProducto = subProducto_regProducto;
@@ -122,4 +124,4 @@ export class ReportsController {
     }
 }
 
-export default ReportsController;
+export default ReportsProductController;

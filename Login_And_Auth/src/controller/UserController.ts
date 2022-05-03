@@ -63,7 +63,7 @@ export class UserController {
     }
 
     //Front ans
-    res.send('User created')
+    return res.status(201).json({message: 'User created'})
   }
 
   static editUser = async (req: Request, res: Response) =>{
@@ -122,7 +122,7 @@ export class UserController {
 
     //remove
     await userRepo.delete(id);
-    res.status(201).json({message: 'Deleted'})
+    return res.status(201).json({message: 'Deleted'})
   }
 }
 export default UserController;

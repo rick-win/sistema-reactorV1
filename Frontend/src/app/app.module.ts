@@ -9,11 +9,6 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-//firebase
-import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment';
-import { AngularFireAuthModule} from '@angular/fire/auth';
-
 //toast
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -131,8 +126,6 @@ import {AuthInterceptor} from "./shared/httpInterceptor";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,

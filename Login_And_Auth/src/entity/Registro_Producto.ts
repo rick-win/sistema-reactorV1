@@ -10,6 +10,7 @@ import {
 } from 'typeorm';
 import {MinLength, IsNotEmpty, IsEmail, isNotEmpty} from 'class-validator';
 import {Proceso} from "./proceso";
+import {ClientRequest} from "http";
 
 @Entity()
 export class Registro_Producto {
@@ -21,8 +22,11 @@ export class Registro_Producto {
     @IsNotEmpty()
     cantProducto_regProducto: number;
 
+    @Column({ name: 'process_ID'})
+    parentProcess: number;
+
     @OneToOne(()=> Proceso)
-    @JoinColumn()
+    @JoinColumn({name: 'process_ID'})
     procesoID_: Proceso
 
     @Column()

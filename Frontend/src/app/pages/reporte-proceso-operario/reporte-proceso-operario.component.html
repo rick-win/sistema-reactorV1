@@ -36,6 +36,7 @@
 
       <thead>
         <tr>
+          <th>Número</th>
           <th>Fecha de reporte</th>
           <th>Fecha/hora Proceso</th>
           <th>Operario</th>
@@ -48,7 +49,8 @@
         </tr>
       </thead>
       <tbody>
-       <tr *ngFor = "let e of data">
+       <tr *ngFor = "let e of processData">
+          <td>{{e.id_Proceso}}</td>
           <td>{{e.horaReporte_Proceso}}</td>
           <td>{{e.horaCorrida_Proceso}}</td>
           <td>{{e.operador_Proceso}}</td>
@@ -56,8 +58,14 @@
           <td>{{e.verificarCierre_Proceso}}</td>
           <td>{{e.annotations_Proceso}}</td>
           <td>{{e.success_Proceso}}</td>
-         <td><a><button (click)="showFormulary('production')">Añadir datos de producción</button></a></td>
-         <td><a><button (click)="showFormulary('product')">Añadir datos de producto</button></a></td>
+          <td>
+            <a *ngIf="productionFilled.includes(e.id_Proceso)"><button (click)="showFormulary('production', e.id_Proceso)">Ver datos de producción</button></a>
+            <a *ngIf="!productionFilled.includes(e.id_Proceso)"><button (click)="showFormulary('production', e.id_Proceso)">Añadir datos de producción</button></a>
+          </td>
+         <td>
+           <a *ngIf="productFilled.includes(e.id_Proceso)"><button (click)="showFormulary('product', e.id_Proceso)">Ver datos de producto</button></a>
+           <a *ngIf="!productFilled.includes(e.id_Proceso)"><button (click)="showFormulary('product', e.id_Proceso)">Añadir datos de producto</button></a>
+         </td>
          </tr>
       </tbody>
     </table>
@@ -66,8 +74,11 @@
         <label  class="form-label mr-5">Generar Reporte:</label>
         <button  type ="button" class="btn btn-danger "><i class="fa fa-print"></i>  PDF</button>
       </div>
-      <button (click)="showFormulary('new')" type="submit" class="btn btn-iniciar btn-primary btn-lg mr-2" >Nuevo proceso</button>
+      <button (click)="showFormulary('new', 0)" type="submit" class="btn btn-iniciar btn-primary btn-lg mr-2" >Nuevo proceso</button>
     </div>
+
+<!--  Formularios-->
+<!--  Registrar proceso nuevo-->
   <div *ngIf="registeringProcess" class="contenedor-formulario justify-content-center" >
 
     <form class="mt-4" autocomplete="off">
@@ -78,16 +89,16 @@
         <div class="row">
           <div class="form-group col-md-8 mb-3">
             <label class="col-form-label">Fecha y hora</label>
-            <input [(ngModel)]="newProcessToSend.horaCorrida_Proceso" name="date" type="datetime-local" class="form-control">
+            <input [(ngModel)]="newProcessToSend.horaCorrida_Proceso" name="date" type="datetime" class="form-control">
           </div>
 
         </div>
       </div>
 
-      <div class="form-group mb-3">
-        <label class="col-form-label">Operador</label>
-        <input [(ngModel)]="newProcessToSend.operador_Proceso" name="ope" type="text" class="form-control">
-      </div>
+<!--      <div class="form-group mb-3">-->
+<!--        <label class="col-form-label">Operador</label>-->
+<!--        <input [(ngModel)]="newProcessToSend.operador_Proceso" name="ope" type="text" class="form-control">-->
+<!--      </div>-->
 
       <div class="form-group mb-3">
         <label class="col-form-label">Verificación de Encendido</label>
@@ -124,17 +135,18 @@
 
     </form>
   </div>
+<!--  Registrar nuevo reporte de producción-->
   <div *ngIf="registeringProduction" class="contenedor-formulario col-md-5 mt-5  mt-5 justify-content-center" >
 
     <form class="mt-4" autocomplete="off">
 
-      <h3 class="titulo-login">Registrar Producción</h3>
+      <h3 class="titulo-login">Registrando control de producción para proceso número {{currentEdition}}</h3>
 
       <div class="form-row">
         <div class="row">
           <div class="form-group col-md-8 mb-3">
             <label class="col-form-label">Fecha y hora de inicio</label>
-            <input type="datetime-local" class="form-control" name="date1">
+            <input [(ngModel)]="newProductionToSend.fechaInicio_contProduction" type="datetime-local" class="form-control" name="date1">
           </div>
         </div>
       </div>
@@ -143,108 +155,109 @@
         <div class="row">
           <div class="form-group col-md-8 mb-3">
             <label class="col-form-label">Fecha y hora de finalización</label>
-            <input type="datetime-local" class="form-control" name="date2">
+            <input [(ngModel)]="newProductionToSend.fechaFin_contProduction" type="datetime-local" class="form-control" name="date2">
           </div>
         </div>
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Tipo de producto ingresado</label>
-        <input type="text" class="form-control" name="typeIn">
+        <input [(ngModel)]="newProductionToSend.tipoIngreso_contProduction" type="text" class="form-control" name="typeIn">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Cantidad de producto ingresado</label>
-        <input type="number" class="form-control" name="amountIn">
+        <input [(ngModel)]="newProductionToSend.cantIngreso_contProduction" type="number" class="form-control" name="amountIn">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Unidad de medida Ingreso</label>
-        <input type="text" class="form-control" name="measureIn">
+        <input [(ngModel)]="newProductionToSend.unidadIngreso_contProduction" type="text" class="form-control" name="measureIn">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Tipo de líquido producido</label>
-        <input type="text" class="form-control" >
+        <input [(ngModel)]="newProductionToSend.tipoLiquido_contProduction" type="text" class="form-control" name="lqType">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Cantidad de líquido producido</label>
-        <input type="number" class="form-control">
+        <input [(ngModel)]="newProductionToSend.cantLiquido_contProduction" type="number" class="form-control" name="lqMes">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Unidad de medida de líquido</label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="newProductionToSend.unidadLiquido_contProduction" type="text" class="form-control" name="lqUm">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Tipo de sólido producido</label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="newProductionToSend.tipoSolido_contProduction" type="text" class="form-control" name="slType">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Cantidad de sólido producido</label>
-        <input type="number" class="form-control">
+        <input [(ngModel)]="newProductionToSend.cantSolido_contProduction" type="number" class="form-control" name="slMes">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Unidad de medida de sólidos</label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="newProductionToSend.unidadSolido_contProduction" type="text" class="form-control" name="slUm">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Tipo de gas producido</label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="newProductionToSend.tipoGas_contProduction" type="text" class="form-control" name="gsType">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Cantidad de gas producido</label>
-        <input type="number" class="form-control">
+        <input [(ngModel)]="newProductionToSend.cantGas_contProduction" type="number" class="form-control" name="gsMes">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Unidad de medida de gases</label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="newProductionToSend.unidadGas_contProduction" type="text" class="form-control" name="gsUm">
       </div>
 
       <div class="contedor-btn-iniciar mt-3">
-        <button type="submit" class="btn btn-iniciar btn-primary btn-lg" >Guardar</button>
+        <button (click)="newProduction()" type="submit" class="btn btn-iniciar btn-primary btn-lg" >Guardar</button>
       </div>
 
     </form>
   </div>
+<!--  Registrar producto-->
   <div *ngIf="registeringProduct" class="contenedor-formulario col-md-5 mt-5  mt-5 justify-content-center" >
     <form class="mt-4" autocomplete="off">
 
-      <h3 class="titulo-login">Registrar Producto</h3>
+      <h3 class="titulo-login">Registrando datos de producto para proceso número {{currentEdition}}</h3>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Tipo de producto</label>
-        <input type="text" class="form-control" name="Tipo">
+        <input [(ngModel)]="newProductToSend.tipoProducto_regProducto" type="text" class="form-control" name="Tipo">
       </div>
 
       <div class="form-group mb-3">
         <label class="col-form-label">Subproducto</label>
-        <input type="text" class="form-control" name="Sub_Producto">
+        <input [(ngModel)]="newProductToSend.subProducto_regProducto" type="text" class="form-control" name="Sub_Producto">
       </div>
 
       <div class="mb-3">
         <label class="form-label">Detalle</label>
-        <input type="text" class="form-control" id="Detail" name="Detalle">
+        <input [(ngModel)]="newProductToSend.detalle_regProducto" type="text" class="form-control" id="Detail" name="Detalle">
       </div>
 
       <div class="mb-3">
         <label class="form-label">Cantidad</label>
-        <input type="number" class="form-control" id="amount" name="Can_Producto">
+        <input [(ngModel)]="newProductToSend.cantProducto_regProducto" type="number" class="form-control" id="amount" name="Can_Producto">
       </div>
       <div class="mb-3">
         <label class="form-label">Unidad de Medida</label>
-        <input type="text" class="form-control" id="measureUnit" name="Unidad_Medida">
+        <input [(ngModel)]="newProductToSend.unidadMedida_regProducto" type="text" class="form-control" id="measureUnit" name="Unidad_Medida">
       </div>
 
       <div class="contedor-btn-iniciar mt-3">
-        <button type="submit" class="btn btn-iniciar btn-primary btn-lg">Guardar</button>
+        <button (click)="newProduct()" type="submit" class="btn btn-iniciar btn-primary btn-lg">Guardar</button>
       </div>
 
     </form>

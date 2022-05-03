@@ -1,30 +1,29 @@
 export class Control_ProduccionFull{
     constructor(
-      public id_contProduc?: number | null | undefined,
-      public tiempoReporte_contProduc?:Date| null | undefined,
-      public fechaInicio_contProduc?:Date| null | undefined,
-      public fechaFin_contProduc?:Date | null | undefined,
-      public tipoIngreso_contProduc?:string | null | undefined,
-      public cantIngreso_contProduc?:number | null | undefined,
+      public id_contProduction?: number | null | undefined,
+      public externalProcess?: number | null | undefined,
 
-      
-      public cantLiquido_contProduc?:number| null | undefined,
-      public  cantSolido_contProduc?:number| null | undefined,
+      public tiempoReporte_contProduction?:Date| null | undefined,
+      public fechaInicio_contProduction?:Date| null | undefined,
+      public fechaFin_contProduction?:Date | null | undefined,
 
-      public cantGas_contProduc?:number| null | undefined,
-      public unidadLiquido_contProduc?:string | null | undefined,
+      public tipoIngreso_contProduction?:string | null | undefined,
+      public cantIngreso_contProduction?:number | null | undefined,
+      public unidadIngreso_contProduction?:string | null | undefined,
 
-      public unidadSolido_contProduc?:string| null | undefined,
-      public  unidadGas_contProduc?:string| null | undefined,
+      public cantLiquido_contProduction?:number| null | undefined,
+      public cantSolido_contProduction?:number| null | undefined,
+      public cantGas_contProduction?:number| null | undefined,
 
-      public tipoLiquido_contProduc?:string| null | undefined,
-      public tipoSolido_contProduc?:string | null | undefined,
+      public unidadLiquido_contProduction?:string | null | undefined,
+      public unidadSolido_contProduction?:string| null | undefined,
+      public unidadGas_contProduction?:string| null | undefined,
 
-      public unidadIngreso_contProduc?:string| null | undefined,
-      public tipoGas_contProduc?:string| null | undefined,
-    
+      public tipoLiquido_contProduction?:string| null | undefined,
+      public tipoSolido_contProduction?:string | null | undefined,
+      public tipoGas_contProduction?:string| null | undefined,
+
     ){
-  
+
     }
   }
-  

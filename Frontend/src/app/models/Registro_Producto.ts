@@ -1,5 +1,6 @@
 export class Registro_ProductoFull{
     constructor(
+      public parentProcess?: number | null | undefined,
       public id_regProducto?: number | null | undefined,
       public cantProducto_regProducto?: number | null | undefined,
       public tipoProducto_regProducto?: string  | null | undefined,
