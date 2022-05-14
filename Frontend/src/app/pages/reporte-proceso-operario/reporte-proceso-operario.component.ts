@@ -1,10 +1,8 @@
 import { Component,OnDestroy, OnInit } from '@angular/core';
 import { Subject, Subscriber } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import {ProcessGestorService} from "../../services/process-gestor.service";
-import {FormGroup} from "@angular/forms";
-import {FormControl} from "@angular/forms"
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ProcesoFull} from "../../models/Proceso";
 import {Registro_ProductoFull} from "../../models/Registro_Producto";
 import {ProductGestorService} from "../../services/product-gestor.service";
@@ -25,6 +23,7 @@ export class ReporteProcesoOperarioComponent implements OnInit {
   registeringHopper: boolean
   registeringProduction: boolean
   registeringProduct: boolean
+  viewing: boolean;
   currentEdition: number;
   result: string;
 
@@ -37,6 +36,10 @@ export class ReporteProcesoOperarioComponent implements OnInit {
   processData: any = {};
   productData: any = {};
   productionData: any = {};
+  singleProductData: any = {};
+  singleProductionData: any = {};
+
+  closeResult = '';
 
   newProcessToSend: ProcesoFull = {
     operador_Proceso: '',
@@ -85,7 +88,29 @@ export class ReporteProcesoOperarioComponent implements OnInit {
   // noinspection SpellCheckingInspection
   constructor(private processSvc: ProcessGestorService,
               private productSvc: ProductGestorService,
-              private prdtionSvc: ProductionGestorService) {
+              private prdtionSvc: ProductionGestorService,
+              private modalSvc: NgbModal) {
+  }
+
+  open(content, selected: number) {
+    this.currentEdition = selected;
+    this.modalSvc.open(content,
+      {ariaLabelledBy: 'modal-basic-title', size: "xl"}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult =
+        `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 
   ngOnInit(): void {
@@ -115,7 +140,7 @@ export class ReporteProcesoOperarioComponent implements OnInit {
       res => {
         this.processData = res;
         console.log(this.processData)
-        this.getProduction()
+        this.getProductions()
         this.getProducts()
         this.dtTrigger.next()
       },
@@ -138,13 +163,37 @@ export class ReporteProcesoOperarioComponent implements OnInit {
       }
     )
   }
-  getProduction(){
+  getProductions(){
     const res = this.prdtionSvc.getProduction().subscribe(
       res => {
         this.productionData = res;
         this.productions = this.productionData
         this.productionArrayFiller()
         console.log('Production records: ',this.productionData)
+      },
+      error => {console.log(error);
+        console.log(res)
+      }
+    )
+  }
+
+  getProduct(search: number){
+    const res = this.productSvc.getproductById(search).subscribe(
+      res => {
+        this.singleProductData = res;
+        console.log('Product to show in pop up :',this.singleProductData)
+      },
+      error => {console.log(error);
+        console.log(res)
+      }
+    )
+  }
+
+  getProduction(search: number){
+    const res = this.prdtionSvc.getProductionById(search).subscribe(
+      res => {
+        this.singleProductionData = res;
+        console.log('Production to show in pop up :',this.singleProductionData)
       },
       error => {console.log(error);
         console.log(res)

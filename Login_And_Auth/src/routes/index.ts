@@ -5,6 +5,7 @@ import hopper from "./hopper";
 import proceso from "./process";
 import product from "./product";
 import production from "./production";
+import sensorReadings from "./sensorReadings";
 
 const routes = Router();
 
@@ -14,5 +15,6 @@ routes.use('/product', product)
 routes.use('/production', production)
 routes.use('/users', user);
 routes.use('/hopper', hopper)
+routes.use('/sensorRead', sensorReadings)
 
 export default routes;

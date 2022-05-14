@@ -1,5 +1,4 @@
 import {Component, Injectable, OnInit} from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 

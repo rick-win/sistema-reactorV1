@@ -28,7 +28,7 @@ export class ReportsProductionController {
         const {id} = req.params;
         const ProductionRepo = getRepository(Control_Produccion);
         try{
-            const Production = await ProductionRepo.findOneOrFail({where:{id_contProduction: id}})
+            const Production = await ProductionRepo.findOneOrFail({where:{externalProcess: id}})
             return res.send(Production)
         }
         catch (e) {

@@ -8,7 +8,6 @@ import { UserResponse, User } from '../models/Usuario';
 import { catchError, map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {error} from "jquery";
-import {loggedIn} from "@angular/fire/auth-guard";
 import {UserFull} from "../models/usuario.model";
 
 const helper = new JwtHelperService();

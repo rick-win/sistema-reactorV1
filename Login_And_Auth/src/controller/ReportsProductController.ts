@@ -26,10 +26,11 @@ export class ReportsProductController {
 
     static getById = async (req: Request, res: Response) =>{
         const {id} = req.params;
+        console.log('Searching a specific product with id: ', req.params)
         const ProductRepo = getRepository(Registro_Producto);
         try{
-            const Product = await ProductRepo.findOneOrFail({where:{id_Proceso: id}})
-            res.send(Product)
+            const Product = await ProductRepo.findOneOrFail({where:{parentProcess: id}})
+            return res.send(Product)
         }
         catch (e) {
             res.status(404).json({message: 'Product not found'})

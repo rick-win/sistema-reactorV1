@@ -20,7 +20,6 @@ export class Lecturas_Sensor {
 
     @ManyToOne(() => Sensor, (sensor) => sensor.id_Sensor)
     @JoinColumn()
-    @Column()
     sensor_id_Sensor: number;
 
     @Column()

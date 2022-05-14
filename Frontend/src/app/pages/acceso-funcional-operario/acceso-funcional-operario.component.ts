@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Subject, Subscriber } from 'rxjs';
+import {Observable, Subject, Subscriber, Subscription, interval} from 'rxjs';
 import {AuthApiService} from "../../services/auth-api.service";
+import {SensorReadingGestorService} from "../../services/sensor-reading-gestor.service";
+import {Lectura_SensorFull} from "../../models/Lectura_Sensor";
 
 
 @Component({
@@ -18,17 +20,35 @@ export class AccesoFuncionalOperarioComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject();
   data: any;
+  sensorReadings: Lectura_SensorFull[] = [];
+  sub: Subscription;
 
   username: string
   nameUser: string
 
   constructor(
     private authApi: AuthApiService,
-    private http : HttpClient,
+    private sensorReads: SensorReadingGestorService,
     public router: Router
-  ) { }
+  ) {
+    this.sub = interval(5000)
+      .subscribe((val) => {
+        this.getTemps()
+      });
+  }
 
-
+  getTemps(){
+    const res = this.sensorReads.getSensorReading().subscribe(
+      res => {
+        this.data = res;
+        this.sensorReadings = this.data;
+        console.log('Temps',this.sensorReadings)
+      },
+      error => {console.log(error);
+        console.log(res)
+      }
+    )
+  }
 
   ngOnInit(): void {
 
@@ -39,12 +59,12 @@ export class AccesoFuncionalOperarioComponent implements OnInit {
         url :'//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
       }
     };
-    this.http.get('http://dummy.restapiexample.com/api/v1/employees').subscribe((res:any) => {this.data = res.data
+    this.getTemps()
     this.dtTrigger.next();
-    });
     this.username = localStorage.getItem('Username');
     this.nameUser = localStorage.getItem('Name')
   }
+
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();

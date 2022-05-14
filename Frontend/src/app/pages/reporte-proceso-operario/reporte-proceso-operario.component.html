@@ -1,3 +1,97 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title"
+        id="modal-basic-title">
+      Datos de producto del proceso número {{currentEdition}}
+    </h4>
+    <button type="button" class="close"
+            aria-label="Close" (click)=
+              "modal.dismiss('Cross click')">
+
+            <span aria-hidden="true">
+                ×
+            </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <table datatable class="table table-striped table-bordered table-sm row-border hover">
+          <thead>
+          <tr>
+            <th>tipo de producto ingresado</th>
+            <th>Cantidad de producto ingresado</th>
+            <th>Sub-producto ingresado</th>
+            <th>Detalles del producto ingresado</th>
+            <th>Fecha de reporte</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{singleProductData.tipoProducto_regProducto}} {{singleProductData.unidadMedida_regProducto}}</td>
+            <td>{{singleProductData.cantProducto_regProducto}} {{singleProductData.unidadMedida_regProducto}}</td>
+            <td>{{singleProductData.subProducto_regProducto}}</td>
+            <td>{{singleProductData.detalle_regProducto}}</td>
+            <td>{{singleProductData.deteTime_regProducto}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</ng-template>
+<ng-template #contentPr let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title"
+        id="modal-basic">
+      Datos de producción del proceso número {{currentEdition}}
+    </h4>
+    <button type="button" class="close"
+            aria-label="Close" (click)=
+              "modal.dismiss('Cross click')">
+
+            <span aria-hidden="true">
+                ×
+            </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <table datatable class="table table-striped table-bordered table-sm row-border hover">
+          <thead>
+          <tr>
+            <th>Fecha de inicio</th>
+            <th>Fecha de finalización</th>
+            <th>tipo de ingreso</th>
+            <th>Cantidad de ingreso</th>
+            <th>Tipo de líquido producido</th>
+            <th>Cantidad</th>
+            <th>Tipo de sólido producido</th>
+            <th>Cantidad</th>
+            <th>Tipo de gas producido</th>
+            <th>Cantidad</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{singleProductionData.fechaInicio_contProduction}}</td>
+            <td>{{singleProductionData.fechaFin_contProduction}}</td>
+            <td>{{singleProductionData.tipoIngreso_contProduction}}</td>
+            <td>{{singleProductionData.cantIngreso_contProduction}} {{singleProductionData.unidadIngreso_contProduction}}</td>
+            <td>{{singleProductionData.tipoLiquido_contProduction}}</td>
+            <td>{{singleProductionData.cantLiquido_contProduction}} {{singleProductionData.unidadLiquido_contProduction}}</td>
+            <td>{{singleProductionData.tipoSolido_contProduction}}</td>
+            <td>{{singleProductionData.cantSolido_contProduction}} {{singleProductionData.unidadSolido_contProduction}}</td>
+            <td>{{singleProductionData.tipoGas_contProduction}}</td>
+            <td>{{singleProductionData.cantGas_contProduction}} {{singleProductionData.unidadGas_contProduction}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</ng-template>
 <div class="container-sm ">
 
     <div class="row text-center ">
@@ -59,11 +153,11 @@
           <td>{{e.annotations_Proceso}}</td>
           <td>{{e.success_Proceso}}</td>
           <td>
-            <a *ngIf="productionFilled.includes(e.id_Proceso)"><button (click)="showFormulary('production', e.id_Proceso)">Ver datos de producción</button></a>
+            <a *ngIf="productionFilled.includes(e.id_Proceso)"><button (click)="open(contentPr, e.id_Proceso); getProduction(e.id_Proceso)">Ver datos de producción</button></a>
             <a *ngIf="!productionFilled.includes(e.id_Proceso)"><button (click)="showFormulary('production', e.id_Proceso)">Añadir datos de producción</button></a>
           </td>
          <td>
-           <a *ngIf="productFilled.includes(e.id_Proceso)"><button (click)="showFormulary('product', e.id_Proceso)">Ver datos de producto</button></a>
+           <a *ngIf="productFilled.includes(e.id_Proceso)"><button (click)="open(content, e.id_Proceso); getProduct(e.id_Proceso)">Ver datos de producto</button></a>
            <a *ngIf="!productFilled.includes(e.id_Proceso)"><button (click)="showFormulary('product', e.id_Proceso)">Añadir datos de producto</button></a>
          </td>
          </tr>

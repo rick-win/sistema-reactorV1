@@ -11,8 +11,8 @@
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
       <a
+        routerLink="/accesofuncional-operario"
         class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
-        href="#"
         >
         <img src="assets/Img/logoSena.png"  width="40"
         class="d-inline-block aling-top mr-2"/>
@@ -369,16 +369,55 @@
             <tr>
               <th>Zona</th>
               <th>Temperatura</th>
-              <th>RPM</th>
 
             </tr>
           </thead>
           <tbody>
-           <tr *ngFor = "let e of data">
-                 <td>{{e.employee_age}}</td>
-                 <td>{{e.employee_age}}</td>
-                 <td>{{e.employee_age}}</td>
-             </tr>
+           <tr>
+             <td>A</td>
+             <td>{{sensorReadings[0].medida_LecturaSensor}}</td>
+           </tr>
+           <tr>
+             <td>B</td>
+             <td>{{sensorReadings[1].medida_LecturaSensor}}</td>
+           </tr>
+           <tr>
+             <td>C</td>
+             <td>{{sensorReadings[2].medida_LecturaSensor}} </td>
+           </tr>
+           <tr>
+             <td>D</td>
+             <td>{{sensorReadings[3].medida_LecturaSensor}} </td>
+           </tr>
+           <tr>
+             <td>E</td>
+             <td>{{sensorReadings[4].medida_LecturaSensor}} </td>
+           </tr>
+           <tr>
+             <td>F</td>
+             <td>{{sensorReadings[5].medida_LecturaSensor}} </td>
+           </tr>
+           <tr>
+             <td>G</td>
+             <td>{{sensorReadings[6].medida_LecturaSensor}} </td>
+           </tr>
+          </tbody>
+        </table>
+        <table datatable2 class="table table-striped table-bordered table-sm row-border hover">
+          <thead>
+          <tr>
+            <th>RPM</th>
+            <th>Modo</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{sensorReadings[7].medida_LecturaSensor}}</td>
+            <td>
+              <h6 *ngIf="sensorReadings[7].modoTornillo_LecturaSensor">Continuo</h6>
+              <h6 *ngIf="!sensorReadings[7].modoTornillo_LecturaSensor">Cíclico</h6>
+            </td>
+          </tr>
           </tbody>
         </table>
         <!-- tablas -->
@@ -687,7 +726,7 @@
             id="path106656" class="a45"/>
             </a>
              <!--  RESISTENCIA  R100B -->
-            <a xlink:title = "Resistencia reactor R100B">
+            <a xlink:title = "Resistencia reactor {{sensorReadings[1].medida_LecturaSensor}} R100B">
           <path
             d="m 272.6914,159.80442 -0.12961,23.84753 h 20.9962 l -0.1296,-23.71793 z"
             id="path112642" class="R100B" />
@@ -699,13 +738,13 @@
             id="path115167" class="a48"/>
             </a>
               <!--  RESISTENCIA  R100C -->
-            <a xlink:title = "Resistencia reactor R100C">
+            <a xlink:title = "Resistencia reactor R100C (C {{sensorReadings[2].medida_LecturaSensor}}">
           <path
             d="m 297.05736,160.06363 h 20.60738 l 0.12961,24.75478 h -3.11055 l -0.12961,1.94409 -15.42313,0.25921 v -2.72173 h -1.94409 z"
             id="path118472" class="R100C" />
             </a>
             <!--   RESISTENCIA  R100A -->
-            <a xlink:title = "Resistencia reactor R100A">
+            <a xlink:title = "Resistencia reactor R100A (C {{sensorReadings[0].medida_LecturaSensor}}">
           <path
             d="m 246.77016,159.67481 v 24.88439 l 4.27701,0.1296 -0.12961,1.9441 h 14.7751 l -0.1296,-2.33292 3.49937,-0.1296 v -24.49557 z"
             id="path129973" class="R100A" />
@@ -729,25 +768,25 @@
             id="path160588" class="a53"/>
             </a>
             <!--   RESISTENCIA  R100D -->
-            <a xlink:title = "Resistencia reactor R100D">
+            <a xlink:title = "Resistencia reactor R100D (C {{sensorReadings[3].medida_LecturaSensor}}">
           <path
             d="m 325.44111,160.97087 -0.1296,23.58833 33.43839,0.1296 v -23.84753 z"
             id="path169929" class="R100D"/>
             </a>
             <!--   RESISTENCIA  R100E -->
-            <a xlink:title = "Resistencia reactor R100E">
+            <a xlink:title = "Resistencia reactor R100E (C {{sensorReadings[4].medida_LecturaSensor}}">
           <path
             d="m 362.24927,160.45245 v 24.23635 h 6.86912 v 1.68488 h 15.55275 v -1.81448 h 6.4803 l 0.25922,-23.97715 z"
             id="path171206" class="R100E"/>
             </a>
             <!--   RESISTENCIA  R100f -->
-            <a xlink:title = "Resistencia reactor R100F">
+            <a xlink:title = "Resistencia reactor R100F (C {{sensorReadings[5].medida_LecturaSensor}}">
           <path
             d="m 394.52121,160.84127 0.1296,23.84753 34.47524,-0.1296 -0.1296,-23.97715 z"
             id="path175371" class="R100F"/>
             </a>
             <!-- RESISTENCIA R100G -->
-            <a xlink:title = "Resistencia reactor R100G">
+            <a xlink:title = "Resistencia reactor R100G (C {{sensorReadings[6].medida_LecturaSensor}}">
               <path
 
                 d="m 437.55046,152.80568 h 4.92503 l -0.12961,10.75732 h 5.44346 l -0.1296,-5.31386 3.36976,0.12961 0.12961,5.05464 2.46251,-0.12961 v 6.48031 l 5.83228,0.25922 v 4.01779 l -5.96188,0.1296 0.38881,6.86913 -2.59212,0.12961 -3.36976,-1.03685 -2.2033,0.64803 -0.25922,1.16645 -2.33291,-0.1296 -0.51842,0.1296 0.1296,10.88692 -9.85007,0.12961 0.12961,-40.43713 z"

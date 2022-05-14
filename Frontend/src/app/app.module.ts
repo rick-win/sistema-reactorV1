@@ -63,6 +63,8 @@ import { CmdMantenimientoComponent } from './pages/cmd-mantenimiento/cmd-manteni
 import { AgradecimientosMantenimientoComponent } from './pages/agradecimientos-mantenimiento/agradecimientos-mantenimiento.component';
 import { DesarrolloMantenimientoComponent } from './pages/desarrollo-mantenimiento/desarrollo-mantenimiento.component';
 import {AuthInterceptor} from "./shared/httpInterceptor";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {APP_BASE_HREF} from "@angular/common";
 
 
 
@@ -130,9 +132,12 @@ import {AuthInterceptor} from "./shared/httpInterceptor";
     ToastrModule.forRoot(),
     HttpClientModule,
     DataTablesModule,
+    NgbModule,
 
   ],
-  providers: [GestionarUsuarioService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [GestionarUsuarioService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    { provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

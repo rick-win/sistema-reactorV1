@@ -6,7 +6,6 @@ import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {error} from "jquery";
-import {loggedIn} from "@angular/fire/auth-guard";
 import {ProcesoFull} from "../models/Proceso";
 import {Control_ProduccionFull} from "../models/Control_Produccion";
 

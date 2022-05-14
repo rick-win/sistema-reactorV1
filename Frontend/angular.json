@@ -60,13 +60,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "15mb",
+                  "maximumError": "20mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "15mb",
+                  "maximumError": "20mb"
                 }
               ],
               "fileReplacements": [
@@ -90,6 +90,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "deployUrl": "/",
+            "baseHref": "dist"
+          },
           "configurations": {
             "production": {
               "browserTarget": "Frontend:build:production"
