@@ -1,5 +1,5 @@
 {
-   "name": "Login_And_Auth",
+   "name": "login_and_auth",
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",

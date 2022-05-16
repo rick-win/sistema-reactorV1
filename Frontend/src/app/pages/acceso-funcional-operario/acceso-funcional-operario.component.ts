@@ -42,6 +42,8 @@ export class AccesoFuncionalOperarioComponent implements OnInit {
       res => {
         this.data = res;
         this.sensorReadings = this.data;
+
+        console.log('Temps',this.data)
         console.log('Temps',this.sensorReadings)
       },
       error => {console.log(error);

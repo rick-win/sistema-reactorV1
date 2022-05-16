@@ -3,8 +3,10 @@ import { DatatablesComponent } from '../datatables/datatables.component';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { Subject, Subscriber } from 'rxjs';
+import {Subject, Subscriber, Subscription} from 'rxjs';
 import {AuthApiService} from "../../services/auth-api.service";
+import {SensorReadingGestorService} from "../../services/sensor-reading-gestor.service";
+import {Lectura_SensorFull} from "../../models/Lectura_Sensor";
 
 @Component({
   selector: 'app-acceso-funcional-directivo',
@@ -19,12 +21,16 @@ export class AccesoFuncionalDirectivoComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject();
   data: any;
+  data2: any;
+  sensorReadings: Lectura_SensorFull[] = [];
+  sub: Subscription;
 
   username: string;
   nameUser: string;
 
   constructor(
     private authApi: AuthApiService,
+    private sensorReads: SensorReadingGestorService,
     public router: Router
   ) {
   }
@@ -39,7 +45,22 @@ export class AccesoFuncionalDirectivoComponent implements OnInit {
       }
     };
     this.username = localStorage.getItem('Username');
-    this.nameUser = localStorage.getItem('Name')
+    this.nameUser = localStorage.getItem('Name');
+  }
+
+  getTemps(){
+    const res = this.sensorReads.getSensorReading().subscribe(
+      res => {
+        this.data = res;
+        this.sensorReadings = this.data2;
+
+        console.log('Temps',this.data2)
+        console.log('Temps',this.sensorReadings)
+      },
+      error => {console.log(error);
+        console.log(res)
+      }
+    )
   }
 
   ngOnDestroy(): void {
