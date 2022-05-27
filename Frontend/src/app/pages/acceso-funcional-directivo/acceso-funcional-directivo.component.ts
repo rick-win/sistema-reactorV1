@@ -3,10 +3,11 @@ import { DatatablesComponent } from '../datatables/datatables.component';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import {Subject, Subscriber, Subscription} from 'rxjs';
+import {Subject, Subscriber, Subscription,interval} from 'rxjs';
 import {AuthApiService} from "../../services/auth-api.service";
 import {SensorReadingGestorService} from "../../services/sensor-reading-gestor.service";
 import {Lectura_SensorFull} from "../../models/Lectura_Sensor";
+
 
 @Component({
   selector: 'app-acceso-funcional-directivo',
@@ -33,6 +34,10 @@ export class AccesoFuncionalDirectivoComponent implements OnInit {
     private sensorReads: SensorReadingGestorService,
     public router: Router
   ) {
+    this.sub = interval(5000)
+      .subscribe((val) => {
+        this.getTemps()
+      });
   }
 
   ngOnInit(): void {

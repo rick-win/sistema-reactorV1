@@ -60,11 +60,11 @@ const routes: Routes = [
     canActivate: [CheckLogInGuard]
   },
 
-  {
-    path: 'gestionarUsuario',
-    component: AdministradorComponent,
-    canActivate: [CheckLogOutGuard]
-  },
+  // {
+  //   path: 'gestionarUsuario',
+  //   component: AdministradorComponent,
+  //   canActivate: [CheckLogOutGuard]
+  // },
 
 
 {
@@ -73,11 +73,6 @@ const routes: Routes = [
   canActivate: [CheckLogOutGuard]
 },
 
-{
-  path: 'perfilTemperatura',
-  component: TemperaturasComponent,
-  canActivate: [CheckLogOutGuard]
-},
 
 {
   path: 'presion',
@@ -110,6 +105,13 @@ const routes: Routes = [
   component: AccesoFuncionalTecnicoComponent,
   canActivate: [CheckLogOutGuard]
 },
+
+{
+  path: 'record-reporte-mantenimiento',
+  component: AccesoFuncionalTecnicoComponent,
+  canActivate: [CheckLogOutGuard]
+},
+
 
 {
   path: 'sobre-proyecto-mantenimiento',
@@ -214,6 +216,12 @@ const routes: Routes = [
 },
 
 {
+  path: 'gestionarUsuario',
+  component: AccesoFuncionalDirectivoComponent,
+  canActivate: [CheckLogOutGuard]
+},
+
+{
   path: 'sobre-proyecto-directivo',
   component:  AccesoFuncionalDirectivoComponent,
   canActivate: [CheckLogOutGuard]
@@ -293,6 +301,13 @@ const routes: Routes = [
   component: AccesoFuncionalOperarioComponent,
   canActivate: [CheckLogOutGuard]
 },
+
+{
+  path: 'perfilTemperatura',
+  component: AccesoFuncionalOperarioComponent,
+  canActivate: [CheckLogOutGuard]
+},
+
 
 // {
 //   path: 'sobre-el-proyecto-operario',

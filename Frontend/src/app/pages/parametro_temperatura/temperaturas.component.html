@@ -1,9 +1,18 @@
-<div class="contenedor-formulario col-md-5 mt-5 shadow-lg mt-5" >
+<div class="container-sm mt-5">
+    <div class="row text-center ">
+    <img src="assets/Img/logoSena.png"   
+      class="imgLS d-inline-block col mr-2"/>
+    <h3 class="col mt-4">Parametros de Temperatura</h3>
+    <img src="assets/Img/LogoGIDEMP.jpg"   
+      class="imgLS d-inline-block  col mr-2 float-end"/>
+    </div><hr>
+</div>
+
+
+<div class="contenedor-formulario col-md-5  mt-2" >
    
     <form class="mt-4" autocomplete="off" [formGroup]="formulario">
         
-        <h3 class="titulo-login">Parametros Temperatura</h3>
-
         <div class="mb-3">
             <label class="form-label">Zona A</label>
             <input type="number" class="form-control" id="zonaA" formControlName="ZonaA" >
