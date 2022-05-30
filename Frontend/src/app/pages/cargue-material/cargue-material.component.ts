@@ -105,12 +105,32 @@ export class CargueMaterialComponent implements OnInit {
       res => {
         this.result = JSON.stringify(res)
         this.result = JSON.parse(this.result).message
+        this.newProductToSend = {
+          parentProcess: 0,
+          cantProducto_regProducto: 0,
+          tipoProducto_regProducto: '',
+          catalizador: false,
+          catalizador_Cant: 0,
+          catalizador_Med: '',
+          unidadMedida_regProducto: '',
+          detalle_regProducto: '',
+        }
         this.getProcesses()
         console.log(this.result)
       },
       error => {console.log(error);
         console.log('Error')
         console.log(res)
+        this.newProductToSend = {
+          parentProcess: 0,
+          cantProducto_regProducto: 0,
+          tipoProducto_regProducto: '',
+          catalizador: false,
+          catalizador_Cant: 0,
+          catalizador_Med: '',
+          unidadMedida_regProducto: '',
+          detalle_regProducto: '',
+        }
       }
     )
   }

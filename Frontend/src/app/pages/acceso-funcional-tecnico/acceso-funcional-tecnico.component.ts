@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import {interval, Subject, Subscriber, Subscription} from 'rxjs';
 import {SensorReadingGestorService} from "../../services/sensor-reading-gestor.service";
 import {Lectura_SensorFull} from "../../models/Lectura_Sensor";
+import {AuthApiService} from "../../services/auth-api.service";
 
 
 @Component({
@@ -25,6 +26,7 @@ export class AccesoFuncionalTecnicoComponent implements OnInit {
   constructor(
     private http : HttpClient,
     public router: Router,
+    private authApi: AuthApiService,
     private sensorReads: SensorReadingGestorService,
   ) {
     this.sub = interval(5000)
@@ -66,5 +68,9 @@ export class AccesoFuncionalTecnicoComponent implements OnInit {
     }
 
 
+  logOut(): void {
+    this.authApi.logout();
+    this.router.navigate(['/login'])
+  }
 
 }

@@ -56,12 +56,12 @@
           </label>
         </div>
 
-      <div class="mb-3">
+      <div *ngIf="newProductToSend.catalizador"s class="mb-3">
         <label class="form-label">Cantidad Catalizador</label>
         <input [(ngModel)]="newProductToSend.catalizador_Cant" name="catCant" type="number" class="form-control" placeholder="ingresar valor">
     </div>
 
-    <div class="mb-3">
+    <div *ngIf="newProductToSend.catalizador" class="mb-3">
       <label class="form-label">Unidad/medida Catalizador</label>
       <select [(ngModel)]="newProductToSend.catalizador_Med" name="catUm" class="form-select" aria-label="Default select example">
         <option selected>Seleccionar</option>
