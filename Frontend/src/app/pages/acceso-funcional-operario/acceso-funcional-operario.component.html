@@ -211,7 +211,23 @@
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
-                    <span>Produccion</span>
+                    <span>Procesos</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/reporteProduccionOperario" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Producción</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/reporteIngresoTolva" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Cargues de tolva</span>
                   </a>
                 </li>
                 <li>
@@ -249,10 +265,16 @@
   </div>
   <!-- offcanvas -->
 
-<!-- contenido reporte produccion operario-->
+<!-- contenido reporte producción operario-->
 
 <div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteProduccionOperario'">
   <app-reporte-produccion-operario></app-reporte-produccion-operario>
+</div>
+
+<!-- contenido reporte ingreso operario-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteIngresoTolva'">
+  <app-reporte-ingreso-operario></app-reporte-ingreso-operario>
 </div>
 
 <!-- contenido reporte proceso operario(bitacora)-->

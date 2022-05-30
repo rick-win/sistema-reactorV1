@@ -12,27 +12,33 @@ export class ReporteParcialMantenimientoComponent implements OnInit {
   indicadoresMat:boolean = false;
   indicadoresProd:boolean = false;
 
-  dtOptions: DataTables.Settings = {};
+  dtOptions: any = {};
   dtTrigger = new Subject();
   data: any;
 
   constructor(private http : HttpClient) { }
 
   ngOnInit(): void {
-
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 5,
-      language : {
-        url :'//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
-      }
-    };
-    this.http.get('http://dummy.restapiexample.com/api/v1/employees').subscribe((res:any) => {this.data = res.data
+      pageLength: 10,
+      // Declare the use of the extension in the dom parameter
+      dom: 'Bfrtip',
+      // Configure the buttons
+      buttons: [
+        'colvis',
+        'copy',
+        {
+          extend: 'csv',
+          text: 'CSV export',
+          fieldSeparator: '; ',
+          exportOption: [1, 2, 3]
+        },
+        'excel'
+      ]
+    }
     this.dtTrigger.next();
-    });  
-
-
-  }
+    }
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();

@@ -65,6 +65,7 @@ import { DesarrolloMantenimientoComponent } from './pages/desarrollo-mantenimien
 import {AuthInterceptor} from "./shared/httpInterceptor";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {APP_BASE_HREF} from "@angular/common";
+import { ReporteIngresoOperarioComponent } from './pages/reporte-ingreso-operario/reporte-ingreso-operario.component';
 
 
 
@@ -121,6 +122,7 @@ import {APP_BASE_HREF} from "@angular/common";
     CmdMantenimientoComponent,
     AgradecimientosMantenimientoComponent,
     DesarrolloMantenimientoComponent,
+    ReporteIngresoOperarioComponent,
 
   ],
   imports: [

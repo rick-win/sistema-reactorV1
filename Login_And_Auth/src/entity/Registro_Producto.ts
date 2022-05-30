@@ -35,15 +35,25 @@ export class Registro_Producto {
 
     @Column()
     @IsNotEmpty()
-    subProducto_regProducto: string;
+    catalizador: boolean;
+
+    @Column()
+    catalizador_Cant: number;
+
+    @Column()
+    catalizador_Med: string;
+
+    // @Column()
+    // @IsNotEmpty()
+    // subProducto_regProducto: string;
 
     @Column()
     @IsNotEmpty()
     unidadMedida_regProducto: string;
 
-    @Column()
-    @IsNotEmpty()
-    detalle_regProducto: string;
+    // @Column()
+    // @IsNotEmpty()
+    // detalle_regProducto: string;
 
     @Column()
     @CreateDateColumn()

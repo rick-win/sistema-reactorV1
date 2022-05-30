@@ -53,7 +53,9 @@ export class ReportsProductionController {
             unidadGas_contProduction,
             tipoSolido_contProduction,
             tipoLiquido_contProduction,
-            tipoGas_contProduction
+            tipoGas_contProduction,
+            labID,
+            labDesc
         }= req.body
         const Production = new Control_Produccion();
 
@@ -77,6 +79,9 @@ export class ReportsProductionController {
         Production.tipoSolido_contProduction = tipoSolido_contProduction;
         Production.tipoLiquido_contProduction = tipoLiquido_contProduction;
         Production.tipoGas_contProduction = tipoGas_contProduction;
+
+        Production.labID = labID;
+        Production.labDesc = labDesc;
 
         //validator
         const errors = await validate(Production, {validationError: { target: false, value: false}});

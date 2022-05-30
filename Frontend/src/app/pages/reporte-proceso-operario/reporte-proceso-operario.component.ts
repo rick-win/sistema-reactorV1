@@ -58,6 +58,9 @@ export class ReporteProcesoOperarioComponent implements OnInit {
     subProducto_regProducto: '',
     unidadMedida_regProducto: '',
     detalle_regProducto: '',
+    catalizador: false,
+    catalizador_Med: '',
+    catalizador_Cant: 0,
   }
 
   newProductionToSend: Control_ProduccionFull = {
@@ -83,6 +86,8 @@ export class ReporteProcesoOperarioComponent implements OnInit {
     cantLiquido_contProduction: 0,
     unidadLiquido_contProduction: '',
 
+    labID: 0,
+    labDesc: '',
   }
 
   // noinspection SpellCheckingInspection
@@ -301,21 +306,21 @@ export class ReporteProcesoOperarioComponent implements OnInit {
       }
     )
   }
-  newProduct(){
-    console.log('New product = ', this.newProductToSend)
-    const res = this.productSvc.saveproduct(this.newProductToSend).subscribe(
-      res => {
-        this.result = JSON.stringify(res)
-        this.result = JSON.parse(this.result).message
-        this.getProcesses()
-        console.log(this.result)
-      },
-      error => {console.log(error);
-        console.log('Error')
-        console.log(res)
-      }
-    )
-  }
+  // newProduct(){
+  //   console.log('New product = ', this.newProductToSend)
+  //   const res = this.productSvc.saveproduct(this.newProductToSend).subscribe(
+  //     res => {
+  //       this.result = JSON.stringify(res)
+  //       this.result = JSON.parse(this.result).message
+  //       this.getProcesses()
+  //       console.log(this.result)
+  //     },
+  //     error => {console.log(error);
+  //       console.log('Error')
+  //       console.log(res)
+  //     }
+  //   )
+  // }
   newProduction(){
     console.log('New production = ', this.newProductionToSend)
     const res = this.prdtionSvc.saveProduction(this.newProductionToSend).subscribe(

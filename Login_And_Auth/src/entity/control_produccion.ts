@@ -84,4 +84,10 @@ export class Control_Produccion {
     @IsNotEmpty()
     tipoGas_contProduction:string;
 
+    @Column()
+    labID: number;
+
+    @Column()
+    labDesc: string;
+
 }

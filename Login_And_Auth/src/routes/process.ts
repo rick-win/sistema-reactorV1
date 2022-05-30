@@ -6,7 +6,7 @@ import ReportsProcessController from "../controller/ReportsProcessController";
 const router = Router();
 
 // Get all users
-router.get('/',[checkJwt, checkRole(['admin', 'operario'])], ReportsProcessController.getAll);
+router.get('/',[checkJwt, checkRole(['admin', 'operario', 'mantenimiento'])], ReportsProcessController.getAll);
 
 // Get one user
 router.get('/:id',[checkJwt, checkRole(['admin', 'operario'])],  ReportsProcessController.getById);

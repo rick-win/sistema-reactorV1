@@ -376,20 +376,59 @@
     <div class ="row-mt-2" id="boxIzq">
       <!-- tabla -->
       <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="dataTables-example" class="table table-striped table-bordered table-sm row-border hover">
-        <thead>
-          <tr>
-            <th>Zona</th>
-            <th>Temperatura</th>
-            <th>RPM</th>
+      <thead>
+      <tr>
+        <th>Zona</th>
+        <th>Temperatura</th>
 
-          </tr>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>A</td>
+        <td>{{sensorReadings[0].medida_LecturaSensor}}</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>{{sensorReadings[1].medida_LecturaSensor}}</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>{{sensorReadings[2].medida_LecturaSensor}} </td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>{{sensorReadings[3].medida_LecturaSensor}} </td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>{{sensorReadings[4].medida_LecturaSensor}} </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>{{sensorReadings[5].medida_LecturaSensor}} </td>
+      </tr>
+      <tr>
+        <td>G</td>
+        <td>{{sensorReadings[6].medida_LecturaSensor}} </td>
+      </tr>
+      </tbody>
+    </table>
+      <table datatable2 class="table table-striped table-bordered table-sm row-border hover">
+        <thead>
+        <tr>
+          <th>RPM</th>
+          <th>Modo</th>
+        </tr>
         </thead>
         <tbody>
-         <tr *ngFor = "let e of data">
-               <td>{{e.employee_age}}</td>
-               <td>{{e.employee_age}}</td>
-               <td>{{e.employee_age}}</td>
-           </tr>
+        <tr>
+          <td>{{sensorReadings[7].medida_LecturaSensor}}</td>
+          <td>
+            <h6 *ngIf="sensorReadings[7].modoTornillo_LecturaSensor">Continuo</h6>
+            <h6 *ngIf="!sensorReadings[7].modoTornillo_LecturaSensor">Cíclico</h6>
+          </td>
+        </tr>
         </tbody>
       </table>
       <!-- tablas -->

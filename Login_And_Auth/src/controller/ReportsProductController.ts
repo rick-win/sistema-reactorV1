@@ -39,15 +39,27 @@ export class ReportsProductController {
 
     static newProduct = async (req: Request, res: Response) =>{
         console.log('new Product = ', req.body)
-        const {parentProcess, cantProducto_regProducto, tipoProducto_regProducto, subProducto_regProducto, unidadMedida_regProducto, detalle_regProducto}= req.body
+        const {parentProcess,
+            cantProducto_regProducto,
+            tipoProducto_regProducto,
+            // subProducto_regProducto,
+            unidadMedida_regProducto,
+            // detalle_regProducto,
+            catalizador,
+            catalizador_Cant,
+            catalizador_Med
+        }= req.body
         const Product = new Registro_Producto();
 
         Product.parentProcess = parentProcess;
         Product.cantProducto_regProducto = cantProducto_regProducto;
         Product.tipoProducto_regProducto = tipoProducto_regProducto;
-        Product.subProducto_regProducto = subProducto_regProducto;
+        // Product.subProducto_regProducto = subProducto_regProducto;
         Product.unidadMedida_regProducto = unidadMedida_regProducto
-        Product.detalle_regProducto = detalle_regProducto;
+        // Product.detalle_regProducto = detalle_regProducto;
+        Product.catalizador = catalizador;
+        Product.catalizador_Cant = catalizador_Cant;
+        Product.catalizador_Med = catalizador_Med
 
         //validator
         const errors = await validate(Product, {validationError: { target: false, value: false}});

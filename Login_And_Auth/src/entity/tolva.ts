@@ -7,9 +7,9 @@ export class Tolva {
     @PrimaryGeneratedColumn()
     id_Tolva: number;
 
-    @Column()
-    @IsNotEmpty()
-    estadoTapa_Tolva:boolean;
+    // @Column()
+    // @IsNotEmpty()
+    // estadoTapa_Tolva:boolean;
 
     @Column()
     @IsNotEmpty()
@@ -17,15 +17,7 @@ export class Tolva {
 
     @Column()
     @IsNotEmpty()
-    tipoMaterial_Tolva: string;
-
-    @Column()
-    @IsNotEmpty()
-    cantMaterial_Tolva: number;
-
-    @Column()
-    @IsNotEmpty()
-    datetimeCargue_Tolva: Date;
+    tiempoSostenimiento_Tolva: number;
 
     @Column()
     @CreateDateColumn()

@@ -6,10 +6,10 @@ import SensorReadingsController from "../controller/SensorReadingsController";
 const router = Router();
 
 // Get all users
-router.get('/',[checkJwt, checkRole(['admin', 'operario'])], SensorReadingsController.getAll);
+router.get('/',[checkJwt, checkRole(['admin', 'operario', 'mantenimiento'])], SensorReadingsController.getAll);
 
 // Get one user
-router.get('/:id',[checkJwt, checkRole(['admin', 'operario'])],  SensorReadingsController.getById);
+router.get('/:id',[checkJwt, checkRole(['admin', 'operario', 'mantenimiento'])],  SensorReadingsController.getById);
 
 // Create a new user
 // router.post('/',[checkJwt, checkRole(['admin', 'operario'])],  reportsProductionController.newProduction);

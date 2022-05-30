@@ -9,16 +9,16 @@
       >
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a 
+      <a
       class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
       href="#"
       >
-      <img src="assets/Img/logoSena.png"  width="40" 
+      <img src="assets/Img/logoSena.png"  width="40"
       class="d-inline-block aling-top mr-2"/>
       Sistema Reactor
-      <img src="assets/Img/logo_astin.png"  width="60" 
+      <img src="assets/Img/logo_astin.png"  width="60"
       class="d-inline-block aling-top mr-8"/>
-      <img src="assets/Img/LogoSENNOVA.jpeg"  width="60" 
+      <img src="assets/Img/LogoSENNOVA.jpeg"  width="60"
       class="d-inline-block aling-top mr-2"/>
     </a>
       <button
@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse" id="topNavBar">
         <form class="d-flex ms-auto my-3 my-lg-0">
           <div class="input-group">
-            
+
           </div>
         </form>
         <ul class="navbar-nav">
@@ -49,11 +49,11 @@
             >
               Usuario <i class="bi bi-person-fill"></i>
             </a>
-  
+
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby = "navbarDropdown">
               <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
             </ul>
-  
+
           </li>
         </ul>
       </div>
@@ -120,9 +120,9 @@
               Interface
             </div>
           </li>
-  
-          
-  
+
+
+
           <li>
             <a
               class="nav-link px-3 sidebar-link"
@@ -158,14 +158,14 @@
               </ul>
             </div>
           </li>
-         
+
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
               Addons
             </div>
           </li>
-         
+
           <li>
             <a
               class="nav-link px-3 sidebar-link"
@@ -173,7 +173,7 @@
               href="#reporteTecnico"
             >
               <span class="me-2"><i class="bi bi-layout-split"></i></span>
-              <span>Reporte de Desempeño</span>
+              <span>Reportes</span>
               <span class="ms-auto">
                 <span class="right-icon">
                   <i class="bi bi-chevron-down"></i>
@@ -187,27 +187,51 @@
                     <span class="me-2"
                       ><i class="bi bi-speedometer2"></i
                     ></span>
-                    <span>Parcial</span>
-                  </a>
-                </li>
-                <li>
-                  <a routerLink="/generarReporte" class="nav-link px-3">
-                    <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
-                    ></span>
-                    <span>Final</span>
+                    <span>Desempeño</span>
                   </a>
                 </li>
 
+<!--                <li>-->
+<!--                  <a routerLink="/generarReporte" class="nav-link px-3">-->
+<!--                    <span class="me-2"-->
+<!--                      ><i class="bi bi-speedometer2"></i-->
+<!--                    ></span>-->
+<!--                    <span>Record de Reportes</span>-->
+<!--                  </a>-->
+<!--                </li>-->
                 <li>
-                  <a routerLink="/generarReporte" class="nav-link px-3">
+                  <a routerLink = "/reporteProcesoOperario" class="nav-link px-3">
                     <span class="me-2"
-                      ><i class="bi bi-speedometer2"></i
+                    ><i class="bi bi-speedometer2"></i
                     ></span>
-                    <span>Record de Reportes</span>
+                    <span>Procesos</span>
                   </a>
                 </li>
-               
+                <li>
+                  <a routerLink = "/reporteProduccionOperario" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Producción</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink = "/reporteIngresoTolva" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Cargues de tolva</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/reporteBitacoraIncidencias" class="nav-link px-3">
+                    <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                    ></span>
+                    <span>Bitácora Incidencias</span>
+                  </a>
+                </li>
+
               </ul>
             </div>
           </li>
@@ -232,6 +256,31 @@
     </div>
   </div>
   <!-- offcanvas -->
+
+
+<!-- contenido reporte producción operario-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteProduccionOperario'">
+  <app-reporte-produccion-operario></app-reporte-produccion-operario>
+</div>
+
+<!-- contenido reporte ingreso operario-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteIngresoTolva'">
+  <app-reporte-ingreso-operario></app-reporte-ingreso-operario>
+</div>
+
+<!-- contenido reporte proceso operario(bitacora)-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteProcesoOperario'">
+  <app-reporte-proceso-operario></app-reporte-proceso-operario>
+</div>
+
+<!-- contenido bitacora incidencias-->
+
+<div class="mt-5 pt-3 ctn-main" *ngIf="router.url === '/reporteBitacoraIncidencias'">
+  <app-reporte-bitacora-eventos-operario></app-reporte-bitacora-eventos-operario>
+</div>
 
 <!--Contenido reporte de desempeño - parcial-->
 
@@ -258,7 +307,7 @@
   <app-desarrollo-mantenimiento></app-desarrollo-mantenimiento>
  </div>
 
- 
+
 <!--Contenido agradecimientos-->
 
 <div class= "ctn-main" *ngIf="router.url === '/agradecimientos-mantenimiento'">
@@ -302,31 +351,70 @@
         <!-- tabla -->
         <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="dataTables-example" class="table table-striped table-bordered table-sm row-border hover">
           <thead>
-            <tr>
-              <th>Zona</th>
-              <th>Temperatura</th>
-              <th>RPM</th>
-          
-            </tr>
+          <tr>
+            <th>Zona</th>
+            <th>Temperatura</th>
+
+          </tr>
           </thead>
           <tbody>
-           <tr *ngFor = "let e of data">
-                 <td>{{e.employee_age}}</td>
-                 <td>{{e.employee_age}}</td> 
-                 <td>{{e.employee_age}}</td>  
-             </tr>
+          <tr>
+            <td>A</td>
+            <td>{{sensorReadings[0].medida_LecturaSensor}}</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>{{sensorReadings[1].medida_LecturaSensor}}</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>{{sensorReadings[2].medida_LecturaSensor}} </td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>{{sensorReadings[3].medida_LecturaSensor}} </td>
+          </tr>
+          <tr>
+            <td>E</td>
+            <td>{{sensorReadings[4].medida_LecturaSensor}} </td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td>{{sensorReadings[5].medida_LecturaSensor}} </td>
+          </tr>
+          <tr>
+            <td>G</td>
+            <td>{{sensorReadings[6].medida_LecturaSensor}} </td>
+          </tr>
+          </tbody>
+        </table>
+        <table datatable2 class="table table-striped table-bordered table-sm row-border hover">
+          <thead>
+          <tr>
+            <th>RPM</th>
+            <th>Modo</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{sensorReadings[7].medida_LecturaSensor}}</td>
+            <td>
+              <h6 *ngIf="sensorReadings[7].modoTornillo_LecturaSensor">Continuo</h6>
+              <h6 *ngIf="!sensorReadings[7].modoTornillo_LecturaSensor">Cíclico</h6>
+            </td>
+          </tr>
           </tbody>
         </table>
         <!-- tablas -->
       </div>
-  
+
     <!-- IMAGEN SVG -->
     <!-- IMAGEN SGV -->
     <div class="plantaDiv">
       <svg
         version="1.1"
         id="svg9"
-        
+
         viewBox="0 0 1149.6 410.88"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:svg="http://www.w3.org/2000/svg">
@@ -343,7 +431,7 @@
           </a>
             <a xlink:title = "Estructura o soporte del Reactor">
           <path
-            
+
             d="m 114.09853,216.64974 -0.0916,144.15823 303.89617,-1.09975 -0.0916,-145.07468 z"
             id="path46325" class="estructuraReactor"/>
             </a>
@@ -351,30 +439,30 @@
             <!-- M100 MOTOREDUCTOR -->
             <a xlink:title = "M100 Motoreductor">
           <path
-            
+
             d="m 193.46345,153.78099 0.1833,36.74981 -2.10785,4.21569 0.0916,8.61467 -2.19949,0.18329 0.0916,1.46633 h 2.10785 l 0.18329,4.49062 h -2.19949 l 0.0916,4.49063 h -36.74981 v -4.85721 l -1.37468,-0.0916 -0.0916,-4.30733 2.29113,0.27494 -0.27493,-1.83291 -2.10785,-0.18329 -0.27493,-9.34783 1.28303,-0.36659 0.54987,-2.93265 h -4.21568 l 0.18329,-26.48552 h 4.12404 v -1.37468 l -4.0324,-0.0917 v -9.62277 l 4.21569,-0.0916 -0.0916,-0.91646 h 5.13214 l 0.18329,-2.10784 27.12704,-0.0916 -0.18329,2.10785 3.57417,0.0916 0.36658,2.19949 z"
             id="path53139" class="M100"/>
           </a>
 
           <a xlink:title = "3">
           <path
-            
+
             d="m 152.95618,213.99203 0.0917,2.38278 36.84145,-0.0916 -0.18329,-2.38278 z"
             id="path55976" class="a3"/>
           </a>
           <a xlink:title = "4">
           <path
-            
+
             d="m 119.04738,144.79974 -0.0916,6.14025 4.30733,-0.0916 0.18329,62.68546 -5.49872,0.18329 -0.0917,3.0243 14.84656,-0.18329 -0.27494,-3.84911 h -3.66581 l 0.18329,-75.79075 -5.77366,-0.0916 -0.0917,7.88151 z"
             id="path58425" class="a4"/>
             </a>
             <a xlink:title = "5">
           <path
-            
+
             d="m 141.31722,161.02098 h 2.29113 l 0.0916,24.56097 -2.38278,-0.0917 z"
             id="path67640" class="a5"/>
             </a>
-          
+
             <a xlink:title = "7">
           <path
             style="fill:#343434;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -429,7 +517,7 @@
             <!-- LUZ ROJA -->
             <a xlink:title = "Luz roja-LR">
           <path
-            
+
             d="m 32.660757,63.57183 -0.0648,8.942827 9.007629,0.129606 v -9.331645 z"
             id="path44800" class="LR"/>
             </a>
@@ -442,27 +530,27 @@
             <!-- LUZ AMARILLA LA -->
             <a xlink:title = "Luz amarilla-LA">
           <path
-            
+
             d="m 32.833249,81.551428 c -0.02359,-0.651185 -0.04289,-2.754013 -0.04289,-4.672951 v -3.488979 l 3.35356,2.37e-4 c 1.844458,1.31e-4 3.772356,0.0194 4.284217,0.04281 l 0.930658,0.04257 -0.02385,4.553247 c -0.01312,2.504286 -0.04785,4.577249 -0.07719,4.606585 -0.02934,0.02934 -1.927201,0.06394 -4.217479,0.07689 l -4.164142,0.02356 z"
             id="path54832" class="LA"/>
             </a>
             <!-- LUZ VERDA LV -->
             <a xlink:title = "Luz verde-LV">
           <path
-            
+
             d="m 32.53412,83.488966 -0.09165,9.256186 9.256186,0.09165 v -9.531123 z"
             id="path68141" class="LV"/>
             </a>
             <!-- BALIZA -->
             <a xlink:title = "Baliza-indicador sonoro y luminico">
           <path
-            
+
             d="m 32.259183,58.194834 0.385096,-4.903029 h 4.573014 4.573013 v 4.903029 4.903029 h -4.573013 -4.573014 z"
             id="path89623" class="aBaliza"/>
             </a>
             <a xlink:title = "Baliza-indicador sonoro y lunico">
           <path
-            
+
             d="m 32.625765,93.020088 9.072895,0.183291 v 9.439481 l -1.649617,4.30733 -0.09164,5.95695 1.924553,4.58227 -10.17264,-0.0916 3.024298,-3.75747 0.09165,-6.8734 -2.291135,-5.0405 z"
             id="path71321" class="Baliza"/>
             </a>
@@ -519,7 +607,7 @@
             <!-- PARADA DE EMERGENCIA -->
             <a xlink:title = "Parada de emergencia">
           <path
-            
+
             d="m 107.0547,137.90097 2.46252,1.16646 0.64803,1.68488 -0.12961,1.68488 -1.42566,1.42567 -1.68488,0.51842 -2.0737,-0.51842 -1.16646,-1.29606 -0.38882,-1.9441 1.16646,-1.81448 z"
             id="path136774" class="btnEmergencia"/>
             </a>
@@ -538,21 +626,21 @@
             <!--RECONOCIMIENTO DE ALARMA -->
             <a xlink:title = "Reconocimiento de alarma">
           <path
-            
+
             d="m 67.265606,167.96961 1.425668,1.29606 0.129606,1.55527 -0.777637,1.16646 -1.296061,0.1296 -1.684881,-0.38881 v -2.0737 l 0.777637,-1.42567 z"
             id="path172447" class="ReconocieiintoAlarma"/>
             </a>
             <!-- bton INICIO PROCESO -->
             <a xlink:title = "Iniciar Proceso">
           <path
-            
+
             d="m 59.230023,168.09921 1.555274,1.03685 -0.129606,1.29606 -0.388818,1.16646 -1.425668,0.77764 -1.296062,-0.77764 -0.648031,-1.81449 0.648031,-1.16645 z"
             id="path184548" class="btnIniciarProceso"/>
             </a>
             <!-- btn PARADA DE PROCESO -->
             <a xlink:title = "Parada proceso">
           <path
-            
+
             d="m 52.360896,168.09921 1.555274,1.42567 -0.129606,1.55527 -0.907243,1.03685 -1.166456,0.51843 -1.296062,-0.77764 -0.648031,-1.55527 0.518425,-1.29606 0.907243,-0.77764 z"
             id="path190115" class="btnParadaproceso"/>
             </a>
@@ -612,7 +700,7 @@
             <!-- TE100 SENSOR TEMPERATURA -->
             <a xlink:title = "HE100 Intercambiador de calor">
           <path
-            
+
             d="m 229.01412,157.98993 0.1296,28.64297 1.29606,0.25921 0.25922,29.03178 2.46251,-0.1296 v -28.77258 l 10.10929,-0.1296 -0.25922,-28.51336 z"
             id="path99420" class="HE100"/>
             </a>
@@ -685,14 +773,14 @@
             <!-- RESISTENCIA R100G -->
             <a xlink:title = "Resistencia reactor R100G">
               <path
-                
+
                 d="m 437.55046,152.80568 h 4.92503 l -0.12961,10.75732 h 5.44346 l -0.1296,-5.31386 3.36976,0.12961 0.12961,5.05464 2.46251,-0.12961 v 6.48031 l 5.83228,0.25922 v 4.01779 l -5.96188,0.1296 0.38881,6.86913 -2.59212,0.12961 -3.36976,-1.03685 -2.2033,0.64803 -0.25922,1.16645 -2.33291,-0.1296 -0.51842,0.1296 0.1296,10.88692 -9.85007,0.12961 0.12961,-40.43713 z"
                 id="path360196" class="R100G"/>
                 </a>
              <!-- RESISTENCIA R100 -->
             <a xlink:title = "Resistencia del tornillo R100">
               <path
-                    
+
                 d="m 145.80784,161.29592 2.19949,0.0916 -0.0916,24.37768 -2.19949,-0.18329 z"
                 id="path70477" class="R100"/>
               </a>
@@ -724,13 +812,13 @@
 
             <!--TE100 sENSOR TEMPERATURA -->
             <a xlink:title = "TE100 Sensor temperatura">
-              
+
           <path
-            
+
             d="m 229.01412,163.82221 0.25921,18.27447 -29.93903,-0.25921 v -5.05464 l 1.94409,-0.12961 -0.1296,-2.33291 -1.68488,-0.38882 -0.12961,-9.46125 h 1.94409 v -0.64803 z"
             id="path189634" class="TE100"/>
               </a>
-                 
+
 
             <a xlink:title = "62">
           <path
@@ -741,7 +829,7 @@
             <!-- BLWR-100B SOPLADORA -->
             <a xlink:title = "BLWR-100B Sopladora">
           <path
-            
+
             d="m 268.80321,163.17418 3.88819,0.25921 -0.12961,20.21856 h 4.79543 l 0.12961,4.79543 h 6.73952 l -0.25921,5.18425 -0.51843,1.68488 -2.2033,0.51842 -4.1474,0.25922 v 5.44346 l 2.98094,0.1296 v 7.77637 l -16.7192,0.12961 v -8.03558 l 2.72173,0.1296 0.12961,-8.03558 -2.20331,0.12961 -0.1296,-7.12834 h 1.94409 v -2.59213 h 3.11055 z"
             id="path195899"class="BLWR-100B" />
             </a>
@@ -755,7 +843,7 @@
             <!-- CILINDRO -->
             <a xlink:title = "CILINDRO">
           <path
-            
+
             d="m 317.79435,163.6926 7.38755,-0.1296 0.25921,18.01526 h -7.77637 z"
             id="path201807" class="cilindro"/>
             </a>
@@ -801,11 +889,11 @@
             style="fill:#343434;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
             d="m 388.30011,210.61004 h 2.2033 l -0.1296,1.55527 -1.9441,0.38882 z"
             id="path216534" class="a72"/>
-            </a>  
+            </a>
             <!-- BLWR-100D SOPLADORA -->
             <a xlink:title = "BLWR-100D Sopladora">
           <path
-            
+
             d="m 323.41664,181.6412 h 1.83291 v 3.29923 l 12.55542,-0.0916 0.0916,4.39898 6.14024,-0.0917 0.18329,7.69821 h -5.95695 l -0.27494,4.67392 2.10785,0.73316 c 0,0 2.0162,7.23999 -0.36659,7.23999 -2.38278,0 -19.7954,0 -19.7954,0 l -0.18329,-8.06479 4.03239,0.18329 z"
             id="path218827" class="BLWR-100D"/>
             </a>
@@ -854,7 +942,7 @@
             <!-- BLWR-100A SOPLADORA -->
             <a xlink:title = "BLWR-100A Sopladora">
           <path
-            
+
             d="m 262.19751,186.95663 -8.24809,-0.18329 0.0916,2.47443 -3.57417,-0.0917 -0.18329,-1.37468 -5.77366,-0.0917 -4.94886,1.37469 -2.65771,2.38278 -2.47443,4.8572 -1.37468,6.23189 0.73316,4.12404 1.83291,4.30734 2.38278,2.10784 c 0,0 3.39088,2.38278 4.58227,2.65772 1.19139,0.27493 10.35593,0.18329 10.35593,0.18329 l 6.78176,-5.13214 2.38278,-6.59847 z"
             id="path244682" class="BLWR-100A"/>
             </a>
@@ -873,7 +961,7 @@
             <!-- BLWR-100C SOPLADORA -->
             <a xlink:title = "BLWR-100C Sopladora">
           <path
-            
+
             d="m 302.3382,186.95663 h 9.25618 l 0.1833,15.48807 -1.28304,4.94886 -3.20759,4.67391 -5.22379,3.29924 -13.28858,-0.0917 -4.49063,-5.59037 -1.0081,-1.74126 -0.36658,-12.09719 4.85721,-6.0486 4.12404,-2.10785 3.75746,-0.64151 h 3.29924 c 0,0 -0.64152,2.10784 0.0916,2.10784 0.73317,0 1.92456,-0.0916 1.92456,-0.0916 h 1.46632 z"
             id="path249728" class="BLWR-100C"/>
             </a>
@@ -892,7 +980,7 @@
             <!-- BLWR-100E Sopladora -->
             <a xlink:title = "BLWR-100E Sopladora">
           <path
-            
+
             d="m 381.61148,186.40676 0.18329,15.02985 -0.91646,4.76556 -1.64961,3.48252 -3.48253,3.48253 -2.56607,1.28303 -2.47443,0.45823 -12.09719,-0.0916 -1.28304,-1.28303 -5.04049,-5.0405 -1.37469,-4.67391 0.45823,-5.95696 2.38278,-5.68201 4.21569,-3.29924 4.21569,-1.46632 4.0324,-0.0917 3.48252,0.82481 1.19139,0.36658 0.73317,-1.55797 0.27493,-0.64152 h 2.56607 z"
             id="path255807" class="BLWR-100E"/>
             </a>
@@ -912,7 +1000,7 @@
             <!-- PT100-1 TRASMISOR DE PRESION -->
             <a xlink:title = "PT100-1 Trasmisor de presión">
           <path
-            
+
             d="m 193.76124,29.290996 2.98094,0.712834 2.1385,1.749684 1.36086,2.851336 c 0,0 0.32402,3.693776 0.19441,4.147397 -0.1296,0.453622 -0.1296,2.332911 -0.1296,2.332911 l -2.1385,2.073699 -0.32402,2.332911 v 4.017792 l -0.77764,-0.0648 0.32402,2.786533 -0.0648,0.972046 h -2.0089 l -0.25921,7.12834 h -4.01779 l -0.0648,-7.322749 -1.42566,-0.129606 0.1944,-3.823383 -1.23125,-0.0648 0.1296,-2.203305 -1.94409,-1.555274 v -7.12834 l -0.71283,-2.851336 1.42566,-3.175351 2.26811,-2.073699 z"
             id="path261778" class="PT100-1"/>
             </a>
@@ -931,7 +1019,7 @@
             </a>
             <a xlink:title = "ZSC100 Switch - apertura/cierre tapa Tolva">
           <path
-            
+
             d="m 209.57319,53.268139 0.12961,3.499367 18.01525,0.259212 -0.25921,-3.758579 z"
             id="path271511" class="SwitchTapaTolva"/>
             </a>
@@ -943,21 +1031,21 @@
             </a>
             <a xlink:title = "PI100-1 Indicador de Presión manométrico">
           <path
-            
+
             d="m 239.1234,49.50956 -0.25921,2.203305 0.38881,1.68488 1.42567,1.166456 2.59213,0.777637 h 1.94409 l 1.16645,-2.592124 0.64803,-2.592123 -1.03684,-1.425668 -2.72173,-1.03685 h -1.81449 l -1.16646,1.296062 z"
             id="path279447" class="PI100-1"/>
             </a>
             <!-- TUBERIA DE ALTA TE PERATURA -->
             <a xlink:title = "Tubería de alta temperatura">
           <path
-            
+
             d="m 327.90727,127.93699 -13.01365,-0.54987 0.54987,-32.80906 1.28304,-4.032398 1.46632,-2.566071 3.11595,-1.283036 1.64962,-1.283035 h 2.93265 l 5.68201,-0.183291 132.70255,0.183291 0.36658,11.730612 h -8.98125 l -0.73316,1.283035 -0.18329,1.832913 -0.18329,3.11594 0.18329,43.98979 h -9.53112 L 444.66352,99.343621 443.38048,97.510713 440.9977,96.77755 H 330.10676 l -2.0162,0.549872 -0.54987,2.016199 v 4.032399 z"
             id="path291309" class="tuberiaTemperatura"/>
             </a>
             <!-- TANQIE DE ALTA PRESION -->
             <a xlink:title = "T106 Tanque alta presión">
           <path
-            
+
             d="m 1050.9895,191.90548 16.3129,-0.36658 1.8329,2.0162 2.5661,2.0162 2.5661,3.48252 1.8329,5.68202 -0.1833,8.0648 -0.7332,142.60025 -0.1833,2.0162 -1.0997,1.09974 -1.8329,1.28304 h -1.8329 l -11.9139,0.18329 -12.2805,-0.18329 -2.7494,-1.09975 -1.4663,-2.19949 -0.1833,-1.64961 -0.1833,-6.59847 0.3666,-140.58406 0.5499,-4.58227 1.8329,-5.13214 2.1995,-2.74936 z"
             id="path299372" class="Tanquealtapresion"/>
             </a>
@@ -970,7 +1058,7 @@
             <!-- refrogeracion chiller -->
             <a xlink:title = "Refrigeración Chiller">
           <path
-            
+
             d="m 1041.4584,211.88418 -2.0162,-0.18329 -0.3666,0.91645 -8.9812,-0.18329 -0.5499,-2.56607 h 2.1995 l -0.1833,-2.93265 -2.3828,-0.18329 -0.3666,-2.19949 2.5661,-0.18329 0.1833,-48.20549 0.7332,-1.46632 3.6658,-0.54988 -0.9165,-3.48252 -4.0324,-1.09975 0.5499,-40.50727 64.3351,0.54988 v 5.68201 h -3.2993 v 92.56186 l 63.0521,0.18329 3.6658,1.46633 1.6496,1.64962 0.5499,2.19949 v 4.21569 l -0.3666,142.41696 -89.6292,0.54987 v -0.91645 l 2.3828,-1.09975 1.6496,-3.8491 -0.5499,-5.68202 0.9165,-144.06658 -1.0998,-4.94885 -3.1159,-4.39898 -4.399,-3.29924 v -0.91645 l 1.0998,-2.0162 -0.1833,-2.74936 -0.9165,-7.14834 -1.4663,-7.14834 -1.4663,-4.21569 -1.2831,-2.19949 -0.4582,-7.69822 -0.8248,-7.60657 -0.7332,-6.04859 -0.4582,-1.46633 -1.6496,-1.83291 -1.0998,-0.18329 -1.4663,0.73317 -0.8248,1.74126 -0.2749,1.83291 -0.7332,9.80605 -0.8248,9.34784 -0.5499,2.19949 -2.5661,9.71441 -0.4582,6.0486 -0.2749,6.78176 1.0997,2.65771 -4.3989,3.20759 -3.116,4.76556 -1.283,4.85721 -0.5499,3.39088 z"
             id="path316912" class="CHILLER"/>
             </a>
@@ -1012,25 +1100,25 @@
             d="m 319.65918,154.42251 -0.0916,9.0729 4.21568,0.0916 c 0,0 0.27494,-9.16454 -0.0916,-9.16454 -0.36658,0 -4.0324,0 -4.0324,0 z"
             id="path352830" class="a105"/>
             </a>
-          
+
             <!-- canaleta/conexion electrica -->
             <a xlink:title = "Canaleta/Conexion eléctrica">
           <path
-            
+
             d="m 435.21755,192.9836 h 7.64676 l -0.12961,-11.14613 2.46252,-0.12961 0.12961,21.90345 h -2.46252 l -1.03685,0.90724 0.51842,1.16645 2.20331,0.38882 -0.12961,8.68362 -9.20203,9.59085 z"
             id="path363423" class="canaletaconexElectrica2"/>
             </a>
             <!-- canaleta/conexion electrica -->
             <a xlink:title = "Canaleta/Conexion eléctrica">
           <path
-            
+
             d="m 434.56951,97.204633 0.64804,55.471447 7.12833,0.1296 0.12961,11.01653 2.20331,-0.25921 -0.12961,-64.155062 -0.77764,-1.68488 c 0,0 -1.16645,-0.648031 -1.68488,-0.648031 -0.51842,0 -7.51716,0.129606 -7.51716,0.129606 z"
             id="path367334" class="canaletaconexElectrica1"/>
            </a>
            <!-- canaleta metallica conexion electrica -->
             <a xlink:title = "Canaleta/Conexion eléctrica">
           <path
-            
+
             d="m 442.86431,84.373622 3.88819,-3.758579 550.43743,0.907243 9.33167,9.461251 0.5184,108.609973 h -8.29479 V 184.94802 L 999.00442,96.945421 993.69057,90.335506 913.07552,90.2059 793.0602,90.335506 689.24565,90.2059 580.63568,89.946687 l -94.87173,0.388819 -1.81448,-1.036849 -19.70014,0.259212 0.12961,-4.147398 -21.77384,-0.129606 z"
             id="path370840" class="canaletaconexElectrica"/>
             </a>
@@ -1072,7 +1160,7 @@
             <!-- PT106 TRASMISOR DE PRESION -->
             <a xlink:title = "PT106 Trasmisor de presión">
           <path
-            
+
             d="m 1025.9703,149.19872 3.6659,1.19139 2.0161,2.74937 0.4583,3.66581 -1.2831,2.0162 -0.092,9.16454 -1.283,0.0916 -0.092,3.39088 -1.283,0.0916 0.092,2.56607 h -4.0324 l 0.1833,-2.65771 -1.7412,-0.18329 0.092,-3.29924 -2.0162,0.0916 0.5499,-7.51493 h -2.2912 v -5.8653 l 2.0162,-3.29924 2.0162,-1.55797 z"
             id="path403362" class="PT106"/>
             </a>
@@ -1100,7 +1188,7 @@
           <!-- PI106 INDICADOR DE PREION -->
             <a xlink:title = "PI106 Indicador/Presión">
           <path
-            
+
             d="m 1038.4047,168.87685 2.7217,0.77764 1.6849,2.0737 -0.1296,1.55527 -1.4257,2.0737 -1.8145,0.38882 -1.944,0.38882 -2.0737,-0.77764 -1.5553,-2.85134 0.5184,-2.0737 1.9441,-1.03685 z"
             id="path420275" class="PI106"/>
             </a>
@@ -1195,7 +1283,7 @@
             <!-- tuberia de refrigeracion/Agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 926.55457,163.43339 v 2.98094 h 72.19064 V 163.563 Z"
             id="path504861" class="TuberiaRefrigeracion_Agua"/>
             </a>
@@ -1217,21 +1305,21 @@
             <!-- V104C VALVULA MANUAL -->
             <a xlink:title = "V104C valvula Cheque">
           <path
-            
+
             d="m 945.86589,176.52361 2.98094,-0.1296 0.1296,-1.81449 0.90725,-1.29606 0.38882,-3.36976 -1.29607,0.12961 -1.03685,-0.77764 -0.1296,-1.55528 v -0.64803 l -4.66582,0.25922 v 0.90724 1.16645 l -0.51843,0.12961 -0.64803,0.12961 h -0.51842 l -0.12961,4.79543 1.03685,0.51842 1.94409,-0.25921 h 1.55528 z"
             id="path524994" class="V104C"/>
             </a>
             <!-- TUBERIA DEL PROCESO -->
             <a xlink:title = "Tubería del proceso">
           <path
-            
+
             d="m 955.26233,170.88575 0.0648,2.59212 3.75858,0.12961 1.42566,0.64803 0.90725,1.42566 0.32401,1.49048 v 3.36976 l -0.0648,3.49936 1.49047,2.46252 2.91614,1.55527 5.18425,-0.0648 -0.12961,-2.72173 -3.62897,0.12961 -1.94409,-0.71284 -0.77764,-1.94409 0.1296,-2.98094 v -3.82338 l -1.10165,-2.59213 -1.94409,-1.87929 c 0,0 -1.42567,-0.25921 -1.74968,-0.38882 -0.32402,-0.1296 -3.24016,-0.1944 -3.24016,-0.1944 z"
             id="path531029" class="tuberiaProceso_"/>
             </a>
             <!-- C105 COMPRESOR -->
             <a xlink:title = "C105 Compresor">
           <path
-            
+
             d="m 986.43262,180.60621 -4.73063,0.12961 0.12961,2.2681 5.05464,-0.19441 0.45362,3.24016 -3.82338,-0.25921 3.36976,5.57306 1.55528,5.96189 -0.32402,3.56417 -1.42567,3.88818 c 0,0 -2.52732,2.59212 -2.78653,2.59212 -0.25921,0 -10.88692,-0.1296 -10.88692,-0.1296 l -2.98094,-3.49937 -2.26811,-4.47141 0.45362,-4.34181 2.20331,-4.40661 1.10165,-1.62008 -0.32402,-6.4803 h 2.20331 l 0.0648,-3.04575 6.2211,-0.19441 3.24015,-0.19441 2.39772,0.38882 z"
             id="path535270" class="C105compresor"/>
             </a>
@@ -1239,7 +1327,7 @@
             <!-- T105 Tanque de baja presion -->
             <a xlink:title = "T105 Tanque de baja presión">
           <path
-            
+
             d="m 823.38805,159.02678 h 3.36976 v 4.66582 l 75.04198,-0.1296 24.88438,0.1296 v 7.12834 l 4.66582,-0.1296 0.12961,2.46251 -5.18425,0.25922 0.90725,66.87678 -7.51716,0.12961 v 11.40534 h -15.29353 l -0.38882,-11.27573 -15.29353,0.38881 -45.36216,-0.1296 -0.12961,11.01652 h -15.16392 l 0.12961,-11.01652 -8.16519,0.1296 0.77763,-77.6341 h 2.72173 z"
             id="path554897" class="T105"/>
             </a>
@@ -1261,7 +1349,7 @@
             <!-- V105 VALVULA DE ALIBIO -->
             <a xlink:title = "V105 Valvula de Alibio">
           <path
-            
+
             d="m 920.30318,135.26862 c 0,0.73316 -0.18329,14.29668 -0.18329,14.29668 0,0 -2.56607,-0.73316 -2.56607,0 0,0.73317 -0.54988,4.76557 0.18329,4.76557 0.73316,0 3.11594,0.18329 3.11594,0.18329 l -0.18329,3.11594 4.39898,0.36658 v -2.93265 l -3.66582,-0.54987 v -4.21569 l 3.66582,-0.18329 v -15.02985 z"
             id="path580780" class="V105"/>
             </a>
@@ -1276,7 +1364,7 @@
             <!-- PT105 TRASMIDOR DE PRESION -->
             <a xlink:title = "PT105 Trasmisor de presión">
           <path
-            
+
             d="m 837.83913,126.17161 3.30496,0.97205 2.1385,2.39771 0.84244,3.04575 -0.77763,2.78653 -1.29607,1.87929 -0.84244,1.87929 -0.19441,7.12834 -7.19314,0.19441 0.0648,-4.01779 h -2.46251 v -4.73063 l -2.1385,-0.1296 0.0648,-8.87803 6.60991,-2.39771 z"
             id="path1072" class="PT105"/>
             </a>
@@ -1325,21 +1413,21 @@
 
             <a xlink:title = "PI105 Indicador de presión manométrico">
           <path
-            
+
             d="m 825.20253,151.70403 2.39772,0.84244 1.62007,2.0737 v 1.62008 l -0.77763,1.36086 -2.0089,1.29606 -3.30496,0.19441 -2.59212,-1.36086 -0.51843,-2.98094 1.03685,-1.87929 2.0737,-1.03685 z"
             id="path16819" class="PI105"/>
             </a>
 
             <a xlink:title = "V105A Valvula manual">
           <path
-            
+
             d="m 870.43509,247.28859 6.4803,0.25921 v 4.40661 l 1.55528,-0.25921 -0.25921,7.51715 h 3.36976 v 1.55528 l -2.33291,0.51842 0.25921,4.1474 -8.03558,0.25921 -0.51843,-1.81448 -0.77764,0.77763 0.51843,1.16646 -2.46252,-0.90724 c 0,0 -0.77764,-0.90725 -0.77764,-1.42567 0,-0.51843 0.12961,-1.29606 0.12961,-1.29606 h 2.0737 l 0.51842,-4.92504 z"
             id="path19886" class="V105A"/>
             </a>
             <!--V104A valvula manual -->
             <a xlink:title = "V104A Válvula manual">
           <path
-            
+
             d="m 763.40624,166.61135 0.36658,9.34783 8.43138,-0.18329 -0.18329,-9.34783 z"
             id="path30696" class="V104A"/>
             </a>
@@ -1535,21 +1623,21 @@
             <!--SV104A Valvula solenoide -->
             <a xlink:title = "SV104A Válvula solenoide">
           <path
-           
+
             d="m 760.65865,140.10428 h 9.72047 l -0.12961,2.0737 2.72173,-0.12961 v 1.42567 l 6.09149,0.1296 v 3.62898 l -5.83228,0.25921 v 2.0737 l -14.7751,-0.38882 -0.12961,-2.0737 h -5.70267 l -0.12961,-4.01779 5.70268,-0.25921 v -0.77764 h 2.46251 z"
             id="path143900" class="SV104_A"/>
             </a>
             <!--SV104A Valvula solenoide -->
             <a xlink:title = "SV104A Válvula solenoide">
           <path
-            
+
             d="m 760.52905,131.42066 0.1296,8.94283 c 0,0 9.72047,0.51842 9.72047,0 0,-0.51842 -0.12961,-8.68361 -0.12961,-8.68361 z"
             id="path147936" class="SV104A"/>
             </a>
             <!-- FI103 Filtro de solidos -->
             <a xlink:title = "FI103 Filtro de solidos">
           <path
-           
+
             d="m 688.72723,126.23642 0.1296,3.49936 3.11055,-0.1296 -0.12961,3.11055 10.88692,-0.12961 v 2.59212 l 2.20331,-0.25921 -0.12961,-12.5718 h -2.98094 v 1.81449 l -9.72046,0.38882 v 1.94409 z"
             id="path153928" class="FI103"/>
             </a>
@@ -1598,7 +1686,7 @@
             <!--Valvula Manual -->
             <a xlink:title = "V104B Válvula Manual">
           <path
-            
+
             d="m 741.77792,214.08367 v 3.48253 h -2.74936 l 0.27494,3.02429 0.91645,1.64962 2.10785,0.64152 3.94075,-0.0916 0.0916,-2.10784 1.64962,0.27494 0.0916,-3.84911 3.11594,0.18329 -0.18329,-3.11594 z"
             id="path189295" class="V104B"/>
             </a>
@@ -1606,14 +1694,14 @@
             <!--SV104B Valvula solenoide -->
             <a xlink:title = "SV104B Valvula solenoide">
           <path
-            
+
             d="m 766.98041,208.76824 h 6.96505 l -0.0916,2.65771 h 2.29113 l 0.0916,9.34784 -2.56608,-0.36659 -0.0916,7.69822 -3.66582,0.45822 -1.83291,-1.19139 -0.45822,-1.55797 v -0.64152 l 2.29113,0.1833 0.0917,-2.38279 h -3.29924 z"
             id="path192756" class="SV104B"/>
             </a>
             <!--SV104B Valvula solenoide -->
             <a xlink:title = "SV104B Valvula solenoide">
           <path
-            
+
             d="m 776.41989,211.5176 -0.0916,8.98125 8.70631,0.0916 -0.0916,-9.34783 z"
             id="path194501" class="SV104_B"/>
             </a>
@@ -1634,7 +1722,7 @@
             <!-- C102 CONDENSADOR -->
             <a xlink:title = "C102 Condensador">
           <path
-            
+
             d="m 613.65764,178.34196 1.64962,2.19949 -4.58227,4.21569 h 43.07334 v 5.31543 l -45.27283,0.18329 0.18329,3.84911 h -5.49872 l 0.36658,-3.66581 H 600.644 l -0.18329,-5.68202 4.39897,-0.36658 -0.54987,-9.71441 h -6.78176 v -3.29924 l 6.78176,-0.18329 -0.73316,-8.24809 -21.81161,-12.83035 -2.19949,3.29923 -23.09464,-13.01365 -55.9037,-32.62576 1.64962,-2.38278 -19.9787,-11.913905 h -6.0486 v -4.032398 h 7.33164 l 20.34528,11.364033 1.8329,-2.932656 1.46633,1.466327 0.18329,-8.431377 2.38278,0.18329 0.18329,8.981246 75.33253,44.17309 -1.28304,2.56607 24.0111,15.02985 v 21.44502 z"
             id="path218754" class="C102"/>
             </a>
@@ -1670,14 +1758,14 @@
             <!-- T101 TANQUE ALMACENAMIENTO SOLIDOS -->
             <a xlink:title = "T101 Tanque almacenamiento/solidos">
           <path
-            
+
             d="m 444.8468,206.56875 -0.36658,8.24808 -8.24808,8.43138 0.0916,29.8764 22.91135,-0.18329 -0.36658,-30.60956 -7.33163,-7.88151 v -8.24808 l -6.78176,-0.0916 z"
             id="path255782" class="T101"/>
             </a>
             <!-- V100 VALVULA MANUAL -->
             <a xlink:title = "V100 Valvula manual">
           <path
-            
+
             d="m 465.10044,196.30446 0.0916,6.59847 h 7.33164 l 0.18329,-6.8734 -3.29924,-0.1833 -0.0916,-3.57417 h -1.83291 l -0.18329,2.47443 -0.91645,1.28304 z"
             id="path262720" class="V100"/>
             </a>
@@ -1705,7 +1793,7 @@
 
             <a xlink:title = "FTT100 Trasmisor/flujo,temperatura">
           <path
-            
+
             d="m 488.35608,213.07256 v 4.79542 l 8.4244,0.12961 0.25921,2.72173 11.66456,0.12961 0.1296,-2.98095 8.4244,-0.25921 -0.1296,-4.40661 h -8.16519 l 0.1296,-2.85133 -12.83101,0.1296 0.38882,2.46252 z"
             id="path286534" class="FTT100"/>
             </a>
@@ -1719,7 +1807,7 @@
             <!-- V102A VALVULA MANUAL -->
             <a xlink:title = "V102A Valvula manual">
           <path
-            
+
             d="m 518.81353,193.63163 -0.12961,9.59086 h 7.51716 l -0.38882,-7.38756 -3.11055,-0.1296 -0.25921,-2.0737 z"
             id="path290024" class="V102A"/>
             </a>
@@ -1772,7 +1860,7 @@
             d="m 499.95583,197.58462 8.74842,-0.19441 0.0648,3.04574 h -8.87802 z"
             id="path305751" class="215"/>
             </a>
-            
+
             <a xlink:title = "216">
           <path
             style="fill:#0202cf;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1782,7 +1870,7 @@
 
             <a xlink:title = "TI102A Indicador de temperatura">
           <path
-            
+
             d="m 541.88343,186.8273 c 0.71283,0 2.39771,0.90725 2.39771,0.90725 0,0 1.36087,1.23126 1.36087,2.1385 0,0.90724 -0.19441,2.2033 -0.19441,2.2033 l -1.36087,1.36087 c 0,0 -1.23126,1.10165 -2.2033,1.03685 -0.97205,-0.0648 -2.46252,-1.16646 -2.46252,-1.16646 0,0 -1.49047,-0.71283 -1.42567,-2.00889 0.0648,-1.29606 0.38882,-2.46252 0.38882,-2.46252 l 1.36087,-1.23126 z"
             id="path312595" class="TI102A"/>
             </a>
@@ -1839,7 +1927,7 @@
             <!-- t103 tanque lamacenamiento condensados -->
             <a xlink:title = "T103 Tanque Almacenamiento/Condensados">
           <path
-            
+
             d="m 616.77359,225.63099 h 3.48252 v 3.11595 l 4.94885,3.29923 8.24809,5.86531 -0.36658,43.98979 -29.8764,-0.36658 v -43.9898 l 9.53112,-6.04859 3.84911,-3.29924 z"
             id="path340761" class="T103"/>
             </a>
@@ -1888,7 +1976,7 @@
             <!-- VP104 bomba de vacio -->
             <a xlink:title = "VP104 Bomba de vacio">
           <path
-            
+
             d="m 676.89297,166.79464 v 42.70676 l 30.60957,0.36658 -0.36658,-42.70676 z"
             id="path432837" class="VP104"/>
             </a>
@@ -2056,7 +2144,7 @@
 
             <a xlink:title = "PT100-2 Trasmisor de presión">
           <path
-            
+
             d="m 480.96852,118.33044 3.24016,0.77764 1.94409,1.81448 1.81449,3.49937 -0.51843,2.59212 h 0.90725 l 0.1296,5.18425 -2.0737,-0.12961 0.25922,7.64677 -1.81449,0.38882 h -7.64677 v -4.01779 l -1.55527,-0.12961 -0.25921,-6.86913 -1.03685,-2.46251 0.38882,-3.36977 1.55527,-2.85133 2.20331,-1.81449 z"
             id="path144291" class="PT100-2"/>
             </a>
@@ -2133,7 +2221,7 @@
             <!-- BLWR-100F SOPLADORA  -->
             <a xlink:title = "BLWR-100F Sopladora">
           <path
-            
+
             d="m 394.65081,184.42959 -0.12961,13.09022 h 0.77764 v 4.53622 l -1.42567,-0.25921 v 8.16519 l 15.16393,-0.12961 0.25921,-7.64676 -2.0737,-0.25922 v -5.57306 l 3.11055,0.1296 v -7.90597 h -2.20331 l 0.12961,-4.01779 z"
             id="path298288" class="BLWR-100F"/>
             </a>
@@ -2203,14 +2291,14 @@
             <!-- Tuberia refrigeración/Agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 451.67753,214.1094 c 0.90724,0 36.41933,-0.1296 36.41933,-0.1296 l 0.12961,2.59212 -34.73446,0.25921 z"
             id="path355428" class="Tuberia_RefrigeracionAgua"/>
             </a>
             <!-- Tuberia refrigeración/Agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 516.99904,214.1094 v 2.72173 h 86.0585 v -1.68488 l -1.42567,-0.1296 v -0.90725 l -69.85772,0.12961 z"
             id="path358655" class="tuberia_RefrigeracionAgua"/>
             </a>
@@ -2224,21 +2312,21 @@
             <!-- tuberia refrigeracion /agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 623.00548,213.71709 0.0916,2.84101 31.06779,-0.18329 -0.27493,-2.29114 z"
             id="path375834" class="tuberia_refrigeracionAgua"/>
             </a>
             <!-- tuberia refrigeracion /agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 730.59718,213.71709 c 0,0 -0.27493,3.20759 0.0917,3.20759 0.36658,0 10.9058,-0.18329 10.9058,-0.18329 l -0.0916,-2.93266 z"
             id="path381089" class="tuberiarefrigeracionagua"/>
             </a>
             <!-- tuberia refrigeracion /agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 750.85082,214.26696 v 2.84101 l 16.12959,-0.0916 -0.0916,-3.0243 z"
             id="path385174" class="tuberiarefrigeracion_agua"/>
             </a>
@@ -2252,14 +2340,14 @@
             <!-- tuberia refrigeracion /agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 798.50643,213.44215 -0.0917,3.29924 21.90326,0.18329 -0.0916,-3.39088 z"
             id="path393110" class="tuberiarefrigeracionagua_"/>
             </a>
             <!-- tuberia refrigeracion /agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 926.90164,213.90038 h 17.41263 v 3.48252 l -17.59592,-0.18329 z"
             id="path401645" class="Tuberiarefrigeracionagua_"/>
             </a>
@@ -2273,7 +2361,7 @@
             <!-- tuberia proceso -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 1013.0483,213.99202 0.092,2.56608 5.8653,-0.0916 v -2.19949 z"
             id="path410907" class="tuberiaRefrigeracionagua_"/>
             </a>
@@ -2294,14 +2382,14 @@
             <!-- Tuberia refrigerante /agua -->
             <a xlink:title = "Tubería refirgeración/Agua">
           <path
-            
+
             d="m 492.41077,194.10497 h 3.84911 l 0.36658,-23.003 0.91645,-2.38278 1.55798,-0.8248 2.47442,-0.0916 68.17345,-0.35156 34.01118,-0.65654 v -3.11594 l -101.90969,0.18329 c 0,0 -4.76556,-0.0916 -5.22379,0 -0.45823,0.0916 -2.29114,1.09974 -2.29114,1.09974 l -1.19139,1.55797 -0.54987,2.10785 -0.0916,3.20759 z"
             id="path449521" class="RefrigeracionAgua"/>
             </a>
             <!-- tuberia refrigeracion /agua -->
             <a xlink:title = "Tubería refrigeración/Agua">
           <path
-            
+
             d="m 607.85297,163.82221 v 2.85133 l 69.08009,-0.64803 143.99247,0.90725 -0.12961,-3.36976 -78.02292,-0.12961 z"
             id="path469147" class="RefrigeracionAgua_"/>
             </a>
@@ -2357,7 +2445,7 @@
             <!-- TE102A SENSOR TEMPERATURA -->
             <a xlink:title = "TE102A Sensor temperatura/aguaRefrigerante">
           <path
-            
+
             d="m 551.15548,187.23157 10.35593,-0.18329 0.73316,0.91645 c 0,0 0.64152,0.27494 1.09975,0.27494 0.45822,0 1.37468,0 1.37468,0 l 0.64151,-0.1833 -0.0916,3.0243 c 0,0 -2.74936,0.18329 -3.29924,0.18329 -0.54987,0 -5.49872,0.0917 -5.49872,0.0917 0,0 -1.92455,0.27494 -2.47443,0 -0.54987,-0.27494 -1.8329,-1.0081 -1.8329,-1.0081 l -0.73317,-1.55797 z"
             id="path523047" class="TE102A"/>
             </a>
@@ -2365,21 +2453,21 @@
             <!-- TE102A SENSOR TEMPERATURA -->
             <a xlink:title = "TE102 Sensor temperatura">
           <path
-           
+
             d="m 597.98628,162.30402 -0.27494,6.32353 -0.0916,5.40708 v 2.19949 l -1.09975,1.92455 -2.10784,0.73316 -2.19949,-0.18329 v -5.04049 l 0.0916,-5.49873 c 0,0 0.82481,-1.0081 1.19139,-1.37468 0.36659,-0.36658 0.91646,-1.74126 0.91646,-1.74126 v -2.38278 l -0.0916,-0.54988 2.56607,-0.27493 z"
             id="path524864" class="TE102-1"/>
             </a>
             <!-- LS103 SENSOR DE NIVEL -->
             <a xlink:title = "LS103 Sensor de nivel">
           <path
-            
+
             d="m 616.5903,221.78188 c 0,0 -0.54988,4.12405 0,4.0324 0.54987,-0.0916 3.57417,-0.27493 3.57417,-0.27493 l -0.0917,-4.0324 h 3.11595 l 0.18329,-14.66327 h -8.88961 l -0.0916,14.75491 z"
             id="path528793" class="LS103"/>
             </a>
             <!--V103B valvula manual -->
             <a xlink:title = "V103B Valvula manual">
           <path
-            
+
             d="m 615.49974,297.05736 v 4.40661 h 5.96188 v -4.27701 z"
             id="path544752" class="V103B"/>
             </a>
@@ -2436,7 +2524,7 @@
             <!-- TE102 SENSOR TEMPERATURA/AGUA REFRIGERANTE -->
             <a xlink:title = "TE102A Sensore temperatura/aguaRefrigerante">
           <path
-            
+
             d="m 551.99271,182.35589 9.59086,-0.25921 v 4.66582 0.25921 h -9.59086 z"
             id="path578043" class="TE102A_1"/>
             </a>
@@ -2457,7 +2545,7 @@
             <!-- TE102 SENSOR TEMPERATURA -->
             <a xlink:title = "TE102 Sensor temperatura">
           <path
-            
+
             d="m 587.76401,167.96961 1.9441,0.77763 2.46251,-0.77763 v 11.01652 l -4.66582,-0.25921 z"
             id="path588350" class="TE102"/>
             </a>
@@ -2473,14 +2561,14 @@
             <!-- TI102B INDICADOR TEMPERATURA -->
             <a xlink:title = "TI102B Indicador de Temperatura">
           <path
-           
+
             d="m 603.83518,146.97341 2.85134,0.84244 1.23125,1.81448 v 1.74969 l -0.77763,1.62007 c 0,0 -2.0089,1.10165 -2.26811,1.16646 -0.25921,0.0648 -2.65693,-0.19441 -2.65693,-0.19441 l -1.62007,-1.49047 -0.51843,-2.33291 0.90724,-1.87929 1.36087,-0.84244 z"
             id="path593946" class="TI102B"/>
             </a>
 
             <a xlink:title = "Tuberia de proceso">
           <path
-            
+
             d="m 612.7132,174.96834 -0.19441,2.1385 2.20331,-0.0648 1.16645,2.52732 1.49048,0.19441 2.72173,2.52732 0.45362,-0.45362 0.71283,-0.45362 c 0,0 -1.94409,-1.68489 -2.2033,-2.13851 -0.25922,-0.45362 -0.58323,-1.23126 -0.58323,-1.23126 l 0.25921,-0.90724 8.4892,-8.68361 0.45363,-33.5032 1.49047,-3.17535 2.52732,-2.1385 2.72173,-1.49047 2.91614,-0.19441 3.04574,0.38882 2.72173,1.29606 2.0737,2.33291 1.29606,1.94409 -0.1296,4.79543 0.1296,29.16139 1.10165,3.24015 2.0089,3.43457 3.69378,2.39771 4.40661,0.90725 0.1296,4.47141 -0.45362,17.69124 0.12961,29.4206 h 3.75858 l -0.77764,-51.58325 2.46252,-0.12961 6.09149,-3.11055 2.0737,-3.11055 1.55527,-5.31385 -0.12961,-9.46125 0.12961,-18.7929 0.38882,-4.01779 2.59212,-3.75858 3.88819,-0.38882 6.73952,0.12961 v 4.1474 h 2.59212 l -0.1296,-6.99874 v -4.277 l -2.46252,-0.12961 0.25921,4.40661 -9.97967,-0.25921 -2.85134,1.16646 -2.46252,3.11055 -1.16645,2.33291 v 33.43839 l -0.77764,2.59212 -1.55528,2.46252 -4.79542,2.98094 -3.49937,0.90725 -3.88819,-0.77764 -2.59212,-1.81449 -1.94409,-2.59212 -1.42567,-2.72173 -0.12961,-15.81195 -0.38881,-18.53369 -1.42567,-3.36976 -4.1474,-3.75858 -4.01779,-1.55527 -3.24016,-0.38882 -2.72173,0.77764 -3.62897,1.55527 -2.85133,2.59212 -2.0737,2.98095 -1.03685,2.0737 0.1296,33.568 -8.16519,7.77637 -0.51842,0.25921 -0.38882,-1.68488 -1.81449,0.1296 z"
             id="path600927" class="Tuberiaproceso"/>
             </a>
@@ -2718,14 +2806,14 @@
 
             <a xlink:title = "Tuberia del proceso">
           <path
-            
+
             d="m 742.51109,247.4426 4.39898,0.18329 -0.36659,18.14579 41.9736,0.36658 0.18329,3.29924 -46.18928,-0.18329 z"
             id="path731919" class="tuberiaProceso_"/>
             </a>
             <!-- tuberia de proceso -->
             <a xlink:title = "Tubería del proceso">
           <path
-            
+
             d="m 798.43886,266.14629 0.1296,3.56416 55.53625,-0.38881 h 63.11821 l 54.04577,-0.12961 31.88311,-0.0648 v -3.36976 l -46.3342,0.32401 -84.37362,0.0648 h -65.51592 z"
             id="path737581" class="tuberiadeproceso"/>
             </a>
@@ -2823,7 +2911,7 @@
             <!-- tuberia de proceso -->
             <a xlink:title = "Tubería del Proceso">
           <path
-            
+
             d="m 432.10699,232.25427 v 4.66582 l 67.39522,-0.25921 64.80309,0.12961 v -4.40661 l -92.40921,0.25921 z"
             id="path782607" class="tuberiadel_proceso"/>
 
@@ -2886,7 +2974,7 @@
             <!-- tuberia del proceso -->
             <a xlink:title = "Tubería del Proceso">
           <path
-            
+
             d="m 731.69693,171.01033 3.66581,-0.18329 3.66582,0.18329 0.36658,-4.39898 -0.18329,-14.47997 v -4.0324 l 1.64962,-2.93266 c 0,0 0.73316,-1.09974 2.0162,-1.09974 1.28303,0 3.29923,-0.18329 3.29923,-0.18329 h 3.84911 2.38278 l 0.18329,2.38278 -0.36658,0.73316 h -1.83291 -3.48252 -2.74937 l -1.09974,1.28304 -0.91646,2.38278 0.36659,2.74936 -0.36659,13.19694 v 3.66582 l 11.73062,0.18329 -0.18329,2.93265 h -7.69822 l -17.41263,-0.36658 -0.54987,4.21569 -0.36658,5.13214 0.18329,3.84911 2.19949,2.93265 6.78176,0.73316 1.83291,-0.18329 30.24298,0.18329 3.29924,2.56607 0.36658,2.74937 0.18329,4.03239 v 3.48253 l -1.09975,0.73316 h -1.8329 l -0.54988,-6.04859 v -3.11595 l -2.38278,-2.19949 h -16.86275 l -4.58227,-0.18329 0.91645,12.83036 -3.29923,0.18329 -0.18329,-7.88151 0.18329,-5.49872 -12.28049,0.54987 -3.29923,-1.09974 -1.83291,-2.56607 -0.18329,-3.11595 0.18329,-8.24808 1.83291,-4.21569 z"
             id="path820961" class="tuberiaPROCESO"/>
             </a>
@@ -2956,7 +3044,7 @@
             <!-- tuberia del proceso -->
             <a xlink:title = "Tubería del proceso">
           <path
-            
+
             d="m 779.16925,144.24987 0.18329,2.0162 6.59847,-0.18329 2.38278,0.73316 1.46633,1.64962 0.18329,2.38278 2.56607,-0.18329 -0.54987,-3.66582 -2.0162,-1.83291 -2.56608,-1.09974 z"
             id="path848293" class="TUBERIAproceso"/>
             </a>
@@ -3201,8 +3289,8 @@
             id="path61276"
             style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
             d="m 1038.7539,212.18851 3.0243,0.0916 M 432.269,67.200799 l -0.0324,7.45236 m 46.74716,91.850111 a 3.4825253,3.253412 0 0 1 -3.48252,3.25341 3.4825253,3.253412 0 0 1 -3.48253,-3.25341 3.4825253,3.253412 0 0 1 3.48253,-3.25342 3.4825253,3.253412 0 0 1 3.48252,3.25342 z m -19.52049,7.37746 18.87896,-0.1833
-             c 3.56836,-0.9927 4.6432,-3.02436 5.31543,-5.22378 l 0.36659,-11.27239 -3.48253,0.0916 v 4.49062 c -1.34238,-1.13216 
-             -2.04016,-2.88126 -7.14834,-2.38278 -2.97339,0.84517 -4.93488,2.70224 -5.22379,6.23189 0.0822,2.29302 0.96323,4.42628 
+             c 3.56836,-0.9927 4.6432,-3.02436 5.31543,-5.22378 l 0.36659,-11.27239 -3.48253,0.0916 v 4.49062 c -1.34238,-1.13216
+             -2.04016,-2.88126 -7.14834,-2.38278 -2.97339,0.84517 -4.93488,2.70224 -5.22379,6.23189 0.0822,2.29302 0.96323,4.42628
              3.48253,6.23189 l -12.28049,0.0916 z m 11.54733,-52.0546 0.0916,4.12405 m 4.30738,-4.30734 -5.95695,0.0917 0.0916,4.21564
             5.04054,-0.0917 m 3.02429,-1.55791 h 7.78986 v 3.48252 h -7.78986 z m 10.08101,1.19141 a 6.5984693,7.2399874 0 0 1 -6.59847,7.23998 6.5984693,7.2399874
              0 0 1 -6.59847,-7.23998 6.5984693,7.2399874 0 0 1 6.59847,-7.23999 6.5984693,7.2399874 0 0 1 6.59847,7.23999 z m -1.28299,14.57159 -0.0917,-7.97315 2.0162,-5e-5 -0.18329,-5.68197 3.84911,-0.18329 -0.0916,-4.67391 -5.13219,0.0917 m -9.62277,18.42067 v -3.84911 l -1.46633,-0.0916 -0.18329,-6.87344 m 9.34783,10.81415 v 2.38278 l
@@ -3254,7 +3342,7 @@
              -10.88693 0.0648,6.93394 h -1.81449 l -0.0648,3.75858 m 34.02162,0.38882 -0.38882,-17.88566 c 0.30241,-0.0864 0.60483,-0.17281 0.90724,-0.25921 l 14.77511,0.25921 v 17.75605 m -91.63157,0 0.12961,-17.75605 h 15.16392 l -0.12961,17.62644 m 113.66462,5.18425 44.32531,-0.12961 m -44.45491,-4.79542 h 44.32531 m -67.91364,4.92503 5.44346,-0.12961 m -5.31385,-4.92503 h 5.18424 m -126.88445,0 h -8.29479 m 0,4.66582 8.4244,-0.25921 m 112.62777,1.03685 -102.64809,-0.51843 m 0,-4.66582 h 102.38888 m 0.2592,-1.81449 h 8.81322 v 7.51716 h -8.81322 z m -112.49817,0.51844 h 9.85007 v 6.48031 h -9.85007 z m 139.39146,
              -29.1614 -0.1296,24.43076 m -5.37866,-24.56037 0.19441,24.36597 m -1.84649,-28.59596 h -17.04605 m 16.9544,-3.0243 -16.9544,-0.0916 m 4.07822,-40.64478 h -4.53644 l 0.62267,67.17239 -107.05471,0.51842 0.51843,-77.50449 h 106.01785 m 0,0 -0.10424,7.4309 4.4448,-0.0917 m 10.11053,-1.44212 c 2.63633,0.58548 1.99166,-1.11512 2.0089,-2.1385 l 5.11944,-1e-5 m -0.38882,0.0648 c -0.0818,0.88813 -0.2375,2.84265 2.20331,2.72173 m -8.74842,4.79543 4.53622,-0.0648 v 1.68488 l 2.98094,-0.12961 c -0.0334,-1.31182 0.14345,-2.92649 1.10165,-2.91614 m -8.74842,-5.31385 v 8.10038 l -2.65692,-0.0648 -0.0648,-2.0737 -1.29607,
              -0.0648 v -0.84244 l -5.57306,0.0648 -0.12961,-3.04574 6.54511,-0.12961 v -2.00889 z m 9.00763,6.15629 5.05465,-0.0648 v -4.277 l -5.11945,0.0648 m 0.0648,0 v 4.08259 m 21.09519,8.36949 2.10785,-0.0916 v -2.93269 l 5.49872,-0.1833 c 4.17855,-0.48774 6.82344,-0.02 7.33719,1.20251 m 6.31798,0.17218 -10.72251,0.18329 v 2.23189 m -0.4425,-0.0324 11.53159,-0.27494 m 11.24552,-2.74285 -0.065,-2.75587 -8.67389,-0.0435 0.0592,2.51794 m 11.27249,1.19137 0.092,2.0162 -3.0243,1.46633 h -10.72257 l -0.0916,-4.30734 h 13.28857 m 8.8896,0.54987 0.092,3.48253 -4.1296,0.0537 -0.086,-3.35291 h -4.674 l -0.092,-3.39088 11.7306,
-             -0.18329 v 3.43439 m 145.8214,79.28397 h 2.0737 l 0.2593,4.66583 h -2.5922 m -2.3329,-7.77637 h 2.3329 l 0.2592,11.14613 -2.3329,0.25921 m -0.5184,-21.51463 h 4.4066 l 0.2592,6.2211 h -4.6658 m -85.7993,5.44346 62.9886,0.51843 m -63.7662,77.7637 64.2846,0.25921 m -63.7662,-10.36849 63.2478,-0.25921 m -62.9886,-11.40535 63.2478,0.25922 m -63.507,-12.96062 63.507,0.51842 m -63.7662,29.291 64.0254,-0.25921 m -63.7662,-23.58833 h 63.7662 m -63.507,12.70141 h 63.507 m -63.7662,-27.73572 h 63.507 m -62.9886,3.88818 h 63.5071 m -64.2847,-13.99747 63.7662,-0.51842 m -63.2478,5.44346 h 64.0255 m -63.7663,-10.62771 h 62.9886 m 
+             -0.18329 v 3.43439 m 145.8214,79.28397 h 2.0737 l 0.2593,4.66583 h -2.5922 m -2.3329,-7.77637 h 2.3329 l 0.2592,11.14613 -2.3329,0.25921 m -0.5184,-21.51463 h 4.4066 l 0.2592,6.2211 h -4.6658 m -85.7993,5.44346 62.9886,0.51843 m -63.7662,77.7637 64.2846,0.25921 m -63.7662,-10.36849 63.2478,-0.25921 m -62.9886,-11.40535 63.2478,0.25922 m -63.507,-12.96062 63.507,0.51842 m -63.7662,29.291 64.0254,-0.25921 m -63.7662,-23.58833 h 63.7662 m -63.507,12.70141 h 63.507 m -63.7662,-27.73572 h 63.507 m -62.9886,3.88818 h 63.5071 m -64.2847,-13.99747 63.7662,-0.51842 m -63.2478,5.44346 h 64.0255 m -63.7663,-10.62771 h 62.9886 m
              -62.9886,-5.96188 62.9886,-0.51843 m -62.9886,-6.99873 h 62.4702 m -62.7294,-9.59086 63.2478,0.25922 m -62.7294,-8.2948 h 62.4702 m -62.4702,-7.25795 62.9886,0.25922 m -5.1842,-6.73953 0.7776,109.12841 m -5.1842,-109.12841 -0.5184,109.12841 m -5.4435,-108.86919 -0.5184,108.60997 M 1116.946,232.51347 V 342.1603 m -4.925,-109.64683 -1.0369,109.38762 m -5.7026,-109.64683 -0.5185,109.38762 m -4.925,-109.38762 -1.0369,109.1284 m -5.4434,-109.38761 -0.2592,109.38761 m -5.7027,-108.86919 -0.7776,109.12841 m -5.1843,-109.64683 -0.2592,109.64683 m -5.1842,-109.38762 62.2109,0.25921 0.2592,109.38762 -63.2478,-0.25921 m 0,5.70267 70.765,
              -0.25921 -0.5184,-118.20084 h -69.4689 m -34.1207,83.0142 h -6.0486 l 0.2506,-96.75245 h 5.7027 m -11.0854,1.44122 -0.1833,143.51671 h 5.8195 l 0.046,-41.97359 h 5.1321 M 1031.239,183.22856 v 21.26173 m 0.3777,-45.85797 -0.3777,22.21346 M 1161.1921,359.9209 V 215.48774 c 0.4273,-4.94852 -1.8219,-7.22048 -6.2319,-7.33163 h -62.3188 v -92.74515 h 3.2122 l 0.087,-6.01715 -64.5183,-0.21474 v 40.32398 m 39.4075,210.96772 90.5456,-0.54987 m -86.1925,-6.32354 c -0.1344,2.68422 0.5043,5.76358 -5.6362,6.50683 l -22.3614,-0.18329 m -5.4987,-153.5977 -0.1833,148.64885 c 0.4962,1.83761 0.6301,4.85816 5.8652,4.94885 m 19.5495,-167.84454 c 4.9979,
              2.73961 8.5324,6.88292 9.0725,13.73825 l -0.7777,148.26947 m -23.7179,-161.94292 c -7.5576,2.98203 -9.0259,9.29407 -9.85,14.96951 m 13.6734,-62.79419 c 1.5862,-4.06989 4.0404,-4.4109 5.7998,0.0648 m 2.171,22.03305 -2.2034,-22.16265 m -5.7026,-0.12961 -1.7497,21.80624 m -3.953,23.68553 1.4257,2.46252 16.2007,-0.25921 1.1665,-2.33292 c -0.7869,-8.58518 -1.4984,-17.22904 -5.3139,-23.45871 m -9.4612,-0.38882 c -3.4014,7.42021 -3.4895,15.94485 -3.8882,24.36596 m -28.2854,-37.01709 h 8.4314 v 4.21569 h -8.4314 z m 10.081,1.64962 4.0324,-0.54987 -0.5499,-3.48253 -9.3386,-1.99492 m -6.5318,5.77923 -3.0086,-0.11849 v -2.74936 l 9.7913,
@@ -3302,59 +3390,59 @@
              2.10785 z m 7.331631,0.18329 a 1.9245535,2.1078444 0 0 1 -1.924554,2.10784 1.9245535,2.1078444 0 0 1 -1.924553,-2.10784 1.9245535,2.1078444 0 0 1 1.924553,-2.10785 1.9245535,2.1078444 0 0 1 1.924554,2.10785 z m -32.992345,5.31549 a 1.9245535,2.1078444 0 0 1 -1.924554,2.10784 1.9245535,2.1078444 0 0 1 -1.924553,-2.10784 1.9245535,2.1078444 0 0 1 1.924553,-2.10785 1.9245535,2.1078444 0 0 1 1.924554,2.10785 z m -7.056696,0.0916 a 1.9245535,2.1078444 0 0 1 -1.924554,2.10784 1.9245535,2.1078444 0 0 1 -1.924553,-2.10784 1.9245535,2.1078444 0 0 1 1.924553,-2.10784 1.9245535,2.1078444 0 0 1 1.924554,2.10784 z m -2.19949,-41.51536 -0.183291,29.50982 42.89005,0.54988 0.183291,-30.24299 z m -3.482525,-3.66581 v 36.47487 l 49.305228,0.18329 v -36.47487 z m 70.933539,-3.84911 v 59.38622 l -91.462111,0.36658 0.549873,
              -59.7528 z m -94.634629,-0.74251 h 98.241479 v -2.59213 l -97.723054,-0.51842 -0.645141,-0.17934 z m 15.644387,-13.58641 -0.09164,6.32846 2.332911,4.40661 m -7.517158,-11.43679 v 7.5486 l -2.743966,3.59753 m 9.742699,-15.2778 -1.814486,5.19997 m -7.608803,-5.64248 2.424556,5.12405 m -2.332911,-4.75747 9.331644,0.35086 M 32.142333,52.879319 32.401545,102.12967 M 31.775751,52.879319 h 10.216651 l -0.259213,49.509561 m 68.436841,38.77448 a 3.358279,3.1749883 0 0 1 -3.35828,3.17499 3.358279,3.1749883 0 0 1 -3.35827,-3.17499 3.358279,3.1749883 0 0 1 3.35827,-3.17499 3.358279,3.1749883 0 0 1 3.35828,3.17499 z" />
             </a>
-            
+
             <a xlink:title = "390a">
             <path
             style="fill:none;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
             d="m 32.442474,52.971045 -0.09164,9.98935 h 9.622768 l -0.09165,-9.806059 z"
             id="path89551" class="390a"/>
             </a>
-         
-           <a xlink:title = "392"> 
+
+           <a xlink:title = "392">
             <path
-           
+
             d="m 207.94343,175.77589 h 1.28304 v 40.23233 h -1.188 z"
             id="path95225" class="a392"/>
             </a>
             <!--TE100A sensor temperatura/TERMOCUPLA -->
          <a xlink:title = "TE100A Termocupla">
             <path
-            
+
             d="m 257.20531,173.21866 1.04612,0.0648 -0.0523,42.0572 -1.09843,0.12961 z"
             id="path136690" class="TE100A"/>
             </a>
             <!--TE100B sensor temperatura/TERMOCUPLA -->
          <a xlink:title = "TE100B Termocupla">
             <path
-            
+
             d="m 281.90127,172.84324 v 42.61511 l 0.91645,-0.27493 -0.18328,-42.24854 z"
             id="path144560" class="TE100B"/>
             </a>
          <!--TE100C sensor temperatura/TERMOCUPLA -->
-           <a xlink:title = "TE100C Termocupla"> 
+           <a xlink:title = "TE100C Termocupla">
             <path
-            
+
             d="m 306.3515,173.53058 h 0.79808 l -0.21002,41.7903 -0.79807,-0.0457 z"
             id="path146619" class="TE100C"/>
             </a>
             <!--TE100F sensor temperatura/TERMOCUPLA -->
          <a xlink:title = "TE100F Termocupla">
             <path
-            
+
             d="m 410.82804,172.75159 h 0.87979 l 0.14663,41.9736 -1.09974,-0.18329 z"
             id="path148990" class="TE100F"/>
             </a>
             <!--TE100E sensor temperatura/TERMOCUPLA -->
          <a xlink:title = "TE100E Termocupla">
             <path
-            
+
             d="m 376.50594,173.41307 h 0.84244 l -0.45362,41.27957 h -0.71283 z"
             id="path151361" class="TE100E"/>
             </a>
             <!--TE100D sensor temperatura/TERMOCUPLA -->
          <a xlink:title = "TE100D Termocupla">
             <path
-            
+
             d="m 341.31787,173.34826 0.90724,0.0648 -0.1296,41.53878 h -0.84244 z"
             id="path154356" class="TE100D"/>
             </a>
@@ -3423,7 +3511,7 @@
   </div>
   <!-- IMAGEN SVG -->
   <!-- IMAGEN SVG -->
-   
+
 
       <h5 class="barraProgress"><span>Progreso del proceso de pirolisis</span> </h5>
       <div class="row barra-progreso">
@@ -3434,7 +3522,7 @@
 
       <div class="row mt-2" id="boxCard">
         <div class="col-md-2 ">
-          <div 
+          <div
           class="card   h-100">
           <div class="card-header">Presión valvula 104A</div>
           <div class="card-body">
@@ -3446,11 +3534,11 @@
           </div>
           </div>
         </div>
-  
+
         <div class="col-md-2">
-          <div 
+          <div
           class="card  h-100">
-    
+
           <div class="card-header">Presión valvula 104B</div>
           <div class="card-body">
             <h5 class="card-tittle"> primary card tittle</h5>
@@ -3461,9 +3549,9 @@
           </div>
           </div>
         </div>
-  
+
         <div class="col-md-2">
-          <div 
+          <div
           class="card  h-100">
           <div class="card-header">Presión Tanque 1</div>
           <div class="card-body">
@@ -3476,9 +3564,9 @@
           </div>
         </div>
 
-      
+
           <div class="col-md-2 ">
-            <div 
+            <div
             class="card  h-100">
             <div class="card-header">Presión Tanque 2</div>
             <div class="card-body">
@@ -3492,9 +3580,9 @@
           </div>
 
           <div class="col-md-2">
-            <div 
+            <div
             class="card h-100">
-      
+
             <div class="card-header">Presión Tanque 3</div>
             <div class="card-body">
               <h5 class="card-tittle"> primary card tittle</h5>
@@ -3518,12 +3606,12 @@
             </div>
             </div>
           </div>
-  
-       
 
-<!--         
+
+
+<!--
         <div class="row mt-3">
-          
+
           <div class="col-md-4">
             <div class="card">
               <div class="card-header">
@@ -3533,7 +3621,7 @@
                 <canvas class="chart" width="300" height="200"></canvas>
               </div>
             </div>
-          </div>  
+          </div>
 
             <div class="col-md-4">
               <div class="card">
@@ -3544,7 +3632,7 @@
                   <canvas class="chart" width="300" height="200"></canvas>
                 </div>
               </div>
-            </div>  
+            </div>
 
             <div class="col-md-4">
               <div class="card">
@@ -3555,7 +3643,7 @@
                   <canvas class="chart" width="300" height="200"></canvas>
                 </div>
               </div>
-            </div>  
+            </div>
 
         </div> -->
     </div>

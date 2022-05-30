@@ -23,6 +23,9 @@ export class Control_ProduccionFull{
       public tipoSolido_contProduction?:string | null | undefined,
       public tipoGas_contProduction?:string| null | undefined,
 
+      public labID?:number| null | undefined,
+      public labDesc?:string| null | undefined,
+
     ){
 
     }

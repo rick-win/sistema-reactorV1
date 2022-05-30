@@ -6,6 +6,7 @@ import proceso from "./process";
 import product from "./product";
 import production from "./production";
 import sensorReadings from "./sensorReadings";
+import incidents from "./incidents";
 
 const routes = Router();
 
@@ -16,5 +17,6 @@ routes.use('/production', production)
 routes.use('/users', user);
 routes.use('/hopper', hopper)
 routes.use('/sensorRead', sensorReadings)
+routes.use('/incident', incidents)
 
 export default routes;

@@ -21,17 +21,17 @@
           <tr>
             <th>tipo de producto ingresado</th>
             <th>Cantidad de producto ingresado</th>
-            <th>Sub-producto ingresado</th>
-            <th>Detalles del producto ingresado</th>
+            <th>Catalizador usado</th>
+            <th>Cantidad de catalizador</th>
             <th>Fecha de reporte</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>{{singleProductData.tipoProducto_regProducto}} {{singleProductData.unidadMedida_regProducto}}</td>
+            <td>{{singleProductData.tipoProducto_regProducto}}</td>
             <td>{{singleProductData.cantProducto_regProducto}} {{singleProductData.unidadMedida_regProducto}}</td>
-            <td>{{singleProductData.subProducto_regProducto}}</td>
-            <td>{{singleProductData.detalle_regProducto}}</td>
+            <td>{{singleProductData.catalizador? 'Usado' : 'No usado'}}</td>
+            <td>{{singleProductData.catalizador_Cant}} {{singleProductData.catalizador_Med}}</td>
             <td>{{singleProductData.deteTime_regProducto}}</td>
           </tr>
           </tbody>
@@ -158,7 +158,7 @@
           </td>
          <td>
            <a *ngIf="productFilled.includes(e.id_Proceso)"><button (click)="open(content, e.id_Proceso); getProduct(e.id_Proceso)">Ver datos de producto</button></a>
-           <a *ngIf="!productFilled.includes(e.id_Proceso)"><button (click)="showFormulary('product', e.id_Proceso)">Añadir datos de producto</button></a>
+           <a *ngIf="!productFilled.includes(e.id_Proceso)">No se encuentran datos de cargue</a>
          </td>
          </tr>
       </tbody>
@@ -314,6 +314,16 @@
         <input [(ngModel)]="newProductionToSend.unidadGas_contProduction" type="text" class="form-control" name="gsUm">
       </div>
 
+      <div class="form-group mb-3">
+        <label class="col-form-label">Id de Laboratorio</label>
+        <input [(ngModel)]="newProductionToSend.labID" type="number" class="form-control" name="labId">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="col-form-label">Descripción de laboratorio</label>
+        <input [(ngModel)]="newProductionToSend.labDesc" type="text" class="form-control" name="lqType">
+      </div>
+
       <div class="contedor-btn-iniciar mt-3">
         <button (click)="newProduction()" type="submit" class="btn btn-iniciar btn-primary btn-lg" >Guardar</button>
       </div>
@@ -321,7 +331,7 @@
     </form>
   </div>
 <!--  Registrar producto-->
-  <div *ngIf="registeringProduct" class="contenedor-formulario col-md-5 mt-5  mt-5 justify-content-center" >
+<!--  <div *ngIf="registeringProduct" class="contenedor-formulario col-md-5 mt-5  mt-5 justify-content-center" >
     <form class="mt-4" autocomplete="off">
 
       <h3 class="titulo-login">Registrando datos de producto para proceso número {{currentEdition}}</h3>
@@ -355,7 +365,7 @@
       </div>
 
     </form>
-  </div>
+  </div> -->
 
 </div>
 

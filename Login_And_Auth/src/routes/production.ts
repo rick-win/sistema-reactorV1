@@ -6,7 +6,7 @@ import reportsProductionController from "../controller/ReportsProductionControll
 const router = Router();
 
 // Get all users
-router.get('/',[checkJwt, checkRole(['admin', 'operario'])], reportsProductionController.getAll);
+router.get('/',[checkJwt, checkRole(['admin', 'operario', 'mantenimiento'])], reportsProductionController.getAll);
 
 // Get one user
 router.get('/:id',[checkJwt, checkRole(['admin', 'operario'])],  reportsProductionController.getById);

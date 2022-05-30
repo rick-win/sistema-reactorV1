@@ -1,50 +1,56 @@
 <div class="container-sm ">
 
     <div class="row text-center ">
-    <img src="assets/Img/logoSena.png"   
+    <img src="assets/Img/logoSena.png"
       class="imgLS d-inline-block col mr-2"/>
     <h3 class="col mt-5">Cargue Material - Tolva</h3>
-    <img src="assets/Img/LogoGIDEMP.jpg"   
+    <img src="assets/Img/LogoGIDEMP.jpg"
       class="imgLS d-inline-block  col mr-2 float-end"/>
     </div><hr>
 </div>
 
 <div class="contenedor-formulario col-md-5 " >
-   
-  <form class="row mt-4" autocomplete="off" [formGroup]="formularioTolva">
-      
+
+  <form class="row mt-4" autocomplete="off">
+
       <div class="form-group mb-3 col-md-4">
+        <label class="row-sm-2 col-form-label">Proceso asociado</label>
+        <input [(ngModel)]="newProductToSend.parentProcess" type="number" class="form-control" name="parent">
+<!--    <select [(ngModel)]="newProductToSend.parentProcess" class="form-select" aria-label="Default select example">
+          <option selected>Selecione tipo material plástico</option>
+        </select>-->
+
           <label class="row-sm-2 col-form-label">Detalle Producto</label>
-          <select class="form-select" aria-label="Default select example">
+          <select [(ngModel)]="newProductToSend.tipoProducto_regProducto" name="type" class="form-select" aria-label="Default select example">
               <option selected>Selecione tipo material plástico</option>
-              <option value="1">PET(Tereftalato de Polietileno)</option>
-              <option value="2">PVC(Cloruro de Polivinilo)</option>
-              <option value="3">PP(Polipropileno)</option>
-              <option value="4">PS(Poliestireno)</option>
-              <option value="5">LDPE/PEBD(Polietileno de baja densidad)</option>
-              <option value="6">HDPE/EAD(Polietileno de alta densidad)</option>
-              <option value="7">Otros plásticos/materiales compuestos</option>
+              <option value="PET(Tereftalato de Polietileno)">PET(Tereftalato de Polietileno)</option>
+              <option value="PVC(Cloruro de Polivinilo)">PVC(Cloruro de Polivinilo)</option>
+              <option value="PP(Polipropileno)">PP(Polipropileno)</option>
+              <option value="PS(Poliestireno)">PS(Poliestireno)</option>
+              <option value="LDPE/PEBD(Polietileno de baja densidad)">LDPE/PEBD(Polietileno de baja densidad)</option>
+              <option value="HDPE/EAD(Polietileno de alta densidad)">HDPE/EAD(Polietileno de alta densidad)</option>
+              <option value="Otros plásticos/materiales compuestos">Otros plásticos/materiales compuestos</option>
           </select>
 
           <div class="">
             <div class="mb-3">
               <label class="row-sm-2 col-form-label">Cantidad</label>
-              <input type="number" class="form-control" id="cantidaProducto" formControlName="cantidadMaterial" placeholder="ingresar valor">
+              <input [(ngModel)]="newProductToSend.cantProducto_regProducto" name="cant" type="number" class="form-control" placeholder="ingresar valor">
           </div>
        </div>
 
       <div class="mb-3">
           <label class="form-label">Unidad/medida Material</label>
-          <select class="form-select" aria-label="Default select example">
+          <select [(ngModel)]="newProductToSend.unidadMedida_regProducto" name="um" class="form-select" aria-label="Default select example">
             <option selected>Seleccionar</option>
-            <option value="1">Kg (kilogramo)</option>
-            <option value="2">g (gramo)</option>
+            <option value="Kg">Kg (kilogramo)</option>
+            <option value="g">g (gramo)</option>
         </select>
       </div>
-  
+
 
         <div class="form-check">
-          <input class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault">
+          <input [(ngModel)]="newProductToSend.catalizador" name="catVF" class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
             Catalizador
           </label>
@@ -52,32 +58,30 @@
 
       <div class="mb-3">
         <label class="form-label">Cantidad Catalizador</label>
-        <input type="number" class="form-control" id="cantCatalizador" formControlName="cantidadCatalizador" placeholder="ingresar valor">
+        <input [(ngModel)]="newProductToSend.catalizador_Cant" name="catCant" type="number" class="form-control" placeholder="ingresar valor">
     </div>
 
     <div class="mb-3">
       <label class="form-label">Unidad/medida Catalizador</label>
-      <select class="form-select" aria-label="Default select example">
+      <select [(ngModel)]="newProductToSend.catalizador_Med" name="catUm" class="form-select" aria-label="Default select example">
         <option selected>Seleccionar</option>
-        <option value="1">Kg (kilogramo)</option>
-        <option value="2">g (gramo)</option>
+        <option value="Kg">Kg (kilogramo)</option>
+        <option value="g">g (gramo)</option>
     </select>
    </div>
     </div>
 
   <div class="form-group mb-4 col-md-4">
     <div class="mb-3">
-      <label class="form-label">Presión</label>
-      <input type="number" class="form-control" id="presionTolva" formControlName="" placeholder="ingresar valor">
+      <label class="form-label">Presión: {{hopperArray[0].indicadorPresion_Tolva}}</label>
   </div>
 
   <div class="mb-3">
-    <label class="form-label">Tiempo sostenimiento</label>
-    <input type="number" class="form-control" id="tiempoSostenimientoTolva" formControlName="" placeholder="ingresar valor">
+    <label class="form-label">Tiempo sostenimiento: {{hopperArray[0].tiempoSostenimiento_Tolva}}</label>
   </div>
 
   <div class="contedor-btn-iniciar mt-2">
-    <button type="submit" class="btn btn-iniciar btn-primary btn-lg float-end" (click)="guardarParametrosTolva()">Guardar</button>
+    <button (click)="newProduct()" type="submit" class="btn btn-iniciar btn-primary btn-lg float-end" >Guardar</button>
   </div>
 
   </div>
@@ -89,11 +93,11 @@
         <div class="card-header">Estado Tapa - Tolva</div>
         <div class="card-body">
           <p class="card-text">
-            Abierta / Cerrada
+            {{openClose}}
           </p>
         </div>
         </div>
-      </div>       
+      </div>
     </div>
   </form>
   </div>
